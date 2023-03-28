@@ -69,7 +69,7 @@ function App() {
 
     event.preventDefault();
 
-    const { data } =  await axios.post('http://localhost:8000/predict', { nitrogen: Number(values.nitrogen) , phosphorus: Number(values.phosphorus) , potassium: Number(values.potassium) , temperature: Number(values.temperature) , humidity: Number(values.humidity) , ph: Number(values.ph) , rainfall: Number(values.rainfall) })
+    const { data } =  await axios.post(`https://cropforesight-backend.onrender.com/predict`, { nitrogen: Number(values.nitrogen) , phosphorus: Number(values.phosphorus) , potassium: Number(values.potassium) , temperature: Number(values.temperature) , humidity: Number(values.humidity) , ph: Number(values.ph) , rainfall: Number(values.rainfall) })
     alert(data.result);
   }
   const onChange = (event) => {
