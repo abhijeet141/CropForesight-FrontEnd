@@ -13,6 +13,7 @@ function App() {
     ph: "",
     rainfall: "",
   });
+  const [loading,setLoading] = useState()
 
   const inputs = [
     {
@@ -68,9 +69,10 @@ function App() {
   const handleSubmit = async (event) => {
 
     event.preventDefault();
-
+    setLoading(true)
     const { data } =  await axios.post(`https://cropforesight-backend.onrender.com/predict`, { nitrogen: Number(values.nitrogen) , phosphorus: Number(values.phosphorus) , potassium: Number(values.potassium) , temperature: Number(values.temperature) , humidity: Number(values.humidity) , ph: Number(values.ph) , rainfall: Number(values.rainfall) })
-    alert(data.result);
+    setLoading(false)
+    alert(`You should plant ${data.result} in your field`);
   }
   const onChange = (event) => {
     setValues({...values, [event.target.name]: event.target.value})
@@ -82,7 +84,7 @@ function App() {
       {inputs.map((input) => (
             <FormInfo key = {input.id} {...input} value={values[input.name]} onChange={onChange} />
       ))}
-      <button>Submit</button>
+      <button>{loading ? 'Evaluating...' : 'Submit'}</button>
     </form>
 </div>
   );
