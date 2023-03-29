@@ -3,7 +3,9 @@
   align-items: center;
   justify-content: center;
   height: 130vh;
-  background-color: aquamarine;
+  background-image: url(./assets/image.jpg);
+  background-size: cover;
+  min-height: 100vh;
 }
 
 form{
