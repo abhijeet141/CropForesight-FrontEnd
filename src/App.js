@@ -97,9 +97,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/form' element={<FormComponet />} />
+        <Route path='/form' element={FormComponet()} />
       </Routes>
-
     </BrowserRouter>
   );
 }
