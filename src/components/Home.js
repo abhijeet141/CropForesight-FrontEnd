@@ -13,7 +13,7 @@ const Home = () => {
         <p className='para'>Predict what type of crop is suitable on your land</p>
       </div>
       <div className='button'>
-        <button className='button1' onClick={() => (navigate("/form"))}>PREDICT YOUR CROP</button>
+        <button className='button-1' onClick={() => (navigate("/form"))}>PREDICT YOUR CROP</button>
       </div>
     </div>
   )
