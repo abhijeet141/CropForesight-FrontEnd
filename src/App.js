@@ -4,6 +4,7 @@ import FormInfo from './components/FormInfo';
 import axios from 'axios';
 import Home from './components/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import swal from 'sweetalert';
 
 function App() {
 
@@ -88,7 +89,7 @@ function App() {
     setLoading(true)
     const { data } = await axios.post(`https://cropforesight-backend.onrender.com/predict`, { nitrogen: Number(values.nitrogen), phosphorus: Number(values.phosphorus), potassium: Number(values.potassium), temperature: Number(values.temperature), humidity: Number(values.humidity), ph: Number(values.ph), rainfall: Number(values.rainfall) })
     setLoading(false)
-    alert(`You should plant ${data.result} in your field`);
+    swal("Success", `You should plant ${data.result} in your field`, "success");
   }
   const onChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value })

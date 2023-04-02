@@ -9,7 +9,7 @@ const Home = () => {
       <video src={video} autoPlay loop muted />
       <div className='overlay'></div>
       <div className='content'>
-        <h1 className='text'>Crop Prdiction</h1>
+        <h1 className='text'>Crop Prediction</h1>
         <p className='para'>Predict what type of crop is suitable on your land</p>
       </div>
       <div className='button'>
