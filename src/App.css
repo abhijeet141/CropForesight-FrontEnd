@@ -2,10 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   background-image: url(./assets/image.jpg);
-  background-size: cover;
-  min-height: 100vh;
+  background-size: cover; 
+  /* min-height: 100vh; */
+  padding-bottom: 10px;
+  height: 100%;
 }
 
 form{
@@ -13,6 +14,7 @@ form{
   width: 45%;
   padding: 10px 80px;
   border-radius: 15px;
+  margin-top: 50px;
 }
 
 h1{
@@ -32,4 +34,25 @@ button{
   font-size: 15px;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+ @media(max-width:412px){
+  .body{
+    height: 900px;
+  }
+} 
+@media(min-width:768px) and (max-width:820px){
+  .body{
+    height: 1200px;
+  }
+  form{
+    width: 60%;
+    height: 70%;
+  }
+  h1{
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+  button{
+    margin-top: 30px;
+  }
 }
