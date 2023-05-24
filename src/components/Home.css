@@ -154,9 +154,9 @@ nav ul li {
     }
     .card{
       width: 80dvw;
-      height: 30dvh;
+      height: 35dvh;
       position: absolute;
-      top: 25rem;
+      top: 23rem;
       right: 1.5rem;
     }
     video{
@@ -167,8 +167,8 @@ nav ul li {
 
     }
     .button{
-      margin-top: 18vh;
-      right: 8rem;
+      margin-top: 17vh;
+      right: 7rem;
     }
 
   }
