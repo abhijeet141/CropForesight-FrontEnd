@@ -3,7 +3,7 @@ import './App.css';
 import FormInfo from './components/FormInfo';
 import axios from 'axios';
 import Home from './components/Home';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import swal from 'sweetalert';
 
 function App() {
@@ -80,6 +80,7 @@ function App() {
             <FormInfo key={input.id} {...input} value={values[input.name]} onChange={onChange} />
           ))}
           <button>{loading ? 'Evaluating...' : 'Recommend Crop'}</button>
+          <button><Link className="home-button" to="/">Home</Link></button>
         </form>
       </div>)
   }
