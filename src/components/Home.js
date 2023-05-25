@@ -1,8 +1,10 @@
 import React,{ useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate ,Link} from 'react-router-dom'
 import video from '../assets/nature.mp4'
 import './Home.css'
+import './nav.css'
 import logo from '../assets/earth.png'
+import Contact from './contact'
 
 const Typewriter = ({ sentences, delay }) => {
   const [displayText, setDisplayText] = useState('');
@@ -41,24 +43,23 @@ const Home = () => {
 
   return (
     <div className='main'>
+
+      <video src={video} autoPlay loop muted />
       <div className='nav'>
       <header>
-        {/* make the nav bar functional when other pages are added */}
         <nav>
-              <img src = {logo}/>
+        <Link to="/"><img src = {logo}/></Link>
             <div class="right">
                 <ul>
-                    <li><a href="/"></a>Home</li>
-                    <li><a href="/"></a>About</li>
-                    <li><a href="/"></a>Contact</li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/contact" >Contact</Link></li>
 
                 </ul>
             </div>
         </nav>
     </header>
       </div>
-      <video src={video} autoPlay loop muted />
-
       <div className="card glass"> 
            <div className='content'>
         <h1 className='text purple'>Crop Prediction</h1>
