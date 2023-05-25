@@ -15,26 +15,7 @@ body {
     color: white;
     font-family: 'Poppins', sans-serif;
 }
-
-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 80px;
-    background-color: rgb(0, 0, 57);
-
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    list-style: none;
-    margin: 0 23px;
-}
-  
+ 
   video{
     position: absolute;
     width: 80dvw ;
@@ -137,20 +118,11 @@ nav ul li {
       top: 1rem;
       right: 3rem;
     }
-    nav ul li{
-        margin: 0 15px;
-    }
-    nav ul{
-      position: absolute;
-      left: 5rem;
-    }
-    .left{
-      position: absolute;
-      left: 1rem;
-    }
+
     img{
       position: absolute;
       left: 1rem;
+      top: 0.8rem;
     }
     .card{
       width: 80dvw;
