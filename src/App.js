@@ -24,80 +24,90 @@ function App() {
   const inputs = [
     {
       id: 1,
-      name: "nitrogen",
-      type: "number",
-      placeholder: "Nitrogen",
-      label: "Nitrogen"
+      name: 'nitrogen',
+      type: 'number',
+      placeholder: 'Nitrogen',
+      label: 'Nitrogen',
     },
     {
       id: 2,
-      name: "phosphorus",
-      type: "number",
-      placeholder: "Phosphorus",
-      label: "Phosphorus"
+      name: 'phosphorus',
+      type: 'number',
+      placeholder: 'Phosphorus',
+      label: 'Phosphorus',
     },
     {
       id: 3,
-      name: "potassium",
-      type: "number",
-      placeholder: "Potassium",
-      label: "Potassium"
+      name: 'potassium',
+      type: 'number',
+      placeholder: 'Potassium',
+      label: 'Potassium',
     },
     {
       id: 4,
-      name: "temperature",
-      type: "number",
-      placeholder: "Temperature",
-      label: "Temperature"
+      name: 'temperature',
+      type: 'number',
+      placeholder: 'Temperature',
+      label: 'Temperature',
     },
     {
       id: 5,
-      name: "humidity",
-      type: "number",
-      placeholder: "Humidity",
-      label: "Humidity"
+      name: 'humidity',
+      type: 'number',
+      placeholder: 'Humidity',
+      label: 'Humidity',
     },
     {
       id: 6,
-      name: "ph",
-      type: "number",
-      placeholder: "Ph",
-      label: "Ph"
+      name: 'ph',
+      type: 'number',
+      placeholder: 'Ph',
+      label: 'Ph',
     },
     {
       id: 7,
-      name: "rainfall",
-      type: "number",
-      placeholder: "Rainfall",
-      label: "Rainfall"
-    }
-  ]
+      name: 'rainfall',
+      type: 'number',
+      placeholder: 'Rainfall',
+      label: 'Rainfall',
+    },
+  ];
 
-  const FormComponet = () => {
+  const FormComponent = () => {
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+      setLoading(true);
+
+      const { data } = await axios.post(`https://cropforesight-backend.onrender.com/predict`, {
+        nitrogen: Number(values.nitrogen),
+        phosphorus: Number(values.phosphorus),
+        potassium: Number(values.potassium),
+        temperature: Number(values.temperature),
+        humidity: Number(values.humidity),
+        ph: Number(values.ph),
+        rainfall: Number(values.rainfall),
+      });
+
+      setLoading(false);
+      swal('Success', `You should plant ${data.result} in your field`, 'success');
+    };
+
+    const onChange = (event) => {
+      setValues({ ...values, [event.target.name]: event.target.value });
+    };
+
     return (
-      <div className='body'>
+      <div className="body">
         <form onSubmit={handleSubmit}>
-          <h1>Crop Recomendation</h1>
+          <h1>Crop Recommendation</h1>
           {inputs.map((input) => (
             <FormInfo key={input.id} {...input} value={values[input.name]} onChange={onChange} />
           ))}
           <button>{loading ? 'Evaluating...' : 'Recommend Crop'}</button>
         </form>
-      </div>)
-  }
-
-  const handleSubmit = async (event) => {
-
-    event.preventDefault();
-    setLoading(true)
-    const { data } = await axios.post(`https://cropforesight-backend.onrender.com/predict`, { nitrogen: Number(values.nitrogen), phosphorus: Number(values.phosphorus), potassium: Number(values.potassium), temperature: Number(values.temperature), humidity: Number(values.humidity), ph: Number(values.ph), rainfall: Number(values.rainfall) })
-    setLoading(false)
-    swal("Success", `You should plant ${data.result} in your field`, "success");
-  }
-
-  const onChange = (event) => {
-    setValues({ ...values, [event.target.name]: event.target.value })
-  }
+      </div>
+    );
+  };
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -110,23 +120,15 @@ function App() {
       <div className={`body ${darkMode ? 'dark-mode' : ''}`}>
         <div className="toggle-container">
           <button onClick={toggleDarkMode}>{darkMode ? 'Light Mode' : 'Dark Mode'}</button>
-        </div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/form">
-            <form onSubmit={handleSubmit}>
-              <h1>Crop Recommendation</h1>
-              {inputs.map((input) => (
-                <FormInfo key={input.id} {...input} value={values[input.name]} onChange={onChange} />
-              ))}
-              <button>{loading ? 'Evaluating...' : 'Recommend Crop'}</button>
-            </form>
-          </Route>
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
-  );
+</div>
+<Routes>
+<Route path="/" element={<Home />} />
+<Route path="/form" element={<FormComponent />} />
+<Route path="/contact" element={<Contact />} />
+</Routes>
+</div>
+</BrowserRouter>
+);
 }
 
 export default App;
