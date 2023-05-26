@@ -1,26 +1,25 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import FormInfo from './components/FormInfo';
 import axios from 'axios';
 import Home from './components/Home';
 import Contact from './components/contact';
-
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import swal from 'sweetalert';
 
 function App() {
   const [values, setValues] = useState({
-    nitrogen: "",
-    phosphorus: "",
-    potassium: "",
-    temperature: "",
-    humidity: "",
-    ph: "",
-    rainfall: "",
+    nitrogen: '',
+    phosphorus: '',
+    potassium: '',
+    temperature: '',
+    humidity: '',
+    ph: '',
+    rainfall: '',
   });
-
   const [loading, setLoading] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const location = useLocation();
 
   const inputs = [
     {
@@ -72,64 +71,62 @@ function App() {
       placeholder: "Rainfall",
       label: "Rainfall"
     }
-  ];
+  ]
 
-  const FormComponent = () => {
+  const FormComponet = () => {
     return (
-      <div className={`body ${darkMode ? 'dark-mode' : ''}`}>
+      <div className='body'>
         <form onSubmit={handleSubmit}>
-          <h1>Crop Recommendation</h1>
+          <h1>Crop Recomendation</h1>
           {inputs.map((input) => (
-            <FormInfo
-              key={input.id}
-              {...input}
-              value={values[input.name]}
-              onChange={onChange}
-            />
+            <FormInfo key={input.id} {...input} value={values[input.name]} onChange={onChange} />
           ))}
           <button>{loading ? 'Evaluating...' : 'Recommend Crop'}</button>
         </form>
-      </div>
-    );
-  };
+      </div>)
+  }
 
   const handleSubmit = async (event) => {
+
     event.preventDefault();
-    setLoading(true);
-    const { data } = await axios.post(
-      `https://cropforesight-backend.onrender.com/predict`,
-      {
-        nitrogen: Number(values.nitrogen),
-        phosphorus: Number(values.phosphorus),
-        potassium: Number(values.potassium),
-        temperature: Number(values.temperature),
-        humidity: Number(values.humidity),
-        ph: Number(values.ph),
-        rainfall: Number(values.rainfall)
-      }
-    );
-    setLoading(false);
+    setLoading(true)
+    const { data } = await axios.post(`https://cropforesight-backend.onrender.com/predict`, { nitrogen: Number(values.nitrogen), phosphorus: Number(values.phosphorus), potassium: Number(values.potassium), temperature: Number(values.temperature), humidity: Number(values.humidity), ph: Number(values.ph), rainfall: Number(values.rainfall) })
+    setLoading(false)
     swal("Success", `You should plant ${data.result} in your field`, "success");
-  };
+  }
 
   const onChange = (event) => {
-    setValues({ ...values, [event.target.name]: event.target.value });
+    setValues({ ...values, [event.target.name]: event.target.value })
+  }
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
   };
+
+  const isFormPage = location.pathname === '/form';
 
   return (
     <BrowserRouter>
-      <div className={`app ${darkMode ? 'dark-mode' : ''}`}>
-        <button className="dark-mode-toggle" onClick={() => setDarkMode(!darkMode)}>
-          {darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-        </button>
-        <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/form' element={<FormComponent />} />
-            <Route path='/contact' element={<Contact />} />
-        </Routes>
+      <div className={`body ${darkMode ? 'dark-mode' : ''}`}>
+        <div className="toggle-container">
+          <button onClick={toggleDarkMode}>{darkMode ? 'Light Mode' : 'Dark Mode'}</button>
         </div>
-</BrowserRouter>
-);
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/form">
+            <form onSubmit={handleSubmit}>
+              <h1>Crop Recommendation</h1>
+              {inputs.map((input) => (
+                <FormInfo key={input.id} {...input} value={values[input.name]} onChange={onChange} />
+              ))}
+              <button>{loading ? 'Evaluating...' : 'Recommend Crop'}</button>
+            </form>
+          </Route>
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default App;
