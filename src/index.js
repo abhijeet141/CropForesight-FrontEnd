@@ -1,20 +1,33 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.3s ease;
-  background-color: #f9f9f9; /* Light mode background color */
+// Check if the user prefers dark mode
+const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+// Set the initial mode based on user preference
+const initialMode = prefersDarkMode ? 'dark' : 'light';
+
+// Function to toggle the mode
+const toggleMode = () => {
+  document.documentElement.classList.toggle('dark-mode');
+};
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+// Add event listener to toggle mode when the button is clicked
+const modeToggleBtn = document.getElementById('mode-toggle-btn');
+if (modeToggleBtn) {
+  modeToggleBtn.addEventListener('click', toggleMode);
 }
 
-body.dark-mode {
-  background-color: #202020; /* Dark mode background color */
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+// Set the initial mode on page load
+if (initialMode === 'dark') {
+  toggleMode();
 }
