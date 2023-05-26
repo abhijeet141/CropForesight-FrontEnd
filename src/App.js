@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import FormInfo from './components/FormInfo';
 import axios from 'axios';
@@ -9,7 +9,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import swal from 'sweetalert';
 
 function App() {
-
   const [values, setValues] = useState({
     nitrogen: "",
     phosphorus: "",
@@ -19,7 +18,9 @@ function App() {
     ph: "",
     rainfall: "",
   });
-  const [loading, setLoading] = useState()
+
+  const [loading, setLoading] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   const inputs = [
     {
@@ -71,40 +72,64 @@ function App() {
       placeholder: "Rainfall",
       label: "Rainfall"
     }
-  ]
-  // Can be extracted sapareately
-  const FormComponet = () => {
+  ];
+
+  const FormComponent = () => {
     return (
-      <div className='body'>
+      <div className={`body ${darkMode ? 'dark-mode' : ''}`}>
         <form onSubmit={handleSubmit}>
-          <h1>Crop Recomendation</h1>
+          <h1>Crop Recommendation</h1>
           {inputs.map((input) => (
-            <FormInfo key={input.id} {...input} value={values[input.name]} onChange={onChange} />
+            <FormInfo
+              key={input.id}
+              {...input}
+              value={values[input.name]}
+              onChange={onChange}
+            />
           ))}
           <button>{loading ? 'Evaluating...' : 'Recommend Crop'}</button>
         </form>
-      </div>)
-  }
-  const handleSubmit = async (event) => {
+      </div>
+    );
+  };
 
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setLoading(true)
-    const { data } = await axios.post(`https://cropforesight-backend.onrender.com/predict`, { nitrogen: Number(values.nitrogen), phosphorus: Number(values.phosphorus), potassium: Number(values.potassium), temperature: Number(values.temperature), humidity: Number(values.humidity), ph: Number(values.ph), rainfall: Number(values.rainfall) })
-    setLoading(false)
+    setLoading(true);
+    const { data } = await axios.post(
+      `https://cropforesight-backend.onrender.com/predict`,
+      {
+        nitrogen: Number(values.nitrogen),
+        phosphorus: Number(values.phosphorus),
+        potassium: Number(values.potassium),
+        temperature: Number(values.temperature),
+        humidity: Number(values.humidity),
+        ph: Number(values.ph),
+        rainfall: Number(values.rainfall)
+      }
+    );
+    setLoading(false);
     swal("Success", `You should plant ${data.result} in your field`, "success");
-  }
+  };
+
   const onChange = (event) => {
-    setValues({ ...values, [event.target.name]: event.target.value })
-  }
+    setValues({ ...values, [event.target.name]: event.target.value });
+  };
+
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/form' element={FormComponet()} />
-        <Route path='/contact' element={<Contact />}/>
-      </Routes>
-    </BrowserRouter>
-  );
+      <div className={`app ${darkMode ? 'dark-mode' : ''}`}>
+        <button className="dark-mode-toggle" onClick={() => setDarkMode(!darkMode)}>
+          {darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+        </button>
+        <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/form' element={<FormComponent />} />
+            <Route path='/contact' element={<Contact />} />
+        </Routes>
+        </div>
+</BrowserRouter>
+);
 }
 
 export default App;
