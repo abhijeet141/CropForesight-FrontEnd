@@ -4,7 +4,6 @@
   justify-content: center;
   background-image: url(./assets/image.jpg);
   background-size: cover;
-  /* min-height: 100vh; */
   padding-bottom: 10px;
   height: 100%;
 }
@@ -39,6 +38,23 @@ button {
   margin-bottom: 10px;
 }
 
+.dark-mode .body {
+  background-color: #333;
+}
+
+.dark-mode h1 {
+  color: white;
+}
+
+.dark-mode form {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.dark-mode button {
+  background-color: #9d57da;
+}
+
 @media (max-width: 412px) {
   .body {
     height: 900px;
@@ -60,31 +76,4 @@ button {
   button {
     margin-top: 30px;
   }
-}
-
-/* Light mode styles */
-.body {
-  background-color: #f9f9f9;
-}
-
-form {
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-}
-
-.button {
-  background-color: rgb(173, 108, 234);
-}
-
-/* Dark mode styles */
-.body.dark-mode {
-  background-color: #202020;
-}
-
-form.dark-mode {
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-}
-
-.button.dark-mode {
-  background-color: #7f7f7f;
-  color: white;
 }
