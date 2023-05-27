@@ -3,7 +3,9 @@ import './App.css';
 import FormInfo from './components/FormInfo';
 import axios from 'axios';
 import Home from './components/Home';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import Contact from './components/contact';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import swal from 'sweetalert';
 
 function App() {
@@ -100,6 +102,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/form' element={FormComponet()} />
+        <Route path='/contact' element={<Contact />} />
       </Routes>
     </BrowserRouter>
   );
