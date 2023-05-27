@@ -82,6 +82,7 @@ function App() {
             <FormInfo key={input.id} {...input} value={values[input.name]} onChange={onChange} />
           ))}
           <button>{loading ? 'Evaluating...' : 'Recommend Crop'}</button>
+          <button><Link className="home-button" to="/">Home</Link></button>
         </form>
       </div>)
   }
@@ -101,7 +102,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/form' element={FormComponet()} />
-        <Route path='/contact' element={<Contact />}/>
+        <Route path='/contact' element={<Contact />} />
       </Routes>
     </BrowserRouter>
   );
