@@ -2,8 +2,7 @@ import React,{ useState, useEffect } from 'react'
 import { useNavigate ,Link} from 'react-router-dom'
 import video from '../assets/nature.mp4'
 import './Home.css'
-import './nav.css'
-import logo from '../assets/earth.png'
+
 import Contact from './contact'
 
 const Typewriter = ({ sentences, delay }) => {
@@ -46,19 +45,7 @@ const Home = () => {
 
       <video src={video} autoPlay loop muted />
       <div className='nav'>
-      <header>
-        <nav>
-        <Link to="/"><img src = {logo}/></Link>
-            <div class="right">
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/contact" >Contact</Link></li>
-
-                </ul>
-            </div>
-        </nav>
-    </header>
+      
       </div>
       <div className="card glass"> 
            <div className='content'>

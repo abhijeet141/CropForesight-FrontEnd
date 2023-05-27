@@ -7,6 +7,7 @@ import Contact from './components/contact';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import swal from 'sweetalert';
+import NavBar from './components/NavBar';
 
 function App() {
 
@@ -97,13 +98,17 @@ function App() {
     setValues({ ...values, [event.target.name]: event.target.value })
   }
   return (
+    <>
+ 
     <BrowserRouter>
+    <NavBar/>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/form' element={FormComponet()} />
         <Route path='/contact' element={<Contact />}/>
       </Routes>
     </BrowserRouter>
+    </>
   );
 }
 
