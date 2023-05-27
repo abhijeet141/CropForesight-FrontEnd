@@ -89,20 +89,6 @@ const Contact = () => {
       {/* nav bar */}
       <div className='nav'>
       <header>
-      
-        <nav>
-          <div class="left" style={{color: "red"}}>
-        <Link to="/"><img src = {logo}/></Link>
-        </div>
-            <div class="right">
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/contact" >Contact</Link></li>
-
-                </ul>
-            </div>
-        </nav>
     </header>
       </div>
       <h1 className="contact">Contact US</h1>
