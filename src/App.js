@@ -80,7 +80,7 @@ function App() {
     return (
       <div className='body'>
         <form onSubmit={handleSubmit}>
-          <h1>Crop Recomendation</h1>
+          <h1 className='title'>Crop Recomendation</h1>
           {inputs.map((input) => (
             <FormInfo key={input.id} {...input} value={values[input.name]} onChange={onChange} />
           ))}

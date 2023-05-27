@@ -20,7 +20,7 @@ form {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
-h1{
+.title {
   text-align: center;
 }
 
@@ -51,7 +51,7 @@ button{
     width: 60%;
     height: 70%;
   }
-  h1{
+  .title{
     margin-bottom: 10px;
     margin-top: 20px;
   }
