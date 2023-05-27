@@ -4,7 +4,9 @@ import FormInfo from './components/FormInfo';
 import axios from 'axios';
 import Home from './components/Home';
 import Contact from './components/contact';
+
 import Err from './components/404'
+import About from './components/about';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import swal from 'sweetalert';
@@ -102,6 +104,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/form' element={FormComponet()} />
+        <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact />}/>
         <Route path='/*' element={<Err />}/>        
       </Routes>
