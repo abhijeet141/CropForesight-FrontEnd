@@ -3,6 +3,7 @@ import styles from './contact.css';
 import './nav.css'
 import logo from '../assets/earth.png';
 import { useNavigate ,Link, useHref} from 'react-router-dom';
+import swal from 'sweetalert';
 
 const Typewriter = ({ sentences, delay }) => {
   const [displayText, setDisplayText] = useState('');
@@ -57,25 +58,29 @@ const Contact = () => {
 
 
     try {
-      const response = await fetch("https://cropforesight-backend.onrender.com/subform", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      // const response = await fetch("https://cropforesight-backend.onrender.com/subform", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(formData),
+      // });
 
-      if (response.ok) {
-        // Form submission successful
-        // Handle success or show a success message
-        console.log('submitted');
-      } else {
-        // Form submission failed
-        // Handle error or show an error message
-        console.log('failed');
-      }
+      // if (response.ok) {
+      //   // Form submission successful
+      //   // Handle success or show a success message
+      //   console.log('submitted');
+      // } else {
+      //   // Form submission failed
+      //   // Handle error or show an error message
+      //   console.log('failed');
+      // }
+      console.log(formData);
+      swal("Success", `Thanks for contacting us ${name}. We have received your details successfully. We will get back to you soon.`, "success");
     } catch (error) {
       // Handle error or show an error message
+      console.log(error);
+      swal("Error", "Something went wrong... Please try again", "error");
     }
 
     // Reset the form fields
