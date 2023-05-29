@@ -53,7 +53,7 @@ const About = () => {
                                 Scalable backend powered by FastAPI for quick data processing.</li>
                         </ul>
 
-                        <button onClick={handleClick} >Get In Touch</button>
+                        <button className="abt" onClick={handleClick} >Get In Touch</button>
 
                     </div>
                     <div className="right">

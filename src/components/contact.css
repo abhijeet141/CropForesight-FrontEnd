@@ -68,6 +68,10 @@ body,html{
     color: #fff;
     cursor: pointer;
   }
+  .btn:hover{
+    box-shadow: 0 0 10px 0 #9864c9 inset, 0 0 20px 2px #9864c9;
+    border: 3px solid #9864c9;
+  }
 .contact{
     font-weight: 300;
     
@@ -196,7 +200,7 @@ body,html{
 }
 
   .form{
-    width: 290px;
+    width: 350px;
     height: 400px;
     position: absolute;
     left: 15px;
@@ -213,16 +217,16 @@ body,html{
   }
   .form input{
     height: 20px;
-    width: 270px;
+    width: 300px;
   }
   .form button{
-    width: 15rem;
+    width: 16rem;
     position: absolute;
     bottom: 1rem;
     left: 2rem;
   }
   .form textarea{
-    width: 270px;
+    width: 290px;
   }
   .tag{
     top: 10rem;
