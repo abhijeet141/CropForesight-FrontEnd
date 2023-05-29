@@ -4,7 +4,10 @@ input{
     border-radius: 5px;
     border: 1px solid grey;
 }
-
+.title {
+    text-align: center;
+    color: black;
+}
 .formInput{
     display: flex;
     flex-direction: column;
@@ -13,4 +16,6 @@ input{
 
 label{
     font-size: 15px;
+    color:black;
 }
+

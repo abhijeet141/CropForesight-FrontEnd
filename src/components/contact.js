@@ -149,7 +149,7 @@ const Contact = () => {
         </div>
           <form className="form glass" onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="name">Name</label>
+              <label className="cl" htmlFor="name">Name</label>
               <input
                 className="form-control"
                 id="name"
@@ -162,7 +162,7 @@ const Contact = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="email">Email</label>
+              <label className="cl" htmlFor="email">Email</label>
               <input
                 className="form-control"
                 id="email"
@@ -175,7 +175,7 @@ const Contact = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="message">Message</label>
+              <label className="cl" htmlFor="message">Message</label>
               <textarea
                 className="form-control"
                 id="message"
