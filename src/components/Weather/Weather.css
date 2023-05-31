@@ -1,0 +1,68 @@
+input {
+    padding: 1rem;
+    border-radius: 25px;
+    border: none;
+    display: flex;
+    margin-left: 550px;
+    background-color: #fff;
+    font-family: inherit;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    min-width: 300px;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+}
+
+h1 {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Weather {
+    text-align: center;
+    margin-left: 550px;
+    margin-top: 30px;
+    border: 1px solid rgb(252, 154, 242);
+    height: 200px;
+    width: 200px;
+}
+
+.getWeather {
+    width: 150px;
+    height: 42px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-left: 640px;
+    margin-top: 50px;
+    align-items: center;
+    border: none;
+    background-color: rgb(208, 177, 244);
+}
+
+.getWeather:hover {
+    background-color: rgb(249, 178, 249);
+}
+
+.Weather .name {
+    font-size: 20pt;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(27, 1, 51);
+
+}
+
+.Weather .dis {
+    font-size: 20pt;
+    color: rgb(27, 1, 51);
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.Weather .temp {
+    font-size: 20pt;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(27, 1, 51);
+}
