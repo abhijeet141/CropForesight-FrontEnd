@@ -1,5 +1,5 @@
-import React,{ useState, useEffect } from 'react'
-import { useNavigate ,Link} from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { useNavigate, Link } from 'react-router-dom'
 import video from '../assets/nature.mp4'
 import './Home.css'
 import './nav.css'
@@ -46,37 +46,36 @@ const Home = () => {
 
       <video src={video} autoPlay loop muted />
       <div className='nav'>
-      <header>
-        <nav>
-        <Link to="/"><img src = {logo}/></Link>
+        <header>
+          <nav>
+            <Link to="/"><img src={logo} /></Link>
             <div class="right">
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/contact" >Contact</Link></li>
-
-                </ul>
+              <ul>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/contact" >Contact</Link></li>
+              </ul>
             </div>
-        </nav>
-    </header>
+          </nav>
+        </header>
       </div>
-      <div className="card glass"> 
-           <div className='content'>
-        <h1 className='text purple'>Crop Prediction</h1>
-        <p className='para'>
-        <Typewriter sentences={sentences} delay={2000} />
+      <div className="card glass">
+        <div className='content'>
+          <h1 className='text purple'>Crop Prediction</h1>
+          <p className='para'>
+            <Typewriter sentences={sentences} delay={2000} />
 
-        </p>
-      </div>
-        {showButton && (
-            <button className='button-1' onClick={() => navigate("/form")}>Get Started</button>
-          )}
+          </p>
         </div>
+        {showButton && (
+          <button className='button-1' onClick={() => navigate("/form")}>Get Started</button>
+        )}
+      </div>
       <div className='button'>
         <button className='button-1' onClick={() => (navigate("/form"))}>PREDICT YOUR CROP</button>
       </div>
     </div>
-    
+
   )
 }
 
