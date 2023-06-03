@@ -48,16 +48,19 @@
     font-size: 20px;
     font-weight: 300;
     margin-top: 20px;
+
 }
 .content .left button:hover{
     background-color: rgb(147, 102, 189);
-    color: aliceblue;
     border: none;
+    color: rgb(244, 244, 244);
     border-radius: 5px;
     font-size: 20px;
     font-weight: 300;
     margin-top: 20px;
+    text-decoration: none;
     cursor: pointer;
+
 }
 
 
@@ -81,6 +84,13 @@ h3{
     font-weight: 300;
     font-style: bold;
     color: rgb(147, 102, 189);
+    margin-top: 10px;
+}
+h1{
+    font-weight: 300;
+    font-style: bold;
+    margin-left: 30px;
+
 }
 
 @media only screen and (max-width: 850px){
