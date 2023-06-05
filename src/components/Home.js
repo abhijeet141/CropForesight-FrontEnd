@@ -38,7 +38,7 @@ const Home = () => {
   const [showButton, setShowButton] = useState(false);
   const sentences = [
     'Predict what type of crop🌾 is suitable on your land🌏',
-    'Get Better yield by pridicting the best crop🌾 for you ',
+    'Get Better yield by predicting the best crop🌾 for you ',
   ];
 
   return (
