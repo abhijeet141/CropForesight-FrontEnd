@@ -9,7 +9,8 @@
     font-style: bold;
     color: rgb(147, 102, 189);
     margin-top: 80px;
-    /* background-color: brown; */
+    text-align: center;
+    padding-top: 20px;
 }
 
 .content {
@@ -66,6 +67,8 @@
     font-weight: 300;
     text-align: justify;
     margin-left: 60px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     /* background-color: yellow; */
 }
 
