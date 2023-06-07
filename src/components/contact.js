@@ -94,7 +94,7 @@ const Contact = () => {
       {/* nav bar */}
       <div className='nav'>
       <header>
-      
+
         <nav>
           <div class="left" style={{color: "red"}}>
         <Link to="/"><img src = {logo}/></Link>
@@ -104,7 +104,7 @@ const Contact = () => {
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/contact" >Contact</Link></li>
-
+                    <li><Link to="/Weather">Weather</Link></li>
                 </ul>
             </div>
         </nav>
@@ -114,7 +114,7 @@ const Contact = () => {
 
           <h3 className="tag"><Typewriter sentences={sentences} delay={2000} /></h3>
           <div class="wrapper">
-         
+
          <div class="icon twitter">
             <div class="tooltip">
                Twitter
@@ -144,8 +144,8 @@ const Contact = () => {
             <span><i class="fab fa-github"onClick={() => openInNewTab('https://www.github.com/')}></i></span>
          </div>
 
-      
-          
+
+
         </div>
           <form className="form glass" onSubmit={handleSubmit}>
             <div className="form-group">
@@ -191,7 +191,7 @@ const Contact = () => {
               Send
             </button>
           </form>
-        
+
       </div>
   );
 };

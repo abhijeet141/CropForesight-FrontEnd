@@ -54,13 +54,13 @@ const Home = () => {
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/contact" >Contact</Link></li>
-
+                    <li><Link to="/Weather">Weather</Link></li>
                 </ul>
             </div>
         </nav>
     </header>
       </div>
-      <div className="card glass"> 
+      <div className="card glass">
            <div className='content'>
         <h1 className='text purple'>Crop Prediction</h1>
         <p className='para'>
@@ -76,7 +76,7 @@ const Home = () => {
         <button className='button-1' onClick={() => (navigate("/form"))}>PREDICT YOUR CROP</button>
       </div>
     </div>
-    
+
   )
 }
 
