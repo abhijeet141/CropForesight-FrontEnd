@@ -4,6 +4,8 @@ import './nav.css'
 import logo from '../assets/earth.png';
 import aboutPic from '../assets/about.png';
 import { useNavigate, Link } from 'react-router-dom';
+import Review from "./Review";
+
 
 
 const About = () => {
@@ -19,10 +21,10 @@ const About = () => {
             <div className='nav'>
                 <header>
                     <nav>
-                        <div class="left" style={{ color: "red" }}>
+                        <div className="left" style={{ color: "red" }}>
                             <Link to="/"><img src={logo} /></Link>
                         </div>
-                        <div class="right">
+                        <div className="right">
                             <ul>
                                 <li><Link to="/">Home</Link></li>
                                 <li><Link to="/about">About</Link></li>
@@ -61,6 +63,15 @@ const About = () => {
                     </div>
                 </div>
             </div>
+            <main>
+      <section className="container">
+        <div className="title">
+          <h2>Our Testimonials</h2>
+          <div className="underline"></div>
+        </div>
+        <Review/>
+      </section>
+    </main>
         </>
     );
 };
