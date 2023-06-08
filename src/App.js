@@ -11,6 +11,10 @@ import About from './components/about';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import swal from 'sweetalert';
 
+import GoToTop from './GoToTop/GoToTop';
+
+
+
 function App() {
 
   const [values, setValues] = useState({
@@ -100,6 +104,8 @@ function App() {
     setValues({ ...values, [event.target.name]: event.target.value })
   }
   return (
+  <>
+  <GoToTop/>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
@@ -109,6 +115,7 @@ function App() {
         <Route path='/*' element={<Err />}/>        
       </Routes>
     </BrowserRouter>
+    </>
   );
 }
 
