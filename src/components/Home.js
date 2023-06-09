@@ -42,41 +42,42 @@ const Home = () => {
   ];
 
   return (
-    <div className='main'>
-
-      <video src={video} autoPlay loop muted />
+    <>
       <div className='nav'>
-      <header>
-        <nav>
-        <Link to="/"><img src = {logo}/></Link>
+        <header>
+          <nav>
+            <Link to="/"><img src={logo} /></Link>
             <div class="right">
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/contact" >Contact</Link></li>
+              <ul>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/contact" >Contact</Link></li>
 
-                </ul>
+              </ul>
             </div>
-        </nav>
-    </header>
+          </nav>
+        </header>
       </div>
-      <div className="card glass"> 
-           <div className='content'>
-        <h1 className='text purple'>Crop Prediction</h1>
-        <p className='para'>
-        <Typewriter sentences={sentences} delay={2000} />
+      <div className='main'>
+        <video src={video} autoPlay muted />
+        <div className="card glass">
+          <div className='content'>
+            <h1 className='text purple'>Crop Prediction</h1>
+            <p className='para'>
+              <Typewriter sentences={sentences} delay={2000} />
 
-        </p>
-      </div>
-        {showButton && (
+            </p>
+          </div>
+          {showButton && (
             <button className='button-1' onClick={() => navigate("/form")}>Get Started</button>
           )}
         </div>
-      <div className='button'>
-        <button className='button-1' onClick={() => (navigate("/form"))}>PREDICT YOUR CROP</button>
+        <div className='button'>
+          <button className='button-1' onClick={() => (navigate("/form"))}>PREDICT YOUR CROP</button>
+        </div>
       </div>
-    </div>
-    
+    </>
+
   )
 }
 
