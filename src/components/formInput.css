@@ -14,3 +14,19 @@ input{
 label{
     font-size: 15px;
 }
+
+
+.errorMsg{
+    color: red;
+    font-size: 16px;
+  
+  }
+  
+.form.glass input.inputField{
+    border: 2px solid rgb(207, 1, 1);
+  }
+  
+.form.glass textarea.inputField{
+    border: 2px solid red;
+  }
+  
