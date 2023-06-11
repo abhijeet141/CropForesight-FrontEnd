@@ -187,7 +187,7 @@ const Contact = () => {
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>
             </div>
-            <button className="btn ac_btn" type="submit">
+            <button className="btn ac_btn" type="submit" >
               Send
             </button>
           </form>

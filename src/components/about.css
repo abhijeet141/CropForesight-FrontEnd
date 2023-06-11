@@ -11,7 +11,9 @@
     margin-top: 80px;
     /* background-color: brown; */
 }
-
+ul{
+    text-align: -webkit-match-parent;
+}
 .content {
     font-weight: 300;
     display: flex;
