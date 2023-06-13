@@ -18,10 +18,12 @@ form {
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  color: #0C134F;
 }
 
 .title {
   text-align: center;
+  color: #27374D;
 }
 
 button{
@@ -59,3 +61,4 @@ button{
     margin-top: 30px;
   }
 }
+

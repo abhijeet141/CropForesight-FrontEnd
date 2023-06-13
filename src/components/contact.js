@@ -40,6 +40,8 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [error, seterror] = useState("");
+
   const sentences = [
     'Have A Question ❓',
     'Want To contact me ?',
@@ -47,16 +49,40 @@ const Contact = () => {
     'Report a bug 🪲'
   ];
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+   function validEmail(email)
+   {
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if ( re.test(email) ) 
+    return true;
+    else
+    return false;
+   }
 
-    const formData = {
-      name: name,
-      email: email,
-      message: message,
-    };
+    function handleSubmit(event){
+      event.preventDefault();
+      // Do some authentication here...
+      console.log("function called");
 
+      if(name === '')
+      { seterror("**Name is Required!");}
+    
+      else if(email === '')
+      { seterror("**E-mail is Required!");}
 
+      else if(!validEmail(email)) {
+        seterror("**Enter a valid E-mail!");
+      }
+
+      else if(message === '')
+      { seterror("**Enter a message!");}
+
+      else
+      {
+        seterror("");
+        setName("");
+        setEmail("");
+        setMessage("");
+     
     try {
       // const response = await fetch("https://cropforesight-backend.onrender.com/subform", {
       //   method: "POST",
@@ -75,18 +101,14 @@ const Contact = () => {
       //   // Handle error or show an error message
       //   console.log('failed');
       // }
-      console.log(formData);
+      //console.log(formData);
       swal("Success", `Thanks for contacting us ${name}. We have received your details successfully. We will get back to you soon.`, "success");
     } catch (error) {
       // Handle error or show an error message
       console.log(error);
       swal("Error", "Something went wrong... Please try again", "error");
     }
-
-    // Reset the form fields
-    setName("");
-    setEmail("");
-    setMessage("");
+  }
   };
 
   return (
@@ -147,11 +169,11 @@ const Contact = () => {
 
 
         </div>
-          <form className="form glass" onSubmit={handleSubmit}>
+          <form className="form glass">
+        
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input
-                className="form-control"
                 id="name"
                 name="name"
                 placeholder="Name"
@@ -159,12 +181,18 @@ const Contact = () => {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                className={`form-control ${error === '**Name is Required!' && "inputField"}`}
               />
+               {
+              error === '**Name is Required!' && (
+                <small className='errorMsg'>**Name is Required!</small>
+              ) 
+            }
             </div>
             <div className="form-group">
               <label htmlFor="email">Email</label>
               <input
-                className="form-control"
+                className={`form-control ${error === '**E-mail is Required!' && "inputField"}`}
                 id="email"
                 name="email"
                 placeholder="Email"
@@ -173,11 +201,23 @@ const Contact = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
+               {
+              error === '**E-mail is Required!' && (
+                <small className='errorMsg'>**E-mail is Required!</small>
+              ) 
+            }
+
+            {
+              error === '**Enter a valid E-mail!' && (
+                <small className='errorMsg'>**Enter a valid E-mail!</small>
+              ) 
+            }
+
             </div>
             <div className="form-group">
               <label htmlFor="message">Message</label>
               <textarea
-                className="form-control"
+               className={`form-control ${error === '**Enter a message!' && "inputField"}`}
                 id="message"
                 name="message"
                 placeholder="Message"
@@ -186,8 +226,13 @@ const Contact = () => {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>
+              {
+              error === '**Enter a message!' && (
+                <small className='errorMsg'>**Enter a message!</small>
+              ) 
+            }
             </div>
-            <button className="btn ac_btn" type="submit">
+            <button className="btn ac_btn" type="submit"  onClick={handleSubmit} >
               Send
             </button>
           </form>

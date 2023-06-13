@@ -1,34 +1,40 @@
 nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 80px;
-    background-color: rgb(0, 0, 57);
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 20px;
+  background-color: rgb(0, 0, 57);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul li {
-    list-style: none;
-    margin: 0 23px;
-    text-decoration: none;
+  list-style: none;
+  margin: 0 23px;
+  text-decoration: none;
 }
 
 .nav .right ul li a {
   color: white;
   text-decoration: none;
 }
+
 /* Get a Purple Hover Using This style for the NavBar Elements */
 .nav .right ul li {
   position: relative;
 }
 
 .nav .right ul li::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -43,17 +49,28 @@ nav ul li {
 }
 
 @media only screen and (max-width: 850px) {
-
-    nav ul li{
-        margin: 0 15px;
-    }
-    nav ul{
-      position: absolute;
-      left: 5rem;
-    }
-    .left{
-      position: absolute;
-      left: 1rem;
-    }
-
+  nav ul li {
+    margin: 0 15px;
   }
+
+  nav ul {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .left {
+    position: absolute;
+    left: 1rem;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 20px;
+  }
+}

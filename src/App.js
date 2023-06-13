@@ -11,6 +11,10 @@ import About from './components/about';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import swal from 'sweetalert';
 
+import GoToTop from './GoToTop/GoToTop';
+
+
+
 function App() {
 
   const [values, setValues] = useState({
@@ -30,49 +34,49 @@ function App() {
       name: "nitrogen",
       type: "number",
       placeholder: "Nitrogen",
-      label: "Nitrogen"
+      label: "Nitrogen in parts per million (ppm)"
     },
     {
       id: 2,
       name: "phosphorus",
       type: "number",
       placeholder: "Phosphorus",
-      label: "Phosphorus"
+      label: "Phosphorus in parts per million (ppm) "
     },
     {
       id: 3,
       name: "potassium",
       type: "number",
       placeholder: "Potassium",
-      label: "Potassium"
+      label: "Potassium in parts per million (ppm) "
     },
     {
       id: 4,
       name: "temperature",
       type: "number",
       placeholder: "Temperature",
-      label: "Temperature"
+      label: "Temperature in Celsius (°C)"
     },
     {
       id: 5,
       name: "humidity",
       type: "number",
       placeholder: "Humidity",
-      label: "Humidity"
+      label: "Humidity in percentage (%)"
     },
     {
       id: 6,
       name: "ph",
       type: "number",
       placeholder: "Ph",
-      label: "Ph"
+      label: "Ph (0-14)"
     },
     {
       id: 7,
       name: "rainfall",
       type: "number",
       placeholder: "Rainfall",
-      label: "Rainfall"
+      label: "Rainfall in millimeters (mm)"
     }
   ]
   // Can be extracted sapareately
@@ -100,6 +104,8 @@ function App() {
     setValues({ ...values, [event.target.name]: event.target.value })
   }
   return (
+  <>
+  <GoToTop/>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
@@ -110,6 +116,7 @@ function App() {
         <Route path='/*' element={<Err />}/>
       </Routes>
     </BrowserRouter>
+    </>
   );
 }
 
