@@ -1,69 +1,123 @@
-# Getting Started with Create React App
+<h1 align="center" id="top">CropForesight (Frontend)</h1>
+<p align="center">This Repository includes the frontend code of the <a href="crop-foresight-front-end.vercel.app" >CorpForesight</a> webiste. The frontend of the project is written in HTML, CSS, Javascript, and ReactJS. Before moving ahead, a short intro about the project.</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+ <h1 align="center">CropForesight🌾</h1>
+CropForesight is a powerful crop recommendation website that helps farmers and agriculture enthusiasts make informed decisions about the best crop to cultivate on a given land. By utilizing machine learning algorithms and various environmental parameters such as nitrogen value of soil, phosphorus value, rainfall, pH, potassium, humidity, and temperature. CropForesight predicts the optimal crop choice, maximizing productivity and yield.
+<br>
 
-In the project directory, you can run:
+🌐 [Live Demo](crop-foresight-front-end.vercel.app)
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Features](#features)
+- [Technologies](#technologies)
+- [Usage](#usage)
+- [Local Development](#local-development)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Intelligent crop recommendation based on soil composition, rainfall, pH, potassium, humidity, and temperature.
+- User-friendly interface to input land and environmental parameters.
+- Efficient machine learning model leveraging Gaussian Naïve Bayes algorithm.
+- Responsive frontend developed using ReactJS for seamless user experience.
+- Scalable backend powered by FastAPI for quick data processing.
 
-### `npm run build`
+## Technologies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+HTML, CSS, Javascript, ReactJS
+ 
+## Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To experience the power of CropForesight, follow these simple steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+✅ Visit the CropForesight website: [https://abhijeet141.github.io/CropForesight-FrontEnd/](https://abhijeet141.github.io/CropForesight-FrontEnd/).
 
-### `npm run eject`
+✅ Enter the required details such as soil nitrogen value, phosphorus value, rainfall, pH, potassium, humidity, and temperature.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+✅ Click on the "Recommend Crop" button to generate the optimal crop recommendation.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+✅ Explore the recommended crop and gain insights into its suitability for your land.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Local Development
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+If you want to contribute to CropForesight or run it locally for development purposes, follow these steps:
 
-## Learn More
+1. Clone the frontend repository:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```git clone https://github.com/abhijeet141/CropForesight-FrontEnd.git```
+ 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Change to the project directory:
 
-### Code Splitting
+   ```cd CropForesight-FrontEnd```
+ 
+3. Install the required dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```npm install```
+ 
+4. Run the frontend:
 
-### Analyzing the Bundle Size
+   ```npm start```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+5. Clone the backend repository:
 
-### Making a Progressive Web App
+   ```git clone https://github.com/abhijeet141/CropForesight_BackEnd.git```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+6. Change to the CropForesight_BackEnd directory:
 
-### Advanced Configuration
+   ```cd CropForesight_BackEnd```
+  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+7. Install the required dependencies:
 
-### Deployment
+   ```pip install -r requirements.txt```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+8. Run the backend:
 
+   ```uvicorn main:app --reload```
+
+9. Open the website in your browser at [http://localhost:3000](http://localhost:3000) to access the local instance of CropForesight.
+
+
+## Deployment
+
+✅ CropForesight's frontend is deployed and can be accessed online at [https://crop-foresight-front-end.vercel.app/](https://crop-foresight-front-end.vercel.app/). 
+
+✅ Feel free to explore the website and witness the power of smart crop recommendation firsthand!
+
+## Contributing
+
+We welcome contributions from anyone who is interested in improving this project. If you'd like to contribute, here are some ways you can get started:
+
+- Submit a bug report if you find any issues with the application.
+- Suggest new features or improvements.
+- Submit a pull request to fix a bug or add a feature after an issue is assigned to you. 
+
+To submit a pull request, please follow these steps:
+
+1. Fork the repository and create your branch: ```git checkout -b your-branch-name``` 
+
+2. Make your changes and commit them: ```git commit -m 'Add some feature'``` 
+
+3. Push to your forked repository: ```git push origin your-branch-name```
+
+4.  Open a pull request to the main repository's branch
+
+Congratulations! 🎉 you've made your contribution.
+ 
+Please follow the cotribution guide in all your interactions with the project.
+We will review your pull request and provide feedback. Once your changes are approved, we will merge them into the main branch. 
+
+## License 
+This project is licensed under the MIT License.
+
+Please feel free to modify the sections and add any additional information or badges relevant to your project. Let me know if you need further help.
+<br><br>
+ <a href="#top">Back to top</a>
+</div>
