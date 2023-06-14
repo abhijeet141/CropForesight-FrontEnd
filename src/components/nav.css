@@ -1,8 +1,9 @@
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  height: 80px;
+  height: 70px;
+  padding: 20px;
   background-color: rgb(0, 0, 57);
   position: fixed;
   top: 0;
@@ -61,5 +62,15 @@ nav ul li {
   .left {
     position: absolute;
     left: 1rem;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 20px;
   }
 }
