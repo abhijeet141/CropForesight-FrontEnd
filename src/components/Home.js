@@ -4,6 +4,7 @@ import video from '../assets/nature.mp4'
 import './Home.css'
 import './nav.css'
 import logo from '../assets/earth.png'
+import Footer from './Footer'
 import Contact from './contact'
 
 const Typewriter = ({ sentences, delay }) => {
@@ -79,6 +80,7 @@ const Home = () => {
       <div className='button'>
         <button className='button-1' onClick={() => (navigate("/form"))}>PREDICT YOUR CROP</button>
       </div>
+       <Footer className="footer" />
     </div>
 
   )
