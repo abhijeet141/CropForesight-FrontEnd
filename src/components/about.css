@@ -11,7 +11,9 @@
     margin-top: 180px;
     text-align: center;
 }
-
+ul{
+    text-align: -webkit-match-parent;
+}
 .content {
     font-weight: 300;
     display: flex;

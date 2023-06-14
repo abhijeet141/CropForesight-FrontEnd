@@ -232,7 +232,7 @@ const Contact = () => {
               ) 
             }
             </div>
-            <button className="btn ac_btn" type="submit"  onClick={handleSubmit} >
+            <button className="btn ac_btn" type="submit" >
               Send
             </button>
           </form>
