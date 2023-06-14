@@ -1,0 +1,222 @@
+ 
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.faq-section{
+    padding: 50px 0;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+.faq-heading{
+  color: rgb(147, 102, 189);
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Londrina Solid', cursive;
+}
+.faq-main{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.leftside{
+    flex: 35;
+    margin-right: 50px;
+    margin-left: 50px;
+    font-size: 20px;
+    text-align: center;
+}
+.rightSide{
+  flex: 65;
+    margin-right: 50px;
+    margin-left: 50px;
+    font-size: 20px;
+    text-align: center;
+    /* font-family: 'Londrina Solid', cursive; */
+}
+
+
+.faqImage{
+    width: 100%;
+    height: 100%;
+    margin-right: 50px;
+    margin-left: 50px;
+    border-radius: 50%;
+}
+
+/* responsive design */
+
+@media screen and (max-width: 768px){
+    .faq-heading{
+        font-size: 30px;
+    }
+    .faq-main{
+        flex-direction: column;
+        margin: 20px;
+    }
+    .leftside{
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    .rightSide{
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    .faqImage{
+       display: none;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+  }
+
+
+
+  
+  .accordion {
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+  }
+  
+  .accordion .accordion-item {
+    border-style: none;
+    border-bottom: 1px solid  rgb(190, 212, 231);
+    padding: 2px;
+    margin-right: -8px;
+    font-family: 'Londrina Solid', cursive;
+  }
+  
+  .accordion .accordion-item button[aria-expanded='true'] {
+    border-bottom: 1px solid  rgb(190, 212, 231);
+  }
+  
+  .accordion button {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 1em 0;
+    color: #a4cbe2;
+    font-family: 'Londrina Solid', cursive;
+    font-size: 1.13rem;
+    font-weight: 400;
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .accordion button:hover,
+  .accordion button:focus {
+    color:  aliceblue;
+ 
+  }
+  
+  .accordion button:hover::after,
+  .accordion button:focus::after {
+    color: #fff;
+    border: 1px solid #fff;
+
+  }
+  
+  .accordion button .accordion-title {
+    padding: 1em 1.5em 1em 0;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .accordion button .icon {
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid;
+    border-radius: 22px;
+  }
+  
+  .accordion button .icon::before {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 9px;
+    left: 5px;
+    width: 10px;
+    height: 2px;
+    font-size: 20px;
+    background: currentColor;
+  }
+  
+  .accordion button .icon::after {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 5px;
+    left: 9px;
+    width: 2px;
+    height: 10px;
+    background: currentColor;
+  }
+  
+  .accordion button[aria-expanded='true'] {
+    color: #fff;
+  }
+  
+  .accordion button[aria-expanded='true'] .icon::after {
+    width: 0;
+  }
+  
+  .accordion button[aria-expanded='true'] + .accordion-content {
+    opacity: 1;
+    max-height:9rem;
+    transition: all 200ms linear;
+    will-change: opacity, max-height;
+  }
+  
+  .accordion .accordion-content {
+    line-height: 20px;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+  }
+  
+  .accordion .accordion-content p {
+    font-size:16px;
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 1.6em 0;
+  }
+  
+  @media (max-width: 750px) {
+    .accordion .accordion-item button[aria-expanded='true'] {
+      border-bottom: none;
+
+    }
+  
+    .accordion .accordion-item button .icon {
+      top: 15px;
+    }
+    .accordion .accordion-item{
+      border-style: none;
+      padding: 1px;
+      margin-right: -8px;
+      top: 50px;
+    }
+    .accordion .accordion-item::after{
+      border-style: none;
+    }
+  
+    .accordion .accordion-content p {
+      font-size: 0.9rem;
+      margin: 3em 0;
+      border: none;
+    }
+    .faq-heading{
+        line-height: 60px;
+    }
+    
+  }

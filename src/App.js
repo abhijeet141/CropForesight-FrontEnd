@@ -5,6 +5,7 @@ import axios from 'axios';
 import Home from './components/Home';
 import Contact from './components/contact';
 import Weather from './components/Weather';
+import FAQ from './components/faq/faq';
 import Err from './components/404'
 import About from './components/about';
 
@@ -112,6 +113,7 @@ function App() {
         <Route path='/form' element={FormComponet()} />
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact />}/>
+        <Route path='/faq' element={<FAQ />}/>
         <Route path='/Weather' element={<Weather />}/>
         <Route path='/*' element={<Err />}/>
       </Routes>

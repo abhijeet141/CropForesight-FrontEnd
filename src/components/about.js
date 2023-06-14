@@ -29,6 +29,7 @@ const About = () => {
                                 <li><Link to="/">Home</Link></li>
                                 <li><Link to="/about">About</Link></li>
                                 <li><Link to="/contact" >Contact</Link></li>
+                                <li><Link to="/faq" >FAQs</Link></li>
                                 <li><Link to="/Weather">Weather</Link></li>
 
                             </ul>
