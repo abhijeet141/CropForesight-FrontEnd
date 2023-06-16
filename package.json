@@ -18,9 +18,13 @@
     "sweetalert": "^2.1.2",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^2.0.1",
+    "vite": "^3.0.7"
+  },  
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "vite",
+    "build": "vite build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
