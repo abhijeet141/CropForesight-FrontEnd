@@ -49,7 +49,7 @@ const Home = () => {
         <header>
           <nav>
             <Link to="/"><img src={logo} /></Link>
-            <div class="right">
+            <div className="right">
 
                 <ul>
                     <li><Link to="/">Home</Link></li>
