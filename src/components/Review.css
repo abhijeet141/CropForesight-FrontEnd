@@ -1,0 +1,22 @@
+.testimonial-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    background-color: white;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.img{
+    width: 150px;
+    height: 130px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+.designation{
+    color: black;
+    font-weight: 600;
+    font-style: italic;
+}
