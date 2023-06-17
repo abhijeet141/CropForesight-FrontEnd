@@ -42,9 +42,7 @@ const Home = () => {
   ];
 
   return (
-    <div className='main'>
-
-      <video src={video} autoPlay loop muted />
+    <>
       <div className='nav'>
         <header>
           <nav>
@@ -58,11 +56,11 @@ const Home = () => {
                     <li><Link to="/faq" >FAQs</Link></li>
                     <li><Link to="/Weather">Weather</Link></li>
                 </ul>
-
             </div>
           </nav>
         </header>
       </div>
+
       <div className="card glass">
 
            <div className='content'>

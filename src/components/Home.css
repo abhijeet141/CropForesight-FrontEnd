@@ -14,11 +14,11 @@ body {
 
 .main {
   width: 100vw;
-  height: 110vh;
+  min-height: 110vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   overflow: hidden; /* Prevent vertical scrolling */
 }
 
@@ -158,10 +158,10 @@ img {
   }
 
   video {
-    width: 95vw;
+    max-width: 95vw;
     height: auto;
     max-height: 60vh;
-    margin-top: -5vh;
+    margin-top: 90px;
   }
 
   .button {
@@ -203,7 +203,7 @@ img {
     width: 90vw;
     height: auto;
     max-height: 40vh;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     margin-bottom: 1rem;
   }
 
@@ -233,7 +233,7 @@ img {
 
 @media only screen and (min-width: 856px) {
   video {
-    margin-top: 110px; /* Adjust the value as needed */
+    margin-top: 100px; /* Adjust the value as needed */
   }
 }
 
