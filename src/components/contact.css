@@ -3,6 +3,9 @@ body,html{
     height: 100%;
 
 }
+label {
+  color: white;
+}
 .tag{
     position: absolute;
     left: 20vw;
@@ -10,6 +13,7 @@ body,html{
     font-size: 2rem;
 }
 .form {
+    margin-left: 30px;
     position: absolute;
     display: flex;
     align-items: flex-start;
@@ -17,7 +21,7 @@ body,html{
     gap: 10px;
     width: 300px;
     background-color: white;
-    padding: 20px;
+    padding: 20px 10px 20px 9px;
     border-radius: 10px;
     box-shadow: 0 30px 30px -30px rgba(27, 26, 26, 0.315);
     left: 65vw;
@@ -67,6 +71,7 @@ body,html{
     background-color: rgb(147, 102, 189);
     color: #fff;
     cursor: pointer;
+    margin-left: -9px;
   }
 .contact{
     font-weight: 300;
@@ -78,6 +83,7 @@ body,html{
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.18);
+  align-items: center;
 }
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 

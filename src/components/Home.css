@@ -261,6 +261,7 @@ img {
 @media only screen and (min-width: 1024px) {
   .card {
     position: relative;
+    height: 170px;
   }
 
   .button {
@@ -282,11 +283,11 @@ img {
 
   .text {
     top: 0.00000001rem;
-    font-size: 150%;
+    font-size: 130%;
   }
 
   .para {
-    margin-bottom: 3rem;
+    margin-bottom: 3px;
     margin-top: 1rem; /* Added: Set margin-top to push the paragraph below the text */
   }
 
