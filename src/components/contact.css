@@ -11,17 +11,18 @@ label {
     left: 20vw;
     top: 40vh;
     font-size: 2rem;
+    color: rgb(179, 141, 215);
 }
 .form {
-    margin-left: 30px;
+    /* margin-left: 30px; */
     position: absolute;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
     gap: 10px;
-    width: 300px;
+    width: 350px;
     background-color: white;
-    padding: 20px 10px 20px 9px;
+    /* padding: 20px 10px 20px 9px; */
     border-radius: 10px;
     box-shadow: 0 30px 30px -30px rgba(27, 26, 26, 0.315);
     left: 65vw;
@@ -56,7 +57,7 @@ label {
     resize: none;
     outline: 0;
     padding: 8px 14px;
-    width: 270px;
+    width: 300px;
     border: 1px solid rgb(219, 213, 213);
   }
   
@@ -71,17 +72,20 @@ label {
     background-color: rgb(147, 102, 189);
     color: #fff;
     cursor: pointer;
-    margin-left: -9px;
+    /* margin-left: -9px; */
   }
 .contact{
     font-weight: 300;
-    
+    position: absolute;
+    top: 100px;
+    left: 35vw;
+
     color: rgb(147, 102, 189);
 }
 .glass{
   background: linear-gradient(135deg,rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0.242));
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255,255,255,0.18);
   align-items: center;
 }
@@ -202,10 +206,10 @@ label {
 }
 
   .form{
-    width: 290px;
-    height: 400px;
+    width: 315px;
+    height: 445px;
     position: absolute;
-    left: 15px;
+    left: 8vw;
     top: 200px;
   }
   .wrapper{
@@ -217,10 +221,7 @@ label {
   .wrapper .icon{
     margin: 0 10px;
   }
-  .form input{
-    height: 20px;
-    width: 270px;
-  }
+
   .form button{
     width: 15rem;
     position: absolute;
@@ -228,12 +229,18 @@ label {
     left: 2rem;
   }
   .form textarea{
-    width: 270px;
+    width: 300px;
   }
   .tag{
     top: 10rem;
     left: 2rem;
     font-size: 1.5rem;
+  }
+
+  .contact{
+    font-size: 2rem;
+    left: 20vw;
+
   }
 
 }
