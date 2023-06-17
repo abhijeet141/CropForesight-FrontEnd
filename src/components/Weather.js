@@ -44,6 +44,7 @@ export const Weather = () => {
                     </nav>
                 </header>
             </div>
+            <div class = "maincontainer">
             <h1>Weather</h1>
             <form className="form-h">
                 <input
@@ -62,6 +63,7 @@ export const Weather = () => {
                     <p className='temp'>{weatherData.main.temp}</p>
                 </div>
             )}
+            </div>
         </div>
 
     )
