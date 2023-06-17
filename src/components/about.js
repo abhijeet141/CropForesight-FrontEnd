@@ -40,7 +40,7 @@ const About = () => {
 
             {/* main section */}
             <div className="aboutMain">
-                <h1 className="about"> What Is CropForesight❓ </h1>
+                <h1 className="about"> What Is CropForesight❔ </h1>
                 <div className="content">
                     <div className="left">
                         <p>CropForesight is a powerful crop recommendation website that helps farmers and agriculture enthusiasts make informed decisions about the best crop to cultivate on a given land.<br />

@@ -8,8 +8,10 @@
     font-size: 40px;
     font-style: bold;
     color: rgb(147, 102, 189);
-    margin-top: 180px;
+    margin-top: 80px;
     text-align: center;
+    padding-top: 20px;
+
 }
 ul{
     text-align: -webkit-match-parent;
@@ -68,6 +70,8 @@ ul{
     font-weight: 300;
     text-align: justify;
     margin-left: 60px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     /* background-color: yellow; */
 }
 
