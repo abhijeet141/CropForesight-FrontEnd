@@ -1,4 +1,4 @@
-.testimonial-wrapper{
+/* .testimonial-wrapper{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -7,6 +7,13 @@
     background-color: white;
     padding: 30px;
     border-radius: 30px;
+} */
+
+.testimonial{
+    background-color: white;
+    padding: 30px;
+    border-radius: 30px;
+    margin-right: 20px;
 }
 
 .img{

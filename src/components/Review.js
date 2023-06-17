@@ -9,7 +9,7 @@ import './Review.css';
 const Review = () => {
   const items = reviews.map((ele) => {
     return(
-    <div className="testimonial-wrapper">
+    //<div className="testimonial-wrapper">
        <div className="testimonial">
        <div className="img-wrapper">
           <img src={ele.image} alt='img' className="img"/>
@@ -18,7 +18,7 @@ const Review = () => {
        <p className="designation">{ele.job}</p>
        <p className="description">{ele.text}</p>
      </div>
-    </div>
+    //</div>
     )
   })
 
