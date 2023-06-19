@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './Weather.css'
 import './nav.css'
 import logo from '../assets/earth.png';
+import NAVBAR from './nav';
 
 export const Weather = () => {
     const [city, setCity] = useState('')
@@ -25,25 +26,7 @@ export const Weather = () => {
 
     return (
         <div>
-            <div className='nav'>
-                <header>
-                    <nav>
-                        <div class="left" style={{ color: "red" }}>
-                            <Link to="/"><img src={logo} /></Link>
-                        </div>
-                        <div class="right">
-                            <ul>
-                                <li><Link to="/">Home</Link></li>
-                                <li><Link to="/about">About</Link></li>
-                                <li><Link to="/contact" >Contact</Link></li>
-                                <li><Link to="/faq" >FAQs</Link></li>
-                                <li><Link to="/Weather">Weather</Link></li>
-
-                            </ul>
-                        </div>
-                    </nav>
-                </header>
-            </div>
+            <NAVBAR />
             <h1>Weather</h1>
             <form className="form-h">
                 <input
