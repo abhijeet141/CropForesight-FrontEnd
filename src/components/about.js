@@ -23,7 +23,7 @@ const About = () => {
                 <header>
                     <nav>
                         <div className="left" style={{ color: "red" }}>
-                            <Link to="/"><img src={logo} /></Link>
+                            <Link to="/"><img src={logo} alt="logo"/></Link>
                         </div>
                         <div className="right">
                             <ul>
