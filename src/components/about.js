@@ -14,7 +14,10 @@ const About = () => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate('/contact'); // Replace '/other-page' with the desired URL of the page you want to navigate to
+        navigate('/contact'); 
+    };
+    const handlePracticesClick = (event) => {
+        event.preventDefault(); 
     };
     return (
         <>
@@ -38,9 +41,12 @@ const About = () => {
                             <li>Efficient ML model leveraging Gaussian Naïve Bayes algorithm.</li>
                             <li>
                                 Scalable backend powered by FastAPI for quick data processing.</li>
+                                <li>Crop-specific planting techniques</li>
+                                
                         </ul>
 
                         <button onClick={handleClick} >Get In Touch</button>
+                        <button onClick={handlePracticesClick}>Know about Crop Management Practices</button>
 
                     </div>
                     <div className="right">
