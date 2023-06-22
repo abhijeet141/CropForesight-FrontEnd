@@ -45,6 +45,7 @@ export const Weather = () => {
                     <p className='temp'>{weatherData.main.temp}</p>
                 </div>
             )}
+            </div>
         </div>
 
     )

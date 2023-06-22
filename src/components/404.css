@@ -50,6 +50,10 @@ main {
   display: inline-block;
 }
 
+.purple {
+  color: rgb(152, 100, 201);
+}
+
 h2 {
   color: #e7ebf2;
   margin-bottom: 0.4em;

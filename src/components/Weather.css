@@ -23,10 +23,20 @@ h1 {
 
 .Weather {
     text-align: center;
-    margin-left: 620px;
-    margin-top: 30px;
+    /* margin-left: 620px; */
+    /* margin-top: 30px; */
     height: 200px;
     width: 200px;
+    position: absolute;
+    top: 25rem;
+    left: 7rem;
+
+}
+
+.maincontainer{
+    position: absolute;
+    left: 35vw;
+
 }
 
 .getWeather {
@@ -34,11 +44,13 @@ h1 {
     height: 42px;
     cursor: pointer;
     border-radius: 20px;
-    margin-left: 640px;
-    margin-top: 50px;
+    margin-left: 10rem;
+    /* margin-top: 50px; */
     align-items: center;
     border: none;
     background-color: rgb(208, 177, 244);
+    /* position: absolute;
+    left: 40rem; */
 }
 
 .getWeather:hover {
@@ -64,3 +76,41 @@ h1 {
     font-family: 'Courier New', Courier, monospace;
     color: rgb(255, 255, 255);
 }
+
+
+.form-h{
+    width: 30rem;
+    height: 8rem;
+}
+#search{
+    position: absolute;
+    left: 5rem;
+}
+
+@media only screen and (max-width: 850px) {
+
+    .maincontainer{
+        left: -2vw;
+    }
+    .getWeather{
+        position: absolute;
+        top: 23rem;
+        left: -2rem;
+
+    }
+    .form-h{
+        position: absolute;
+        top: 20vh;
+        left: 10vw;
+        width: 20rem;
+        height: 8rem;
+    }
+    .Weather{
+        position: absolute;
+        top: 30rem;
+    }
+    #search{
+        left: 4vw;
+    }
+  }
+  
