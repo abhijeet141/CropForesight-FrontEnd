@@ -1,76 +1,93 @@
 nav {
+  top: 0;
+  width: 100vw;
+  height: 10vh;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
-  padding: 20px;
   background-color: rgb(0, 0, 57);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
+  z-index: 100;
+  padding: 0 2rem;
 }
 
 nav ul {
   display: flex;
-  justify-content: center;
+  align-items: center;
 }
 
 nav ul li {
-  list-style: none;
-  margin: 0 23px;
+  margin-right: 3rem;
   text-decoration: none;
 }
 
-.nav .right ul li a {
-  color: white;
-  text-decoration: none;
-}
-
-/* Get a Purple Hover Using This style for the NavBar Elements */
-.nav .right ul li {
+nav ul li a {
+  color: #fff;
   position: relative;
 }
 
-.nav .right ul li::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background-color: #9864c9;
-  transition: width 0.3s ease;
-}
-
-.nav .right ul li:hover::after {
+nav ul li:hover::after {
   width: 100%;
 }
 
-@media only screen and (max-width: 850px) {
-  nav ul li {
-    margin: 0 15px;
-  }
-
-  nav ul {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .left {
-    position: absolute;
-    left: 1rem;
-  }
+nav ul li a:hover {
+  opacity: 1;
 }
 
-@media only screen and (max-width: 850px) {
-  nav {
+nav ul li a::before {
+  transition: 300ms;
+  height: 3px;
+  content: "";
+  position: absolute;
+  background-color: #9864c9;
+  bottom: 0;
+}
+
+nav ul li a::before {
+  width: 0%;
+}
+
+nav ul li a:hover::before {
+  width: 100%;
+}
+
+nav .visibility-desktop {
+  display: block;
+}
+
+nav .visibility-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  nav .visibility-desktop {
+    display: none;
+  }
+
+  nav .visibility-mobile {
+    display: block;
+  }
+
+  .mobile-nav {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    height: 70px;
-    padding: 20px;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgb(0, 0, 57);
+    position: fixed;
+    transition: 2s ease-in-out;
+  }
+
+  .mobile-nav ul li {
+    padding-bottom: 3rem;
+  }
+
+  .mobile-nav ul li a {
+    color: #fff;
   }
 }

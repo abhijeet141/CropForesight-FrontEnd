@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
-import video from '../assets/nature.mp4'
-import './Home.css'
-import './nav.css'
-import  NAVBAR from './nav';
-import logo from '../assets/earth.png'
-import Contact from './contact'
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import video from '../assets/nature.mp4';
+import './Home.css';
+import './nav.css';
+import NAVBAR from "./nav.jsx";
 
 const Typewriter = ({ sentences, delay }) => {
   const [displayText, setDisplayText] = useState('');
@@ -44,27 +42,28 @@ const Home = () => {
 
   return (
     <div className='main'>
-
-      <video src={video} autoPlay loop muted />
-      <NAVBAR/>
-      <div className="card glass">
-
-           <div className='content'>
-        <h1 className='text purple'>Crop Prediction</h1>
-        <p className='para'>
-        <Typewriter sentences={sentences} delay={2000} />
-
-
-          </p>
+      <div style={{ position: "relative" }}>
+        <NAVBAR />
+        <div className='main-body'>
+          <video src={video} autoPlay loop muted />
+          <div className="card glass">
+            <div className='content'>
+              <h1 className='text purple'>Crop Prediction</h1>
+              <p className='para'>
+                <Typewriter sentences={sentences} delay={2000} />
+              </p>
+            </div>
+            {showButton && (
+              <button className='button-1' onClick={() => navigate("/form")}>Get Started</button>
+            )}
+          </div>
+          <div className='button'>
+            <button className='button-1' onClick={() => (navigate("/form"))}>PREDICT YOUR CROP</button>
+          </div>
         </div>
-        {showButton && (
-          <button className='button-1' onClick={() => navigate("/form")}>Get Started</button>
-        )}
-      </div>
-      <div className='button'>
-        <button className='button-1' onClick={() => (navigate("/form"))}>PREDICT YOUR CROP</button>
       </div>
     </div>
+
 
   )
 }
