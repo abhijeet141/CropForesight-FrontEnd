@@ -65,6 +65,30 @@ nav ul li {
   }
 }
 
+@media only screen and (max-width: 320px) {
+  nav ul {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    padding-left: 270px; /* Add padding to shift items to the right */
+  }
+
+  nav ul li {
+    flex: 1;
+    margin: 0 5px;
+  }
+
+  .left {
+    position: static;
+    margin-bottom: 10px;
+  }
+}
+
+
+
+
 @media only screen and (max-width: 850px) {
   nav {
     display: flex;
