@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom'
 import video from '../assets/nature.mp4'
 import './Home.css'
 import './nav.css'
+import  NAVBAR from './nav';
 import logo from '../assets/earth.png'
 import Contact from './contact'
 
@@ -45,24 +46,7 @@ const Home = () => {
     <div className='main'>
 
       <video src={video} autoPlay loop muted />
-      <div className='nav'>
-        <header>
-          <nav>
-            <Link to="/"><img src={logo} /></Link>
-            <div class="right">
-
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/contact" >Contact</Link></li>
-                    <li><Link to="/faq" >FAQs</Link></li>
-                    <li><Link to="/Weather">Weather</Link></li>
-                </ul>
-
-            </div>
-          </nav>
-        </header>
-      </div>
+      <NAVBAR/>
       <div className="card glass">
 
            <div className='content'>

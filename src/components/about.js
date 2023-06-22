@@ -5,6 +5,7 @@ import logo from '../assets/earth.png';
 import aboutPic from '../assets/about.png';
 import { useNavigate, Link } from 'react-router-dom';
 import Review from "./Review";
+import NAVBAR from './nav';
 
 
 
@@ -18,25 +19,7 @@ const About = () => {
     return (
         <>
             {/* nav bar */}
-            <div className='nav'>
-                <header>
-                    <nav>
-                        <div className="left" style={{ color: "red" }}>
-                            <Link to="/"><img src={logo} /></Link>
-                        </div>
-                        <div className="right">
-                            <ul>
-                                <li><Link to="/">Home</Link></li>
-                                <li><Link to="/about">About</Link></li>
-                                <li><Link to="/contact" >Contact</Link></li>
-                                <li><Link to="/faq" >FAQs</Link></li>
-                                <li><Link to="/Weather">Weather</Link></li>
-
-                            </ul>
-                        </div>
-                    </nav>
-                </header>
-            </div>
+            <NAVBAR />
 
             {/* main section */}
             <div className="aboutMain">
