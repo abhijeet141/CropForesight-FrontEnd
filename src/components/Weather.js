@@ -27,6 +27,7 @@ export const Weather = () => {
     return (
         <div>
             <NAVBAR />
+            <div class = "maincontainer">
             <h1>Weather</h1>
             <form className="form-h">
                 <input
