@@ -8,6 +8,7 @@
   padding-bottom: 10px;
   height: 100%;
 }
+
 form {
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
@@ -17,8 +18,10 @@ form {
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-  color: #0C134F;
+  color: #131f8b;
+  background-image: linear-gradient(to bottom right, #3e09cf, #4f0084); /* Add a gradient background */
 }
+
 
 .title {
   text-align: center;

@@ -26,7 +26,7 @@ export const Weather = () => {
         <form className="form-h">
         <input
         type="text"
-        id="search" placeholder="Search By Loaction"
+        id="search" placeholder="Search By Location"
         value = {city}
         onChange={(e) => setCity(e.target.value)}
         />
