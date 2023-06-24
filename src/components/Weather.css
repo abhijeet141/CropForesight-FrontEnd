@@ -1,36 +1,49 @@
 input {
-    padding: 1rem;
-    border-radius: 25px;
-    border: none;
-    display: flex;
-    background-color: #fff;
-    font-family: inherit;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    min-width: 300px;
-    font-size: 1rem;
+  padding: 1rem;
+  border-radius: 25px;
+  border: none;
+  display: flex;
+  background-color: #fff;
+  font-family: inherit;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  min-width: 300px;
+  font-size: 1rem;
 }
 
 input:focus {
-    outline: none;
+  outline: none;
 }
 
 h1 {
+  margin-top: 6rem;
+  color: #fff;
+  font-size: 5rem;
+}
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.weather-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .Weather {
-    text-align: center;
-    /* margin-left: 620px; */
-    /* margin-top: 30px; */
-    height: 200px;
-    width: 200px;
-    position: absolute;
-    top: 25rem;
-    left: 7rem;
+  text-align: center;
+  margin-top: 30px;
+  height: 200px;
+  width: 200px;
+}
 
+.getWeather {
+  width: 150px;
+  height: 42px;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-top: 50px;
+  align-items: center;
+  border: none;
+  background-color: rgb(208, 177, 244);
 }
 
 .maincontainer{
@@ -39,44 +52,27 @@ h1 {
 
 }
 
-.getWeather {
-    width: 150px;
-    height: 42px;
-    cursor: pointer;
-    border-radius: 20px;
-    margin-left: 10rem;
-    /* margin-top: 50px; */
-    align-items: center;
-    border: none;
-    background-color: rgb(208, 177, 244);
-    /* position: absolute;
-    left: 40rem; */
-}
-
 .getWeather:hover {
-    background-color: rgb(249, 178, 249);
+  background-color: rgb(249, 178, 249);
 }
 
 .Weather .name {
-    font-size: 20pt;
-    font-family: 'Courier New', Courier, monospace;
-    color: rgb(255, 255, 255);
-
+  font-size: 20pt;
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(255, 255, 255);
 }
 
 .Weather .dis {
-    font-size: 20pt;
-    color: rgb(255, 255, 255);
-    font-family: 'Courier New', Courier, monospace;
-
+  font-size: 20pt;
+  color: rgb(255, 255, 255);
+  font-family: "Courier New", Courier, monospace;
 }
 
 .Weather .temp {
-    font-size: 20pt;
-    font-family: 'Courier New', Courier, monospace;
-    color: rgb(255, 255, 255);
+  font-size: 20pt;
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(255, 255, 255);
 }
-
 
 .form-h{
     width: 30rem;

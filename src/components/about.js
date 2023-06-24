@@ -1,11 +1,10 @@
 import React from "react";
-import './about.css';
-import './nav.css'
-import logo from '../assets/earth.png';
+import { useNavigate } from 'react-router-dom';
 import aboutPic from '../assets/about.png';
-import { useNavigate, Link } from 'react-router-dom';
 import Review from "./Review";
+import './about.css';
 import NAVBAR from './nav';
+import './nav.css';
 
 
 
@@ -49,14 +48,14 @@ const About = () => {
                 </div>
             </div>
             <main>
-      <section className="container">
-        <div className="title">
-          <h2>Our Testimonials</h2>
-          <div className="underline"></div>
-        </div>
-        <Review/>
-      </section>
-    </main>
+                <section className="container">
+                    <div className="title">
+                        <h2>Our Testimonials</h2>
+                        <div className="underline"></div>
+                    </div>
+                    <Review />
+                </section>
+            </main>
         </>
     );
 };
