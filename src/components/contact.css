@@ -11,6 +11,7 @@ label {
   left: 20vw;
   top: 40vh;
   font-size: 2rem;
+  color: rgb(179, 141, 215);
 }
 .form {
   margin-left: 30px;
@@ -75,7 +76,9 @@ label {
 }
 .contact {
   font-weight: 300;
-
+      position: absolute;
+    top: 100px;
+    left: 35vw;
   color: rgb(147, 102, 189);
 }
 .glass {
@@ -207,7 +210,7 @@ label {
     width: 290px;
     height: 400px;
     position: absolute;
-    left: 15px;
+    left: 8vw;
     top: 200px;
   }
   .wrapper {
@@ -223,7 +226,7 @@ label {
     height: 20px;
     width: 270px;
   }
-  .form button {
+  .form button{
     width: 15rem;
     position: absolute;
     bottom: 1rem;
@@ -237,4 +240,7 @@ label {
     left: 2rem;
     font-size: 1.5rem;
   }
-}
+  .contact{
+    font-size: 2rem;
+    left: 20vw;
+  }

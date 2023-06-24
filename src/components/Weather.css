@@ -46,6 +46,12 @@ h1 {
   background-color: rgb(208, 177, 244);
 }
 
+.maincontainer{
+    position: absolute;
+    left: 35vw;
+
+}
+
 .getWeather:hover {
   background-color: rgb(249, 178, 249);
 }
@@ -67,3 +73,40 @@ h1 {
   font-family: "Courier New", Courier, monospace;
   color: rgb(255, 255, 255);
 }
+
+.form-h{
+    width: 30rem;
+    height: 8rem;
+}
+#search{
+    position: absolute;
+    left: 5rem;
+}
+
+@media only screen and (max-width: 850px) {
+
+    .maincontainer{
+        left: -2vw;
+    }
+    .getWeather{
+        position: absolute;
+        top: 23rem;
+        left: -2rem;
+
+    }
+    .form-h{
+        position: absolute;
+        top: 20vh;
+        left: 10vw;
+        width: 20rem;
+        height: 8rem;
+    }
+    .Weather{
+        position: absolute;
+        top: 30rem;
+    }
+    #search{
+        left: 4vw;
+    }
+  }
+  

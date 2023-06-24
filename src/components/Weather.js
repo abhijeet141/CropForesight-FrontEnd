@@ -27,9 +27,24 @@ export const Weather = () => {
 
     return (
         <div style={{ position: "relative" }}>
-            <nav>
-                <div>
-                    <Link to="/"><img src={logo} /></Link>
+            <NAVBAR />
+            <div class = "maincontainer">
+            <h1>Weather</h1>
+            <form className="form-h">
+                <input
+                    type="text"
+                    id="search" placeholder="Search By Loaction"
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                />
+            </form>
+            <button onClick={handleWeather} className="getWeather">SUBMIT</button>
+            {weatherData && (
+                <div className='Weather'>
+
+                    <p className='name'>{weatherData.name}</p>
+                    <p className='dis'>{weatherData.weather[0].description}</p>
+                    <p className='temp'>{weatherData.main.temp}</p>
                 </div>
                 <div className='visibility-desktop'>
                     <ul>
