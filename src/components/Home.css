@@ -1,25 +1,20 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
 }
 
 body {
   background-color: rgb(0, 0, 40);
   color: white;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .main {
   width: 100vw;
   height: 110vh;
-  overflow: hidden; /* Prevent vertical scrolling */
-}
-
-.main-body {
-  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,6 +61,7 @@ img {
   transform: translate(-50%, -50%);
 }
 
+
 .para {
   font-size: 1rem;
   font-weight: 400;
@@ -108,7 +104,7 @@ img {
 
 .button {
   width: 8rem;
-  height: 4rem;
+  height: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -124,16 +120,12 @@ img {
 .button:hover {
   background-color: rgb(132, 80, 181);
 }
-
 @media only screen and (max-width: 1023px) {
   .text {
     position: static;
     transform: none;
-    font-size: 1.8 rem;
-  }
-
-  .main-body {
-    padding-top: 5rem;
+    
+    font-size:1.8 rem;
   }
 }
 
@@ -142,6 +134,7 @@ img {
     text-align: center;
     overflow: auto; /* Allow scrolling for smaller screens */
   }
+  
 
   .text {
     font-size: 2rem;
@@ -151,11 +144,11 @@ img {
     left: 3rem;
   }
 
-  /* img {
+  img {
     position: absolute;
     left: 1rem;
     top: 0.8rem;
-  } */
+  }
 
   .card {
     width: 90vw;
@@ -184,7 +177,7 @@ img {
   .para {
     margin-top: 2rem;
     margin-bottom: 2rem;
-
+    
     text-align: left;
   }
 }
@@ -229,7 +222,7 @@ img {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
-  .para {
+  .para{
     justify-content: center;
   }
 
@@ -246,7 +239,7 @@ img {
 
 /* Added: Media query for iPad Air and iPad Mini */
 @media only screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait),
-  only screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
+       only screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
   .text {
     top: 0.0000000000000001rem; /* Adjust the value as needed */
   }
@@ -256,7 +249,7 @@ img {
   }
 }
 @media only screen and (device-width: 820px) and (device-height: 1180px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait),
-  only screen and (device-width: 820px) and (device-height: 1180px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
+       only screen and (device-width: 820px) and (device-height: 1180px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
   .text {
     top: 0.0000000000000001rem; /* Adjust the value as needed */
   }
