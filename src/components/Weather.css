@@ -12,15 +12,13 @@ input {
 
 input:focus {
     outline: none;
-    
 }
 
 h1 {
-    /*display: flex;
+
+    display: flex;
     justify-content: center;
-    align-items: center;*/
-    margin-top: 20px;
-    text-align: center;
+    align-items: center;
 }
 
 .Weather {
@@ -33,20 +31,17 @@ h1 {
     top: 25rem;
     left: 7rem;
 
-    
-
 }
 
 .maincontainer{
     position: absolute;
     left: 35vw;
-    margin-top: 75px;
 
 }
 
 .getWeather {
     width: 150px;
-    height: 60px;
+    height: 42px;
     cursor: pointer;
     border-radius: 20px;
     margin-left: 10rem;
@@ -58,14 +53,8 @@ h1 {
     left: 40rem; */
 }
 
-body {
-    background-color: #f1f1f1; /* Add your desired background color or use a color code */
-    background-image: linear-gradient(to bottom right, #180356, #64089a); /* Add a gradient background */
-}
-
-
 .getWeather:hover {
-    background-color: rgb(241, 136, 241);
+    background-color: rgb(249, 178, 249);
 }
 
 .Weather .name {
