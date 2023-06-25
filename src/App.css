@@ -39,6 +39,14 @@ button{
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.btn:hover{
+  color: purple;
+  background-color: aliceblue;
+  box-shadow: 1px 1px 1px 1px purple;
+  transition: background-color 0.5s ease;
+}
+
  @media(max-width:412px){
   .body{
     height: 900px;
