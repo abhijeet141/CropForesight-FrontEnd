@@ -75,18 +75,21 @@ ul{
     /* background-color: yellow; */
 }
 
-.slider{
+.slider {
   width: 180%;
   height: 160%;
   margin-left: -80px;
 }
-.slider-box{
+
+.slider-box {
   width: 20%;
   display: block;
   margin: auto;
+  margin-top: 100px;
 }
-.slider-div img{
-  width: 32rem;
+
+.slider-div img {
+  width: 30rem;
   height: 18rem;
 }
 h3{
@@ -96,12 +99,13 @@ h3{
 }
 
 @media only screen and (max-width: 1024px){
-  .slider-div img{
-      width: 21.5rem;
-      height: 12rem;
+  .slider-div img {
+    width: 21.5rem;
+    height: 12rem;
   }
-  .slider{
-      margin-top: -150px;
+
+  .slider {
+    margin-top: 50px;
   }
 }
 @media only screen and (max-width: 850px){
@@ -128,20 +132,27 @@ h3{
         margin-right: 30px;
         /* padding-bottom: 20%; */
     }
-    .content .right{
-        width: 100%;
-        margin-top: 50%;
-    }
-    .content .right img{
-        margin-top: 50rem;
-    }
+    .slider-div img {
+    width: 25rem;
+    height: 15rem;
+  }
+
+  .slider {
+    width: 25rem;
+    height: 15rem;
+    margin-left: 7.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .slider-box {
+    width: 100%;
+    display: block;
+    margin: auto;
+    margin-left: -15px;
+  }
   }
   @media only screen and (max-width: 560px){
-    .content .right img{
-        width: 100%;
-        height: fit-content;
-        margin-top: 65rem;
-    }
+    
   }
 
   
