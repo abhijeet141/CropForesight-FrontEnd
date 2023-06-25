@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(./assets/image.jpg);
+  background-image: url(./assets/image.webp);
   background-size: cover; 
   /* min-height: 100vh; */
   padding-bottom: 10px;

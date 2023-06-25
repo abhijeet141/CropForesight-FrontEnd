@@ -1,7 +1,7 @@
 import React, { useState ,useEffect} from "react";
 import styles from './contact.css';
 import './nav.css'
-import logo from '../assets/earth.png';
+import logo from '../assets/earth.webp';
 import { useNavigate ,Link, useHref} from 'react-router-dom';
 import swal from 'sweetalert';
 import NAVBAR from './nav';

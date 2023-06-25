@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom';
 import './faq.css';
 import "../nav.css";
-import logo from "../../assets/earth.png";
-import faq from "../../assets/faq.png";
+import logo from "../../assets/earth.webp";
+import faq from "../../assets/faq.webp";
 
 const AccordionItem = ({ title, content }) => {
     const [expanded, setExpanded] = useState(false);
