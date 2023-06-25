@@ -16,10 +16,18 @@ import NAVBAR from './nav';
 
 const About = () => {
   const navigate = useNavigate();
-
+  
     const handleClick = () => {
         navigate('/contact'); // Replace '/other-page' with the desired URL of the page you want to navigate to
     };
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
     return (
         <>
             {/* nav bar */}
