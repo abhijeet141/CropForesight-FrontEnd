@@ -246,41 +246,7 @@ h3{
     transform: translateY(25%);
     background: rgb(0, 0, 40);
     color: #fff
+   
   }
-  .img-container::before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    background: rgb(0, 0, 40);
-    position: absolute;
-    top: -0.25rem;
-    right: -0.5rem;
-    border-radius: 50%;
-  }
-  .author {
-    margin-bottom: 0.25rem;
-  }
-  .job {
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    color:rgb(0, 0, 57);
-    font-size: 0.85rem;
-  }
-  .info {
-    margin-bottom: 0.75rem;
-  }
-  .prev-btn,
-  .next-btn {
-    color:  rgb(147, 102, 189);
-    font-size: 1.25rem;
-    background: transparent;
-    border-color: transparent;
-    margin: 0 0.5rem;
-    transition: all 0.3s linear;
-    cursor: pointer;
-  }
-  .prev-btn:hover,
-  .next-btn:hover {
-    color: rgb(147, 102, 189);
-  }
+  
 

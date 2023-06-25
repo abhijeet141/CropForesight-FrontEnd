@@ -124,7 +124,6 @@ img {
   .text {
     position: static;
     transform: none;
-    
     font-size:1.8 rem;
   }
 }
@@ -142,12 +141,6 @@ img {
     top: 1rem;
     right: 3rem;
     left: 3rem;
-  }
-
-  img {
-    position: absolute;
-    left: 1rem;
-    top: 0.8rem;
   }
 
   .card {

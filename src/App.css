@@ -44,6 +44,28 @@ button{
     height: 900px;
   }
 } 
+@media (max-width: 320px) and (max-height: 364px) {
+  .body {
+    height: auto;
+    padding-bottom: 0;
+  }
+
+  form {
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+  }
+
+  .title {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  button {
+    margin-top: 20px;
+  }
+}
+
 @media(min-width:768px) and (max-width:820px){
   .body{
     height: 1200px;
