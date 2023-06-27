@@ -9,6 +9,7 @@ import NAVBAR from './nav';
 
 
 
+
 const About = () => {
 
     const navigate = useNavigate();
@@ -20,7 +21,6 @@ const About = () => {
         <>
             {/* nav bar */}
             <NAVBAR />
-
             {/* main section */}
             <div className="aboutMain">
                 <h1 className="about"> What Is CropForesight❔ </h1>

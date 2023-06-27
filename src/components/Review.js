@@ -1,47 +1,46 @@
-import React, { useState } from 'react';
-import people from './data';
-import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa';
+import React from "react";
+import { FaQuoteRight } from "react-icons/fa";
+import reviews from "./data";
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
+import "./Review.css";
 
 const Review = () => {
-  const [index, setIndex] = useState(0);
-  const {name, job, image, text} = people[index];
+  const items = reviews.map((ele) => {
+    return (
+      <div className="testimonial" key={ele.id}>
+        <div className="img-wrapper">
+          <img src={ele.image} alt="img" className="img" />
+          <span className="quote-icon">
+            <FaQuoteRight />
+          </span>
+        </div>
+        <p className="designation">{ele.job}</p>
+        <p className="description">{ele.text}</p>
+      </div>
+    );
+  });
 
-  const checkNumber = (number) => {
-    if(number > people.length - 1) {
-      return 0;
-    }
-    if(number < 0) {
-      return people.length - 1;
-    }
-    return number;
-  }
-
-  const nextPerson = () => {
-    setIndex((index) => {
-      let newIndex = index + 1;
-      return checkNumber(newIndex);
-    }) 
+  const responsive = {
+    0: { items: 1 },
+    512: { items: 1 },
+    768: { items: 1 },
+    1024: { items: 1 },
+    1200: { items: 1 },
   };
 
-  const prevPerson = () => {
-    setIndex((index) => {
-      let newIndex = index - 1;
-      return checkNumber(newIndex);
-    }) 
-  };
-
-  return <article className="review">
-      <div className="img-container">
-        <img src={image} alt={name} className="person-img"/>
-        <span className="quote-icon"><FaQuoteRight/></span>
-      </div>
-      <p className="job">{job}</p>
-      <p className="info">{text}</p>
-      <div className="button-container">
-        <span className="prev-btn" onClick={prevPerson}><FaChevronLeft/></span>
-        <span className="next-btn" onClick={nextPerson}><FaChevronRight/></span>
-      </div>
-     </article>;
+  return (
+    <div className="carousel-wrapper">
+      <AliceCarousel
+        mouseTracking
+        infinite
+        disableButtonsControls
+        responsive={responsive}
+        items={items}
+        autoPlay
+      />
+    </div>
+  );
 };
 
 export default Review;
