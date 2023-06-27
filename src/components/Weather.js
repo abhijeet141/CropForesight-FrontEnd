@@ -25,7 +25,7 @@ export const Weather = () => {
 
 
     return (
-        <div>
+        <div id="weather-page">
             <NAVBAR />
             <div class = "maincontainer">
             <h1>Weather</h1>
