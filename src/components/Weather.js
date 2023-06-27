@@ -9,16 +9,26 @@ import NAVBAR from './nav';
 export const Weather = () => {
     const [city, setCity] = useState('')
     const [weatherData, setWeatherData] = useState(null);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleWeather = async () => {
         try {
             const response = await axios.get(
                 `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7b96e250f5f9d8682865d4335a802fe2`
             );
-            setWeatherData(response.data)
+            // setWeatherData(response.data)
+            if(response.data.cod === '404') {
+                setErrorMessage('Improper location. Please try again.');
+                setWeatherData(null);
+            }
+            else {
+                setWeatherData(response.data);
+                setErrorMessage('');
+            }
         } catch (error) {
-            console.error(error)
-
+            console.error(error);
+            setErrorMessage('Location does not exist.');
+            setWeatherData(null);
         }
     }
 
@@ -38,6 +48,7 @@ export const Weather = () => {
                 />
             </form>
             <button onClick={handleWeather} className="getWeather">SUBMIT</button>
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
             {weatherData && (
                 <div className='Weather'>
 
