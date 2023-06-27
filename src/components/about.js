@@ -56,10 +56,8 @@ const About = () => {
                 </div>
               </div>
 
-          <h1 className="feat" >Features</h1>
-        <div className="again">
+
           <div className="slider-box">
-            {/* <img src={aboutPic} alt="about" /> */}
             <Slider {...settings} className="slider">
               <div className="slider-div">
                 <img src={aboutPic} alt="about" />
@@ -75,7 +73,6 @@ const About = () => {
               </div>
             </Slider>
           </div>
-        </div>
 
 
 

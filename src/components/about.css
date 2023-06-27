@@ -85,31 +85,22 @@ ul{
     padding-bottom: 15px;
 }
 
-.again{
-  background-color: #7209b7;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  border-radius: 1.2cm 0 0 1.2cm;
-  width:104rem;
-  margin-left:19.2rem;
-}
 
 .slider {
   width: 180%;
   height: 190%;
-  margin-left: -80px;
 }
 
 .slider-box {
   width: 20%;
   display: block;
   margin: auto;
-  margin-top: 100px;
+  margin-top: -45rem;
+  margin-left: 75rem;
 }
 
 .slider-div img {
-  width: 40rem;
+  width: 35rem;
   height: 28rem;
 }
 h3{
@@ -258,10 +249,11 @@ h3{
 
   main{
     background-color: #7209b7;
-    height: 43rem;
+    height: 41rem;
     width: 105rem;
     margin-top: 5rem;
-    border-radius: 0 1.2cm 1.2cm 0;
+    margin-left: 18.3rem;
+    border-radius:  1.2cm 0 0 1.2cm;
   }
 
   .review {
@@ -309,5 +301,54 @@ h3{
   .first_letter{
     font-size: 5.5rem;
   }
+
+  .test{
+    margin-top: 15rem;
+  }
   
 
+
+  @media only screen and (max-width: 997px) {
+    /* .aboutMain {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100%;
+      width: 100%;
+      padding: 5%;
+    } */
+  
+    .content {
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 5%;
+      padding-top: 50px;
+      width:45rem;
+    }
+  
+    .content .left {
+      width: 100%;
+      margin-right: 30px;
+    }
+  
+    .slider-div img {
+      width: 25rem;
+      height: 15rem;
+    }
+  
+    .slider {
+      width: 25rem;
+      height: 15rem;
+      margin-left: 7.5rem;
+      margin-bottom: 2.5rem;
+    }
+  
+    .slider-box {
+      width: 100%;
+      display: block;
+      margin: auto;
+      margin-left: -15px;
+    }
+  }
