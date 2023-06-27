@@ -34,9 +34,15 @@ h1 {
 }
 
 .maincontainer{
-    position: absolute;
+        background-color: #f1f1f1;
+        background-image: linear-gradient(to bottom right, #180356, #64089a);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+        padding-top: 75px;
     left: 35vw;
-
 }
 
 .getWeather {
@@ -44,7 +50,7 @@ h1 {
     height: 42px;
     cursor: pointer;
     border-radius: 20px;
-    margin-left: 10rem;
+    margin-left: 35rem;
     /* margin-top: 50px; */
     align-items: center;
     border: none;
