@@ -89,7 +89,7 @@ function App() {
           {inputs.map((input) => (
             <FormInfo key={input.id} {...input} value={values[input.name]} onChange={onChange} />
           ))}
-          <button>{loading ? 'Evaluating...' : 'Recommend Crop'}</button>
+          <button className='btn'>{loading ? 'Evaluating...' : 'Recommend Crop'}</button>
         </form>
       </div>)
   }

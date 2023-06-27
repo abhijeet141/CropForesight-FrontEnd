@@ -74,6 +74,21 @@ label {
   cursor: pointer;
   /* margin-left: -9px; */
 }
+
+/* button:hover {
+  color: purple;
+  background-color: aliceblue;
+  box-shadow: 1px 1px 1px 1px purple;
+  transition: background-color 0.5s ease;
+} */
+
+.btn:hover {
+  color: purple;
+  background-color: aliceblue;
+  box-shadow: 1px 1px 1px 1px purple;
+  transition: background-color 0.5s ease;
+}
+
 .contact {
   font-weight: 300;
   position: absolute;

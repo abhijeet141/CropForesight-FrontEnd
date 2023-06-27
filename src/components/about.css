@@ -54,8 +54,10 @@ ul{
     margin-top: 20px;
 }
 .content .left button:hover{
-    background-color: rgb(147, 102, 189);
-    color: aliceblue;
+    background-color: aliceblue;
+    color: purple;
+    box-shadow: 1px 1px 1px 1px purple;
+    transition: background-color 0.5s ease;
     border: none;
     border-radius: 5px;
     font-size: 20px;
@@ -63,7 +65,6 @@ ul{
     margin-top: 20px;
     cursor: pointer;
 }
-
 
 .content .left .feature{
     font-size: 20px;
