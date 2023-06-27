@@ -1,8 +1,6 @@
 import React from "react";
 import "./about.css";
 import "./nav.css";
-import logo from "../assets/earth.png";
-import aboutPic from "../assets/about.png";
 import image1 from "../assets/image1.png";
 import image2 from "../assets/image2.png";
 import image3 from "../assets/image3.png";
@@ -10,6 +8,8 @@ import { useNavigate, Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import logo from '../assets/earth.webp';
+import aboutPic from '../assets/about.webp';
 import Review from "./Review";
 import NAVBAR from './nav';
 

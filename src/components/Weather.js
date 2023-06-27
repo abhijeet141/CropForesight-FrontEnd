@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom';
 import './Weather.css'
 import './nav.css'
-import logo from '../assets/earth.png';
+import logo from '../assets/earth.webp';
 import NAVBAR from './nav';
 
 export const Weather = () => {
@@ -25,7 +25,7 @@ export const Weather = () => {
 
 
     return (
-        <div>
+        <div id="weather-page">
             <NAVBAR />
             <div class = "maincontainer">
             <h1>Weather</h1>
