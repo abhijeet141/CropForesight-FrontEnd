@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom';
 import './faq.css';
 import "../nav.css";
-import logo from "../../assets/earth.png";
-import faq from "../../assets/faq.png";
+import logo from "../../assets/earth.webp";
+import faq from "../../assets/faq.webp";
+import NAV from '../nav';
 
 const AccordionItem = ({ title, content }) => {
     const [expanded, setExpanded] = useState(false);
@@ -33,25 +34,7 @@ const FAQ = () => {
     return (
         <>
             {/* nav bar */}
-            <div className='nav'>
-                <header>
-                    <nav>
-                        <div className="left" style={{ color: "red" }}>
-                            <Link to="/"><img src={logo} /></Link>
-                        </div>
-                        <div className="right">
-                            <ul>
-                                <li><Link to="/">Home</Link></li>
-                                <li><Link to="/about">About</Link></li>
-                                <li><Link to="/contact" >Contact</Link></li>
-                                <li><Link to="/faq" >FAQs</Link></li>
-                                <li><Link to="/Weather">Weather</Link></li>
-
-                            </ul>
-                        </div>
-                    </nav>
-                </header>
-            </div>
+            <NAV />
             {/* main section */}
             <div className="faq-section">
                 {/* add Heading */}
@@ -83,7 +66,7 @@ const FAQ = () => {
                                 title="Q: How accurate are the crop recommendations provided by CropForesight?"
                                 content="A: CropForesight strives to provide accurate crop recommendations by leveraging advanced machine learning algorithms and considering multiple environmental factors. However, the accuracy may depend on the quality and reliability of the input data."
                             />
-                              <AccordionItem
+                            <AccordionItem
                                 title="Q: Is CropForesight applicable to all regions and climates?"
                                 content="A: CropForesight is designed to be applicable to a wide range of regions and climates. However, it's important to note that certain crops may have specific requirements and thrive in particular climatic conditions. CropForesight considers these factors to suggest crops that are suitable for specific regions and climates."
                             />

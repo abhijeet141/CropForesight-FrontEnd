@@ -6,27 +6,25 @@ html {
 label {
   color: white;
 }
-.tag {
-  position: absolute;
-  left: 20vw;
-  top: 40vh;
-  font-size: 2rem;
-  color: rgb(179, 141, 215);
-}
+
 .form {
-  /* margin-left: 30px; */
+  box-shadow: rgba(240, 46, 170, 0.4) 0px 12px 28px 0px,
+    rgba(240, 46, 170, 0.3) 0px 2px 4px 0px,
+    rgba(240, 46, 170, 0.2) 0px 0px 0px 1px inset;
   position: absolute;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   gap: 10px;
-  width: 350px;
+  width: 450px;
+  height: 480px;
   background-color: white;
-  /* padding: 20px 10px 20px 9px; */
   border-radius: 10px;
-  box-shadow: 0 30px 30px -30px rgba(27, 26, 26, 0.315);
-  left: 65vw;
+  margin-top: 230px;
+  left: 35vw;
   bottom: 5vh;
+  top: 30px;
+  padding-bottom: 70px;
 }
 
 .form .title {
@@ -56,31 +54,68 @@ label {
   width: 100%;
   resize: none;
   outline: 0;
-  padding: 8px 14px;
+  margin-top: 10px;
+  padding: 10px 14px;
   width: 300px;
   border: 1px solid rgb(219, 213, 213);
 }
 
 .form button {
-  align-self: flex-end;
   padding: 8px;
   outline: 0;
   border: 0;
   border-radius: 8px;
+  width: 300px;
   font-size: 16px;
   font-weight: 500;
   background-color: rgb(147, 102, 189);
   color: #fff;
   cursor: pointer;
-  /* margin-left: -9px; */
+  transition: 2s all ease;
 }
+.form button:hover {
+  transform: translateY(5px);
+  box-shadow: rgba(240, 46, 170, 0.4) 0px 12px 28px 0px,
+    rgba(240, 46, 170, 0.3) 0px 2px 4px 0px;
+}
+
+/* button:hover {
+  color: purple;
+  background-color: aliceblue;
+  box-shadow: 1px 1px 1px 1px purple;
+  transition: background-color 0.5s ease;
+} */
+
+.btn:hover {
+  color: purple;
+  background-color: aliceblue;
+  box-shadow: 1px 1px 1px 1px purple;
+  transition: background-color 0.5s ease;
+}
+
 .contact {
-  font-weight: 300;
+  font-weight: bold;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   position: absolute;
   top: 100px;
-  left: 35vw;
-
-  color: rgb(147, 102, 189);
+  left: 38vw;
+  font-size: 60px;
+  text-shadow: 2px 2px 4px plum;
+  color: rgb(167, 116, 214);
+  margin-bottom: 20px;
+}
+.tag {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  position: absolute;
+  top: 190px;
+  left: 38vw;
+  text-align: center;
+  font-size: 2rem;
+  color: rgb(167, 116, 214);
+  margin-bottom: 20px;
+  letter-spacing: 2px;
 }
 .glass {
   background: linear-gradient(
@@ -97,9 +132,8 @@ label {
 
 .wrapper {
   display: inline-flex;
-  position: absolute;
-  bottom: 15vh;
-  left: 17vw;
+  margin-top: 20px;
+  left: 2vw;
 }
 .wrapper .icon {
   margin: 0 20px;
