@@ -4,8 +4,8 @@ import video from "../assets/nature.mp4";
 import "./Home.css";
 import "./nav.css";
 import NAVBAR from "./nav";
-import logo from "../assets/earth.png";
 import Contact from "./contact";
+import logo from '../assets/earth.webp';
 
 const Typewriter = ({ sentences, delay }) => {
   const [displayText, setDisplayText] = useState("");

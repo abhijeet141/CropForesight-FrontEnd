@@ -1,15 +1,15 @@
+import axios from 'axios';
 import { useState } from 'react';
 import './App.css';
+import Err from './components/404';
 import FormInfo from './components/FormInfo';
-import axios from 'axios';
 import Home from './components/Home';
-import Contact from './components/contact';
 import Weather from './components/Weather';
-import FAQ from './components/faq/faq';
-import Err from './components/404'
 import About from './components/about';
+import Contact from './components/contact';
+import FAQ from './components/faq/faq';
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import swal from 'sweetalert';
 
 import GoToTop from './GoToTop/GoToTop';
@@ -89,7 +89,7 @@ function App() {
           {inputs.map((input) => (
             <FormInfo key={input.id} {...input} value={values[input.name]} onChange={onChange} />
           ))}
-          <button>{loading ? 'Evaluating...' : 'Recommend Crop'}</button>
+          <button className='btn'>{loading ? 'Evaluating...' : 'Recommend Crop'}</button>
         </form>
       </div>)
   }
@@ -104,21 +104,34 @@ function App() {
   const onChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value })
   }
+
+  const [preLoading, setPreLoading] = useState(true);
+  const spinner = document.getElementById("spinner");
+  if (spinner) {
+    setTimeout(() => {
+      spinner.style.display = "none";
+      setPreLoading(false);
+    }, 2000);
+  }
+
+
   return (
-  <>
-  <GoToTop/>
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/form' element={FormComponet()} />
-        <Route path='/about' element={<About/>}/>
-        <Route path='/contact' element={<Contact />}/>
-        <Route path='/faq' element={<FAQ />}/>
-        <Route path='/Weather' element={<Weather />}/>
-        <Route path='/*' element={<Err />}/>
-      </Routes>
-    </BrowserRouter>
-    </>
+    !preLoading && (
+      <>
+        <GoToTop />
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/form' element={FormComponet()} />
+            <Route path='/about' element={<About />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/faq' element={<FAQ />} />
+            <Route path='/Weather' element={<Weather />} />
+            <Route path='/*' element={<Err />} />
+          </Routes>
+        </BrowserRouter>
+      </>
+    )
   );
 }
 

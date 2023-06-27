@@ -120,6 +120,13 @@ img {
   border-radius: 4px;
 }
 
+.button-1:hover {
+  color: purple;
+  background-color: aliceblue;
+  box-shadow: 1px 1px 1px 1px purple;
+  transition: background-color 0.5s ease;
+}
+
 .button:hover {
   background-color: rgb(132, 80, 181);
 }
