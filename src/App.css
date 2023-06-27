@@ -8,6 +8,20 @@
   padding-bottom: 10px;
   height: 100%;
 }
+::-webkit-scrollbar{
+  width: 1rem;
+}
+::-webkit-scrollbar-track{
+  background-color: rgb(22, 20, 20);
+
+}
+::-webkit-scrollbar-thumb{
+background-color: green;
+border-radius:40px ;
+border: 3px solid transparent;
+background-clip: content-box;
+}
+
 form {
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
