@@ -80,7 +80,7 @@ ul{
     font-size: 1.4rem;
     font-weight: 300;
     text-align: justify;
-    margin-left: -380px;
+    /* margin-left: -380px; */
     padding-top: 15px;
     padding-bottom: 15px;
 }
