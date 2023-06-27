@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from '../assets/earth.png';
+import logo from '../assets/earth.webp';
 import "./404.css";
 import NAVBAR from './nav';
 

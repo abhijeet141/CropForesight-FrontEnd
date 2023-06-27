@@ -1,8 +1,8 @@
 import React from "react";
 import './about.css';
 import './nav.css'
-import logo from '../assets/earth.png';
-import aboutPic from '../assets/about.png';
+import logo from '../assets/earth.webp';
+import aboutPic from '../assets/about.webp';
 import { useNavigate, Link } from 'react-router-dom';
 import Review from "./Review";
 import NAVBAR from './nav';
