@@ -2,7 +2,7 @@
     height: 100%;
     width: 100%;
 }
-.about {
+.about { 
     width: 100%;
     font-weight: 300;
     font-size: 40px;
@@ -11,7 +11,6 @@
     margin-top: 80px;
     text-align: center;
     padding-top: 20px;
-
 }
 ul{
     text-align: -webkit-match-parent;
@@ -24,61 +23,81 @@ ul{
     align-items: center;
     margin: 5%;
     margin-top: 10px;
-    margin-right: 0px;
-    /* background-color: green; */
-    color: aliceblue;
-    padding: 10px;
+    margin-left: -0.2rem;
+    color: hsl(209, 56%, 65%);
+    padding: 1.3rem;
+    background-color: #7209b7;
+    border-radius: 0 1.2cm 1.2cm 0;
 }
 
 .content .left {
-    font-size: 20px;
+    font-size: 1.6rem;
     font-weight: 300;
     flex: 0.6;
     text-align: justify;
-
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
     align-items: center;
-    /* background-color: blue; */
 }
-.content .left button{
-    width: 100%;
-    height: 50px;
-    background-color: rgb(147, 102, 189);
-    color: aliceblue;
-    border: none;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: 300;
-    margin-top: 20px;
+
+.content .left button {
+  width: 100%;
+  height: 50px;
+  background-color: rgb(147, 102, 189);
+  color: aliceblue;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 300;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
 }
-.content .left button:hover{
-    background-color: aliceblue;
-    color: purple;
-    box-shadow: 1px 1px 1px 1px purple;
-    transition: background-color 0.5s ease;
-    border: none;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: 300;
-    margin-top: 20px;
-    cursor: pointer;
+
+.content .left button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, aliceblue);
+  transition: left 0.5s;
+}
+
+.content .left button:hover::before {
+  left: 100%;
+}
+
+.content .left button:hover {
+  color: purple;
+  box-shadow: 1px 1px 1px 1px purple;
+  transition: color 0.5s ease, box-shadow 0.5s ease;
+  cursor: pointer;
 }
 
 .content .left .feature{
-    font-size: 20px;
+    font-size: 1.4rem;
     font-weight: 300;
     text-align: justify;
-    margin-left: 60px;
+    margin-left: -380px;
     padding-top: 15px;
     padding-bottom: 15px;
-    /* background-color: yellow; */
+}
+
+.again{
+  background-color: #7209b7;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 1.2cm 0 0 1.2cm;
+  width:104rem;
+  margin-left:19.2rem;
 }
 
 .slider {
   width: 180%;
-  height: 160%;
+  height: 190%;
   margin-left: -80px;
 }
 
@@ -90,8 +109,8 @@ ul{
 }
 
 .slider-div img {
-  width: 30rem;
-  height: 18rem;
+  width: 40rem;
+  height: 28rem;
 }
 h3{
     font-weight: 300;
@@ -176,18 +195,34 @@ h3{
   h1 {
     font-size: 3rem;
   }
+
+  .feat{
+    font-weight: 100;
+    font-size: 3.6rem;
+  }
+
+  .test{
+    font-weight: 100;
+    font-size: 3.6rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: -2rem;
+  }
+
   h2 {
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
   h3 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    color: black;
   }
   h4 {
     font-size: 0.875rem;
   }
   p {
     margin-bottom: 1.25rem;
-    color: hsl(210, 22%, 49%);
+    color: hsl(209, 56%, 65%);
   }
   
   .section {
@@ -215,10 +250,20 @@ h3{
     margin-left: auto;
     margin-right: auto;
   }
+
   .container {
     width: 80vw;
-    max-width: 620px;
+    max-width: 620px; 
   }
+
+  main{
+    background-color: #7209b7;
+    height: 43rem;
+    width: 105rem;
+    margin-top: 5rem;
+    border-radius: 0 1.2cm 1.2cm 0;
+  }
+
   .review {
     background: #fff;
     padding: 1.5rem 2rem;
@@ -259,6 +304,10 @@ h3{
     background: rgb(0, 0, 40);
     color: #fff
    
+  }
+
+  .first_letter{
+    font-size: 5.5rem;
   }
   
 

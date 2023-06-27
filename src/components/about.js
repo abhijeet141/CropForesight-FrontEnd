@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import logo from '../assets/earth.webp';
 import aboutPic from '../assets/about.webp';
-import Review from "./Review";
+import Review from "./Review"; 
 import NAVBAR from './nav';
 
 
@@ -33,15 +33,16 @@ const About = () => {
             {/* nav bar */}
             <NAVBAR />
             {/* main section */}
-            <div className="aboutMain">
-                <h1 className="about"> What Is CropForesight❔ </h1>
+
+              <div className="aboutMain">
+                <h1 className="about">What Is CropForesight❔ </h1>
                 <div className="content">
                     <div className="left">
-                        <p>CropForesight is a powerful crop recommendation website that helps farmers and agriculture enthusiasts make informed decisions about the best crop to cultivate on a given land.<br />
+                        <p>  <span className="first_letter" >C</span>ropForesight is a powerful crop recommendation website that helps farmers and agriculture enthusiasts make informed decisions about the best crop to cultivate on a given land.<br />
                             By utilizing machine learning algorithms and various environmental parameters such as nitrogen value of soil, phosphorus value, rainfall, pH, potassium, humidity, and temperature. CropForesight predicts the optimal crop choice, maximizing productivity and yield.</p>
 
                         <ul className="feature">
-                            <h3>Salient Features</h3>
+                            <h3> Salient Features</h3>
                             <li>
                                 Intelligent crop recommendation</li>
                             <li>
@@ -50,21 +51,13 @@ const About = () => {
                             <li>
                                 Scalable backend powered by FastAPI for quick data processing.</li>
                         </ul>
+                    <button onClick={handleClick}>Get In Touch</button>
+                  </div>
+                </div>
+              </div>
 
-            <ul className="feature">
-              <h3>Salient Features</h3>
-              <li>Intelligent crop recommendation</li>
-              <li>User-friendly interface </li>
-              <li>
-                Efficient ML model leveraging Gaussian Naïve Bayes algorithm.
-              </li>
-              <li>
-                Scalable backend powered by FastAPI for quick data processing.
-              </li>
-            </ul>
-
-            <button onClick={handleClick}>Get In Touch</button>
-          </div>
+          <h1 className="feat" >Features</h1>
+        <div className="again">
           <div className="slider-box">
             {/* <img src={aboutPic} alt="about" /> */}
             <Slider {...settings} className="slider">
@@ -83,11 +76,13 @@ const About = () => {
             </Slider>
           </div>
         </div>
-      </div>
+
+
+
+      <h2 className="test" >Our Testimonials</h2>
       <main>
         <section className="container">
           <div className="title">
-            <h2>Our Testimonials</h2>
             <div className="underline"></div>
           </div>
           <Review />
