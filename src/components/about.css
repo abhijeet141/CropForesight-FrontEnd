@@ -54,8 +54,10 @@ ul{
     margin-top: 20px;
 }
 .content .left button:hover{
-    background-color: rgb(147, 102, 189);
-    color: aliceblue;
+    background-color: aliceblue;
+    color: purple;
+    box-shadow: 1px 1px 1px 1px purple;
+    transition: background-color 0.5s ease;
     border: none;
     border-radius: 5px;
     font-size: 20px;
@@ -63,7 +65,6 @@ ul{
     margin-top: 20px;
     cursor: pointer;
 }
-
 
 .content .left .feature{
     font-size: 20px;
@@ -75,13 +76,22 @@ ul{
     /* background-color: yellow; */
 }
 
-.content .right{
-    flex: 0.4;
-    /* background-color: pink; */
+.slider {
+  width: 180%;
+  height: 160%;
+  margin-left: -80px;
 }
-.content .right img{
-    width: 100%;
-    height: 100%;
+
+.slider-box {
+  width: 20%;
+  display: block;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.slider-div img {
+  width: 30rem;
+  height: 18rem;
 }
 h3{
     font-weight: 300;
@@ -89,6 +99,16 @@ h3{
     color: rgb(147, 102, 189);
 }
 
+@media only screen and (max-width: 1024px){
+  .slider-div img {
+    width: 21.5rem;
+    height: 12rem;
+  }
+
+  .slider {
+    margin-top: 50px;
+  }
+}
 @media only screen and (max-width: 850px){
     .aboutMain{
         display: flex;
@@ -113,20 +133,27 @@ h3{
         margin-right: 30px;
         /* padding-bottom: 20%; */
     }
-    .content .right{
-        width: 100%;
-        margin-top: 50%;
-    }
-    .content .right img{
-        margin-top: 50rem;
-    }
+    .slider-div img {
+    width: 25rem;
+    height: 15rem;
+  }
+
+  .slider {
+    width: 25rem;
+    height: 15rem;
+    margin-left: 7.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .slider-box {
+    width: 100%;
+    display: block;
+    margin: auto;
+    margin-left: -15px;
+  }
   }
   @media only screen and (max-width: 560px){
-    .content .right img{
-        width: 100%;
-        height: fit-content;
-        margin-top: 65rem;
-    }
+    
   }
 
   

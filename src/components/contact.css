@@ -78,6 +78,21 @@ label {
   box-shadow: rgba(240, 46, 170, 0.4) 0px 12px 28px 0px,
     rgba(240, 46, 170, 0.3) 0px 2px 4px 0px;
 }
+
+/* button:hover {
+  color: purple;
+  background-color: aliceblue;
+  box-shadow: 1px 1px 1px 1px purple;
+  transition: background-color 0.5s ease;
+} */
+
+.btn:hover {
+  color: purple;
+  background-color: aliceblue;
+  box-shadow: 1px 1px 1px 1px purple;
+  transition: background-color 0.5s ease;
+}
+
 .contact {
   font-weight: bold;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
