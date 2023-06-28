@@ -13,23 +13,25 @@ body {
 }
 
 .main {
+  position: relative;
+  top: 90px;
   width: 100vw;
-  height: 110vh;
+  height: max-content;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   overflow: hidden; /* Prevent vertical scrolling */
 }
 
 video {
-  position: relative;
+  
   width: 90%;
   max-width: 150vw;
   height: auto;
   max-height: 60vh;
   object-fit: fill;
-  border-radius: 10rem;
+  border-radius: 8vw;
 }
 
 .overlay {
@@ -67,8 +69,8 @@ img {
   font-weight: 400;
 
   text-align: center;
-  margin-top: 1.5rem; /* Increase or decrease the gap between text and para */
-  margin-bottom: 1.5rem; /* Increase or decrease the gap between text and para */
+  margin: 1.5rem 2rem 1.5rem 2rem; /* Increase or decrease the gap between text and para */
+   /* Increase or decrease the gap between text and para */
 }
 
 .card-container {
@@ -81,21 +83,21 @@ img {
 
 .card {
   border-radius: 8px;
-  padding: 30px;
-  width: 50vw;
+  padding: 0px 30px 0px 30px;
+  width: 60vw;
   max-width: 400px;
-  height: auto;
-  display: flex;
+  height: 170px;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  align-items: center; */
+   margin-top: 1rem;
+  /*margin-bottom: 2rem; */
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  text-align: center;
+  /* text-align: center; */
 }
 
 .purple {
@@ -103,8 +105,9 @@ img {
 }
 
 .button {
+  
   width: 8rem;
-  height: 2rem;
+  height: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,6 +118,13 @@ img {
   color: white;
   border: none;
   border-radius: 4px;
+}
+
+.button-1:hover {
+  color: purple;
+  background-color: aliceblue;
+  box-shadow: 1px 1px 1px 1px purple;
+  transition: background-color 0.5s ease;
 }
 
 .button:hover {
@@ -146,15 +156,14 @@ img {
   .card {
     width: 90vw;
     max-width: 400px;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    /* margin-top: 1rem;
+    margin-bottom: 1rem; */
   }
 
   video {
     width: 95vw;
     height: auto;
     max-height: 60vh;
-    margin-top: -5vh;
   }
 
   .button {
@@ -168,10 +177,11 @@ img {
   }
 
   .para {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin: 1rem 2rem 0rem 2rem;
     
-    text-align: left;
+    /* margin-bottom: 2rem; */
+    
+    /* text-align: left; */
   }
 }
 
@@ -187,6 +197,9 @@ img {
 }
 
 @media only screen and (max-width: 480px) {
+  .main{
+    
+  }
   .card-container {
     flex-direction: column;
     align-items: center;
@@ -196,8 +209,6 @@ img {
     width: 90vw;
     height: auto;
     max-height: 40vh;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
   }
 
   .text {
@@ -211,12 +222,13 @@ img {
   .card {
     width: 90vw;
     max-width: 300px;
-    height: auto;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    height: 170px;
+    /* margin-top: 1rem;
+    margin-bottom: 1rem; */
   }
   .para{
     justify-content: center;
+    margin: 1rem 1rem 1rem 1rem;
   }
 
   .button {
@@ -224,11 +236,6 @@ img {
   }
 }
 
-@media only screen and (min-width: 856px) {
-  video {
-    margin-top: 110px; /* Adjust the value as needed */
-  }
-}
 
 /* Added: Media query for iPad Air and iPad Mini */
 @media only screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait),
@@ -253,7 +260,7 @@ img {
 
 @media only screen and (min-width: 1024px) {
   .card {
-    position: relative;
+    /* position: relative; */
     height: 170px;
   }
 
@@ -270,8 +277,6 @@ img {
     width: 95vw;
     height: auto;
     max-height: 20vh;
-    margin-top: 10vh;
-    margin-bottom: 1000vh;
   }
 
   .text {
@@ -290,4 +295,7 @@ img {
       left: 56%;
     }
   }
+}
+.button-1{
+  height: 50px;
 }

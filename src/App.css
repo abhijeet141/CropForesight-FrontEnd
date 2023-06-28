@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(./assets/image.jpg);
+  background-image: url(./assets/image.webp);
   background-size: cover; 
   /* min-height: 100vh; */
   padding-bottom: 10px;
@@ -39,6 +39,14 @@ button{
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.btn:hover{
+  color: purple;
+  background-color: aliceblue;
+  box-shadow: 1px 1px 1px 1px purple;
+  transition: background-color 0.5s ease;
+}
+
  @media(max-width:412px){
   .body{
     height: 900px;
