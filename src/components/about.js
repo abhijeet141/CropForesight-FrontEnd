@@ -51,7 +51,7 @@ const About = () => {
             <main>
       <section className="container">
         <div className="title">
-          <h2>Our Testimonials</h2>
+          <h2 style={{fontSize:'40px'}}>Our Testimonials</h2>
           <div className="underline"></div>
         </div>
         <Review/>
