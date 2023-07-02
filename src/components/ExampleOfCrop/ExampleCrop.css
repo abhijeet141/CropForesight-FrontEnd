@@ -1,0 +1,51 @@
+.Avtar {
+  height: 5rem !important;
+  width: 7rem !important;
+  border-radius: 15%;
+  opacity: 0.6;
+}
+.Avtar:hover {
+  scale: 1.5;
+  opacity: 1;
+  cursor: pointer;
+}
+.table_E {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+}
+
+.thead_E {
+  border-bottom: 1px solid black;
+  border: 2px solid rgb(112, 111, 112);
+  color: rgb(229, 160, 250);
+}
+
+td {
+  padding-right: 5rem;
+  padding-left: 5rem;
+  text-align: center;
+  border: 2px solid rgb(112, 111, 112);
+}
+.Crop_table {
+  justify-content: center !important;
+  align-items: center !important;
+}
+.input_E {
+  min-width: 540px !important;
+}
+.h1_E {
+  margin-top: 5rem;
+}
+.tbody_E tr:nth-child(odd) {
+  background-color: rgb(0, 0, 57);
+}
+
+.tbody_E tr:nth-child(even) {
+  background-color: #0c134f;
+}
+@media only screen and (max-width: 855px) {
+  img {
+    position: relative !important;
+  }
+}
