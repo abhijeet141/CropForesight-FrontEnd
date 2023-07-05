@@ -49,7 +49,28 @@
   font-size: 24px;
   margin-bottom: 10px;
 }
-
+.right_arrow{
+  width:100%;
+  margin: 0;
+  top:-300px;
+  position: relative;
+  cursor: pointer;
+  left:-400px;
+}
+.right_arrow:hover{
+  color:#fc5c7d;
+}
+.left_arrow:hover{
+  color:#fc5c7d;
+}
+.left_arrow{
+  /* width:100%; */
+  cursor: pointer;
+  position: relative;
+  top:-300px;
+  margin: 0;
+  right:-300px;
+}
 @media (max-width: 768px) {
   .testimonial {
     margin-right: 10px;
