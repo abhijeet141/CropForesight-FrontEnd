@@ -8,7 +8,7 @@ import { useNavigate, Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import logo from "../assets/earth.webp";
+import logo from "../assets/logo.png";
 import aboutPic from "../assets/about.webp";
 import Review from "./Review";
 import NAVBAR from "./nav";

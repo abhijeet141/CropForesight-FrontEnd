@@ -4,7 +4,7 @@ import "./nav.css";
 import { useNavigate, Link, useHref } from "react-router-dom";
 import swal from "sweetalert";
 import NAVBAR from "./nav";
-import logo from '../assets/earth.webp';
+import logo from '../assets/logo.png';
 
 const Typewriter = ({ sentences, delay }) => {
   const [displayText, setDisplayText] = useState("");
