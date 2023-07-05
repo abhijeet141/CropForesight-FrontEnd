@@ -8,16 +8,29 @@ import "./Review.css";
 const Review = () => {
   const items = reviews.map((ele) => {
     return (
+      <>
+      
       <div className="testimonial" key={ele.id}>
         <div className="img-wrapper">
           <img src={ele.image} alt="img" className="img" />
-          <span className="quote-icon">
-            <FaQuoteRight />
-          </span>
         </div>
         <p className="designation">{ele.job}</p>
-        <p className="description">{ele.text}</p>
+        <p className="description">
+          {ele.text}
+          <span style={{marginLeft:'12px'}}>
+            <img 
+              width="20"
+              height="15"
+              src="https://img.icons8.com/external-zen-filled-royyan-wijaya/24/external-quote-right-communication-zen-filled-royyan-wijaya.png"
+              alt="external-quote-right-communication-zen-filled-royyan-wijaya"
+            />
+          </span>
+        </p>
       </div>
+      
+      
+      </>
+     
     );
   });
 
@@ -34,10 +47,16 @@ const Review = () => {
       <AliceCarousel
         mouseTracking
         infinite
-        disableButtonsControls
         responsive={responsive}
         items={items}
         autoPlay
+         autoPlayInterval={5000}
+         renderPrevButton={() => {
+          return <p className="right_arrow"><img width="48" height="48" src="https://img.icons8.com/color/48/circled-chevron-left--v1.png" alt="circled-chevron-left--v1"/></p>
+        }}
+        renderNextButton={() => {
+          return <p className="left_arrow"><img width="48" height="48" src="https://img.icons8.com/color/48/circled-chevron-right--v1.png" alt="circled-chevron-right--v1"/></p>
+        }} 
       />
     </div>
   );
