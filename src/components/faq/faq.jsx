@@ -16,6 +16,7 @@ const AccordionItem = ({ title, content }) => {
     return (
         <div className={`accordion-item ${expanded ? 'expanded' : ''}`}>
             <button
+            style={{display: "flex", justifyContent: "space-between", alignItems: "center", }}
                 onClick={toggleAccordion}
                 aria-expanded={expanded ? 'true' : 'false'}
             >

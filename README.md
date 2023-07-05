@@ -49,38 +49,53 @@ If you want to contribute to CropForesight or run it locally for development pur
 
 1. Clone the frontend repository:
 
-   ```git clone https://github.com/abhijeet141/CropForesight-FrontEnd.git```
- 
-
+   ``` sh
+   git clone https://github.com/abhijeet141/CropForesight-FrontEnd.git
+   ```
+   
 2. Change to the project directory:
 
-   ```cd CropForesight-FrontEnd```
+   ``` sh
+   cd CropForesight-FrontEnd
+   ```
  
 3. Install the required dependencies:
 
-   ```npm install```
+   ``` sh
+   npm install
+   ```
  
 4. Run the frontend:
 
-   ```npm start```
+   ``` sh
+   npm start
+   ```
 
 5. Clone the backend repository:
 
-   ```git clone https://github.com/abhijeet141/CropForesight_BackEnd.git```
+   ``` sh
+   git clone https://github.com/abhijeet141/CropForesight_BackEnd.git
+   ```
 
 6. Change to the CropForesight_BackEnd directory:
 
-   ```cd CropForesight_BackEnd```
+   ``` sh
+   cd CropForesight_BackEnd
+   ```
   
 
 7. Install the required dependencies:
 
-   ```pip install -r requirements.txt```
+   ```sh 
+   pip install -r requirements.txt
+```
 
 
 8. Run the backend:
 
-   ```uvicorn main:app --reload```
+```sh
+ uvicorn main:app --reload
+```
 
 9. Open the website in your browser at [http://localhost:3000](http://localhost:3000) to access the local instance of CropForesight.
 
@@ -101,15 +116,91 @@ We welcome contributions from anyone who is interested in improving this project
 
 To submit a pull request, please follow these steps:
 
-1. Fork the repository and create your branch: ```git checkout -b your-branch-name``` 
+1. Fork the Project
+2. Clone your forked repository
 
-2. Make your changes and commit them: ```git commit -m 'Add some feature'``` 
+```sh
+ git clone https://github.com/<your_github_username>/CropForesight-FrontEnd.git
+```
+3. Now go ahead and create a new branch and move to the branch
+   ```sh
+   git checkout -b fix-issue-<ISSUE-NUMBER>
+   ```
+4. After you have added your changes, follow the following command chain
+   * Check the changed files
+    ```sh
+     git status -s
+     ```
 
-3. Push to your forked repository: ```git push origin your-branch-name```
-
-4.  Open a pull request to the main repository's branch
+   * Add all the files to the staging area
+      ```sh
+     git add .
+     ```
+     or
+     ```sh
+     git add <file_name1> <file_name2>
+     ```
+   * Commit your changes
+    ```sh
+     git commit -m "<EXPLAIN-YOUR_CHANGES>"
+     ```
+5. Push your changes
+   ```sh
+   git push origin fix-issue-<ISSUE-NUMBER>
+   ```
+6. Open a Pull Request 
 
 Congratulations! 🎉 you've made your contribution.
+
+<h1>GSSOC'23 Issue TimeLine</h1>
+	
+	
+- Once an issue is assigned,the assignee is expected to submit a pr for review withing a week of the assignment. 
+	
+- If the assignee fails to comply with the deadline, the issue will be assigned to the next person who had who had requested to be assigned.
+	
+	
+
+<h1>GSSOC'23 Pointer System</h1>
+<h2> Level 1 - Documentation/Minor bug fix </h2>
+<h3> Points - 10 </h3>
+	
+	
+- Contributors can update existing documentation, write new documentation for features or code and improve the overall organisation and clarity of the projects documentation.  
+	
+	
+- Minor bug fixes refer to fixing small isolated issues in the codebase.  
+	
+	
+- Fixing issues such as typos, brokel links, or minor performance problems.
+	
+	
+- Bug fixes are an important part of maintaining stability of and reliability of of an open-source project and every bug fix, no matter how small, contributes to the overall health of the project. 
+	
+	
+
+	
+	
+<h2> Level 2 - Enhancement of existing features </h2>
+<h3> Points - 25 </h3>
+	
+	
+-  Feature or enhancement contributions refer to adding new functionality to an open source project.  
+	
+- Contributors can add new features, improve existing features, or add new functionality to existing features.
+	
+
+	
+	
+	
+	
+<h2> Level 3 - Refactoring/ Adding functionalities </h2>
+<h3> Points - 45 </h3>
+	
+	
+- Core contributions, such as implementing major features or refactoring significant parts of the codebase. This needs a deep understanding of the codebase and its patterns.
+	
+	
  
 Please follow the cotribution guide in all your interactions with the project.
 We will review your pull request and provide feedback. Once your changes are approved, we will merge them into the main branch. 
