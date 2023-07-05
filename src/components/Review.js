@@ -47,10 +47,16 @@ const Review = () => {
       <AliceCarousel
         mouseTracking
         infinite
-        disableButtonsControls
         responsive={responsive}
         items={items}
         autoPlay
+         autoPlayInterval={5000}
+         renderPrevButton={() => {
+          return <p className="right_arrow"><img width="48" height="48" src="https://img.icons8.com/color/48/circled-chevron-left--v1.png" alt="circled-chevron-left--v1"/></p>
+        }}
+        renderNextButton={() => {
+          return <p className="left_arrow"><img width="48" height="48" src="https://img.icons8.com/color/48/circled-chevron-right--v1.png" alt="circled-chevron-right--v1"/></p>
+        }} 
       />
     </div>
   );
