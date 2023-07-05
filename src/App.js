@@ -1,13 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import "./App.css";
-import Err from "./components/404";
 import FormInfo from "./components/FormInfo";
-import Home from "./components/Home";
-import Weather from "./components/Weather";
-import About from "./components/about";
-import Contact from "./components/contact";
-import FAQ from "./components/faq/faq";
 import { ExampleCrop } from "./components/ExampleOfCrop/ExampleCrop";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import swal from "sweetalert";
@@ -23,7 +17,6 @@ const About=lazy(()=>import('./components/about'))
 const Contact=lazy(()=>import('./components/contact'))
 const FAQ=lazy(()=>import('./components/faq/faq'))
 const Err=lazy(()=>import('./components/404'))
-
 
 function App() {
   const [values, setValues] = useState({
