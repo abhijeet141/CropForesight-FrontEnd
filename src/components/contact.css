@@ -6,16 +6,23 @@ html {
 label {
   color: white;
 }
+.contact-wrapper{
+  display: flex;
+  flex-direction: column;
+}
 .tag {
-  position: absolute;
+  /* position: absolute;
   left: 20vw;
-  top: 40vh;
+  top: 40vh; */
+  margin-top: 10px;
+  height: 35px;
+  text-align: center;
   font-size: 2rem;
   color: rgb(179, 141, 215);
 }
 .form {
   /* margin-left: 30px; */
-  position: absolute;
+  /* position: absolute; */
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -25,8 +32,8 @@ label {
   /* padding: 20px 10px 20px 9px; */
   border-radius: 10px;
   box-shadow: 0 30px 30px -30px rgba(27, 26, 26, 0.315);
-  left: 65vw;
-  bottom: 5vh;
+  /* left: 65vw;
+  bottom: 5vh; */
 }
 
 .form .title {
@@ -51,6 +58,8 @@ label {
 }
 
 .form textarea {
+  margin-top: 10px;
+  font-size: 16px;
   border-radius: 8px;
   height: 100px;
   width: 100%;
@@ -75,12 +84,13 @@ label {
   /* margin-left: -9px; */
 }
 .contact {
+  margin-top: 6%;
   font-weight: 300;
-  position: absolute;
+  /* position: absolute;
   top: 100px;
-  left: 35vw;
+  left: 35vw; */
 
-  color: rgb(147, 102, 189);
+  color: white;
 }
 .glass {
   background: linear-gradient(
@@ -96,10 +106,7 @@ label {
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 
 .wrapper {
-  display: inline-flex;
-  position: absolute;
-  bottom: 15vh;
-  left: 17vw;
+ margin-bottom: -20px;
 }
 .wrapper .icon {
   margin: 0 20px;
@@ -109,14 +116,14 @@ label {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  position: relative;
-  z-index: 2;
+  position: relative; 
+   z-index: 2;
   transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 .wrapper .icon span {
   display: block;
-  height: 60px;
-  width: 60px;
+  height: 40px;
+  width: 40px;
   background: rgb(147, 102, 189);
   border-radius: 50%;
   position: relative;
@@ -125,14 +132,14 @@ label {
   transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 .wrapper .icon span i {
-  line-height: 60px;
-  font-size: 25px;
+  line-height: 40px;
+  font-size: 18px;
   color: white;
 }
 .wrapper .icon .tooltip {
-  position: absolute;
+   position: absolute;
   top: 0;
-  z-index: 1;
+   z-index: 1; 
   background: #fff;
   color: #fff;
   padding: 10px 18px;
@@ -200,47 +207,9 @@ label {
 .wrapper span {
   text-decoration: none;
 }
-@media only screen and (max-width: 850px) {
-  /* img {
-    position: absolute;
-    left: 1rem;
-    top: 0rem;
-} */
 
-  .form {
-    width: 315px;
-    height: 445px;
-    position: absolute;
-    left: 8vw;
-    top: 200px;
-  }
-  .wrapper {
-    margin: 0;
-    position: absolute;
-    left: 15px;
-    top: 750px;
-  }
-  .wrapper .icon {
-    margin: 0 10px;
-  }
-
-  .form button {
-    width: 15rem;
-    position: absolute;
-    bottom: 1rem;
-    left: 2rem;
-  }
-  .form textarea {
-    width: 300px;
-  }
-  .tag {
-    top: 10rem;
-    left: 2rem;
-    font-size: 1.5rem;
-  }
-
-  .contact {
-    font-size: 2rem;
-    left: 20vw;
+@media(max-width:950px) {
+  .contact{
+    margin-top: 27%;
   }
 }
