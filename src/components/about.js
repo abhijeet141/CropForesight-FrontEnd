@@ -138,7 +138,7 @@ const About = () => {
             />
           </div>
           <div className="title">
-            <h2>TECHNOLOGY</h2>
+            <h2>Technology</h2>
             <p>
               Using data science to forecast agronomic and financial crop
               outcomes and automate data collection.{" "}

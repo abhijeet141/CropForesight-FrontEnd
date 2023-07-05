@@ -15,7 +15,11 @@ input:focus {
 }
 
 h1 {
-
+    font-family: 'Poppins';
+    font-size: 60px;
+    font-weight: 600;
+    color: rgb(167, 116, 214);
+    text-shadow: 0px 2px 0px rgb(91, 53, 126);
     display: flex;
     justify-content: center;
     align-items: center;
