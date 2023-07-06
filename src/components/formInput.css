@@ -2,24 +2,23 @@ input{
     padding: 15px;
     margin: 10px 0px;
     border-radius: 5px;
-    border: 1px solid grey;
+    border:none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .formInput{
     display: flex;
+    margin-top: 5px;
     flex-direction: column;
     width: 100%;
 }
 
 label{
-    font-size: 15px;
+    font-size: 14px;
 }
-
-
 .errorMsg{
     color: red;
     font-size: 16px;
-  
   }
   
 .form.glass input.inputField{

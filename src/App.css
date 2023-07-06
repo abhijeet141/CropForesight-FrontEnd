@@ -1,25 +1,24 @@
-.body{
+.body {
   display: flex;
   align-items: center;
   justify-content: center;
   background-image: url(./assets/image.webp);
-  background-size: cover; 
+  background-size: cover;
   /* min-height: 100vh; */
   padding-bottom: 10px;
   height: 100%;
 }
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 1rem;
 }
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
   background-color: rgb(22, 20, 20);
-
 }
-::-webkit-scrollbar-thumb{
-background-color: green;
-border-radius:40px ;
-border: 3px solid transparent;
-background-clip: content-box;
+::-webkit-scrollbar-thumb {
+  background-color: green;
+  border-radius: 40px;
+  border: 3px solid transparent;
+  background-clip: content-box;
 }
 
 form {
@@ -31,24 +30,27 @@ form {
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-  color: #0C134F;
+  color: #010319;
 }
 
 .title {
   text-align: center;
-  color: #27374D;
+  font-size: 40px;
+  color: #040608;
+  text-shadow: 2px 2px 4px black;
 }
 
-.formInput label{
-  color: #0C134F;
+.formInput label {
+  color: #00094de7;
+  font-size: 18px;
+  font-weight: 600;
 }
 
-.formInput input.error
-{
+.formInput input.error {
   border: 1px solid red;
 }
 
-button{
+button {
   width: 100%;
   height: 60px;
   padding: 10px;
@@ -58,23 +60,28 @@ button{
   cursor: pointer;
   border-radius: 5px;
   font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
   font-size: 15px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.btn:hover{
+.btn:hover {
   color: purple;
   background-color: aliceblue;
   box-shadow: 1px 1px 1px 1px purple;
   transition: background-color 0.5s ease;
 }
 
- @media(max-width:412px){
-  .body{
+@media (max-width: 412px) {
+  .body {
     height: 900px;
   }
-} 
+}
 @media (max-width: 320px) and (max-height: 364px) {
   .body {
     height: auto;
@@ -97,20 +104,19 @@ button{
   }
 }
 
-@media(min-width:768px) and (max-width:820px){
-  .body{
+@media (min-width: 768px) and (max-width: 820px) {
+  .body {
     height: 1200px;
   }
-  form{
+  form {
     width: 60%;
     height: 70%;
   }
-  .title{
+  .title {
     margin-bottom: 10px;
     margin-top: 20px;
   }
-  button{
+  button {
     margin-top: 30px;
   }
 }
-
