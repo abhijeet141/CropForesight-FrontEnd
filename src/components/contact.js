@@ -5,6 +5,7 @@ import { useNavigate, Link, useHref } from "react-router-dom";
 import swal from "sweetalert";
 import NAVBAR from "./nav";
 import logo from '../assets/earth.webp';
+import validate from "../common/validation";
 
 const Typewriter = ({ sentences, delay }) => {
   const [displayText, setDisplayText] = useState("");
@@ -39,10 +40,12 @@ const openInNewTab = (url) => {
 };
 
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [error, seterror] = useState("");
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: ""
+  })
+  const [error, setError] = useState({});
 
   const sentences = [
     "Have A Question ❓",
@@ -51,32 +54,30 @@ const Contact = () => {
     "Report a bug 🪲",
   ];
 
-  function validEmail(email) {
-    let re =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (re.test(email)) return true;
-    else return false;
+  const handleChange = (e)=>{
+    const {name, value} = e.target;
+    setForm((prev)=>{
+      return {...prev, [name]: value}
+    })
+    const errMessage =  validate[name](value);
+    setError((prev)=>{
+      return {...prev, ...errMessage}
+    })
+
   }
 
   function handleSubmit(event) {
     event.preventDefault();
     // Do some authentication here...
     console.log("function called");
-
-    if (name === "") {
-      seterror("**Name is Required!");
-    } else if (email === "") {
-      seterror("**E-mail is Required!");
-    } else if (!validEmail(email)) {
-      seterror("**Enter a valid E-mail!");
-    } else if (message === "") {
-      seterror("**Enter a message!");
-    } else {
-      seterror("");
-      setName("");
-      setEmail("");
-      setMessage("");
-
+    let submitable = true;
+     Object.values(error).forEach((err)=>{
+      if(err !== false){
+        submitable = false;
+      }
+     })
+ 
+     if(submitable){
       try {
         // const response = await fetch("https://cropforesight-backend.onrender.com/subform", {
         //   method: "POST",
@@ -98,7 +99,7 @@ const Contact = () => {
         //console.log(formData);
         swal(
           "Success",
-          `Thanks for contacting us ${name}. We have received your details successfully. We will get back to you soon.`,
+          `Thanks for contacting us ${form.name}. We have received your details successfully. We will get back to you soon.`,
           "success"
         );
       } catch (error) {
@@ -106,6 +107,8 @@ const Contact = () => {
         console.log(error);
         swal("Error", "Something went wrong... Please try again", "error");
       }
+    }else{
+      swal("Error", "Plesae fill all fields with valid data.")
     }
   }
 
@@ -119,7 +122,7 @@ const Contact = () => {
         <Typewriter sentences={sentences} delay={2000} />
       </h3>
 
-      <form className="form glass">
+      <form className="form glass" onSubmit={handleSubmit}>
         <div className="form-group">
           <input
             id="name"
@@ -127,53 +130,37 @@ const Contact = () => {
             placeholder="Name"
             type="text"
             required
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className={`form-control ${
-              error === "**Name is Required!" && "inputField"
-            }`}
+            value={form.name}
+            onChange={handleChange}
+            className={`form-control`}
           />
-          {error === "**Name is Required!" && (
-            <small className="errorMsg">**Name is Required!</small>
-          )}
+          {error.name && error.nameError && <p className="errorMsg">{error.nameError}</p>}
         </div>
         <div className="form-group">
           <input
-            className={`form-control ${
-              error === "**E-mail is Required!" && "inputField"
-            }`}
+            className={`form-control`}
             id="email"
             name="email"
             placeholder="Email"
             type="email"
             required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={form.email}
+            onChange={handleChange}
           />
-          {error === "**E-mail is Required!" && (
-            <small className="errorMsg">**E-mail is Required!</small>
-          )}
-
-          {error === "**Enter a valid E-mail!" && (
-            <small className="errorMsg">**Enter a valid E-mail!</small>
-          )}
+           {error.email && error.emailError && <p className="errorMsg">{error.emailError}</p>}
         </div>
         <div className="form-grojup">
           <textarea
-            className={`form-control ${
-              error === "**Enter a message!" && "inputField"
-            }`}
+            className={`form-control`}
             id="message"
             name="message"
             placeholder="Message"
             rows="5"
             required
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            value={form.message}
+            onChange={handleChange}
           ></textarea>
-          {error === "**Enter a message!" && (
-            <small className="errorMsg">**Enter a message!</small>
-          )}
+           {error.message && error.messageError && <p className="errorMsg">{error.messageError}</p>}
         </div>
         <button className="btn ac_btn" type="submit">
           Send
