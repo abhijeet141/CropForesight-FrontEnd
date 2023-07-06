@@ -13,6 +13,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import swal from 'sweetalert';
 
 import GoToTop from './GoToTop/GoToTop';
+import Contributors from './components/Contributors';
 
 
 
@@ -128,6 +129,7 @@ function App() {
             <Route path='/faq' element={<FAQ />} />
             <Route path='/Weather' element={<Weather />} />
             <Route path='/*' element={<Err />} />
+            <Route path='/Contributor' element={<Contributors/>} />
           </Routes>
         </BrowserRouter>
       </>

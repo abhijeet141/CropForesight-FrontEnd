@@ -21,6 +21,7 @@ const NAV = () => {
                         <li><Link to="/contact" >Contact</Link></li>
                         <li><Link to="/faq" >FAQs</Link></li>
                         <li><Link to="/Weather">Weather</Link></li>
+                        <li><Link to="/Contributor">Contributors</Link></li>
                     </ul>
                 </div>
                 <div className='visibility-mobile' onClick={() => setShowMenu((prev) => !prev)}>
@@ -36,6 +37,7 @@ const NAV = () => {
                             <li><Link to="/contact" >Contact</Link></li>
                             <li><Link to="/faq" >FAQs</Link></li>
                             <li><Link to="/Weather">Weather</Link></li>
+                            <li><Link to="/Contributor">Contributors</Link></li>
                         </ul>
                     </div>
                 </>
