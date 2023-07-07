@@ -118,7 +118,6 @@ const Contact = () => {
       <h3 className="tag">
         <Typewriter sentences={sentences} delay={2000} />
       </h3>
-
       <form className="form glass">
         <div className="form-group">
           <input
