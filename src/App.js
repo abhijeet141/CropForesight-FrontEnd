@@ -1,20 +1,21 @@
 import axios from 'axios';
 import { useState } from 'react';
 import './App.css';
-import Err from './components/404';
 import FormInfo from './components/FormInfo';
-import Home from './components/Home';
-import Weather from './components/Weather';
-import About from './components/about';
-import Contact from './components/contact';
-import FAQ from './components/faq/faq';
-
+import {lazy, Suspense} from 'react'
+import "./components/nav.css";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import swal from 'sweetalert';
 
 import GoToTop from './GoToTop/GoToTop';
+import Loading from './components/Loading';
 
-
+const Home=lazy(()=>import('./components/Home'))
+const Weather=lazy(()=>import('./components/Weather'))
+const About=lazy(()=>import('./components/about'))
+const Contact=lazy(()=>import('./components/contact'))
+const FAQ=lazy(()=>import('./components/faq/faq'))
+const Err=lazy(()=>import('./components/404'))
 
 function App() {
 
@@ -105,21 +106,11 @@ function App() {
     setValues({ ...values, [event.target.name]: event.target.value })
   }
 
-  const [preLoading, setPreLoading] = useState(true);
-  const spinner = document.getElementById("spinner");
-  if (spinner) {
-    setTimeout(() => {
-      spinner.style.display = "none";
-      setPreLoading(false);
-    }, 2000);
-  }
-
-
   return (
-    !preLoading && (
       <>
         <GoToTop />
         <BrowserRouter>
+          <Suspense fallback={<Loading/>}>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/form' element={FormComponet()} />
@@ -129,9 +120,9 @@ function App() {
             <Route path='/Weather' element={<Weather />} />
             <Route path='/*' element={<Err />} />
           </Routes>
+          </Suspense>
         </BrowserRouter>
       </>
-    )
   );
 }
 
