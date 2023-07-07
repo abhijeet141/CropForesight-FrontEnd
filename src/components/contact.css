@@ -234,6 +234,28 @@ label {
 .wrapper span {
   text-decoration: none;
 }
+/*@media only screen and (max-width: 800px) {
+
+  .form {
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 10rem;
+  }
+
+  .form textarea {
+    width: 300px;
+  }
+  .tag {
+    top: 10rem;
+    font-size: 1.5rem;
+  }
+
+  .contact {
+    font-size: 2rem;
+    position: absolute;
+  }
+*/
 
 @media only screen and (max-width: 820px) {
   .contact {
@@ -254,6 +276,10 @@ label {
   .form-group {
     margin-bottom: 15px;
   }
+
+  /* .form textarea {
+    width: 100%;
+  } */
 
   .btn.ac_btn {
     width: 100%;
