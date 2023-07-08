@@ -113,7 +113,7 @@ const Contact = () => {
     <div>
       {/* nav bar */}
       <NAVBAR />
-      <h1 className="contact">Contact US</h1>
+      <h1 className="contact">Contact Us</h1>
 
       <h3 className="tag">
         <Typewriter sentences={sentences} delay={2000} />
