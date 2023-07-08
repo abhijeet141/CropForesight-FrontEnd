@@ -2,6 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
+import logo from "../assets/logo.png";
+import aboutPic from "../assets/about.webp";
 import "slick-carousel/slick/slick.css";
 import Review from "./Review";
 import "./about.css";
