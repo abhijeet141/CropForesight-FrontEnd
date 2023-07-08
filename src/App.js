@@ -86,8 +86,12 @@ function App() {
   const FormComponet = () => {
     return (
       <div className="body">
-        <form onSubmit={handleSubmit}>
-          <h1 className='title'>Crop Recomendation</h1>
+        <form 
+        style={{
+          boxShadow: "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px"
+        }} 
+        onSubmit={handleSubmit}>
+          <h1 style={{marginBottom:'60px'}} className='title'>Crop Recomendation</h1>
           {error && (<p style={{color:"red"}}>{error}</p>)}
           {inputs.map((input) => (
             <FormInfo key={input.id} {...input} value={values[input.name]} onChange={onChange}
