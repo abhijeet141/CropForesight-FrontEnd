@@ -72,11 +72,23 @@
     text-align: center;
   }
   
+  .slideR{
+    margin-top: -20rem;
+    cursor: pointer;
+    margin-left: 20rem;
+  }
+  .slideL{
+    margin-top: -20rem;
+    cursor: pointer;
+    margin-left: -22rem;
+  }
   .quote-icon {
     font-size: 24px;
     margin-bottom: 10px;
   }
- 
+ .swiper{
+  width: 100%;
+ }
   
   @media (max-width: 768px) {
     .testimonial {

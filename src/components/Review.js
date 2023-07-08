@@ -4,10 +4,19 @@ import reviews from "./data";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./Review.css";
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const Review = () => {
+  const renderNextButton = ({ isDisabled }) => {
+    return <ArrowForwardIosIcon className='slideR' style={{ position: "absolute"}} />
+  };
+  const renderPrevButton = ({ isDisabled }) => {
+    return <ArrowBackIosIcon className='slideL' style={{ position: "absolute" }} />
+  };
   const items = reviews.map((ele) => {
     return (
+     
       <div className="testimonial" key={ele.id}>
         <div className="img-wrapper">
           <img src={ele.image} alt="img" className="img" />
@@ -34,10 +43,18 @@ const Review = () => {
       <AliceCarousel
         mouseTracking
         infinite
-        disableButtonsControls
+        // renderPrevButton={() => {
+        //   return <p className="p-4 absolute right-0 top-0 shifter mb-50">Previous</p>
+        // }}
         responsive={responsive}
         items={items}
         autoPlay
+        renderPrevButton={renderPrevButton}
+          renderNextButton={renderNextButton}
+       
+        // renderNextButton={() => {
+        //   return <i className=" absolute right-0 top-0 Shifter">Next </i>
+        // }}
       />
     </div>
   );
