@@ -47,19 +47,16 @@ h1 {
     height: 100vh;
 }
 
-.maincontainer {
-    /* background-color: #180356; */
-    /* background-image: linear-gradient(to bottom right, #180356, #64089a); */
-    /* position: absolute; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    /* top: 5vw;
-    right: 30vw;
-    padding-top: 75px;
-    left: 35vw; */
+.maincontainer{
+        background-color: #f1f1f1;
+        background-image: linear-gradient(to bottom right, #180356, #64089a);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+        padding-top: 75px;
+        left: 0vw;
 }
 
 .getWeather {
