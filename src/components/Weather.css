@@ -22,15 +22,29 @@ h1 {
 }
 
 .Weather {
-    text-align: center;
     /* margin-left: 620px; */
     /* margin-top: 30px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     height: 200px;
-    width: 200px;
-    position: absolute;
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    /* position: absolute;
     top: 25rem;
-    left: 7rem;
+    left: 7rem; */
+}
 
+#weather-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .maincontainer{
@@ -50,31 +64,33 @@ h1 {
     height: 42px;
     cursor: pointer;
     border-radius: 20px;
-    margin-left: 35rem;
+    /* margin-left: 12rem; */
     /* margin-top: 50px; */
     align-items: center;
     border: none;
     background-color: rgb(208, 177, 244);
-    /* position: absolute;
-    left: 40rem; */
 }
 
 .getWeather:hover {
     background-color: rgb(249, 178, 249);
 }
 
+.error-message {
+    color: gray;
+    font-weight: bold;
+    margin-top: 2vh;
+}
+
 .Weather .name {
     font-size: 20pt;
     font-family: 'Courier New', Courier, monospace;
     color: rgb(255, 255, 255);
-
 }
 
 .Weather .dis {
     font-size: 20pt;
     color: rgb(255, 255, 255);
     font-family: 'Courier New', Courier, monospace;
-
 }
 
 .Weather .temp {
@@ -84,16 +100,21 @@ h1 {
 }
 
 
-.form-h{
+.form-h {
     width: 30rem;
     height: 8rem;
 }
-#search{
+
+#search {
     position: absolute;
     left: 5rem;
 }
 
-@media only screen and (max-width: 850px) {
+#search:hover {
+    box-shadow: 0px 0px 3px 3px pink;
+}
+
+/* @media only screen and (max-width: 850px) {
 
     .maincontainer{
         left: -2vw;
@@ -118,5 +139,6 @@ h1 {
     #search{
         left: 4vw;
     }
-  }
+  } */
+
   
