@@ -4,12 +4,19 @@ import reviews from "./data";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./Review.css";
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const Review = () => {
+  const renderNextButton = ({ isDisabled }) => {
+    return <ArrowForwardIosIcon className='slideR' style={{ position: "absolute"}} />
+  };
+  const renderPrevButton = ({ isDisabled }) => {
+    return <ArrowBackIosIcon className='slideL' style={{ position: "absolute" }} />
+  };
   const items = reviews.map((ele) => {
     return (
       <>
-      
       <div className="testimonial" key={ele.id}>
         <div className="img-wrapper">
           <img src={ele.image} alt="img" className="img" />
@@ -50,13 +57,10 @@ const Review = () => {
         responsive={responsive}
         items={items}
         autoPlay
-         autoPlayInterval={5000}
-         renderPrevButton={() => {
-          return <p className="right_arrow"><img width="48" height="48" src="https://img.icons8.com/color/48/circled-chevron-left--v1.png" alt="circled-chevron-left--v1"/></p>
-        }}
-        renderNextButton={() => {
-          return <p className="left_arrow"><img width="48" height="48" src="https://img.icons8.com/color/48/circled-chevron-right--v1.png" alt="circled-chevron-right--v1"/></p>
-        }} 
+        renderPrevButton={renderPrevButton}
+        renderNextButton={renderNextButton}
+       
+
       />
     </div>
   );
