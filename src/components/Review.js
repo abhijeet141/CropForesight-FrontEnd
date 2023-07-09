@@ -58,7 +58,7 @@ const Review = () => {
         items={items}
         autoPlay
         renderPrevButton={renderPrevButton}
-          renderNextButton={renderNextButton}
+        renderNextButton={renderNextButton}
        
 
       />
