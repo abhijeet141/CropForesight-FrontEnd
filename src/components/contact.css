@@ -139,12 +139,12 @@ https://github.com/abhijeet141/CropForesight-FrontEnd/pull/199/conflicts
     rgba(240, 46, 170, 0.3) 0px 2px 4px 0px;
 }
 
-/* button:hover {
+.form button:hover {
   color: purple;
   background-color: aliceblue;
-  box-shadow: 1px 1px 1px 1px purple;
   transition: background-color 0.5s ease;
-} */
+  transform: scale(1.1);
+}
 .wrapper {
   display: flex;
   align-items: center;
