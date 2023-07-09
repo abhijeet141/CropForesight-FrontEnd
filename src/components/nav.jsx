@@ -46,6 +46,40 @@ const NAV = () => {
       </nav>
       {showMenu && (
         <>
+
+            <nav>
+                <div>
+                    <Link to="/"><img src={logo} alt="logo" /></Link>
+                </div>
+                <div className='visibility-desktop'>
+                    <ul>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/about">About</Link></li>
+                        <li><Link to="/contact" >Contact</Link></li>
+                        <li><Link to="/faq" >FAQs</Link></li>
+                        <li><Link to="/Weather">Weather</Link></li>
+                        <li><Link to="/Contributor">Contributors</Link></li>
+                    </ul>
+                </div>
+                <div className='visibility-mobile' onClick={() => setShowMenu((prev) => !prev)}>
+                    <img src={menu} alt="" />
+                </div>
+            </nav>
+            {showMenu && (
+                <>
+                    <div className='mobile-nav'>
+                        <ul>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/about">About</Link></li>
+                            <li><Link to="/contact" >Contact</Link></li>
+                            <li><Link to="/faq" >FAQs</Link></li>
+                            <li><Link to="/Weather">Weather</Link></li>
+                            <li><Link to="/Contributor">Contributors</Link></li>
+                        </ul>
+                    </div>
+                </>
+            )}
+
           <div className="mobile-nav">
             <ul>
               <li>
@@ -65,6 +99,7 @@ const NAV = () => {
               </li>
             </ul>
           </div>
+
         </>
       )}
     </>
