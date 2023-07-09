@@ -13,7 +13,9 @@
 }
 
 .aboutMain h1 {
+  font-family: 'Poppins';
   font-weight: 600;
+  text-shadow: 0px 2px 0px rgb(91, 53, 126);
 }
 
 .about {
@@ -115,33 +117,47 @@ ul {
 }
 
 h3 {
-  font-weight: 300;
-  font-style: bold;
+  font-weight: 600;
   color: rgb(147, 102, 189);
 }
 
 .details{
   width: 100vw;
-  height: 45vh;
-  background: rgb(19, 2, 42);
+  height: 50vh;
   display: flex;
+  justify-content: space-around;
 }
 
 .d-col{
-  height: 40vh;
+  height:50vh;
   width: 30vw;
   justify-content: center;
+  background: rgb(19, 2, 42);
   margin: auto;
+}
+
+.title h2{
+  font-weight: 800;
+  color: rgb(147, 102, 189);
+  font-family: 'Poppins';
+  text-shadow: 0px 2px 0px rgb(91, 53, 126);
 }
 
 .title p{
   color: white;
-  font-size: 1.4em;
+  font-size: 1em;
 }
 
 .img-cont{
   display: flex;
   justify-content: center;
+}
+
+.d-col{
+  margin:5px;
+  max-height: fit-content;
+  overflow: hidden;
+  text-align: justify;
 }
 
 .d-col img{
@@ -260,6 +276,7 @@ p {
   ===============
   */
 main {
+  margin-top: 10%;
   min-height: 20vh;
   display: grid;
   place-items: center;

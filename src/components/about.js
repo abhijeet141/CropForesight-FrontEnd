@@ -1,17 +1,14 @@
 import React from "react";
-import "./about.css";
-import "./nav.css";
-import image1 from "../assets/image1.png";
-import image2 from "../assets/image2.png";
-import image3 from "../assets/image3.png";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import logo from "../assets/earth.webp";
+import logo from "../assets/logo.png";
 import aboutPic from "../assets/about.webp";
+import "slick-carousel/slick/slick.css";
 import Review from "./Review";
+import "./about.css";
 import NAVBAR from "./nav";
+import "./nav.css";
 
 const About = () => {
   const navigate = useNavigate();
@@ -52,20 +49,6 @@ const About = () => {
               <li>&#9830; User-friendly interface </li>
               <li>
                 &#9830;Efficient ML model leveraging Gaussian Naïve Bayes
-                algorithm.
-              </li>
-              <li>
-                &#9830; Scalable backend powered by FastAPI for quick data
-                processing.
-              </li>
-            </ul>
-
-            <ul className="feature">
-              <h3>🌾 Salient Features</h3>
-              <li>&#9830;Intelligent crop recommendation</li>
-              <li> &#9830; User-friendly interface </li>
-              <li>
-                &#9830; Efficient ML model leveraging Gaussian Naïve Bayes
                 algorithm.
               </li>
               <li>
@@ -138,7 +121,7 @@ const About = () => {
             />
           </div>
           <div className="title">
-            <h2>TECHNOLOGY</h2>
+            <h2>Technology</h2>
             <p>
               Using data science to forecast agronomic and financial crop
               outcomes and automate data collection.{" "}

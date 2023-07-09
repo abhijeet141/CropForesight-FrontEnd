@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom';
 import './faq.css';
 import "../nav.css";
-import logo from "../../assets/earth.webp";
+import logo from "../../assets/logo.png";
 import faq from "../../assets/faq.webp";
 import NAV from '../nav';
 

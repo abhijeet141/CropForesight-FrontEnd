@@ -4,10 +4,10 @@ import "./nav.css";
 import { useNavigate, Link, useHref } from "react-router-dom";
 import swal from "sweetalert";
 import NAVBAR from "./nav";
-import logo from '../assets/earth.webp';
 import { AiFillTwitterCircle, AiFillInstagram, AiFillGithub, AiFillMail } from "react-icons/ai";
 import { FaUserAlt  } from "react-icons/fa";
 import { BsFillChatRightTextFill } from "react-icons/bs";
+import logo from '../assets/logo.png';
 
 const Typewriter = ({ sentences, delay }) => {
   const [displayText, setDisplayText] = useState("");
