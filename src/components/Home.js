@@ -5,7 +5,7 @@ import "./Home.css";
 import "./nav.css";
 import NAVBAR from "./nav";
 import Contact from "./contact";
-import logo from '../assets/earth.webp';
+import logo from '../assets/logo.png';
 
 const Typewriter = ({ sentences, delay }) => {
   const [displayText, setDisplayText] = useState("");

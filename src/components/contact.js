@@ -4,7 +4,7 @@ import "./nav.css";
 import { useNavigate, Link, useHref } from "react-router-dom";
 import swal from "sweetalert";
 import NAVBAR from "./nav";
-import logo from '../assets/earth.webp';
+import logo from '../assets/logo.png';
 import validate from "../common/validation";
 
 const Typewriter = ({ sentences, delay }) => {
@@ -116,7 +116,7 @@ const Contact = () => {
     <div>
       {/* nav bar */}
       <NAVBAR />
-      <h1 className="contact">Contact US</h1>
+      <h1 className="contact">Contact Us</h1>
 
       <h3 className="tag">
         <Typewriter sentences={sentences} delay={2000} />

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/earth.webp";
+import logo from "../assets/logo.png";
 import menu from "../assets/menu-icon.webp";
 import "./nav.css";
 
@@ -12,7 +12,7 @@ const NAV = () => {
       <nav>
         <div>
           <Link to="/">
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="logo" style={{width: "200px", height: "45px", marginTop: "7px"}} />
           </Link>
         </div>
         <div className="visibility-desktop">
