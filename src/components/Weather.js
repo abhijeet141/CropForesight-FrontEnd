@@ -53,7 +53,14 @@ export const Weather = () => {
             {errorMessage && <p className="error-message">{errorMessage}</p>}
             {weatherData && (
                 <div className='Weather'>
-
+                    <p className="name">{weatherData.name}</p>
+                    <img src='https://openweathermap.org/img/wn/.png' alt="" ></img>
+                    <p className="dis">{weatherData.weather[0].description}</p>
+                    <p className="temp">temp: {weatherData.main.temp}°c</p>
+                    <p className="temp_min">min temp:{weatherData.main.temp_min}°c</p>
+                    <p className="temp_max">max temp:{weatherData.main.temp_max}°c</p>
+                    <p className="humidity">Humidity:{weatherData.main.humidity}%</p>
+                    <p className="wind_speed">wind speed:{weatherData.wind.speed}km/h</p>
                     <p className='name'>{weatherData.name}</p>
                     <p className='dis'>{weatherData.weather[0].description}</p>
                     <p className='temp'>{(weatherData.main.temp-273.15).toFixed(2)}°C</p>
@@ -66,7 +73,6 @@ export const Weather = () => {
             )}
             </div>
         </div>
-
     )
 }
 export default Weather;
