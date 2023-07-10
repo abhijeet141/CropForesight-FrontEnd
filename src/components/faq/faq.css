@@ -7,10 +7,12 @@
     margin-bottom: 50px;
 }
 .faq-heading{
+  font-family: 'Poppins';
+  text-align: center;
+  font-size: 60px;
+  font-weight: 600;
+  text-shadow: 0px 2px 0px rgb(91, 53, 126);
   color: rgb(147, 102, 189);
-    font-size: 50px;
-    text-align: center;
-    font-family: 'Londrina Solid', cursive;
 }
 .faq-main{
     margin-top: 50px;
@@ -29,10 +31,11 @@
 }
 .rightSide{
   flex: 65;
-    margin-right: 50px;
-    margin-left: 50px;
-    font-size: 20px;
-    text-align: center;
+  font-family: 'Poppins';
+  margin-right: 50px;
+  margin-left: 50px;
+  font-size: 20px;
+  text-align: center;
     /* font-family: 'Londrina Solid', cursive; */
 }
 
@@ -122,8 +125,8 @@
   
   .accordion button .accordion-title {
     padding: 1em 1.5em 1em 0;
-    font-size: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-size: 20px; 
+    font-family: 'Poppins';
   }
   
   .accordion button .icon {
@@ -187,8 +190,10 @@
   .accordion .accordion-content p {
     font-size:16px;
     font-weight: 300;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins';
     margin: 1.6em 0;
+    color: #fff;
+    opacity: 0.6;
   }
   
   @media (max-width: 750px) {
@@ -219,4 +224,23 @@
         line-height: 60px;
     }
     
+  }
+
+  @media screen and (max-width: 576px) {
+    .accordion .accordion-item {
+      margin: 10px auto;
+    }
+  }
+    @media (min-width: 769px) and (max-width: 999px) {
+    .accordion button {
+      margin: 1em auto;
+    }
+    .accordion button[aria-expanded='true'] + .accordion-content p {
+      margin: 0 auto 1.6em auto;
+    }
+  }
+  @media screen and (min-width: 769px) {
+    .accordion .accordion-item button[aria-expanded='true'] {
+      padding: 2.5em 0;
+    }
   }

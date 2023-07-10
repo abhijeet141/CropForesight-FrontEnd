@@ -1,103 +1,140 @@
-body,html{
-    width: 100%;
-    height: 100%;
-
+body,
+html {
+  width: 100%;
+  height: 100%;
 }
 label {
   color: white;
 }
-.tag{
-    position: absolute;
-    left: 20vw;
-    top: 40vh;
-    font-size: 2rem;
-    color: rgb(179, 141, 215);
-}
-.form {
-    /* margin-left: 30px; */
-    position: absolute;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 10px;
-    width: 350px;
-    background-color: white;
-    /* padding: 20px 10px 20px 9px; */
-    border-radius: 10px;
-    box-shadow: 0 30px 30px -30px rgba(27, 26, 26, 0.315);
-    left: 65vw;
-    bottom: 5vh;
-  }
-  
-  .form .title {
-    color: royalblue;
-    font-size: 30px;
-    font-weight: 600;
-    letter-spacing: -1px;
-    line-height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .form input {
-    outline: 0;
-    border: 1px solid rgb(219, 213, 213);
-    padding: 8px 14px;
-    border-radius: 8px;
-    width: 100%;
-    height: 40px;
-    width: 270px;
-  }
-  
-  .form textarea {
-    border-radius: 8px;
-    height: 100px;
-    width: 100%;
-    resize: none;
-    outline: 0;
-    padding: 8px 14px;
-    width: 300px;
-    border: 1px solid rgb(219, 213, 213);
-  }
-  
-  .form button {
-    align-self: flex-end;
-    padding: 8px;
-    outline: 0;
-    border: 0;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 500;
-    background-color: rgb(147, 102, 189);
-    color: #fff;
-    cursor: pointer;
-    /* margin-left: -9px; */
-  }
-.contact{
-    font-weight: 300;
-    position: absolute;
-    top: 100px;
-    left: 35vw;
 
-    color: rgb(147, 102, 189);
+.form {
+  box-shadow: rgba(240, 46, 170, 0.4) 0px 12px 28px 0px,
+    rgba(240, 46, 170, 0.3) 0px 2px 4px 0px,
+    rgba(240, 46, 170, 0.2) 0px 0px 0px 1px inset;
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  width: 450px;
+  height: 480px;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 230px;
+  left: 35vw;
+  bottom: 5vh;
+  top: 30px;
+  padding-bottom: 70px;
 }
-.glass{
-  background: linear-gradient(135deg,rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0.242));
+
+.form .title {
+  color: royalblue;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form input {
+  outline: 0;
+  border: 1px solid rgb(219, 213, 213);
+  padding: 8px 14px;
+  border-radius: 8px;
+  width: 100%;
+  height: 40px;
+  width: 270px;
+}
+
+.form textarea {
+  border-radius: 8px;
+  height: 100px;
+  width: 100%;
+  resize: none;
+  outline: 0;
+  margin-top: 10px;
+  padding: 10px 14px;
+  width: 300px;
+  border: 1px solid rgb(219, 213, 213);
+}
+
+.form button {
+  padding: 8px;
+  outline: 0;
+  border: 0;
+  border-radius: 8px;
+  width: 300px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: rgb(147, 102, 189);
+  color: #fff;
+  cursor: pointer;
+  transition: 2s all ease;
+}
+.form button:hover {
+  transform: translateY(5px);
+  box-shadow: rgba(240, 46, 170, 0.4) 0px 12px 28px 0px,
+    rgba(240, 46, 170, 0.3) 0px 2px 4px 0px;
+}
+
+/* button:hover {
+  color: purple;
+  background-color: aliceblue;
+  box-shadow: 1px 1px 1px 1px purple;
+  transition: background-color 0.5s ease;
+} */
+
+.btn:hover {
+  color: purple;
+  background-color: aliceblue;
+  box-shadow: 1px 1px 1px 1px purple;
+  transition: background-color 0.5s ease;
+}
+
+.contact {
+  font-weight: bold;
+  font-family: 'Poppins';
+  position: absolute;
+  top: 100px;
+  left: 38vw;
+  font-size: 60px;
+  font-weight: 600;
+  text-shadow: 0px 2px 0px rgb(91, 53, 126);
+  color: rgb(167, 116, 214);
+  margin-bottom: 20px;
+}
+.tag {
+  font-family: 'Poppins';
+  position: absolute;
+  top: 190px;
+  left: 38vw;
+  text-align: center;
+  font-size:20px;
+  color: rgb(167, 116, 214);
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+.glass {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.242)
+  );
   backdrop-filter: blur(100px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.18);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   align-items: center;
 }
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 
-.wrapper{
+.wrapper {
   display: inline-flex;
-  position: absolute;
-  bottom: 15vh;
-  left: 17vw;
+  margin-top: 20px;
+  left: 2vw;
 }
-.wrapper .icon{
+.wrapper .icon {
   margin: 0 20px;
   text-align: center;
   cursor: pointer;
@@ -109,7 +146,7 @@ label {
   z-index: 2;
   transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-.wrapper .icon span{
+.wrapper .icon span {
   display: block;
   height: 60px;
   width: 60px;
@@ -117,16 +154,15 @@ label {
   border-radius: 50%;
   position: relative;
   z-index: 2;
-  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
   transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-.wrapper .icon span i{
+.wrapper .icon span i {
   line-height: 60px;
   font-size: 25px;
   color: white;
-
 }
-.wrapper .icon .tooltip{
+.wrapper .icon .tooltip {
   position: absolute;
   top: 0;
   z-index: 1;
@@ -138,15 +174,15 @@ label {
   border-radius: 25px;
   opacity: 0;
   pointer-events: none;
-  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
   transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-.wrapper .icon:hover .tooltip{
+.wrapper .icon:hover .tooltip {
   top: -70px;
   opacity: 1;
   pointer-events: auto;
 }
-.icon .tooltip:before{
+.icon .tooltip:before {
   position: absolute;
   content: "";
   height: 15px;
@@ -157,90 +193,87 @@ label {
   transform: translateX(-50%) rotate(45deg);
   transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-.wrapper .icon:hover span{
+.wrapper .icon:hover span {
   color: #fff;
 }
 .wrapper .icon:hover span,
-.wrapper .icon:hover .tooltip{
-  text-shadow: 0px -1px 0px rgba(0,0,0,0.4);
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.4);
 }
 .wrapper .facebook:hover span,
 .wrapper .facebook:hover .tooltip,
-.wrapper .facebook:hover .tooltip:before{
-  background: #3B5999;
+.wrapper .facebook:hover .tooltip:before {
+  background: #3b5999;
 }
 .wrapper .twitter:hover span,
 .wrapper .twitter:hover .tooltip,
-.wrapper .twitter:hover .tooltip:before{
-  background: #46C1F6;
+.wrapper .twitter:hover .tooltip:before {
+  background: #46c1f6;
 }
 .wrapper .instagram:hover span,
 .wrapper .instagram:hover .tooltip,
-.wrapper .instagram:hover .tooltip:before{
+.wrapper .instagram:hover .tooltip:before {
   background: #e1306c;
 }
 .wrapper .github:hover span,
 .wrapper .github:hover .tooltip,
-.wrapper .github:hover .tooltip:before{
+.wrapper .github:hover .tooltip:before {
   background: #333;
 }
 .wrapper .youtube:hover span,
 .wrapper .youtube:hover .tooltip,
-.wrapper .youtube:hover .tooltip:before{
-  background: #DE463B;
+.wrapper .youtube:hover .tooltip:before {
+  background: #de463b;
 }
 .wrapper .email:hover span,
 .wrapper .email:hover .tooltip,
-.wrapper .email:hover .tooltip:before{
+.wrapper .email:hover .tooltip:before {
   background: #4678f6;
 }
-.wrapper span{
+.wrapper span {
   text-decoration: none;
 }
-@media only screen and (max-width: 850px){
-
-  img {
+@media only screen and (max-width: 850px) {
+  /* img {
     position: absolute;
     left: 1rem;
     top: 0rem;
-}
+} */
 
-  .form{
+  .form {
     width: 315px;
     height: 445px;
     position: absolute;
     left: 8vw;
     top: 200px;
   }
-  .wrapper{
+  .wrapper {
     margin: 0;
     position: absolute;
     left: 15px;
     top: 750px;
   }
-  .wrapper .icon{
+  .wrapper .icon {
     margin: 0 10px;
   }
 
-  .form button{
+  .form button {
     width: 15rem;
     position: absolute;
     bottom: 1rem;
     left: 2rem;
   }
-  .form textarea{
+  .form textarea {
     width: 300px;
   }
-  .tag{
+  .tag {
     top: 10rem;
     left: 2rem;
     font-size: 1.5rem;
   }
 
-  .contact{
+  .contact {
     font-size: 2rem;
     left: 20vw;
-
   }
-
 }
