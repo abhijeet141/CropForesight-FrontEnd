@@ -23,12 +23,13 @@ h1 {
 
 .Weather {
     text-align: center;
-    /* margin-left: 620px; */
-    /* margin-top: 30px; */
+    /* margin-left: 30px;
+    margin-right: 100px; */
+    margin-top: 30px; 
     height: 200px;
     width: 200px;
     position: absolute;
-    top: 25rem;
+    top: 22rem;
     left: 7rem;
 
 }
@@ -58,21 +59,41 @@ h1 {
 }
 
 .Weather .name {
-    font-size: 20pt;
+    font-size: 15pt;
     font-family: 'Courier New', Courier, monospace;
     color: rgb(255, 255, 255);
 
 }
 
 .Weather .dis {
-    font-size: 20pt;
+    font-size: 15pt;
     color: rgb(255, 255, 255);
     font-family: 'Courier New', Courier, monospace;
 
 }
 
 .Weather .temp {
-    font-size: 20pt;
+    font-size: 15pt;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(255, 255, 255);
+}
+.Weather .humidity {
+    font-size: 15pt;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(255, 255, 255);
+}
+.Weather .temp_min {
+    font-size: 15pt;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(255, 255, 255);
+}
+.Weather .temp_max {
+    font-size: 15pt;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(255, 255, 255);
+}
+.Weather .wind_speed {
+    font-size: 15pt;
     font-family: 'Courier New', Courier, monospace;
     color: rgb(255, 255, 255);
 }

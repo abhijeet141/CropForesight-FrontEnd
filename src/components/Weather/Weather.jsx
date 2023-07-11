@@ -35,12 +35,12 @@ export const Weather = () => {
       {weatherData && (
         <div className="Weather">
           <p className="name">{weatherData.name}</p>
-          <p className="dis">{weatherData.weather.icon}+{weatherData.weather[0].description}</p>
-          <p className="temp">{weatherData.main.temp}</p>
-          <p className="humidity">{weatherData.main.humidity}</p>
-          <p className="temp_min">{weatherData.main.temp_min}</p>
-          <p className="temp_max">{weatherData.main.temp_max}</p>
-          <p className="wind_speed">{weatherData.wind.speed}</p>
+          <p className="dis">{weatherData.weather.icon}{weatherData.weather[0].description}</p>
+          <p className="temp">temp: {weatherData.main.temp}</p>
+          <p className="temp_min">min temp: {weatherData.main.temp_min}</p>
+          <p className="temp_max">max temp: {weatherData.main.temp_max}</p>
+          <p className="humidity">Humidity: {weatherData.main.humidity}</p>
+          <p className="wind_speed">wind speed: {weatherData.wind.speed}</p>
         </div>
       )}
     </div>
