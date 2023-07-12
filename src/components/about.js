@@ -10,7 +10,7 @@ import "./about.css";
 import NAVBAR from "./nav";
 import "./nav.css";
 
-const About = () => {
+const About = ({mode,setmode}) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -25,15 +25,15 @@ const About = () => {
     slidesToScroll: 1,
   };
   return (
-    <>
+    <div className={mode === 'light' ? "bg-white" : "bg-bluee"}>
       {/* nav bar */}
-      <NAVBAR />
+      <NAVBAR mode={mode} setmode={setmode} />
       {/* main section */}
-      <div className="aboutMain">
+      <div className={`aboutMain ${mode === 'light' ? "bg-white" : "bg-bluee"}`}>
         <h1 className="about">🌾 What Is CropForesight❔ </h1>
         <div className="content">
           <div className="left">
-            <p>
+            <p className={mode === 'light' ? "text-black	" : "text-white"}>
               CropForesight is a powerful crop recommendation website that helps
               farmers and agriculture enthusiasts make informed decisions about
               the best crop to cultivate on a given land. By utilizing machine
@@ -43,7 +43,7 @@ const About = () => {
               choice, maximizing productivity and yield.
             </p>
 
-            <ul className="feature">
+            <ul className={`feature ${mode === 'light' ? "text-black	" : "text-white"}`}>
               <h3>🌾 Salient Features</h3>
               <li>&#9830; Intelligent crop recommendation</li>
               <li>&#9830; User-friendly interface </li>
@@ -155,7 +155,7 @@ const About = () => {
           <Review />
         </section>
       </main>
-    </>
+    </div>
   );
 };
 

@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import video from "../assets/nature.mp4";
 import "./Home.css";
 import "./nav.css";
-import NAVBAR from "./nav";
+import Nav from "./nav";
 import Contact from "./contact";
 import logo from '../assets/logo.png';
 
@@ -36,7 +36,8 @@ const Typewriter = ({ sentences, delay }) => {
   return <span>{displayText}</span>;
 };
 
-const Home = () => {
+const Home = (props) => {
+  const {mode,setmode} = props;
   const navigate = useNavigate();
   const [showButton, setShowButton] = useState(false);
   const sentences = [
@@ -46,8 +47,8 @@ const Home = () => {
 
   return (
     <>
-      <div className="main">
-        <NAVBAR />
+      <div className={`main ${mode === 'dark' && "bg-zinc-50	"}`}>
+        <Nav mode={mode} setmode={setmode}/>
         <video src={video} autoPlay loop muted />
 
         {/* <div className="card glass">
@@ -68,8 +69,9 @@ const Home = () => {
         </button>
       </div> */}
 
-        <div className="card glass">
-          <button className="button-1" onClick={() => navigate("/form")}>
+        <div 
+          className={`card border-4  ${mode === 'light' ? "" : "text-black border-indigo-700"}`}>
+          <button className={`button-1 ${mode === 'light' ? ""  : "text-black "}`} onClick={() => navigate("/form")}>
             PREDICT YOUR CROP
           </button>
           <p className="para">
