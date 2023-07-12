@@ -1,0 +1,49 @@
+.main {
+  background-color: rgb(0, 0, 40);
+}
+
+.contributor-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  row-gap: 2rem;
+  font-family: serif;
+}
+
+.content {
+  width: 25%;
+  padding: 20px;
+  color: "#fff";
+  border: 1px solid white;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 20px 25px -5px rgb(15 23 42), 0 8px 10px -6px rgb(15 23 42);
+}
+
+.content-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content img {
+  width: 50%;
+  border-radius: 50%;
+}
+
+.content button {
+  height: 40px;
+}
+
+.content:hover {
+  scale: 1.02;
+  transition: ease-in-out;
+}
+
+@media only screen and (max-width: 800px) {
+  .content {
+    width: 80%;
+  }
+}

@@ -1,22 +1,22 @@
 import axios from "axios";
-import { useState } from "react";
-import "./App.css";
-import FormInfo from "./components/FormInfo";
-import { ExampleCrop } from "./components/ExampleOfCrop/ExampleCrop";
+import { Suspense, lazy, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import swal from "sweetalert";
-import {lazy, Suspense} from 'react'
+import "./App.css";
+import { ExampleCrop } from "./components/ExampleOfCrop/ExampleCrop";
+import FormInfo from "./components/FormInfo";
 import "./components/nav.css";
 
 import GoToTop from "./GoToTop/GoToTop";
+import Contributor from "./components/Contributor";
 import Loading from './components/Loading';
 
-const Home=lazy(()=>import('./components/Home'))
-const Weather=lazy(()=>import('./components/Weather'))
-const About=lazy(()=>import('./components/about'))
-const Contact=lazy(()=>import('./components/contact'))
-const FAQ=lazy(()=>import('./components/faq/faq'))
-const Err=lazy(()=>import('./components/404'))
+const Home = lazy(() => import('./components/Home'))
+const Weather = lazy(() => import('./components/Weather'))
+const About = lazy(() => import('./components/about'))
+const Contact = lazy(() => import('./components/contact'))
+const FAQ = lazy(() => import('./components/faq/faq'))
+const Err = lazy(() => import('./components/404'))
 
 function App() {
   const [values, setValues] = useState({
@@ -88,7 +88,7 @@ function App() {
       <div className="body">
         <form onSubmit={handleSubmit}>
           <h1 className='title'>Crop Recomendation</h1>
-          {error && (<p style={{color:"red"}}>{error}</p>)}
+          {error && (<p style={{ color: "red" }}>{error}</p>)}
           {inputs.map((input) => (
             <FormInfo key={input.id} {...input} value={values[input.name]} onChange={onChange}
             />
@@ -99,35 +99,27 @@ function App() {
   }
 
   const [error, seterror] = useState("");
- 
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-   // console.log("function called");
+    // console.log("function called");
     setLoading(true)
 
-    if(values.nitrogen === '')
-    { seterror("*Nitrogen is Required!");}
-    else if(values.phosphorus === '')
-    { seterror("*Phosphorus is Required!");}
-    else if(values.potassium === '')
-    { seterror("*Potassium is Required!");}
-    else if(values.temperature === '')
-    { seterror("*Temperature is Required!");}
-    else if(values.humidity === '')
-    { seterror("*Humidity is Required!");}
-    else if(values.ph === '')
-    { seterror("*Ph is Required!");}
-    else if(values.rainfall === '')
-    { seterror("*Rainfall is Required!");}
-    else
-    {
+    if (values.nitrogen === '') { seterror("*Nitrogen is Required!"); }
+    else if (values.phosphorus === '') { seterror("*Phosphorus is Required!"); }
+    else if (values.potassium === '') { seterror("*Potassium is Required!"); }
+    else if (values.temperature === '') { seterror("*Temperature is Required!"); }
+    else if (values.humidity === '') { seterror("*Humidity is Required!"); }
+    else if (values.ph === '') { seterror("*Ph is Required!"); }
+    else if (values.rainfall === '') { seterror("*Rainfall is Required!"); }
+    else {
       const { data } = await axios.post(`https://cropforesight-backend.onrender.com/predict`, { nitrogen: Number(values.nitrogen), phosphorus: Number(values.phosphorus), potassium: Number(values.potassium), temperature: Number(values.temperature), humidity: Number(values.humidity), ph: Number(values.ph), rainfall: Number(values.rainfall) })
       setLoading(false)
       seterror("");
-      values.nitrogen='';values.phosphorus='';values.potassium='';values.temperature='';values.humidity='';values.ph='';values.rainfall='';
+      values.nitrogen = ''; values.phosphorus = ''; values.potassium = ''; values.temperature = ''; values.humidity = ''; values.ph = ''; values.rainfall = '';
       swal("Success", `You should plant ${data.result} in your field`, "success");
-    }     
+    }
   }
   const onChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
@@ -143,10 +135,10 @@ function App() {
   }
 
   return (
-      <>
-        <GoToTop />
-        <BrowserRouter>
-          <Suspense fallback={<Loading/>}>
+    <>
+      <GoToTop />
+      <BrowserRouter>
+        <Suspense fallback={<Loading />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/form" element={FormComponet()} />
@@ -156,10 +148,11 @@ function App() {
             <Route path="/Weather" element={<Weather />} />
             <Route path="/*" element={<Err />} />
             <Route path="/ExampleCrop" element={<ExampleCrop />} />
+            <Route path="/contributors" element={<Contributor />} />
           </Routes>
-          </Suspense>
-        </BrowserRouter>
-      </>
+        </Suspense>
+      </BrowserRouter>
+    </>
   );
 }
 
