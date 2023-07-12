@@ -1,121 +1,131 @@
 input {
-    padding: 1rem;
-    border-radius: 25px;
-    border: none;
-    display: flex;
-    background-color: #fff;
-    font-family: inherit;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    min-width: 300px;
-    font-size: 1rem;
+  padding: 1rem;
+  border-radius: 25px;
+  border: none;
+  display: flex;
+  background-color: #fff;
+  font-family: inherit;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  min-width: 300px;
+  font-size: 1rem;
 }
 
 input:focus {
-    outline: none;
+  outline: none;
 }
 
 h1 {
-    font-family: 'Poppins';
-    font-size: 60px;
-    font-weight: 600;
-    color: rgb(167, 116, 214);
-    text-shadow: 0px 2px 0px rgb(91, 53, 126);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: "Poppins";
+  font-size: 60px;
+  font-weight: 600;
+  color: rgb(167, 116, 214);
+  text-shadow: 0px 2px 0px rgb(91, 53, 126);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Weather {
-    /* margin-left: 620px; */
-    /* margin-top: 30px; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 200px;
-    width: 80%;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 5px;
-    /* position: absolute;
+  /* margin-left: 620px; */
+  /* margin-top: 30px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 170px;
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  /* position: absolute;
     top: 25rem;
     left: 7rem; */
 }
 
 #weather-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.maincontainer{
-        background-color: #f1f1f1;
-        background-image: linear-gradient(to bottom right, #180356, #64089a);
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        margin: 0;
-        padding-top: 75px;
-        left: 0vw;
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.maincontainer {
+  background-color: #f1f1f1;
+  background-image: linear-gradient(to bottom right, #180356, #64089a);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding-top: 75px;
+  left: 0vw;
 }
 
 .getWeather {
-    width: 150px;
-    height: 42px;
-    cursor: pointer;
-    border-radius: 20px;
-    /* margin-left: 12rem; */
-    /* margin-top: 50px; */
-    align-items: center;
-    border: none;
-    background-color: rgb(208, 177, 244);
+  width: 150px;
+  height: 42px;
+  cursor: pointer;
+  border-radius: 20px;
+  /* margin-left: 12rem; */
+  /* margin-top: 50px; */
+  align-items: center;
+  border: none;
+  background-color: rgb(208, 177, 244);
 }
 
 .getWeather:hover {
-    background-color: rgb(249, 178, 249);
+  background-color: rgb(249, 178, 249);
 }
 
 .error-message {
-    color: gray;
-    font-weight: bold;
-    margin-top: 2vh;
+  color: gray;
+  font-weight: bold;
+  margin-top: 2vh;
 }
 
 .Weather .name {
-    font-size: 20pt;
-    font-family: 'Courier New', Courier, monospace;
-    color: rgb(255, 255, 255);
+  font-size: 20pt;
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(255, 255, 255);
 }
 
 .Weather .dis {
-    font-size: 20pt;
-    color: rgb(255, 255, 255);
-    font-family: 'Courier New', Courier, monospace;
+  font-size: 20pt;
+  color: rgb(255, 255, 255);
+  font-family: "Courier New", Courier, monospace;
 }
 
 .Weather .temp {
-    font-size: 20pt;
-    font-family: 'Courier New', Courier, monospace;
-    color: rgb(255, 255, 255);
+  font-size: 20pt;
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(255, 255, 255);
 }
-
 
 .form-h {
-    width: 30rem;
-    height: 8rem;
+  /* width: 30rem;
+  height: 8rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-#search {
-    position: absolute;
-    left: 5rem;
-}
+/* #search {
+  position: absolute;
+  left: 5rem;
+} */
 
 #search:hover {
-    box-shadow: 0px 0px 3px 3px pink;
+  box-shadow: 0px 0px 3px 3px pink;
 }
 
 /* @media only screen and (max-width: 850px) {
@@ -144,5 +154,3 @@ h1 {
         left: 4vw;
     }
   } */
-
-  
