@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
 body,
 html {
   width: 100%;
@@ -7,35 +9,82 @@ label {
   color: white;
 }
 
-.form {
-  box-shadow: rgba(240, 46, 170, 0.4) 0px 12px 28px 0px,
-    rgba(240, 46, 170, 0.3) 0px 2px 4px 0px,
-    rgba(240, 46, 170, 0.2) 0px 0px 0px 1px inset;
-  position: absolute;
+.contactUsContainer {
+  padding: 20px;
   display: flex;
-  align-items: flex-start;
   flex-direction: column;
-  gap: 10px;
-  width: 450px;
-  height: 480px;
-  background-color: white;
-  border-radius: 10px;
-  margin-top: 230px;
-  left: 35vw;
-  bottom: 5vh;
-  top: 30px;
-  padding-bottom: 70px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
 }
 
-.form .title {
-  color: royalblue;
-  font-size: 30px;
-  font-weight: 600;
-  letter-spacing: -1px;
-  line-height: 30px;
+.contactUs {
+  border-radius: 10px;
+  width: 70%;
+  padding: 25px;
+  background-color: rgb(167, 116, 214);
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.leftContact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+  flex-direction: column;
+}
+
+.contact {
+  font-weight: bold;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 60px;
+  text-shadow: 0 0 0 4px plum;
+  color: cyan;
+  margin-bottom: 20px;
+}
+
+.tag {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  position: absolute;
+  top: 280px;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  width: 50%;
+  height: 450px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
 .form input {
@@ -45,7 +94,19 @@ label {
   border-radius: 8px;
   width: 100%;
   height: 40px;
-  width: 270px;
+  width: 300px;
+}
+
+.text-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.icon {
+  color: cyan;
+  cursor: pointer;
 }
 
 .form textarea {
@@ -61,11 +122,8 @@ label {
 }
 
 .form button {
-  padding: 8px;
-  outline: 0;
-  border: 0;
   border-radius: 8px;
-  width: 300px;
+  width: 340px;
   font-size: 16px;
   font-weight: 500;
   background-color: rgb(147, 102, 189);
@@ -74,165 +132,62 @@ label {
   transition: 2s all ease;
 }
 .form button:hover {
-  transform: translateY(5px);
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
   box-shadow: rgba(240, 46, 170, 0.4) 0px 12px 28px 0px,
     rgba(240, 46, 170, 0.3) 0px 2px 4px 0px;
 }
 
-/* button:hover {
+.form button:hover {
   color: purple;
   background-color: aliceblue;
-  box-shadow: 1px 1px 1px 1px purple;
   transition: background-color 0.5s ease;
-} */
-
-.btn:hover {
-  color: purple;
-  background-color: aliceblue;
-  box-shadow: 1px 1px 1px 1px purple;
-  transition: background-color 0.5s ease;
+  transform: scale(1.1);
 }
-
-.contact {
-  font-weight: bold;
-  font-family: 'Poppins';
-  position: absolute;
-  top: 100px;
-  left: 38vw;
-  font-size: 60px;
-  font-weight: 600;
-  text-shadow: 0px 2px 0px rgb(91, 53, 126);
-  color: rgb(167, 116, 214);
-  margin-bottom: 20px;
-}
-.tag {
-  font-family: 'Poppins';
-  position: absolute;
-  top: 190px;
-  left: 38vw;
-  text-align: center;
-  font-size:20px;
-  color: rgb(167, 116, 214);
-  margin-bottom: 20px;
-  letter-spacing: 2px;
-}
-.glass {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0.242)
-  );
-  backdrop-filter: blur(100px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  align-items: center;
-}
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
-
 .wrapper {
-  display: inline-flex;
-  margin-top: 20px;
-  left: 2vw;
-}
-.wrapper .icon {
-  margin: 0 20px;
-  text-align: center;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  position: relative;
-  z-index: 2;
-  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  gap: 30px;
 }
-.wrapper .icon span {
-  display: block;
-  height: 60px;
-  width: 60px;
-  background: rgb(147, 102, 189);
-  border-radius: 50%;
-  position: relative;
-  z-index: 2;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
-  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-.wrapper .icon span i {
-  line-height: 60px;
-  font-size: 25px;
+
+.twitter {
   color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
-.wrapper .icon .tooltip {
-  position: absolute;
-  top: 0;
-  z-index: 1;
-  background: #fff;
-  color: #fff;
-  padding: 10px 18px;
-  font-size: 20px;
-  font-weight: 500;
-  border-radius: 25px;
-  opacity: 0;
-  pointer-events: none;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
-  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+.twitter:hover {
+  color: #1da1f2;
+  transform: scale(1.2);
 }
-.wrapper .icon:hover .tooltip {
-  top: -70px;
-  opacity: 1;
-  pointer-events: auto;
+
+.mail {
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
-.icon .tooltip:before {
-  position: absolute;
-  content: "";
-  height: 15px;
-  width: 10px;
-  background: #fff;
-  left: 50%;
-  bottom: -6px;
-  transform: translateX(-50%) rotate(45deg);
-  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+.mail:hover {
+  color: purple;
+  transform: scale(1.2);
 }
-.wrapper .icon:hover span {
-  color: #fff;
+
+.github {
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
-.wrapper .icon:hover span,
-.wrapper .icon:hover .tooltip {
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.4);
+
+.github:hover {
+  color: black;
+  transform: scale(1.2);
 }
-.wrapper .facebook:hover span,
-.wrapper .facebook:hover .tooltip,
-.wrapper .facebook:hover .tooltip:before {
-  background: #3b5999;
+
+.wrapper-md {
+  visibility: hidden;
 }
-.wrapper .twitter:hover span,
-.wrapper .twitter:hover .tooltip,
-.wrapper .twitter:hover .tooltip:before {
-  background: #46c1f6;
-}
-.wrapper .instagram:hover span,
-.wrapper .instagram:hover .tooltip,
-.wrapper .instagram:hover .tooltip:before {
-  background: #e1306c;
-}
-.wrapper .github:hover span,
-.wrapper .github:hover .tooltip,
-.wrapper .github:hover .tooltip:before {
-  background: #333;
-}
-.wrapper .youtube:hover span,
-.wrapper .youtube:hover .tooltip,
-.wrapper .youtube:hover .tooltip:before {
-  background: #de463b;
-}
-.wrapper .email:hover span,
-.wrapper .email:hover .tooltip,
-.wrapper .email:hover .tooltip:before {
-  background: #4678f6;
-}
-.wrapper span {
-  text-decoration: none;
-}
+
 @media only screen and (max-width: 850px) {
   /* img {
     position: absolute;
@@ -241,27 +196,24 @@ label {
 } */
 
   .form {
-    width: 315px;
-    height: 445px;
-    position: absolute;
-    left: 8vw;
-    top: 200px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+
   }
-  .wrapper {
-    margin: 0;
-    position: absolute;
-    left: 15px;
-    top: 750px;
-  }
-  .wrapper .icon {
-    margin: 0 10px;
+
+  .wrapper-md {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .form button {
-    width: 15rem;
-    position: absolute;
-    bottom: 1rem;
-    left: 2rem;
+    width: 300px;
   }
   .form textarea {
     width: 300px;
@@ -275,5 +227,19 @@ label {
   .contact {
     font-size: 2rem;
     left: 20vw;
+  }
+
+  .leftContact {
+    visibility: hidden;
+  }
+
+  .contactUs {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
   }
 }

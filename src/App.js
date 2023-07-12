@@ -1,14 +1,14 @@
 import axios from "axios";
 import { Suspense, lazy, useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import swal from "sweetalert";
 import "./App.css";
+import { crop } from "./assets";
 import { ExampleCrop } from "./components/ExampleOfCrop/ExampleCrop";
 import FormInfo from "./components/FormInfo";
 import "./components/nav.css";
 
 import GoToTop from "./GoToTop/GoToTop";
-import Contributor from "./components/Contributor";
 import Loading from './components/Loading';
 
 const Home = lazy(() => import('./components/Home'))
@@ -17,6 +17,8 @@ const About = lazy(() => import('./components/about'))
 const Contact = lazy(() => import('./components/contact'))
 const FAQ = lazy(() => import('./components/faq/faq'))
 const Err = lazy(() => import('./components/404'))
+const Navbar = lazy(() => import('./components/nav.jsx'))
+const Contributor = lazy(() => import('./components/Contributor'));
 
 function App() {
   const [values, setValues] = useState({
@@ -35,67 +37,82 @@ function App() {
       id: 1,
       name: "nitrogen",
       type: "number",
-      placeholder: "Nitrogen",
-      label: "Nitrogen in parts per million (ppm)",
+      placeholder: "Nitrogen in parts per million (ppm)",
     },
     {
       id: 2,
       name: "phosphorus",
       type: "number",
-      placeholder: "Phosphorus",
-      label: "Phosphorus in parts per million (ppm) ",
+      placeholder: "Phosphorus in parts per million (ppm) ",
     },
     {
       id: 3,
       name: "potassium",
       type: "number",
-      placeholder: "Potassium",
-      label: "Potassium in parts per million (ppm) ",
+      placeholder: "Potassium in parts per million (ppm) ",
     },
     {
       id: 4,
       name: "temperature",
       type: "number",
-      placeholder: "Temperature",
-      label: "Temperature in Celsius (°C)",
+      placeholder: "Temperature in Celsius (°C)",
     },
     {
       id: 5,
       name: "humidity",
       type: "number",
-      placeholder: "Humidity",
-      label: "Humidity in percentage (%)",
+      placeholder: "Humidity in percentage (%)",
     },
     {
       id: 6,
       name: "ph",
       type: "number",
-      placeholder: "Ph",
-      label: "Ph (0-14)",
+      placeholder: "Ph (0-14)",
     },
     {
       id: 7,
       name: "rainfall",
       type: "number",
-      placeholder: "Rainfall",
-      label: "Rainfall in millimeters (mm)",
+      placeholder: "Rainfall in millimeters (mm)",
     },
   ];
 
   // Can be extracted sapareately
-  const FormComponet = () => {
+  const FormComponent = () => {
     return (
-      <div className="body">
-        <form onSubmit={handleSubmit}>
-          <h1 className='title'>Crop Recomendation</h1>
-          {error && (<p style={{ color: "red" }}>{error}</p>)}
-          {inputs.map((input) => (
-            <FormInfo key={input.id} {...input} value={values[input.name]} onChange={onChange}
-            />
-          ))}
-          <button onClick={handleSubmit} className='btn'>{loading ? 'Evaluating...' : 'Recommend Crop'}</button>
-        </form>
-      </div>)
+      <>
+        <Navbar />
+        <div className="body">
+          <div className="formCont">
+            <div className="form-left">
+              <div className="form-left-one">
+                <Link to="/" style={{ textDecoration: "none" }}>{<h1>Crop Foresight</h1>}</Link>
+                <h2>Crop Recomendation</h2>
+                <p className="form-left-one-para">
+                  Get crops recommendation based on your soil and weather conditions.
+                  Fill in the given form and get recommendations now.
+                </p>
+              </div>
+
+              <div className="form-left-two">
+                <img
+                  src={crop}
+                  alt="crop"
+                />
+              </div>
+            </div>
+            <form onSubmit={handleSubmit}>
+              {error && (<p style={{ color: "red" }}>{error}</p>)}
+              {inputs.map((input) => (
+                <FormInfo key={input.id} {...input} value={values[input.name]} onChange={onChange}
+                />
+              ))}
+              <button onClick={handleSubmit} className='btn'>{loading ? 'Evaluating...' : 'Recommend Crop'}</button>
+            </form>
+          </div>
+        </div>
+      </>
+    )
   }
 
   const [error, seterror] = useState("");
@@ -141,7 +158,7 @@ function App() {
         <Suspense fallback={<Loading />}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/form" element={FormComponet()} />
+            <Route path="/form" element={FormComponent()} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQ />} />
