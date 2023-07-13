@@ -122,18 +122,20 @@ h3 {
 }
 
 .details{
-  width: 100vw;
-  height: 50vh;
+  /* width: 100vw;
+  height: 50vh; */
   display: flex;
   justify-content: space-around;
+  padding: 0 1rem;
+  gap: 1rem;
 }
 
 .d-col{
-  height:50vh;
-  width: 30vw;
+  /* height:50vh; */
+  /* width: 30vw; */
   justify-content: center;
   background: rgb(19, 2, 42);
-  margin: auto;
+  padding: 2rem 1rem 3.5rem;
 }
 
 .title h2{
