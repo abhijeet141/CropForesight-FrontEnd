@@ -30,14 +30,14 @@ const AccordionItem = ({ title, content }) => {
     );
 };
 
-const FAQ = () => {
+const FAQ = ({mode,setmode}) => {
 
     return (
         <>
             {/* nav bar */}
-            <NAV />
+            <NAV mode={mode} setmode={setmode} />
             {/* main section */}
-            <div className="faq-section">
+            <div className={`faq-section`} style={{backgroundColor: mode === 'light'? "white" : "#0C134F"}} >
                 {/* add Heading */}
                 <div className="faq-heading">Frequently Asked Questions</div>
                 <div className="faq-main">
@@ -50,8 +50,9 @@ const FAQ = () => {
                     {/* Right-Side */}
                     <div className="rightSide">
                         {/* Title */}
-                        <div className="accordion">
+                        <div className="accordion" >
                             <AccordionItem
+                            
                                 title="Q: How does CropForesight determine the best crop recommendation for a specific piece of land?"
                                 content="A : CropForesight utilizes machine learning algorithms that analyze various environmental parameters such as soil composition, rainfall, pH, potassium, humidity, and temperature. Based on these inputs, it predicts the optimal crop choice that maximizes productivity and yield."
                             />

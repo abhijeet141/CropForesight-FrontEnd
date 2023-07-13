@@ -277,6 +277,7 @@ img {
     width: 95vw;
     height: auto;
     max-height: 20vh;
+    margin-top: 20px;
   }
 
   .text {

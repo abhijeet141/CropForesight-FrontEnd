@@ -6,7 +6,7 @@ import './nav.css'
 import logo from '../assets/logo.png';
 import NAVBAR from './nav';
 
-export const Weather = () => {
+export const Weather = ({mode,setmode}) => {
     const [city, setCity] = useState('')
     const [weatherData, setWeatherData] = useState(null);
     const [errorMessage, setErrorMessage] = useState('');
@@ -37,10 +37,10 @@ export const Weather = () => {
 
 
     return (
-        <div id="weather-page">
-            <NAVBAR />
-            <div class = "maincontainer">
-            <h1>Weather</h1>
+        <div id="weather-page" className='w-100'>
+            <NAVBAR mode={mode} setmode={setmode}/>
+            <div className = "maincontainer">
+            <h1 className={`${mode === 'light' ? "text-black":""}`}>Weather</h1>
             <form className="form-h">
                 <input
                     type="text"
@@ -49,7 +49,10 @@ export const Weather = () => {
                     onChange={(e) => setCity(e.target.value)}
                 />
             </form>
-            <button onClick={handleWeather} className="getWeather">SUBMIT</button>
+            <button 
+                onClick={handleWeather} className={`getWeather  `}
+                style={{backgroundColor:mode === 'light'? "black" : "white",color:mode === 'light'? "white" : "black"}}
+            >SUBMIT</button>
             {errorMessage && <p className="error-message">{errorMessage}</p>}
             {weatherData && (
                 <div className='Weather'>

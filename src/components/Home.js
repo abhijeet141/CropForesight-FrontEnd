@@ -49,7 +49,7 @@ const Home = (props) => {
     <>
       <div className={`main ${mode === 'dark' && "bg-zinc-50	"}`}>
         <Nav mode={mode} setmode={setmode}/>
-        <video src={video} autoPlay loop muted />
+        <video src={video} autoPlay loop muted  style={{marginTop:"25px"}}/>
 
         {/* <div className="card glass">
         <div className="content">

@@ -99,7 +99,7 @@ const About = ({mode,setmode}) => {
       </div>
 
       <div className="details">
-        <div className="d-col">
+        <div className="d-col p-3 rounded-lg">
           <div className="img-cont">
             <img
               src="https://crop4sight.com/wp-content/uploads/2022/04/agronomy-icon.png"
@@ -113,7 +113,7 @@ const About = ({mode,setmode}) => {
             </p>
           </div>
         </div>
-        <div className="d-col">
+        <div className="d-col p-3 rounded-lg">
           <div className="img-cont">
             <img
               src="https://crop4sight.com/wp-content/uploads/2022/04/technology-icon.png"
@@ -128,7 +128,7 @@ const About = ({mode,setmode}) => {
             </p>
           </div>
         </div>
-        <div className="d-col">
+        <div className="d-col p-3 rounded-lg">
           <div className="img-cont">
             <img
               src="https://crop4sight.com/wp-content/uploads/2022/04/valuable-insights-icon.png"

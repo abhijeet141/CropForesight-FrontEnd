@@ -4,12 +4,12 @@ import CropData from "./CropData";
 import { useState } from "react";
 import NAV from "../nav";
 
-export function ExampleCrop() {
+export function ExampleCrop({mode,setmode}) {
   const [search, setSearch] = useState("");
 
   return (
     <>
-      <NAV />
+      <NAV mode={mode} setmode={setmode}/>
       <h1 className="h1_E">Find your crop </h1>
       <form className="form_E">
         <input
@@ -20,7 +20,7 @@ export function ExampleCrop() {
         ></input>
       </form>
 
-      <table className="table_E">
+      <table className="table_E" >
         <thead className="thead_E">
           <tr>
             <th>SL NO.</th>
@@ -29,13 +29,13 @@ export function ExampleCrop() {
             <th>IMAGE</th>
           </tr>
         </thead>
-        <tbody className="tbody_E">
+        <tbody className="tbody_E" style={{backgroundColor:mode === "light" ? "white": ""}}>
           {CropData.filter((card) => {
             return search.toLowerCase() === ""
               ? card
               : card.season.toLowerCase().includes(search);
           }).map((card, index) => (
-            <tr>
+            <tr style={{backgroundColor:mode === "light" ? "white": "",color:mode === "light"? "black" : "white" }}>
               <td>{card.sl}</td>
               <td>{card.season}</td>
               <td>{card.head}</td>

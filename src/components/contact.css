@@ -277,3 +277,7 @@ label {
     left: 20vw;
   }
 }
+
+.darkmodecontainer{
+  background-color: #4678f6 !important;
+}

@@ -146,7 +146,7 @@ function App() {
   const[mode,setmode] = useState('light'); // 'dark'
 
   return (
-      <>
+      <div className={`${mode === 'dark' && 'darkbg'} `}>
         <GoToTop />
         <BrowserRouter>
           <Suspense fallback={<Loading/>}>
@@ -154,15 +154,15 @@ function App() {
             <Route path="/" element={<Home mode={mode} setmode={setmode} />} />
             <Route path="/form" element={FormComponet(mode)} />
             <Route path="/about" element={<About mode={mode} setmode={setmode}/>} />
-            <Route path="/contact" element={<Contact  mode={mode}/>} />
-            <Route path="/faq" element={<FAQ mode={mode}/>} />
-            <Route path="/Weather" element={<Weather mode={mode}/>} />
+            <Route path="/contact" element={<Contact  mode={mode} setmode={setmode}/>} />
+            <Route path="/faq" element={<FAQ mode={mode} setmode={setmode}/>} />
+            <Route path="/Weather" element={<Weather mode={mode} setmode={setmode}/>} />
             <Route path="/*" element={<Err mode={mode}/>} />
-            <Route path="/ExampleCrop" element={<ExampleCrop mode={mode}/>} />
+            <Route path="/ExampleCrop" element={<ExampleCrop mode={mode} setmode={setmode}/>} />
           </Routes>
           </Suspense>
         </BrowserRouter>
-      </>
+      </div>
   );
 }
 
