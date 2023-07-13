@@ -1,52 +1,61 @@
-import React, { useEffect, useState } from 'react';
-import './contributor.css';
-import NAV from './nav';
+import React, { useEffect, useState } from "react";
+import axios from 'axios';
+import NAV from "./nav";
+import "../components/contributor.css"
+const Contributor = () => {
+  const [contributors, setContributors] = useState([]);
 
-function Contributor() {
-
-    const [contributors, setContributors] = useState([]);
-
-    const getData = async () => {
-        const res = await fetch(
-            `https://api.github.com/repos/abhijeet141/CropForesight-FrontEnd/contributors?per_page=40`
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://api.github.com/repos/abhijeet141/CropForesight-FrontEnd/contributors"
         );
-
-        const data = await res.json();
+        const data = response.data;
+        console.log(data);
         setContributors(data);
+      } catch (error) {
+        console.error(error);
+      }
     };
+    fetchData();
+  }, []);
 
-    useEffect(() => {
-        getData();
-    }, []);
+  return (
+    <>
+    <NAV/>
+    <br /><br /><br /><br /><br />
+      <div>
+        <h1>
+          Our Contributors
+        </h1>
+      </div>
 
-    return (
-        <div className='main'>
-            <NAV />
-
-            <div style={{ padding: "5% 0" }}>
-                <p style={{ fontSize: "2.5rem", color: "#fff", textAlign: "center", marginBottom: "5rem" }}>Our Contributors</p>
-                <div className='contributor-container'>
-                    {contributors?.map((contributor, i) => (
-                        <div className='content' key={i}>
-                            <div className='content-child'>
-                                <img
-                                    src={`https://images.weserv.nl/?output=webp&url=${contributor.avatar_url}`}
-                                    alt={contributor.login}
-                                />
-                                <div>
-                                    <p style={{ fontSize: "2rem" }}>{contributor.login}</p>
-                                    <p style={{ fontSize: "1.5rem" }}>{contributor.contributions} Commits</p>
-                                </div>
-                            </div>
-                            <a href={contributor.html_url} target='_blank' rel="noreferrer">
-                                <button className='contributor-btn'>Profile</button>
-                            </a>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </div>
-    )
+      <div className="main_cont">
+        {contributors.map((i) => (
+          <>
+          <div className="Contributor_cards">
+          <div className="image">
+            <img src={i.avatar_url} alt="" />
+          </div>
+          <div className="login" key={i.id}>{i.login}</div>
+          <div className="commits">
+            Commits: {i.contributions}
+          </div>
+          <a href={i.html_url} target='_blank' rel="noreferrer">
+              <button className="view" >
+                View
+              </button>
+            </a>
+          </div>
+          </>   
+        ))}
+      </div>
+    </>
+  );
 }
 
 export default Contributor;
+
+
+
