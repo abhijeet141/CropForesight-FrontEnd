@@ -21,7 +21,15 @@
       grid-template-columns: repeat(3, 1fr); 
     }
   }
-  
+
+  .h1{
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-top: 2rem;
+    font-size: 3rem;
+    font-weight: 200;
+  }
 
   .Contributor_cards {
     display: flex;

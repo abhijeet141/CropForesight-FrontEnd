@@ -26,7 +26,7 @@ const Contributor = () => {
     <NAV/>
     <br /><br /><br /><br /><br />
       <div>
-        <h1>
+        <h1 className="h1" >
           Our Contributors
         </h1>
       </div>
