@@ -1,14 +1,14 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
 
 body {
   background-color: rgb(0, 0, 40);
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
@@ -25,7 +25,6 @@ body {
 }
 
 video {
-  
   width: 90%;
   max-width: 150vw;
   height: auto;
@@ -63,14 +62,13 @@ img {
   transform: translate(-50%, -50%);
 }
 
-
 .para {
   font-size: 1rem;
   font-weight: 400;
 
   text-align: center;
   margin: 1.5rem 2rem 1.5rem 2rem; /* Increase or decrease the gap between text and para */
-   /* Increase or decrease the gap between text and para */
+  /* Increase or decrease the gap between text and para */
 }
 
 .card-container {
@@ -91,7 +89,7 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center; */
-   margin-top: 1rem;
+  margin-top: 1rem;
   /*margin-bottom: 2rem; */
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
@@ -105,7 +103,6 @@ img {
 }
 
 .button {
-  
   width: 8rem;
   height: 1rem;
   display: flex;
@@ -134,7 +131,7 @@ img {
   .text {
     position: static;
     transform: none;
-    font-size:1.8 rem;
+    font-size: 1.8 rem;
   }
 }
 
@@ -143,7 +140,6 @@ img {
     text-align: center;
     overflow: auto; /* Allow scrolling for smaller screens */
   }
-  
 
   .text {
     font-size: 2rem;
@@ -178,9 +174,9 @@ img {
 
   .para {
     margin: 1rem 2rem 0rem 2rem;
-    
+
     /* margin-bottom: 2rem; */
-    
+
     /* text-align: left; */
   }
 }
@@ -197,8 +193,7 @@ img {
 }
 
 @media only screen and (max-width: 480px) {
-  .main{
-    
+  .main {
   }
   .card-container {
     flex-direction: column;
@@ -226,7 +221,7 @@ img {
     /* margin-top: 1rem;
     margin-bottom: 1rem; */
   }
-  .para{
+  .para {
     justify-content: center;
     margin: 1rem 1rem 1rem 1rem;
   }
@@ -236,10 +231,9 @@ img {
   }
 }
 
-
 /* Added: Media query for iPad Air and iPad Mini */
 @media only screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait),
-       only screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
+  only screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
   .text {
     top: 0.0000000000000001rem; /* Adjust the value as needed */
   }
@@ -249,7 +243,7 @@ img {
   }
 }
 @media only screen and (device-width: 820px) and (device-height: 1180px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait),
-       only screen and (device-width: 820px) and (device-height: 1180px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
+  only screen and (device-width: 820px) and (device-height: 1180px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
   .text {
     top: 0.0000000000000001rem; /* Adjust the value as needed */
   }
@@ -296,6 +290,6 @@ img {
     }
   }
 }
-.button-1{
+.button-1 {
   height: 50px;
 }

@@ -1,25 +1,25 @@
-import React, { useState } from 'react'
-import axios from 'axios'
-import { Link } from 'react-router-dom';
-import './Weather.css'
-import './nav.css'
-import logo from '../assets/logo.png';
+import axios from 'axios';
+import React, { useState } from 'react';
+import './Weather.css';
 import NAVBAR from './nav';
+import './nav.css';
 
 export const Weather = () => {
     const [city, setCity] = useState('')
     const [weatherData, setWeatherData] = useState(null);
     const [errorMessage, setErrorMessage] = useState('');
-    const [submitPress, setSubmitPress] =useState(false)
+    const [submitPress, setSubmitPress] = useState(false)
 
-    const handleWeather = async () => {
+    const handleWeather = async (e) => {
+        e.preventDefault();
+
         setSubmitPress(true)
         try {
             const response = await axios.get(
                 `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7b96e250f5f9d8682865d4335a802fe2`
             );
             // setWeatherData(response.data)
-            if(response.data.cod === '404') {
+            if (response.data.cod === '404') {
                 setErrorMessage('Improper location. Please try again.');
                 setWeatherData(null);
             }
@@ -39,31 +39,33 @@ export const Weather = () => {
     return (
         <div id="weather-page">
             <NAVBAR />
-            <div class = "maincontainer">
-            <h1>Weather</h1>
-            <form className="form-h">
-                <input
-                    type="text"
-                    id="search" placeholder="Search By Location"
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                />
-            </form>
-            <button onClick={handleWeather} className="getWeather">SUBMIT</button>
-            {errorMessage && <p className="error-message">{errorMessage}</p>}
-            {weatherData && (
-                <div className='Weather'>
+            <div class="maincontainer">
+                <h1>Weather</h1>
+                <div className='box'>
+                    <form className="form-h">
+                        <input
+                            type="text"
+                            id="search" placeholder="Search By Location"
+                            value={city}
+                            onChange={(e) => setCity(e.target.value)}
+                        />
+                        <button onClick={handleWeather} className="getWeather">SUBMIT</button>
+                    </form>
+                </div>
 
-                    <p className='name'>{weatherData.name}</p>
-                    <p className='dis'>{weatherData.weather[0].description}</p>
-                    <p className='temp'>{(weatherData.main.temp-273.15).toFixed(2)}°C</p>
-                </div>
-            )}
-            {weatherData==null && submitPress==true && (
-                <div className='Weather'>
-                    <p className='name'>Please enter proper Location details.</p>
-                </div>
-            )}
+                {errorMessage && <p className="error-message">{errorMessage}</p>}
+                {weatherData && (
+                    <div className='Weather'>
+                        <p className='name'>{weatherData.name}</p>
+                        <p className='dis'>{weatherData.weather[0].description}</p>
+                        <p className='temp'>{(weatherData.main.temp - 273.15).toFixed(2)}°C</p>
+                    </div>
+                )}
+                {weatherData == null && submitPress == true && (
+                    <div className='Weather'>
+                        <p className='name'>Please enter proper Location details.</p>
+                    </div>
+                )}
             </div>
         </div>
 

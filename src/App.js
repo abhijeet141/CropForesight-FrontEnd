@@ -1,13 +1,12 @@
 import axios from "axios";
-import { useState } from "react";
-import "./App.css";
-import FormInfo from "./components/FormInfo";
-import { ExampleCrop } from "./components/ExampleOfCrop/ExampleCrop";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import { Suspense, lazy, useState } from "react";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import swal from "sweetalert";
-import { lazy, Suspense } from 'react'
-import "./components/nav.css";
+import "./App.css";
 import { crop } from "./assets";
+import { ExampleCrop } from "./components/ExampleOfCrop/ExampleCrop";
+import FormInfo from "./components/FormInfo";
+import "./components/nav.css";
 
 import GoToTop from "./GoToTop/GoToTop";
 import Loading from './components/Loading';
@@ -19,6 +18,7 @@ const Contact = lazy(() => import('./components/contact'))
 const FAQ = lazy(() => import('./components/faq/faq'))
 const Err = lazy(() => import('./components/404'))
 const Navbar = lazy(() => import('./components/nav.jsx'))
+const Contributor = lazy(() => import('./components/Contributor'));
 
 function App() {
   const [values, setValues] = useState({
@@ -81,7 +81,7 @@ function App() {
   const FormComponent = () => {
     return (
       <>
-      <Navbar />
+        <Navbar />
         <div className="body">
           <div className="formCont">
             <div className="form-left">
@@ -165,6 +165,7 @@ function App() {
             <Route path="/Weather" element={<Weather />} />
             <Route path="/*" element={<Err />} />
             <Route path="/ExampleCrop" element={<ExampleCrop />} />
+            <Route path="/contributors" element={<Contributor />} />
           </Routes>
         </Suspense>
       </BrowserRouter>
