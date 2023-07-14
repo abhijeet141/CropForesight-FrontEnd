@@ -156,7 +156,7 @@ const Contact = () => {
           </div>
 
           {/* right part */}
-          <form className="form">
+          <form className="form" aria-label="Contact us form">
 
             <div className="form-group">
               <FaUserAlt className="icon" />
@@ -170,9 +170,11 @@ const Contact = () => {
                 onChange={(e) => setName(e.target.value)}
                 className={`form-control ${error === "**Name is Required!" && "inputField"
                   }`}
+                aria-label="name input"
+                aria-describedby="name-error"
               />
               {error === "**Name is Required!" && (
-                <small className="errorMsg">**Name is Required!</small>
+                <small className="errorMsg" role="alert" id="name-error">**Name is Required!</small>
               )}
             </div>
 
@@ -188,9 +190,11 @@ const Contact = () => {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                aria-label="email input"
+                aria-describedby="email-error"
               />
               {error === "**E-mail is Required!" && (
-                <small className="errorMsg">**E-mail is Required!</small>
+                <small className="errorMsg" role="alert" id="email-error">**E-mail is Required!</small>
               )}
 
               {error === "**Enter a valid E-mail!" && (
@@ -210,9 +214,11 @@ const Contact = () => {
                 required
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
+                aria-label="message input"
+                aria-describedby="message-error"
               ></textarea>
               {error === "**Enter a message!" && (
-                <small className="errorMsg">**Enter a message!</small>
+                <small className="errorMsg" role="alert" id="message-error">**Enter a message!</small>
               )}
             </div>
 
@@ -226,16 +232,19 @@ const Contact = () => {
                 size={30}
                 onClick={() => openInNewTab("https://www.twitter.com/")}
                 className="twitter"
+                aria-label="Follow me on Twitter"
               />
 
               <AiFillMail
                 size={30} onClick={() => openInNewTab("mailto:---")}
                 className="mail"
+                aria-label="My email"
               />
 
               <AiFillGithub
                 size={30} onClick={() => openInNewTab("https://www.github.com/")}
                 className="github"
+                aria-label="Follow me on github"
               />
 
             </div>
