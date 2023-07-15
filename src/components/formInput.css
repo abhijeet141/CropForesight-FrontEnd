@@ -11,11 +11,6 @@ input{
     width: 100%;
 }
 
-label{
-    font-size: 15px;
-}
-
-
 .errorMsg{
     color: red;
     font-size: 14px;   

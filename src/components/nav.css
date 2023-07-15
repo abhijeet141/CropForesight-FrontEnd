@@ -14,16 +14,20 @@ nav {
 nav ul {
   display: flex;
   align-items: center;
+  list-style: none;
 }
 
 nav ul li {
   margin-right: 3rem;
   text-decoration: none;
+  list-style: none;
 }
 
 nav ul li a {
   color: #fff;
   position: relative;
+  list-style: none;
+  text-decoration: none;
 }
 
 nav ul li:hover::after {
@@ -66,6 +70,11 @@ nav .visibility-mobile {
 
   nav .visibility-mobile {
     display: block;
+    margin-right: 3rem;
+  }
+
+  nav .visibility-mobile img {
+    width: 30px;
   }
 
   .mobile-nav {
@@ -85,9 +94,11 @@ nav .visibility-mobile {
 
   .mobile-nav ul li {
     padding-bottom: 3rem;
+    list-style: none;
   }
 
   .mobile-nav ul li a {
     color: #fff;
+    text-decoration: none;
   }
 }
