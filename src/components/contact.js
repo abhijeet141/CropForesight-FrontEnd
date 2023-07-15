@@ -171,19 +171,15 @@ const Contact = () => {
                 required
                 value={form.name}
                 onChange={handleChange}
-                className={`form-control ${error === "**Name is Required!" && "inputField"
-                  }`}
+                className={`form-control`}
               />
-              {error === "**Name is Required!" && (
-                <small className="errorMsg">**Name is Required!</small>
-              )}
             </div>
+              {error.name && error.nameError && <p className="errorMsg">{error.nameError}</p>}
 
             <div className="form-group">
               <AiFillMail className="icon" />
               <input
-                className={`form-control ${error === "**E-mail is Required!" && "inputField"
-                  }`}
+                className={`form-control`}
                 id="email"
                 name="email"
                 placeholder="Email"
@@ -192,20 +188,13 @@ const Contact = () => {
                 value={form.email}
                 onChange={handleChange}
               />
-              {error === "**E-mail is Required!" && (
-                <small className="errorMsg">**E-mail is Required!</small>
-              )}
-
-              {error === "**Enter a valid E-mail!" && (
-                <small className="errorMsg">**Enter a valid E-mail!</small>
-              )}
             </div>
+             {error.email && error.emailError && <p className="errorMsg">{error.emailError}</p>}
 
             <div className="text-area">
             <BsFillChatRightTextFill className="icon" />
               <textarea
-                className={`form-control ${error === "**Enter a message!" && "inputField"
-                  }`}
+                className={`form-control}`}
                 id="message"
                 name="message"
                 placeholder="Message"
@@ -214,10 +203,8 @@ const Contact = () => {
                 value={form.message}
                 onChange={handleChange}
               ></textarea>
-              {error === "**Enter a message!" && (
-                <small className="errorMsg">**Enter a message!</small>
-              )}
             </div>
+                {error.message && error.messageError && <p className="errorMsg">{error.messageError}</p>}
 
             <button type="submit">
               Send
