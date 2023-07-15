@@ -159,7 +159,7 @@ const Contact = () => {
           </div>
 
           {/* right part */}
-          <form className="form">
+          <form className="form" onSubmit={handleSubmit}>
 
             <div className="form-group">
               <FaUserAlt className="icon" />
@@ -169,8 +169,8 @@ const Contact = () => {
                 placeholder="Name"
                 type="text"
                 required
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={form.name}
+                onChange={handleChange}
                 className={`form-control ${error === "**Name is Required!" && "inputField"
                   }`}
               />
@@ -189,8 +189,8 @@ const Contact = () => {
                 placeholder="Email"
                 type="email"
                 required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={form.email}
+                onChange={handleChange}
               />
               {error === "**E-mail is Required!" && (
                 <small className="errorMsg">**E-mail is Required!</small>
@@ -211,8 +211,8 @@ const Contact = () => {
                 placeholder="Message"
                 rows="5"
                 required
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
+                value={form.message}
+                onChange={handleChange}
               ></textarea>
               {error === "**Enter a message!" && (
                 <small className="errorMsg">**Enter a message!</small>
