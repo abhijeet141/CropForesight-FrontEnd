@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
-import logo from "../assets/logo.png";
-import aboutPic from "../assets/about.webp";
 import "slick-carousel/slick/slick.css";
 import Review from "./Review";
 import "./about.css";
@@ -82,12 +80,12 @@ const About = () => {
           <div className="slider-box">
             {/* <img src={aboutPic} alt="about" /> */}
             <Slider {...settings} className="slider">
-  {images.map((image, index) => (
-    <div className="slider-div" key={index}>
-      <img src={image} alt="about" />
-    </div>
-  ))}
-</Slider>
+              {images.map((image, index) => (
+                <div className="slider-div" key={index}>
+                  <img src={image} alt="about" />
+                </div>
+              ))}
+            </Slider>
           </div>
         </div>
       </div>
