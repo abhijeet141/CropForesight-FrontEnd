@@ -16,7 +16,7 @@ const NAV = ({mode,setmode}) => {
       <nav className={`${mode === 'light' ? "font-black	" : "font-bold" }`}>
         <div>
           <Link to="/">
-            <img src={logo} alt="logo" style={{width: "200px", height: "45px", marginTop: "7px"}} />
+            <img src={logo} alt="logo" style={{ width: "200px", height: "45px", marginTop: "7px" }} />
           </Link>
         </div>
         <div className="visibility-desktop">
@@ -35,6 +35,9 @@ const NAV = ({mode,setmode}) => {
             </li>
             <li>
               <Link to="/Weather">Weather</Link>
+            </li>
+            <li>
+              <Link to="/contributors">Contributors</Link>
             </li>
             <li>
               <Link to="/ExampleCrop">Example</Link>
@@ -71,6 +74,9 @@ const NAV = ({mode,setmode}) => {
               </li>
               <li>
                 <Link to="/Weather">Weather</Link>
+              </li>
+              <li>
+                <Link to="/contributors">Contributors</Link>
               </li>
             </ul>
           </div>

@@ -1,9 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
-import logo from "../assets/logo.png";
-import aboutPic from "../assets/about.webp";
 import "slick-carousel/slick/slick.css";
 import Review from "./Review";
 import "./about.css";
@@ -12,6 +10,7 @@ import "./nav.css";
 
 const About = ({mode,setmode}) => {
   const navigate = useNavigate();
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleClick = () => {
     navigate("/contact"); // Replace '/other-page' with the desired URL of the page you want to navigate to
@@ -23,7 +22,25 @@ const About = ({mode,setmode}) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    beforeChange: (current, next) => setCurrentIndex(next),
   };
+
+  const images = [
+    "https://kj1bcdn.b-cdn.net/media/33674/1.jpg?width=1200",
+    "https://plantix.net/en/library/assets/custom/crop-images/maize.jpeg",
+    "https://www.agrifarming.in/wp-content/uploads/2022/01/Maize-Yield2-768x576.jpg",
+    "https://cdn.downtoearth.org.in/library/large/2019-06-03/0.62901000_1559538844_maize_gettyimages-.jpg",
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className={mode === 'light' ? "bg-white" : "bg-bluee"}>
       {/* nav bar */}
@@ -63,36 +80,11 @@ const About = ({mode,setmode}) => {
           <div className="slider-box">
             {/* <img src={aboutPic} alt="about" /> */}
             <Slider {...settings} className="slider">
-              <div className="slider-div">
-                <img
-                  src={"https://kj1bcdn.b-cdn.net/media/33674/1.jpg?width=1200"}
-                  alt="about"
-                />
-              </div>
-              <div className="slider-div">
-                <img
-                  src={
-                    "https://plantix.net/en/library/assets/custom/crop-images/maize.jpeg"
-                  }
-                  alt="about"
-                />
-              </div>
-              <div className="slider-div">
-                <img
-                  src={
-                    "https://www.agrifarming.in/wp-content/uploads/2022/01/Maize-Yield2-768x576.jpg"
-                  }
-                  alt="about"
-                />
-              </div>
-              <div className="slider-div">
-                <img
-                  src={
-                    "https://cdn.downtoearth.org.in/library/large/2019-06-03/0.62901000_1559538844_maize_gettyimages-.jpg"
-                  }
-                  alt="about"
-                />
-              </div>
+              {images.map((image, index) => (
+                <div className="slider-div" key={index}>
+                  <img src={image} alt="about" />
+                </div>
+              ))}
             </Slider>
           </div>
         </div>

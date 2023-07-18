@@ -4,6 +4,10 @@ import "./nav.css";
 import { useNavigate, Link, useHref } from "react-router-dom";
 import swal from "sweetalert";
 import NAVBAR from "./nav";
+import { AiFillTwitterCircle, AiFillInstagram, AiFillGithub, AiFillMail } from "react-icons/ai";
+import { FaUserAlt  } from "react-icons/fa";
+import { BsFillChatRightTextFill } from "react-icons/bs";
+import logo from '../assets/logo.png';
 
 const Typewriter = ({ sentences, delay }) => {
   const [displayText, setDisplayText] = useState("");
@@ -113,6 +117,7 @@ const Contact = ({mode,setmode}) => {
       style={{backgroundColor: 'white'}}
     >
       {/* nav bar */}
+
       <NAVBAR mode={mode} setmode={setmode}/>
       <h1 className={`contact`}>Contact Us</h1>
 
@@ -218,9 +223,135 @@ const Contact = ({mode,setmode}) => {
                 onClick={() => openInNewTab("https://www.github.com/")}
               ></i>
             </span>
+
+      <NAVBAR />
+
+      {/* contact us form */}
+
+
+      <div className="contactUsContainer">
+
+        <div className="contactUs">
+
+          {/* left part */}
+          <div className="leftContact">
+            <h1 className="contact">Contact US</h1>
+            <h3 className="tag">
+              <Typewriter sentences={sentences} delay={2000} />
+            </h3>
+
+            <div className="socials">
+              <h4 className="contact">Reach us via</h4>
+              <div class="wrapper">
+
+                <AiFillTwitterCircle
+                  size={50}
+                  onClick={() => openInNewTab("https://www.twitter.com/")}
+                  className="twitter"
+                />
+
+                <AiFillMail
+                  size={50} onClick={() => openInNewTab("mailto:---")}
+                  className="mail"
+                />
+
+                <AiFillGithub
+                  size={50} onClick={() => openInNewTab("https://www.github.com/")}
+                  className="github"
+                />
+
+              </div>
+            </div>
+
           </div>
+
+          {/* right part */}
+          <form className="form">
+
+            <div className="form-group">
+              <FaUserAlt className="icon" />
+              <input
+                id="name"
+                name="name"
+                placeholder="Name"
+                type="text"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className={`form-control ${error === "**Name is Required!" && "inputField"
+                  }`}
+              />
+              {error === "**Name is Required!" && (
+                <small className="errorMsg">**Name is Required!</small>
+              )}
+            </div>
+
+            <div className="form-group">
+              <AiFillMail className="icon" />
+              <input
+                className={`form-control ${error === "**E-mail is Required!" && "inputField"
+                  }`}
+                id="email"
+                name="email"
+                placeholder="Email"
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              {error === "**E-mail is Required!" && (
+                <small className="errorMsg">**E-mail is Required!</small>
+              )}
+
+              {error === "**Enter a valid E-mail!" && (
+                <small className="errorMsg">**Enter a valid E-mail!</small>
+              )}
+            </div>
+
+            <div className="text-area">
+            <BsFillChatRightTextFill className="icon" />
+              <textarea
+                className={`form-control ${error === "**Enter a message!" && "inputField"
+                  }`}
+                id="message"
+                name="message"
+                placeholder="Message"
+                rows="5"
+                required
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              ></textarea>
+              {error === "**Enter a message!" && (
+                <small className="errorMsg">**Enter a message!</small>
+              )}
+            </div>
+
+            <button type="submit">
+              Send
+            </button>
+
+            <div class="wrapper-md">
+
+              <AiFillTwitterCircle
+                size={30}
+                onClick={() => openInNewTab("https://www.twitter.com/")}
+                className="twitter"
+              />
+
+              <AiFillMail
+                size={30} onClick={() => openInNewTab("mailto:---")}
+                className="mail"
+              />
+
+              <AiFillGithub
+                size={30} onClick={() => openInNewTab("https://www.github.com/")}
+                className="github"
+              />
+
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
     </div>
   );
 };
