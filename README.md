@@ -1,5 +1,5 @@
 <h1 align="center" id="top">CropForesight (Frontend)</h1>
-<p align="center">This Repository includes the frontend code of the <a href="crop-foresight-front-end.vercel.app" >CorpForesight</a> webiste. The frontend of the project is written in HTML, CSS, Javascript, and ReactJS. Before moving ahead, a short intro about the project.</p>
+<p align="center">This Repository includes the frontend code of the <a href="crop-foresight-front-end.vercel.app" >CropForesight</a> webiste. The frontend of the project is written in HTML, CSS, Javascript, and ReactJS. Before moving ahead, a short intro about the project.</p>
 
 
  <h1 align="center">CropForesight🌾</h1>
