@@ -16,13 +16,18 @@ input:focus {
 
 h1 {
   font-family: "Poppins";
-  font-size: 60px;
+  font-size: 40px;
   font-weight: 600;
-  color: rgb(167, 116, 214);
   text-shadow: 0px 2px 0px rgb(91, 53, 126);
   display: flex;
   justify-content: center;
   align-items: center;
+  display: flex;
+  font-style: bold;
+  color: rgb(147, 102, 189);
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 .Weather {
@@ -50,6 +55,7 @@ h1 {
   align-items: center;
   height: 100vh;
   overflow: hidden;
+  
 }
 
 .box {
@@ -59,8 +65,7 @@ h1 {
 }
 
 .maincontainer {
-  background-color: #f1f1f1;
-  background-image: linear-gradient(to bottom right, #180356, #64089a);
+  background-color: rgb(4,4,44);
   position: absolute;
   top: 0;
   right: 0;

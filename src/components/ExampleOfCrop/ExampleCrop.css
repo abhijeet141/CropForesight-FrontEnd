@@ -26,6 +26,8 @@ td {
   padding-left: 5rem;
   text-align: center;
   border: 2px solid rgb(112, 111, 112);
+  color:black;
+  font-size: 18px;
 }
 .Crop_table {
   justify-content: center !important;
@@ -34,15 +36,34 @@ td {
 .input_E {
   min-width: 540px !important;
 }
+.inputcard_E {
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  padding-bottom: 30px;
+
+}
 .h1_E {
-  margin-top: 5rem;
+  font-family: "Poppins";
+  font-size: 40px;
+  font-weight: 600;
+  text-shadow: 0px 2px 0px rgb(91, 53, 126);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-style: bold;
+  color: rgb(147, 102, 189);
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 20px;
 }
 .tbody_E tr:nth-child(odd) {
-  background-color: rgb(0, 0, 57);
+  background-color: rgb(220, 155, 240);
 }
 
 .tbody_E tr:nth-child(even) {
-  background-color: #0c134f;
+  background-color: rgb(190, 133, 207);
 }
 @media only screen and (max-width: 855px) {
   img {
