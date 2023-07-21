@@ -14,23 +14,29 @@ body {
 
 .main {
   position: relative;
-  top: 90px;
+  top: 25vh;
   width: 100vw;
   height: max-content;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   /* justify-content: center; */
   overflow: hidden; /* Prevent vertical scrolling */
 }
+.video-card {
+  flex:50%;
+  
+}
 
 video {
-  width: 90%;
+  width: 95%;
   max-width: 150vw;
   height: auto;
   max-height: 60vh;
   object-fit: fill;
   border-radius: 8vw;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .overlay {
@@ -81,15 +87,17 @@ img {
 
 .card {
   border-radius: 8px;
-  padding: 0px 30px 0px 30px;
+  padding: 10px 20px 0px 20px;
   width: 60vw;
   max-width: 400px;
   height: 170px;
+  flex: 50%;
+  margin-right: 15px;
+  margin-left: 15px;
   /* display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center; */
-  margin-top: 1rem;
   /*margin-bottom: 2rem; */
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
@@ -139,6 +147,8 @@ img {
   .main {
     text-align: center;
     overflow: auto; /* Allow scrolling for smaller screens */
+    display: flex;
+    flex-direction: column;
   }
 
   .text {
@@ -152,6 +162,7 @@ img {
   .card {
     width: 90vw;
     max-width: 400px;
+    margin-top: 1rem;
     /* margin-top: 1rem;
     margin-bottom: 1rem; */
   }
@@ -194,6 +205,8 @@ img {
 
 @media only screen and (max-width: 480px) {
   .main {
+    display: flex;
+    flex-direction: column;
   }
   .card-container {
     flex-direction: column;
@@ -215,9 +228,9 @@ img {
   }
 
   .card {
-    width: 90vw;
+    width: 80vw;
     max-width: 300px;
-    height: 170px;
+    height: 140px;
     /* margin-top: 1rem;
     margin-bottom: 1rem; */
   }

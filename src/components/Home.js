@@ -48,7 +48,9 @@ const Home = () => {
     <>
       <div className="main">
         <NAVBAR />
-        <video src={video} autoPlay loop muted />
+        <div className="video-card">
+          <video src={video} autoPlay loop muted />
+        </div>
 
         {/* <div className="card glass">
         <div className="content">
@@ -77,6 +79,7 @@ const Home = () => {
           </p>
         </div>
       </div>
+      
     </>
   );
 };
