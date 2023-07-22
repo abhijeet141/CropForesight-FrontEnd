@@ -61,7 +61,7 @@ export const Weather = () => {
                         <p className='temp'>{(weatherData.main.temp - 273.15).toFixed(2)}°C</p>
                     </div>
                 )}
-                {weatherData == null && submitPress == true && (
+                {weatherData === null && submitPress === true && (
                     <div className='Weather'>
                         <p className='name'>Please enter proper Location details.</p>
                     </div>

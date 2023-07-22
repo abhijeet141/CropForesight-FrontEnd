@@ -1,5 +1,4 @@
 import React from "react";
-import { FaQuoteRight } from "react-icons/fa";
 import reviews from "./data";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";

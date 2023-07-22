@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
-import styles from "./contact.css";
+import "./contact.css";
 import "./nav.css";
-import { useNavigate, Link, useHref } from "react-router-dom";
 import swal from "sweetalert";
 import NAVBAR from "./nav";
-import { AiFillTwitterCircle, AiFillInstagram, AiFillGithub, AiFillMail } from "react-icons/ai";
+import { AiFillTwitterCircle, AiFillGithub, AiFillMail } from "react-icons/ai";
 import { FaUserAlt  } from "react-icons/fa";
 import { BsFillChatRightTextFill } from "react-icons/bs";
-import logo from '../assets/logo.png';
 
 const Typewriter = ({ sentences, delay }) => {
   const [displayText, setDisplayText] = useState("");
@@ -55,8 +53,7 @@ const Contact = () => {
   ];
 
   function validEmail(email) {
-    let re =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (re.test(email)) return true;
     else return false;
   }
