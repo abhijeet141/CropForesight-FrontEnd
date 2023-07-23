@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './Weather.css';
 import NAVBAR from './nav';
 import './nav.css';
+import WeatherCard from './WeatherCard';
 
 export const Weather = () => {
     const [city, setCity] = useState('')
@@ -56,11 +57,10 @@ export const Weather = () => {
                 {errorMessage && <p className="error-message">{errorMessage}</p>}
                 {weatherData && (
                     <div className='Weather'>
-                        <p className='name'>{weatherData.name}</p>
-                        <p className='dis'>{weatherData.weather[0].description}</p>
-                        <p className='temp'>{(weatherData.main.temp - 273.15).toFixed(2)}°C</p>
+                    <WeatherCard weatherData={weatherData} />    
                     </div>
                 )}
+
                 {weatherData == null && submitPress == true && (
                     <div className='Weather'>
                         <p className='name'>Please enter proper Location details.</p>

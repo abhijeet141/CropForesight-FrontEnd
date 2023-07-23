@@ -26,30 +26,22 @@ h1 {
 }
 
 .Weather {
-  /* margin-left: 620px; */
-  /* margin-top: 30px; */
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  height: 170px;
-  width: 80%;
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 5px;
-  /* position: absolute;
-    top: 25rem;
-    left: 7rem; */
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+
 }
 
 #weather-page {
+  margin-top: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   overflow: hidden;
+  min-height: 100vh;
 }
 
 .box {
@@ -59,15 +51,8 @@ h1 {
 }
 
 .maincontainer {
-  background-color: #f1f1f1;
-  background-image: linear-gradient(to bottom right, #180356, #64089a);
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  margin: 0;
-  padding-top: 75px;
-  left: 0vw;
+  margin-top: 100px;
 }
 
 .getWeather {
@@ -117,6 +102,7 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 500px;
 }
 
 /* #search {
