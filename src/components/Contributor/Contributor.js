@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import NAV from "./nav";
-import "../components/contributor.css"
+import NAV from "../Navbar/nav";
+import "../Contributor/contributor.css"
 const Contributor = () => {
   const [contributors, setContributors] = useState([]);
 

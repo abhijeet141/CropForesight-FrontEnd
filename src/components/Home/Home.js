@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import video from "../assets/nature.mp4";
+import video from "../../assets/nature.mp4";
 import "./Home.css";
-import "./nav.css";
-import NAVBAR from "./nav";
-import Contact from "./contact";
-import logo from '../assets/logo.png';
+import "../Navbar/nav.css";
+import NAVBAR from "../Navbar/nav";
+import Contact from "../Contact/contact.js";
+import logo from '../../assets/logo.png';
 
 const Typewriter = ({ sentences, delay }) => {
   const [displayText, setDisplayText] = useState("");

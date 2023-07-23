@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import './Weather.css';
-import NAVBAR from './nav';
-import './nav.css';
+import NAVBAR from './Navbar/nav';
+import '../../src/components/Navbar/nav.css';
 
 export const Weather = () => {
     const [city, setCity] = useState('')

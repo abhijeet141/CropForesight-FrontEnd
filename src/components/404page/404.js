@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import logo from '../assets/logo.png';
+import logo from '../../assets/logo.png';
 import "./404.css";
-import NAVBAR from './nav';
+import NAVBAR from '../Navbar/nav';
 
 const Err = () => {
     return (

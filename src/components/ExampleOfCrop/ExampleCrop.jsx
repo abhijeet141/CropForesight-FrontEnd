@@ -2,7 +2,7 @@ import React from "react";
 import "./ExampleCrop.css";
 import CropData from "./CropData";
 import { useState } from "react";
-import NAV from "../nav";
+import NAV from "../Navbar/nav";
 
 export function ExampleCrop() {
   const [search, setSearch] = useState("");

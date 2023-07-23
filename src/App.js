@@ -5,20 +5,20 @@ import swal from "sweetalert";
 import "./App.css";
 import { crop } from "./assets";
 import { ExampleCrop } from "./components/ExampleOfCrop/ExampleCrop";
-import FormInfo from "./components/FormInfo";
-import "./components/nav.css";
+import FormInfo from "../src/components/Form/FormInfo";
+import "./components/Navbar/nav.css";
 
 import GoToTop from "./GoToTop/GoToTop";
 import Loading from './components/Loading';
 
-const Home = lazy(() => import('./components/Home'))
+const Home = lazy(() => import('./components/Home/Home'))
 const Weather = lazy(() => import('./components/Weather'))
-const About = lazy(() => import('./components/about'))
-const Contact = lazy(() => import('./components/contact'))
+const About = lazy(() => import('./components/About/about'))
+const Contact = lazy(() => import('./components/Contact/contact')) 
 const FAQ = lazy(() => import('./components/faq/faq'))
-const Err = lazy(() => import('./components/404'))
-const Navbar = lazy(() => import('./components/nav.jsx'))
-const Contributor = lazy(() => import('./components/Contributor'));
+const Err = lazy(() => import('./components/404page/404'))
+const Navbar = lazy(() => import('./components/Navbar/nav.jsx'))
+const Contributor = lazy(() => import('./components/Contributor/Contributor'));
 
 function App() {
   const [values, setValues] = useState({

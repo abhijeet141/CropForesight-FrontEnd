@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
-import menu from "../assets/menu-icon.webp";
+import logo from "../../assets/logo.png";
+import menu from "../../assets/menu-icon.webp";
 import "./nav.css";
 
 const NAV = () => {

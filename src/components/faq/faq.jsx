@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom';
 import './faq.css';
-import "../nav.css";
+import "../Navbar/nav.css";
 import logo from "../../assets/logo.png";
 import faq from "../../assets/faq.webp";
-import NAV from '../nav';
+import NAV from '../Navbar/nav';
 
 const AccordionItem = ({ title, content }) => {
     const [expanded, setExpanded] = useState(false);
