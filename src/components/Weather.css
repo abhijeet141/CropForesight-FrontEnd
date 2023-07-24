@@ -52,7 +52,7 @@ h1 {
 
 .maincontainer {
   position: absolute;
-  margin-top: 100px;
+  top: 50px;
 }
 
 .getWeather {
