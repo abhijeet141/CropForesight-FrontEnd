@@ -119,17 +119,48 @@ function App() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+    const [values, setValues] = useState({
+      nitrogen: "",
+      phosphorus: "",
+      potassium: "",
+      temperature: "",
+      humidity: "",
+      ph: "",
+      rainfall: "",
+    });
     // console.log("function called");
     setLoading(true)
 
     if (values.nitrogen === '') { seterror("*Nitrogen is Required!"); }
-    else if (values.phosphorus === '') { seterror("*Phosphorus is Required!"); }
-    else if (values.potassium === '') { seterror("*Potassium is Required!"); }
-    else if (values.temperature === '') { seterror("*Temperature is Required!"); }
-    else if (values.humidity === '') { seterror("*Humidity is Required!"); }
-    else if (values.ph === '') { seterror("*Ph is Required!"); }
-    else if (values.rainfall === '') { seterror("*Rainfall is Required!"); }
+    if (values.nitrogen === '') {
+      seterror("*Nitrogen is Required!");
+    } else if (isNaN(values.nitrogen) || values.nitrogen < 0 || values.nitrogen > 1000) {
+      seterror("*Invalid Nitrogen (should be between 0 and 1000 ppm)");
+    } else if (values.phosphorus === '') {
+      seterror("*Phosphorus is Required!");
+    } else if (isNaN(values.phosphorus) || values.phosphorus < 0 || values.phosphorus > 1000) {
+      seterror("*Invalid Phosphorus (should be between 0 and 1000 ppm)");
+    } else if (values.potassium === '') {
+      seterror("*Potassium is Required!");
+    } else if (isNaN(values.potassium) || values.potassium < 0 || values.potassium > 1000) {
+      seterror("*Invalid Potassium (should be between 0 and 1000 ppm)");
+    } else if (values.temperature === '') {
+      seterror("*Temperature is Required!");
+    } else if (isNaN(values.temperature) || values.temperature < -50 || values.temperature > 50) {
+      seterror("*Invalid Temperature (should be between -50 and 50 degrees)");
+    } else if (values.humidity === '') {
+      seterror("*Humidity is Required!");
+    } else if (isNaN(values.humidity) || values.humidity < 0 || values.humidity > 100) {
+      seterror("*Invalid Humidity (should be between 0 and 100%)");
+    } else if (values.ph === '') {
+      seterror("*pH is Required!");
+    } else if (isNaN(values.ph) || values.ph < 0 || values.ph > 14) {
+      seterror("*Invalid pH (should be between 0 and 14)");
+    } else if (values.rainfall === '') {
+      seterror("*Rainfall is Required!");
+    } else if (isNaN(values.rainfall) || values.rainfall < 0 || values.rainfall > 1000) {
+      seterror("*Invalid Rainfall (should be between 0 and 1000 mm)");
+    }
     else {
       const { data } = await axios.post(`https://cropforesight-backend.onrender.com/predict`, { nitrogen: Number(values.nitrogen), phosphorus: Number(values.phosphorus), potassium: Number(values.potassium), temperature: Number(values.temperature), humidity: Number(values.humidity), ph: Number(values.ph), rainfall: Number(values.rainfall) })
       setLoading(false)
