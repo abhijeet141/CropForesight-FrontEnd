@@ -119,15 +119,7 @@ function App() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const [values, setValues] = useState({
-      nitrogen: "",
-      phosphorus: "",
-      potassium: "",
-      temperature: "",
-      humidity: "",
-      ph: "",
-      rainfall: "",
-    });
+
     // console.log("function called");
     setLoading(true)
 
