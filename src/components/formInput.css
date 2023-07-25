@@ -13,8 +13,7 @@ input{
 
 .errorMsg{
     color: red;
-    font-size: 16px;
-  
+    font-size: 14px;   
   }
   
 .form.glass input.inputField{
