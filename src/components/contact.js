@@ -6,7 +6,6 @@ import NAVBAR from "./nav";
 import { AiFillTwitterCircle, AiFillGithub, AiFillMail } from "react-icons/ai";
 import { FaUserAlt  } from "react-icons/fa";
 import { BsFillChatRightTextFill } from "react-icons/bs";
-import logo from '../assets/logo.png';
 import validate from "../common/validation";
 
 const Typewriter = ({ sentences, delay }) => {
