@@ -13,7 +13,7 @@
 }
 
 .aboutMain h1 {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-weight: 600;
   text-shadow: 0px 2px 0px rgb(91, 53, 126);
 }
@@ -27,7 +27,6 @@
   margin-top: 80px;
   text-align: center;
   padding-top: 20px;
-
 }
 
 ul {
@@ -84,7 +83,7 @@ ul {
   font-weight: 300;
   margin-top: 20px;
   cursor: pointer;
-  transition: .7s;
+  transition: 0.7s;
 }
 
 .content .left .feature {
@@ -99,7 +98,7 @@ ul {
 .slider {
   width: 180%;
   height: 160%;
-  margin-left: -80px;
+  margin-left: -40px;
 }
 
 .slider-box {
@@ -121,14 +120,20 @@ h3 {
   color: rgb(147, 102, 189);
 }
 
-.details{
+.details {
+  width: 100%;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   padding: 0 1rem;
-  gap: 1rem;
+  /* gap: 1rem; */
+  overflow: hidden;
+  /* margin-left: 1rem; */
 }
 
-.d-col{
+.d-col {
+  /* height:50vh; */
+  width: 30%;
   justify-content: center;
   background: rgb(19, 2, 42);
   box-shadow: 2px 2px 6px 0px darkgray;
@@ -138,35 +143,36 @@ h3 {
 .d-col:hover{
   transform: translateY(20px);
 }
-.title h2{
+.title h2 {
+   border: 1px solid #fff;
+  border-radius: 10px;
   font-weight: 800;
   color: rgb(147, 102, 189);
-  font-family: 'Poppins';
+  font-family: "Poppins";
   text-shadow: 0px 2px 0px rgb(91, 53, 126);
 }
 
-.title p{
+.title p {
   color: white;
   font-size: 1em;
 }
 
-.img-cont{
+.img-cont {
   display: flex;
   justify-content: center;
 }
 
-.d-col{
-  margin:5px;
+.d-col {
+  margin: 5px;
   max-height: fit-content;
   overflow: hidden;
   text-align: justify;
 }
 
-.d-col img{
+.d-col img {
   width: 10em;
   height: 10em;
   padding: 1em;
-  
 }
 
 @media only screen and (max-width: 1024px) {
@@ -198,7 +204,6 @@ h3 {
     margin-top: 5%;
     padding-top: 50px;
     margin-left: 30px;
-
   }
 
   .content .left {
@@ -213,9 +218,9 @@ h3 {
   }
 
   .slider {
-    width: 25rem;
+    width: 20rem;
     height: 15rem;
-    margin-left: 7.5rem;
+    margin-left: 0;
     margin-bottom: 2.5rem;
   }
 
@@ -225,11 +230,14 @@ h3 {
     margin: auto;
     margin-left: -15px;
   }
+
+  .d-col {
+    width: 100%;
+  }
 }
 
-@media only screen and (max-width: 560px) {}
-
-
+@media only screen and (max-width: 560px) {
+}
 
 ul {
   list-style-type: none;
@@ -335,7 +343,7 @@ main {
 .quote-icon {
   position: absolute;
   top: 0;
-  left: .5em;
+  left: 0.5em;
   width: 2.5rem;
   height: 2.5rem;
   display: grid;
@@ -343,5 +351,5 @@ main {
   border-radius: 50%;
   transform: translateY(25%);
   background: rgb(0, 0, 40);
-  color: #fff
+  color: #fff;
 }
