@@ -10,13 +10,16 @@ export function ExampleCrop({mode,setmode}) {
   return (
     <>
       <NAV mode={mode} setmode={setmode}/>
+
+    <div className="backdrop-opacity-10 backdrop-invert bg-white/30">
+      <NAV />
       <h1 className="h1_E">Find your crop </h1>
-      <form className="form_E">
+      <form className="form_E" >
         <input
           placeholder="Input season to find your crop"
           onChange={(e) => setSearch(e.target.value)}
           type="text"
-          className="input_E"
+          className={`input_E `}
         ></input>
       </form>
 
@@ -35,7 +38,11 @@ export function ExampleCrop({mode,setmode}) {
               ? card
               : card.season.toLowerCase().includes(search);
           }).map((card, index) => (
+
             <tr style={{backgroundColor:mode === "light" ? "white": "",color:mode === "light"? "black" : "white" }}>
+
+            <tr className="rowex">
+
               <td>{card.sl}</td>
               <td>{card.season}</td>
               <td>{card.head}</td>
@@ -46,6 +53,6 @@ export function ExampleCrop({mode,setmode}) {
           ))}
         </tbody>
       </table>
-    </>
+    </div>
   );
 }
