@@ -8,6 +8,7 @@ import { AiFillTwitterCircle, AiFillInstagram, AiFillGithub, AiFillMail } from "
 import { FaUserAlt  } from "react-icons/fa";
 import { BsFillChatRightTextFill } from "react-icons/bs";
 import logo from '../assets/logo.png';
+import validate from "../common/validation";
 
 const Typewriter = ({ sentences, delay }) => {
   const [displayText, setDisplayText] = useState("");
@@ -42,10 +43,12 @@ const openInNewTab = (url) => {
 };
 
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [error, seterror] = useState("");
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: ""
+  })
+  const [error, setError] = useState({});
 
   const sentences = [
     "Have A Question ❓",
@@ -54,32 +57,30 @@ const Contact = () => {
     "Report a bug 🪲",
   ];
 
-  function validEmail(email) {
-    let re =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (re.test(email)) return true;
-    else return false;
+  const handleChange = (e)=>{
+    const {name, value} = e.target;
+    setForm((prev)=>{
+      return {...prev, [name]: value}
+    })
+    const errMessage =  validate[name](value);
+    setError((prev)=>{
+      return {...prev, ...errMessage}
+    })
+
   }
 
   function handleSubmit(event) {
     event.preventDefault();
     // Do some authentication here...
     console.log("function called");
-
-    if (name === "") {
-      seterror("**Name is Required!");
-    } else if (email === "") {
-      seterror("**E-mail is Required!");
-    } else if (!validEmail(email)) {
-      seterror("**Enter a valid E-mail!");
-    } else if (message === "") {
-      seterror("**Enter a message!");
-    } else {
-      seterror("");
-      setName("");
-      setEmail("");
-      setMessage("");
-
+    let submitable = true;
+     Object.values(error).forEach((err)=>{
+      if(err !== false){
+        submitable = false;
+      }
+     })
+ 
+     if(submitable){
       try {
         // const response = await fetch("https://cropforesight-backend.onrender.com/subform", {
         //   method: "POST",
@@ -101,7 +102,7 @@ const Contact = () => {
         //console.log(formData);
         swal(
           "Success",
-          `Thanks for contacting us ${name}. We have received your details successfully. We will get back to you soon.`,
+          `Thanks for contacting us ${form.name}. We have received your details successfully. We will get back to you soon.`,
           "success"
         );
       } catch (error) {
@@ -109,6 +110,8 @@ const Contact = () => {
         console.log(error);
         swal("Error", "Something went wrong... Please try again", "error");
       }
+    }else{
+      swal("Error", "Plesae fill all fields with valid data.")
     }
   }
 
@@ -156,8 +159,7 @@ const Contact = () => {
           </div>
 
           {/* right part */}
-          <form className="form">
-
+          <form className="form" onSubmit={handleSubmit} aria-label="Contact us form">
             <div className="form-group">
               <FaUserAlt className="icon" />
               <input
@@ -166,55 +168,48 @@ const Contact = () => {
                 placeholder="Name"
                 type="text"
                 required
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className={`form-control ${error === "**Name is Required!" && "inputField"
-                  }`}
+                value={form.name}
+                onChange={handleChange}
+                className={`form-control`}
+                aria-label="name input"
+                aria-describedby="name-error"
               />
-              {error === "**Name is Required!" && (
-                <small className="errorMsg">**Name is Required!</small>
-              )}
             </div>
+              {error.name && error.nameError && <p className="errorMsg" role="alert" id="name-error">{error.nameError}</p>}
 
             <div className="form-group">
               <AiFillMail className="icon" />
               <input
-                className={`form-control ${error === "**E-mail is Required!" && "inputField"
-                  }`}
+                className={`form-control`}
                 id="email"
                 name="email"
                 placeholder="Email"
                 type="email"
                 required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={form.email}
+                onChange={handleChange}
+                aria-label="email input"
+                aria-describedby="email-error"
               />
-              {error === "**E-mail is Required!" && (
-                <small className="errorMsg">**E-mail is Required!</small>
-              )}
-
-              {error === "**Enter a valid E-mail!" && (
-                <small className="errorMsg">**Enter a valid E-mail!</small>
-              )}
             </div>
+             {error.email && error.emailError && <p className="errorMsg" role="alert" id="email-error">{error.emailError}</p>}
 
             <div className="text-area">
             <BsFillChatRightTextFill className="icon" />
               <textarea
-                className={`form-control ${error === "**Enter a message!" && "inputField"
-                  }`}
+                className={`form-control}`}
                 id="message"
                 name="message"
                 placeholder="Message"
                 rows="5"
                 required
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
+                value={form.message}
+                onChange={handleChange}
+                aria-label="message input"
+                aria-describedby="message-error"
               ></textarea>
-              {error === "**Enter a message!" && (
-                <small className="errorMsg">**Enter a message!</small>
-              )}
             </div>
+                {error.message && error.messageError && <p className="errorMsg" role="alert" id="message-error">{error.messageError}</p>}
 
             <button type="submit">
               Send
@@ -226,16 +221,19 @@ const Contact = () => {
                 size={30}
                 onClick={() => openInNewTab("https://www.twitter.com/")}
                 className="twitter"
+                aria-label="Follow me on Twitter"
               />
 
               <AiFillMail
                 size={30} onClick={() => openInNewTab("mailto:---")}
                 className="mail"
+                aria-label="My email"
               />
 
               <AiFillGithub
                 size={30} onClick={() => openInNewTab("https://www.github.com/")}
                 className="github"
+                aria-label="Follow me on github"
               />
 
             </div>

@@ -8,9 +8,10 @@ export function ExampleCrop() {
   const [search, setSearch] = useState("");
 
   return (
-    <>
+    <div className="backdrop-opacity-10 backdrop-invert bg-white/30">
       <NAV />
       <h1 className="h1_E">Find your crop </h1>
+    
       <div className="inputcard_E">
         <form className="form_E">
           <input
@@ -21,6 +22,7 @@ export function ExampleCrop() {
           ></input>
         </form>
       </div>
+
 
       <table className="table_E">
         <thead className="thead_E">
@@ -37,7 +39,7 @@ export function ExampleCrop() {
               ? card
               : card.season.toLowerCase().includes(search);
           }).map((card, index) => (
-            <tr>
+            <tr className="rowex">
               <td>{card.sl}</td>
               <td>{card.season}</td>
               <td>{card.head}</td>
@@ -48,6 +50,6 @@ export function ExampleCrop() {
           ))}
         </tbody>
       </table>
-    </>
+    </div>
   );
 }
