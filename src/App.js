@@ -102,6 +102,13 @@ function App() {
               </div>
             </div>
             <form onSubmit={handleSubmit}>
+         <Link to="/"   >
+          <button class="button2"> 
+          <span class="X2"></span>
+          <span class="Y2"></span>
+          <div class="close2"></div>
+        </button>
+        </Link>
               {error && (<p style={{ color: "red" }}>{error}</p>)}
               {inputs.map((input) => (
                 <FormInfo key={input.id} {...input} value={values[input.name]} onChange={onChange}
