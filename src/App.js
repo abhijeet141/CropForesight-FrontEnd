@@ -1,24 +1,22 @@
 import axios from "axios";
-import { Suspense, lazy, useState } from "react";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import swal from "sweetalert";
+import { useState } from "react";
 import "./App.css";
-import { crop } from "./assets";
-import { ExampleCrop } from "./components/ExampleOfCrop/ExampleCrop";
 import FormInfo from "./components/FormInfo";
+import { ExampleCrop } from "./components/ExampleOfCrop/ExampleCrop";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import swal from "sweetalert";
+import {lazy, Suspense} from 'react'
 import "./components/nav.css";
 
 import GoToTop from "./GoToTop/GoToTop";
 import Loading from './components/Loading';
 
-const Home = lazy(() => import('./components/Home'))
-const Weather = lazy(() => import('./components/Weather'))
-const About = lazy(() => import('./components/about'))
-const Contact = lazy(() => import('./components/contact'))
-const FAQ = lazy(() => import('./components/faq/faq'))
-const Err = lazy(() => import('./components/404'))
-const Navbar = lazy(() => import('./components/nav.jsx'))
-const Contributor = lazy(() => import('./components/Contributor'));
+const Home=lazy(()=>import('./components/Home'))
+const Weather=lazy(()=>import('./components/Weather'))
+const About=lazy(()=>import('./components/about'))
+const Contact=lazy(()=>import('./components/contact'))
+const FAQ=lazy(()=>import('./components/faq/faq'))
+const Err=lazy(()=>import('./components/404'))
 
 function App() {
   const [values, setValues] = useState({
@@ -37,91 +35,81 @@ function App() {
       id: 1,
       name: "nitrogen",
       type: "number",
-      placeholder: "Nitrogen in parts per million (ppm)",
+      placeholder: "Nitrogen",
+      label: "Nitrogen in parts per million (ppm)",
     },
     {
       id: 2,
       name: "phosphorus",
       type: "number",
-      placeholder: "Phosphorus in parts per million (ppm) ",
+      placeholder: "Phosphorus",
+      label: "Phosphorus in parts per million (ppm) ",
     },
     {
       id: 3,
       name: "potassium",
       type: "number",
-      placeholder: "Potassium in parts per million (ppm) ",
+      placeholder: "Potassium",
+      label: "Potassium in parts per million (ppm) ",
     },
     {
       id: 4,
       name: "temperature",
       type: "number",
-      placeholder: "Temperature in Celsius (°C)",
+      placeholder: "Temperature",
+      label: "Temperature in Celsius (°C)",
     },
     {
       id: 5,
       name: "humidity",
       type: "number",
-      placeholder: "Humidity in percentage (%)",
+      placeholder: "Humidity",
+      label: "Humidity in percentage (%)",
     },
     {
       id: 6,
       name: "ph",
       type: "number",
-      placeholder: "Ph (0-14)",
+      placeholder: "Ph",
+      label: "Ph (0-14)",
     },
     {
       id: 7,
       name: "rainfall",
       type: "number",
-      placeholder: "Rainfall in millimeters (mm)",
+      placeholder: "Rainfall",
+      label: "Rainfall in millimeters (mm)",
     },
   ];
 
   // Can be extracted sapareately
-  const FormComponent = () => {
+  const FormComponet = () => {
     return (
-      <>
-        <Navbar />
-        <div className="body">
-          <div className="formCont">
-            <div className="form-left">
-              <div className="form-left-one">
-                <Link to="/" style={{ textDecoration: "none" }}>{<h1>Crop Foresight</h1>}</Link>
-                <h2>Crop Recomendation</h2>
-                <p className="form-left-one-para">
-                  Get crops recommendation based on your soil and weather conditions.
-                  Fill in the given form and get recommendations now.
-                </p>
-              </div>
-
-              <div className="form-left-two">
-                <img
-                  src={crop}
-                  alt="crop"
-                />
-              </div>
-            </div>
-            <form onSubmit={handleSubmit}>
-              {error && (<p style={{ color: "red" }}>{error}</p>)}
-              {inputs.map((input) => (
-                <FormInfo key={input.id} {...input} value={values[input.name]} onChange={onChange}
-                />
-              ))}
-              <button onClick={handleSubmit} className='btn'>{loading ? 'Evaluating...' : 'Recommend Crop'}</button>
-            </form>
-          </div>
-        </div>
-      </>
-    )
+      <div className="body">
+        <form 
+        style={{
+          boxShadow: "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px"
+        }} 
+        onSubmit={handleSubmit}>
+          <h1 style={{marginBottom:'60px'}} className='title'>Crop Recomendation</h1>
+          {error && (<p style={{color:"red"}}>{error}</p>)}
+          {inputs.map((input) => (
+            <FormInfo key={input.id} {...input} value={values[input.name]} onChange={onChange}
+            />
+          ))}
+          <button onClick={handleSubmit} className='btn'>{loading ? 'Evaluating...' : 'Recommend Crop'}</button>
+        </form>
+      </div>)
   }
 
   const [error, seterror] = useState("");
-
+ 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // console.log("function called");
+   // console.log("function called");
     setLoading(true)
+
 
     if (values.nitrogen === '') { seterror("*Nitrogen is Required!"); }
     if (values.nitrogen === '') {
@@ -154,12 +142,13 @@ function App() {
       seterror("*Invalid Rainfall (should be between 0 and 1000 mm)");
     }
     else {
+
       const { data } = await axios.post(`https://cropforesight-backend.onrender.com/predict`, { nitrogen: Number(values.nitrogen), phosphorus: Number(values.phosphorus), potassium: Number(values.potassium), temperature: Number(values.temperature), humidity: Number(values.humidity), ph: Number(values.ph), rainfall: Number(values.rainfall) })
       setLoading(false)
       seterror("");
-      values.nitrogen = ''; values.phosphorus = ''; values.potassium = ''; values.temperature = ''; values.humidity = ''; values.ph = ''; values.rainfall = '';
+      values.nitrogen='';values.phosphorus='';values.potassium='';values.temperature='';values.humidity='';values.ph='';values.rainfall='';
       swal("Success", `You should plant ${data.result} in your field`, "success");
-    }
+    }     
   }
   const onChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
@@ -175,24 +164,23 @@ function App() {
   }
 
   return (
-    <>
-      <GoToTop />
-      <BrowserRouter>
-        <Suspense fallback={<Loading />}>
+      <>
+        <GoToTop />
+        <BrowserRouter>
+          <Suspense fallback={<Loading/>}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/form" element={FormComponent()} />
+            <Route path="/form" element={FormComponet()} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/Weather" element={<Weather />} />
             <Route path="/*" element={<Err />} />
             <Route path="/ExampleCrop" element={<ExampleCrop />} />
-            <Route path="/contributors" element={<Contributor />} />
           </Routes>
-        </Suspense>
-      </BrowserRouter>
-    </>
+          </Suspense>
+        </BrowserRouter>
+      </>
   );
 }
 
