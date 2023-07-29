@@ -157,8 +157,7 @@ const Contact = () => {
           </div>
 
           {/* right part */}
-          <form className="form" onSubmit={handleSubmit}>
-
+          <form className="form" onSubmit={handleSubmit} aria-label="Contact us form">
             <div className="form-group">
               <FaUserAlt className="icon" />
               <input
@@ -170,9 +169,11 @@ const Contact = () => {
                 value={form.name}
                 onChange={handleChange}
                 className={`form-control`}
+                aria-label="name input"
+                aria-describedby="name-error"
               />
             </div>
-              {error.name && error.nameError && <p className="errorMsg">{error.nameError}</p>}
+              {error.name && error.nameError && <p className="errorMsg" role="alert" id="name-error">{error.nameError}</p>}
 
             <div className="form-group">
               <AiFillMail className="icon" />
@@ -185,9 +186,11 @@ const Contact = () => {
                 required
                 value={form.email}
                 onChange={handleChange}
+                aria-label="email input"
+                aria-describedby="email-error"
               />
             </div>
-             {error.email && error.emailError && <p className="errorMsg">{error.emailError}</p>}
+             {error.email && error.emailError && <p className="errorMsg" role="alert" id="email-error">{error.emailError}</p>}
 
             <div className="text-area">
             <BsFillChatRightTextFill className="icon" />
@@ -200,9 +203,11 @@ const Contact = () => {
                 required
                 value={form.message}
                 onChange={handleChange}
+                aria-label="message input"
+                aria-describedby="message-error"
               ></textarea>
             </div>
-                {error.message && error.messageError && <p className="errorMsg">{error.messageError}</p>}
+                {error.message && error.messageError && <p className="errorMsg" role="alert" id="message-error">{error.messageError}</p>}
 
             <button type="submit">
               Send
@@ -214,16 +219,19 @@ const Contact = () => {
                 size={30}
                 onClick={() => openInNewTab("https://www.twitter.com/")}
                 className="twitter"
+                aria-label="Follow me on Twitter"
               />
 
               <AiFillMail
                 size={30} onClick={() => openInNewTab("mailto:---")}
                 className="mail"
+                aria-label="My email"
               />
 
               <AiFillGithub
                 size={30} onClick={() => openInNewTab("https://www.github.com/")}
                 className="github"
+                aria-label="Follow me on github"
               />
 
             </div>
