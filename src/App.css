@@ -133,6 +133,73 @@ button {
   box-shadow: 1px 1px 1px 1px purple;
   transition: background-color 0.5s ease;
 }
+.button2 {
+   position: sticky; 
+   left: 82%;
+   bottom: 81%;
+  width: 4em;
+  height: 2em;
+  border: none;
+  background: none;
+  z-index: 2;
+}
+
+.X2 {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 33%;
+  width: 1.5em;
+  height: 1px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+
+.Y2 {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 33%;
+  width: 1.5em;
+  height: 1px;
+  background-color: #fff;
+  transform: rotate(-45deg);
+}
+
+.close2 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: -40%;
+  left: 70%;
+  width: 3em;
+  height: 1.7em;
+  font-size: 16px;
+  background-color: rgb(254, 255, 225);
+  color: #000;
+  border: 1px solid #000;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.button2:hover {
+  background-color: rgb(210, 0, 0);
+}
+
+.button2:active {
+  background-color: rgb(130, 0, 0);
+}
+
+.button2:hover > .close {
+  animation: close 0.2s forwards 1.25s;
+}
+
+@keyframes close {
+  100% {
+    opacity: 1;
+  }
+}
 
 @media (max-width: 412px) {
   .body {
