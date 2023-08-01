@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { useNavigate, Link } from 'react-router-dom';
+import React, { useState } from 'react'
 import './faq.css';
 import "../nav.css";
-import logo from "../../assets/logo.png";
 import faq from "../../assets/faq.webp";
+import faqs from './faqData';
 import NAV from '../nav';
 
 const AccordionItem = ({ title, content }) => {
@@ -44,7 +43,7 @@ const FAQ = ({mode,setmode}) => {
                     {/* left-Side */}
                     <div className="leftside">
                         {/* <img className='faqImage' src={faq} /> */}
-                        <img className='faqImage' src={faq} />
+                        <img alt='Man with Doubt' className='faqImage' src={faq} />
                     </div>
 
                     {/* Right-Side */}

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import video from "../assets/nature.mp4";
 import "./Home.css";
 import "./nav.css";
 import Nav from "./nav";
 import Contact from "./contact";
 import logo from '../assets/logo.png';
+
 
 const Typewriter = ({ sentences, delay }) => {
   const [displayText, setDisplayText] = useState("");
@@ -39,7 +40,6 @@ const Typewriter = ({ sentences, delay }) => {
 const Home = (props) => {
   const {mode,setmode} = props;
   const navigate = useNavigate();
-  const [showButton, setShowButton] = useState(false);
   const sentences = [
     "Predict what type of crop🌾 is suitable on your land🌏",
     "Get Better yield by predicting the best crop🌾 for you ",

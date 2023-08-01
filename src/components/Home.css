@@ -200,8 +200,6 @@ img {
 }
 
 @media only screen and (max-width: 480px) {
-  .main {
-  }
   .card-container {
     flex-direction: column;
     align-items: center;

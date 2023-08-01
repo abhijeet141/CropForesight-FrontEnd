@@ -85,8 +85,7 @@ export const Weather = ({mode,setmode}) => {
                     <WeatherCard weatherData={weatherData} />    
                     </div>
                 )}
-
-                {weatherData == null && submitPress == true && (
+                {weatherData === null && submitPress === true && (
                     <div className='Weather'>
                         <p className='name'>Please enter proper Location details.</p>
                     </div>
