@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
-import styles from "./contact.css";
+import "./contact.css";
 import "./nav.css";
-import { useNavigate, Link, useHref } from "react-router-dom";
 import swal from "sweetalert";
 import NAVBAR from "./nav";
-import { AiFillTwitterCircle, AiFillInstagram, AiFillGithub, AiFillMail } from "react-icons/ai";
+import { AiFillTwitterCircle, AiFillGithub, AiFillMail } from "react-icons/ai";
 import { FaUserAlt  } from "react-icons/fa";
 import { BsFillChatRightTextFill } from "react-icons/bs";
-import logo from '../assets/logo.png';
 import validate from "../common/validation";
 
 const Typewriter = ({ sentences, delay }) => {

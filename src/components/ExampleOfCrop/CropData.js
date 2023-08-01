@@ -1,4 +1,4 @@
-export default [
+const CropData = [
   {
     sl: "1",
     head: "Tomato",
@@ -105,3 +105,5 @@ export default [
       "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSMhJ4Gdj8tbvRCcnK5wScleb_Ks6kK78EtNDz1Yz5Z4OQUtzOJaKN4moODiz5-wLbe0oK8NFnS6_vSVtc",
   },
 ];
+
+export default CropData;
