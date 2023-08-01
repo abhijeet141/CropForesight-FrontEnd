@@ -24,7 +24,7 @@ const Contributor = () => {
   return (
     <>
     <NAV/>
-    <br /><br /><br /><br /><br />
+    <br />
       <div>
         <h1 className="h1" >
           Our Contributors
