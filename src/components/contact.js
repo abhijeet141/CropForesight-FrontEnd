@@ -4,7 +4,7 @@ import "./nav.css";
 import swal from "sweetalert";
 import NAVBAR from "./nav";
 import { AiFillTwitterCircle, AiFillGithub, AiFillMail } from "react-icons/ai";
-import { FaUserAlt  } from "react-icons/fa";
+import { FaUserAlt } from "react-icons/fa";
 import { BsFillChatRightTextFill } from "react-icons/bs";
 import validate from "../common/validation";
 
@@ -44,8 +44,8 @@ const Contact = () => {
   const [form, setForm] = useState({
     name: "",
     email: "",
-    message: ""
-  })
+    message: "",
+  });
   const [error, setError] = useState({});
 
   const sentences = [
@@ -55,30 +55,29 @@ const Contact = () => {
     "Report a bug 🪲",
   ];
 
-  const handleChange = (e)=>{
-    const {name, value} = e.target;
-    setForm((prev)=>{
-      return {...prev, [name]: value}
-    })
-    const errMessage =  validate[name](value);
-    setError((prev)=>{
-      return {...prev, ...errMessage}
-    })
-
-  }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => {
+      return { ...prev, [name]: value };
+    });
+    const errMessage = validate[name](value);
+    setError((prev) => {
+      return { ...prev, ...errMessage };
+    });
+  };
 
   function handleSubmit(event) {
     event.preventDefault();
     // Do some authentication here...
     console.log("function called");
     let submitable = true;
-     Object.values(error).forEach((err)=>{
-      if(err !== false){
+    Object.values(error).forEach((err) => {
+      if (err !== false) {
         submitable = false;
       }
-     })
- 
-     if(submitable){
+    });
+
+    if (submitable) {
       try {
         // const response = await fetch("https://cropforesight-backend.onrender.com/subform", {
         //   method: "POST",
@@ -108,8 +107,8 @@ const Contact = () => {
         console.log(error);
         swal("Error", "Something went wrong... Please try again", "error");
       }
-    }else{
-      swal("Error", "Plesae fill all fields with valid data.")
+    } else {
+      swal("Error", "Plesae fill all fields with valid data.");
     }
   }
 
@@ -119,125 +118,89 @@ const Contact = () => {
       <NAVBAR />
 
       {/* contact us form */}
-
-
-      <div className="contactUsContainer">
-
-        <div className="contactUs">
-
-          {/* left part */}
-          <div className="leftContact">
-            <h1 className="contact">Contact US</h1>
-            <h3 className="tag">
-              <Typewriter sentences={sentences} delay={2000} />
-            </h3>
-
-            <div className="socials">
-              <h4 className="contact">Reach us via</h4>
-              <div class="wrapper">
-
-                <AiFillTwitterCircle
-                  size={50}
-                  onClick={() => openInNewTab("https://www.twitter.com/")}
-                  className="twitter"
-                />
-
-                <AiFillMail
-                  size={50} onClick={() => openInNewTab("mailto:---")}
-                  className="mail"
-                />
-
-                <AiFillGithub
-                  size={50} onClick={() => openInNewTab("https://www.github.com/")}
-                  className="github"
-                />
-
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <section>
+        <div className="container">
+          <div className="contactInfo">
+            <div>
+              <h2>Contact Info</h2>
+              <ul className="info">
+                <li>
+                  <span>
+                    <i class="fa fa-location"></i>
+                  </span>
+                  <span>
+                    184 Ippokratous Street
+                    <br />
+                    Athens, Gr
+                    <br />
+                    11472
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <i class="fa fa-envelope"></i>
+                  </span>
+                  {/* <span>nassosanagn@gmail.com</span> */}
+                  <span>
+                    <a href="mailto:">
+                      okfine@gmamail.com
+                    </a>
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <i class="fa fa-phone"></i>
+                  </span>
+                  <span>1234567856</span>
+                </li>
+              </ul>
+            </div>
+            <ul className="sci">
+              <li>
+                <i class="fa-brands fa-twitter"></i>
+              </li>
+              <li>
+                <i class="fa-brands fa-facebook"></i>
+              </li>
+              <li>
+                <i class="fa-brands fa-instagram"></i>
+              </li>
+              <li>
+              <i class="fa-brands fa-google"></i>
+              </li>
+            </ul>
+          </div>
+          <div className="contactForm">
+            <h2>Send a Message</h2>
+            <div className="formBox">
+              <div className="inputBox w50">
+                <input type="text" name="" required="" />
+                <span>First Name</span>
+              </div>
+              <div className="inputBox w50">
+                <input type="text" required="" />
+                <span>Last Name</span>
+              </div>
+              <div className="inputBox w50">
+                <input type="email" required="" />
+                <span>Email Address</span>
+              </div>
+              <div className="inputBox w50">
+                <input type="text" required="" />
+                <span>Mobile Number</span>
+              </div>
+              <div className="inputBox w100">
+                <textarea required="" defaultValue={""} />
+                <span>Write your message here...</span>
+              </div>
+              <div className="inputBox w100">
+                <input type="submit" defaultValue="Send" />
               </div>
             </div>
           </div>
-
-          {/* right part */}
-          <form className="form" onSubmit={handleSubmit} aria-label="Contact us form">
-            <div className="form-group">
-              <FaUserAlt className="icon" />
-              <input
-                id="name"
-                name="name"
-                placeholder="Name"
-                type="text"
-                required
-                value={form.name}
-                onChange={handleChange}
-                className={`form-control`}
-                aria-label="name input"
-                aria-describedby="name-error"
-              />
-            </div>
-              {error.name && error.nameError && <p className="errorMsg" role="alert" id="name-error">{error.nameError}</p>}
-
-            <div className="form-group">
-              <AiFillMail className="icon" />
-              <input
-                className={`form-control`}
-                id="email"
-                name="email"
-                placeholder="Email"
-                type="email"
-                required
-                value={form.email}
-                onChange={handleChange}
-                aria-label="email input"
-                aria-describedby="email-error"
-              />
-            </div>
-             {error.email && error.emailError && <p className="errorMsg" role="alert" id="email-error">{error.emailError}</p>}
-
-            <div className="text-area">
-            <BsFillChatRightTextFill className="icon" />
-              <textarea
-                className={`form-control}`}
-                id="message"
-                name="message"
-                placeholder="Message"
-                rows="5"
-                required
-                value={form.message}
-                onChange={handleChange}
-                aria-label="message input"
-                aria-describedby="message-error"
-              ></textarea>
-            </div>
-                {error.message && error.messageError && <p className="errorMsg" role="alert" id="message-error">{error.messageError}</p>}
-
-            <button type="submit">
-              Send
-            </button>
-
-            <div class="wrapper-md">
-
-              <AiFillTwitterCircle
-                size={30}
-                onClick={() => openInNewTab("https://www.twitter.com/")}
-                className="twitter"
-                aria-label="Follow me on Twitter"
-              />
-
-              <AiFillMail
-                size={30} onClick={() => openInNewTab("mailto:---")}
-                className="mail"
-                aria-label="My email"
-              />
-
-              <AiFillGithub
-                size={30} onClick={() => openInNewTab("https://www.github.com/")}
-                className="github"
-                aria-label="Follow me on github"
-              />
-
-            </div>
-          </form>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
