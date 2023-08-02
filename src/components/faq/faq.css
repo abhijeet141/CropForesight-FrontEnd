@@ -7,15 +7,15 @@
     margin-bottom: 50px;
 }
 .faq-heading{
-  font-family: 'Poppins';
-  text-align: center;
-  font-size: 60px;
+  font-family: "Poppins";
   font-weight: 600;
   text-shadow: 0px 2px 0px rgb(91, 53, 126);
+  text-align: center;
+  font-size: 40px;
   color: rgb(147, 102, 189);
 }
 .faq-main{
-    margin-top: 50px;
+    margin-top: 10px;
     margin-bottom: 50px;
     display: flex;
     justify-content: center;
@@ -125,7 +125,7 @@
   
   .accordion button .accordion-title {
     padding: 1em 1.5em 1em 0;
-    font-size: 20px; 
+    font-size: 1.2rem; 
     font-family: 'Poppins';
   }
   
@@ -237,10 +237,29 @@
     }
     .accordion button[aria-expanded='true'] + .accordion-content p {
       margin: 0 auto 1.6em auto;
+      line-height: 1.7rem;
     }
   }
   @media screen and (min-width: 769px) {
     .accordion .accordion-item button[aria-expanded='true'] {
       padding: 2.5em 0;
     }
+  }
+  @media screen and (max-width: 500px) {
+
+.accordion button .accordion-title {
+      padding: 1em 1.3em 0 0;
+      font-size: 1rem;
+      line-height: 2rem;
+    }
+  }
+  @media screen and (max-width: 380px){
+  .accordion button .accordion-title {
+      padding: 1em 1.3em 2em 0;
+      font-size: 0.8rem;
+      line-height: 1.5rem;}
+      .faq-heading{
+        font-size: 1.5rem;
+        line-height:2rem;
+      }
   }

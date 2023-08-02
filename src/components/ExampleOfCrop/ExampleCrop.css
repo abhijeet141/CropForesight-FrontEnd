@@ -3,12 +3,14 @@
   width: 7rem !important;
   border-radius: 15%;
   opacity: 0.6;
+  transition: all ease 2s;
 }
+/* 
 .Avtar:hover {
-  scale: 1.5;
+  scale: 1.2;
   opacity: 1;
   cursor: pointer;
-}
+} */
 .table_E {
   margin-left: auto;
   margin-right: auto;
@@ -18,6 +20,8 @@
 .thead_E {
   border-bottom: 1px solid black;
   border: 2px solid rgb(112, 111, 112);
+  padding-top: 5px;
+  padding-bottom: 5px;
   color: rgb(229, 160, 250);
 }
 
@@ -26,23 +30,61 @@ td {
   padding-left: 5rem;
   text-align: center;
   border: 2px solid rgb(112, 111, 112);
+  color:black;
+  font-size: 18px;
 }
 .Crop_table {
   justify-content: center !important;
   align-items: center !important;
 }
+
+.form_E{
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
 .input_E {
-  min-width: 540px !important;
+  width: 100% ;
+  
+}
+.inputcard_E {
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  padding-bottom: 30px;
+
 }
 .h1_E {
-  margin-top: 5rem;
+  font-family: "Poppins";
+  font-size: 40px;
+  font-weight: 600;
+  text-shadow: 0px 2px 0px rgb(91, 53, 126);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-style: bold;
+  color: rgb(147, 102, 189);
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 20px;
+
 }
 .tbody_E tr:nth-child(odd) {
-  background-color: rgb(0, 0, 57);
+  background-color: rgb(220, 155, 240);
+}
+
+.rowex{
+  transition: 500ms all ease;
+}
+
+.rowex:hover{
+  scale: 1.04;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
 
 .tbody_E tr:nth-child(even) {
-  background-color: #0c134f;
+  background-color: rgb(190, 133, 207);
 }
 @media only screen and (max-width: 855px) {
   img {
