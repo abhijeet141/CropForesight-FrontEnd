@@ -4,8 +4,34 @@ import CropData from "./CropData";
 import { useState } from "react";
 import NAV from "../nav";
 
+
 export function ExampleCrop() {
   const [search, setSearch] = useState("");
+  const [data, setData] = useState(CropData);
+  
+  function handlesearch(e){
+    setSearch(e.target.value);
+    const query = e.target.value;
+    if(query === ""){
+        setData(CropData);
+    }
+
+    const array = CropData.filter((elem)=>{
+        return elem.head.toLowerCase().includes(query);
+    })
+
+    for (let index = 0; index < CropData.length; index++) {
+        const element = CropData[index];
+        // if not present in the array 
+        if(array.find((elem)=>{ return elem.sl === element.sl}) === undefined
+            && element.season.toLowerCase().includes(query)
+        ){
+            array.push(element);
+        }           
+    }
+    // setfiltered(array);
+    setData(array);
+}
 
   return (
     <div className="backdrop-opacity-10 backdrop-invert bg-white/30">
@@ -16,7 +42,7 @@ export function ExampleCrop() {
         <form className="form_E">
           <input
             placeholder="Input season to find your crop"
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => handlesearch(e)}
             type="text"
             className="input_E"
           ></input>
@@ -34,11 +60,7 @@ export function ExampleCrop() {
           </tr>
         </thead>
         <tbody className="tbody_E">
-          {CropData.filter((card) => {
-            return search.toLowerCase() === ""
-              ? card
-              : card.season.toLowerCase().includes(search);
-          }).map((card, index) => (
+          {data.map((card, index) => (
             <tr className="rowex">
               <td>{card.sl}</td>
               <td>{card.season}</td>
