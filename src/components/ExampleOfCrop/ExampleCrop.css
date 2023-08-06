@@ -12,8 +12,7 @@
   cursor: pointer;
 } */
 .table_E {
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
   border-collapse: collapse;
 }
 
@@ -41,19 +40,29 @@ td {
 .form_E{
   margin: auto;
   margin-bottom: 1rem;
+  overflow: hidden;
+  background-color: rgb(220, 155, 240);
+  border-radius: 0.5rem;
 }
 
 .input_E {
-  width: 100% ;
-  
+  width: 90% ;
+  margin-inline: 5%;
+  transition: 1s ease-in all;
+  font-size: 1.2rem;
 }
+
+.input_E:focus{
+  background-color: rgb(220, 155, 240);
+}
+
 .inputcard_E {
   display: flex;
   justify-content: center !important;
   align-items: center !important;
   padding-bottom: 30px;
-
 }
+
 .h1_E {
   font-family: "Poppins";
   font-size: 40px;
