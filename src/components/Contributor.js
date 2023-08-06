@@ -30,7 +30,6 @@ const Contributor = () => {
           Our Contributors
         </h1>
       </div>
-
       <div className="main_cont">
         {contributors.map((i) => (
           <>
@@ -54,7 +53,6 @@ const Contributor = () => {
     </>
   );
 }
-
 export default Contributor;
 
 
