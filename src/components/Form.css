@@ -1,0 +1,10 @@
+.container-sm {
+  position: relative;
+  margin-top: 10vw;
+  margin-left: 32vw;
+}
+
+.col-lg-8 {
+  color: blue;
+  font-size: larger;
+}
