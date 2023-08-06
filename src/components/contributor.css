@@ -6,9 +6,8 @@
   .main_cont {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    justify-content: center;
-    align-items: center;
     gap: 30px;
+    margin: 0 16vw
   }
   
   @media (min-width: 768px) {
@@ -58,8 +57,10 @@
     }
 
     .Contributor_cards:hover{
-      transform: scale(1.05)
-          }
+      transform: scale(1.05);
+      box-shadow: 1px 3px 5px 5px rgb(79, 79, 197);
+      border: none;
+      }
   
 
   .image {
@@ -109,6 +110,7 @@
   
   .view:hover {
     background-color: rgb(57, 37, 78);
+    text-decoration: underline;
   }
 
   
