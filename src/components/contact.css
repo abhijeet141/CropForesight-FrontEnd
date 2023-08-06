@@ -7,7 +7,7 @@
     font-family: 'Poppins',sans-serif;
 }
 
-section
+.sectionIO
 {
     display: flex;
     justify-content: center;
@@ -16,7 +16,7 @@ section
     background-color: #0b2952;
 
 }
-section::before
+.sectionIO::before
 {
     content: '';
     position: absolute;
@@ -300,7 +300,7 @@ section::before
 
 @media (max-width: 991px)
 {
-    section
+    .sectionIO
     {
         display: flex;
         justify-content: center;
@@ -309,7 +309,7 @@ section::before
         background: #fff38e;
     }
 
-    section::before
+    .sectionIO::before
     {
         display: none;
     }
