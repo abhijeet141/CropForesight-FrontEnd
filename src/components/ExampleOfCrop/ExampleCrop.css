@@ -2,7 +2,7 @@
   height: 5rem !important;
   width: 7rem !important;
   border-radius: 15%;
-  opacity: 0.6;
+  /* opacity: 0.6; */
   transition: all ease 2s;
 }
 /* 
@@ -29,7 +29,7 @@ td {
   padding-left: 5rem;
   text-align: center;
   border: 2px solid rgb(112, 111, 112);
-  color:black;
+  color: black;
   font-size: 18px;
 }
 .Crop_table {
@@ -37,7 +37,7 @@ td {
   align-items: center !important;
 }
 
-.form_E{
+.form_E {
   margin: auto;
   margin-bottom: 1rem;
   overflow: hidden;
@@ -46,13 +46,13 @@ td {
 }
 
 .input_E {
-  width: 90% ;
+  width: 90%;
   margin-inline: 5%;
   transition: 1s ease-in all;
   font-size: 1.2rem;
 }
 
-.input_E:focus{
+.input_E:focus {
   background-color: rgb(220, 155, 240);
 }
 
@@ -77,19 +77,19 @@ td {
   text-align: center;
   margin-top: 100px;
   margin-bottom: 20px;
-
 }
 .tbody_E tr:nth-child(odd) {
   background-color: rgb(220, 155, 240);
 }
 
-.rowex{
+.rowex {
   transition: 500ms all ease;
 }
 
-.rowex:hover{
+.rowex:hover {
   scale: 1.04;
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
 
 .tbody_E tr:nth-child(even) {
