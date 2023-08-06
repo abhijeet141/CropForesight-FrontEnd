@@ -27,7 +27,7 @@ section::before
     background: #170549;
 }
 
-.container
+.containerIO
 {
     position: relative;
     min-width: 1100px;
@@ -39,7 +39,7 @@ section::before
 
 }
 
-.container .contactInfo
+.containerIO .contactInfo
 {
     position: absolute;
     top: 40px;
@@ -57,20 +57,20 @@ section::before
     color: white;
 }
 
-.container .contactInfo h2
+.containerIO .contactInfo h2
 {
     color: #fff;
     font-size:24px;
     font-weight: 500;
 }
 
-.container .contactInfo ul.info 
+.containerIO .contactInfo ul.info 
 {
    position: relative;
    margin: 20px 0; 
 }
 
-.container .contactInfo ul.info li
+.containerIO .contactInfo ul.info li
 {
    position: relative;
    list-style: none;
@@ -80,14 +80,14 @@ section::before
    align-items: flex-start;
 }
 
-.container .contactInfo ul.info li span:nth-child(1)
+.containerIO .contactInfo ul.info li span:nth-child(1)
 {
     width: 30px;
     min-width: 30px;
 }
 
 /* for gmail */
-.container .contactInfo ul.info li span a
+.containerIO .contactInfo ul.info li span a
 {
     color: #fff;
     text-decoration: none;
@@ -96,20 +96,20 @@ section::before
     
 }
 
-.container .contactInfo ul.info li span:nth-child(1) img
+.containerIO .contactInfo ul.info li span:nth-child(1) img
 {
     max-width: 100%;
     filter: invert(1);
 }
 
-.container .contactInfo ul.info li span:nth-child(2)
+.containerIO .contactInfo ul.info li span:nth-child(2)
 {
     color: #fff;
     margin-left: 10px;
     font-weight: 300;
 }
 
-.container .contactInfo ul.sci
+.containerIO .contactInfo ul.sci
 {
     position: relative;
     display: flex;
@@ -142,23 +142,23 @@ section::before
     cursor: pointer;
 }
 
-.container .contactInfo ul.sci li
+.containerIO .contactInfo ul.sci li
 {
    list-style: none;  
    margin-right: 15px;
 }
 
-.container .contactInfo ul.sci li a
+.containerIO .contactInfo ul.sci li a
 {
    text-decoration: none;
 }
 
-.container .contactInfo ul.sci li a img
+.containerIO .contactInfo ul.sci li a img
 {
    filter: invert(1);
 }
 
-.container .contactForm
+.containerIO .contactForm
 {
     position: absolute;
     padding: 70px 50px;
@@ -171,14 +171,14 @@ section::before
     border-radius: 22px;
 }
 
-.container .contactForm h2
+.containerIO .contactForm h2
 {
     color: #0f3959;
     font-size: 24px;
     font-weight: 500;
 }
 
-.container .contactForm .formBox
+.containerIO .contactForm .formBox
 {
     position: relative;
     display: flex;
@@ -187,24 +187,24 @@ section::before
     padding-top: 30px;
 }
 
-.container .contactForm .formBox .inputBox
+.containerIO .contactForm .formBox .inputBox
 {
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 
-.container .contactForm .formBox .inputBox.w50
+.containerIO .contactForm .formBox .inputBox.w50
 {
     width: 47%;
 }
 
-.container .contactForm .formBox .inputBox.w100
+.containerIO .contactForm .formBox .inputBox.w100
 {
     width: 100%;
 }
 
-.container .contactForm .formBox .inputBox input,
-.container .contactForm .formBox .inputBox textarea 
+.containerIO .contactForm .formBox .inputBox input,
+.containerIO .contactForm .formBox .inputBox textarea 
 {
     width: 100%;
     resize: none;
@@ -215,14 +215,15 @@ section::before
     border: none;
     outline: none;
     border-bottom: 1px solid #777;
+    margin-bottom: 20px;
 }
 
-.container .contactForm .formBox .inputBox textarea 
+.containerIO .contactForm .formBox .inputBox textarea 
 {
     height: 120px;
 }
 
-.container .contactForm .formBox .inputBox span 
+.containerIO .contactForm .formBox .inputBox span 
 {
     position: absolute;
     left: 0;
@@ -233,10 +234,10 @@ section::before
     transition: 0.3s;
 }
 
-.container .contactForm .formBox .inputBox input:focus ~ span,
-.container .contactForm .formBox .inputBox input:valid ~ span,
-.container .contactForm .formBox .inputBox textarea:focus ~ span, 
-.container .contactForm .formBox .inputBox textarea:valid ~ span
+.containerIO .contactForm .formBox .inputBox input:focus ~ span,
+.containerIO .contactForm .formBox .inputBox input:valid ~ span,
+.containerIO .contactForm .formBox .inputBox textarea:focus ~ span, 
+.containerIO .contactForm .formBox .inputBox textarea:valid ~ span
 {
     transform: translateY(-20px);
     font-size:  12px;
@@ -247,7 +248,7 @@ section::before
 } 
 
 /* Css for the submit button */
-.container .contactForm .formBox .inputBox input[type="submit"]         
+.containerIO .contactForm .formBox .inputBox input[type="submit"]         
 {
     position: relative;
     cursor: pointer;
@@ -260,14 +261,14 @@ section::before
 
 }
 
-.container .contactForm .formBox .inputBox input[type="submit"]:hover{
+.containerIO .contactForm .formBox .inputBox input[type="submit"]:hover{
     background: #0d9480;
 }
 
 /* make the form responsive */
 @media (max-width: 1200px)
 {
-    .container
+    .containerIO
     {
         width: 90%;
         min-width: auto;
@@ -275,7 +276,7 @@ section::before
         box-shadow: 0 20px 50px rgba(0,0,0,0.2);
     }
 
-    .container .contactInfo
+    .containerIO .contactInfo
     {
         top: 0;
         height: 550px;
@@ -284,7 +285,7 @@ section::before
         border-radius: 0px;
     }
 
-    .container .contactForm
+    .containerIO .contactForm
     {
         position: relative;
         width: calc(100% - 350px);
@@ -313,27 +314,27 @@ section::before
         display: none;
     }
 
-    .container
+    .containerIO
     {
         display: flex;
         flex-direction: column-reverse;
     }
 
-    .container .contactForm
+    .containerIO .contactForm
     {
         width: 100%;
         height: auto;
         border-radius: 0px;
     }
 
-    .container .contactInfo
+    .containerIO .contactInfo
     {
         width: 100%;
         height: auto;
         flex-direction: row;
         border-radius: 0px;
     }
-    .container .contactInfo ul.sci
+    .containerIO .contactInfo ul.sci
     {
        position: relative;
        display: flex;
@@ -344,23 +345,23 @@ section::before
 
 @media (max-width: 600px)
 {
-    .container .contactForm
+    .containerIO .contactForm
     {
         padding: 25px;
     }
 
-    .container .contactInfo{
+    .containerIO .contactInfo{
         padding: 25px;
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .container .contactInfo ul.sci
+    .containerIO .contactInfo ul.sci
     {
         margin-top: 40px;
     }
 
-    .container .contactForm .formBox .inputBox.w50
+    .containerIO .contactForm .formBox .inputBox.w50
     {
         width: 100%;
     }
