@@ -138,8 +138,8 @@ const About = () => {
         </div>
       </div>
 
-      <main>
-        <section className="container">
+      <main className="main">
+        <section className="containerIP">
           <div className="title">
             <h2>Our Testimonials</h2>
             <div className="underline"></div>
