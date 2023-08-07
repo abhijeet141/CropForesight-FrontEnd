@@ -285,7 +285,7 @@ p {
   Reviews
   ===============
   */
-main {
+.main {
   margin-top: 10%;
   min-height: 20vh;
   display: grid;
@@ -304,7 +304,7 @@ main {
   margin-right: auto;
 }
 
-.container {
+.containerIPIP {
   width: 80vw;
   max-width: 620px;
 }
