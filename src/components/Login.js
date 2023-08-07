@@ -2,11 +2,11 @@ import NAV from "./nav";
 import "./Login.css";
 import Form from "./Form";
 
-function Login() {
+function Login({mode,setmode}) {
   return (
     <>
-      <NAV />
-      <Form />{" "}
+      <NAV mode={mode} setmode={setmode}/>
+      <Form mode={mode} />{" "}
     </>
   );
 }

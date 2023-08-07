@@ -236,7 +236,7 @@ function App() {
       setPreLoading(false);
     }, 2000);
   }
-  const[mode,setmode] = useState('light');
+  const[mode,setmode] = useState('dark');
   return (
     <>
       <GoToTop />
