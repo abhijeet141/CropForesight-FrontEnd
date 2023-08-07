@@ -56,30 +56,31 @@
 }
 
 .form-left-one h1 {
-  color: #27374d;
-  font-size: 50px;
+  color: #263146;
+  font-size: 45px;
   font-weight: bolder;
   text-decoration: none;
   transition:  0.3s ease-in-out;
 }
 
 .form-left-one h1:hover {
-  color: #1e2939;
-  font-size: 50px;
+  color: #1f2936;
+  font-size: 45px;
   font-weight: bolder;
   text-decoration: none;
 }
 
 .form-left-one h2 {
-  color: black;
-  font-size: 30px;
+  color: rgb(26, 14, 14);
+  font-size: 20px;
   font-weight: bold;
   text-decoration: none;
 }
 
 .form-left-one p {
-  color: navy;
+  color: rgb(66, 66, 149);
   font-size: 15px;
+  margin-bottom: 20px;
   font-weight: 600;
   text-decoration: none;
 }
@@ -241,8 +242,38 @@ button {
     margin: 20px auto;
   }
 
-  .form-left {
+  /* .form-left {
     visibility: hidden;
+  } */
+
+  .form-left-one h1 {
+    color: #f2f3f5;
+    font-size: 45px;
+    font-weight: bolder;
+    text-decoration: none;
+    transition:  0.3s ease-in-out;
+  }
+  
+  .form-left-one h1:hover {
+    color: #afb8c4;
+    font-size: 45px;
+    font-weight: bolder;
+    text-decoration: none;
+  }
+  
+  .form-left-one h2 {
+    color: rgb(254, 249, 249);
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .form-left-one p {
+    color: rgb(221, 221, 244);
+    font-size: 15px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-decoration: none;
   }
 
   .title {
