@@ -236,23 +236,23 @@ function App() {
       setPreLoading(false);
     }, 2000);
   }
-
+  const[mode,setmode] = useState('light');
   return (
     <>
       <GoToTop />
       <BrowserRouter>
         <Suspense fallback={<Loading />}>
           <Routes>
-            <Route path="/" element={<Home />} />{" "}
-            <Route path="/form" element={FormComponent()} />{" "}
-            <Route path="/about" element={<About />} />{" "}
-            <Route path="/contact" element={<Contact />} />{" "}
-            <Route path="/faq" element={<FAQ />} />{" "}
-            <Route path="/Weather" element={<Weather />} />{" "}
-            <Route path="/*" element={<Err />} />{" "}
-            <Route path="/ExampleCrop" element={<ExampleCrop />} />{" "}
-            <Route path="/contributors" element={<Contributor />} />{" "}
-            <Route path="/Login" element={<Login />} />{" "}
+            <Route path="/" element={<Home mode={mode} setmode={setmode}/>} />{" "}
+            <Route path="/form" element={FormComponent(mode)} />{" "}
+            <Route path="/about" element={<About mode={mode} setmode={setmode} />} />{" "}
+            <Route path="/contact" element={<Contact mode={mode} setmode={setmode}/>} />{" "}
+            <Route path="/faq" element={<FAQ mode={mode} setmode={setmode}/>} />{" "}
+            <Route path="/Weather" element={<Weather mode={mode} setmode={setmode}/>} />{" "}
+            <Route path="/*" element={<Err mode={mode} setmode={setmode}/>} />{" "}
+            <Route path="/ExampleCrop" element={<ExampleCrop mode={mode} setmode={setmode}/>} />{" "}
+            <Route path="/contributors" element={<Contributor mode={mode} setmode={setmode}/>} />{" "}
+            <Route path="/Login" element={<Login mode={mode} setmode={setmode}/>} />{" "}
             {/* <Route path="/Success" element={<Success />} />{" "} */}{" "}
           </Routes>{" "}
         </Suspense>{" "}

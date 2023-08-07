@@ -5,7 +5,7 @@ import NAVBAR from './nav';
 import './nav.css';
 import WeatherCard from './WeatherCard';
 
-export const Weather = () => {
+export const Weather = ({mode,setmode}) => {
     const [city, setCity] = useState('')
     const [weatherData, setWeatherData] = useState(null);
     const [errorMessage, setErrorMessage] = useState('');
@@ -39,8 +39,8 @@ export const Weather = () => {
 
     return (
         <div id="weather-page">
-            <NAVBAR />
-            <div class="maincontainer">
+            <NAVBAR mode={mode} setmode={setmode} />
+            <div className="maincontainer">
                 <h1>Weather</h1>
                 <div className='box'>
                     <form className="form-h">
