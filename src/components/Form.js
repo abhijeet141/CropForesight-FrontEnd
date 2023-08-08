@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import "./Form.css";
 // import { ToastContainer, toast } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 
-function Form() {
+function Form({ mode }) {
   const regex_email = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
   // const regex_password = "^(?=.*[a-z])(?=.*[A-Z])(?=.*d)[a-zA-Zd]{8,}$";
   const [data, setData] = useState({
@@ -49,34 +48,32 @@ function Form() {
   // const [useremail, userpassword] = data;
 
   return (
-    <>
-      <div class="Container">
-        <div className="formContainer">
-          <p style={{ fontSize: 20, fontWeight: 600, marginBottom: "2rem" }}> LOGIN </p>{" "}
-          <form class="validate" name="Login" onSubmit={handleSubmit}>
-            <div class="row">
-              <span class="fs-4" style={{ color: "black", fontWeight: 600 }}> Email </span>{" "}
-              <input
-                type="email" required
-                name="username"
-                style={{ width: "100%" }}
-                onChange={handleChange}
-              />{" "}
-            </div>{" "}
-            <div class="row">
-              <span class="fs-4" style={{ color: "black", fontWeight: 600 }}> Password </span>{" "}
-              <input
-                type="password" required
-                name="password"
-                style={{ width: "100%" }}
-                onChange={handleChange}
-              />{" "}
-            </div>{" "}
-            <button type="submit" class="mt-4 ms-5" style={{ color: "white" }}>Submit</button>
-          </form>{" "}
-        </div>
-      </div>{" "}
-    </>
+    <div class="Container">
+      <div className="formContainer">
+        <p style={{ fontSize: 20, fontWeight: 600, marginBottom: "2rem" }}> LOGIN </p>{" "}
+        <form class={mode === "light" ? "formColor validate" : "formColordark validate"} name="Login" onSubmit={handleSubmit}>
+          <div class="row">
+            <span class="fs-4" style={{ color: "black", fontWeight: 600 }}> Email </span>{" "}
+            <input
+              type="email" required
+              name="username"
+              style={{ width: "100%" }}
+              onChange={handleChange}
+            />{" "}
+          </div>{" "}
+          <div class="row">
+            <span class="fs-4" style={{ color: "black", fontWeight: 600 }}> Password </span>{" "}
+            <input
+              type="password" required
+              name="password"
+              style={{ width: "100%" }}
+              onChange={handleChange}
+            />{" "}
+          </div>{" "}
+          <button type="submit" class="mt-4 ms-5" style={{ color: "white" }}>Submit</button>
+        </form>{" "}
+      </div>
+    </div>
   );
 }
 export default Form;

@@ -8,7 +8,7 @@ import "./about.css";
 import NAVBAR from "./nav";
 import "./nav.css";
 
-const About = () => {
+const About = ({mode,setmode}) => {
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -44,9 +44,9 @@ const About = () => {
   return (
     <>
       {/* nav bar */}
-      <NAVBAR />
+      <NAVBAR mode={mode} setmode={setmode}/>
       {/* main section */}
-      <div className="aboutMain">
+      <div className={`aboutMain ${mode === 'light' && "lightmain"}`}>
         <h1 className="about">🌾 What Is CropForesight❔ </h1>
         <div className="content">
           <div className="left">
@@ -144,7 +144,7 @@ const About = () => {
             <h2>Our Testimonials</h2>
             <div className="underline"></div>
           </div>
-          <Review />
+          <Review mode={mode}/>
         </section>
       </main>
     </>

@@ -6,7 +6,7 @@ input {
   background-color: #fff;
   font-family: inherit;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  min-width: 300px;
+  /* min-width: 300px; */
   font-size: 1rem;
 }
 

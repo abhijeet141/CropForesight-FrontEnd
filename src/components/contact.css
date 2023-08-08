@@ -171,6 +171,13 @@
     border-radius: 22px;
 }
 
+.contactFormDark{
+    background-color: #757575 !important;
+}
+.contactFormDark h2{
+    color: black !important;
+}
+
 .containerIO .contactForm h2
 {
     color: #0f3959;
@@ -365,4 +372,8 @@
     {
         width: 100%;
     }
+}
+
+.text-dark{
+    color: black  !important;
 }

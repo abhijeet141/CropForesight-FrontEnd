@@ -353,3 +353,17 @@ p {
   background: rgb(0, 0, 40);
   color: #fff;
 }
+
+
+.lightmain{
+  background-color: aliceblue;
+}
+
+.lightmain .left p{
+  color: black;
+}
+
+.lightmain .feature li{
+  color: black;
+}
+
