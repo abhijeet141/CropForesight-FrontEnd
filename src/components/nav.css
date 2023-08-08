@@ -15,6 +15,7 @@ nav ul {
   display: flex;
   align-items: center;
   list-style: none;
+  
 }
 
 nav ul li {
@@ -63,6 +64,10 @@ nav .visibility-mobile {
   display: none;
 }
 
+.modebtn{
+  background-color: transparent;
+}
+
 @media only screen and (max-width: 1000px) {
   nav .visibility-desktop {
     display: none;
@@ -87,7 +92,8 @@ nav .visibility-mobile {
     left: 0;
     z-index: 10;
     background-color: rgb(0, 0, 57);
-    position: fixed;
+    margin-top: 25px;
+    padding-top: 10px;
     transition: 2s ease-in-out;
   }
 

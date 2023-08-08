@@ -5,7 +5,7 @@ import faq from "../../assets/faq.webp";
 import faqs from './faqData';
 import NAV from '../nav';
 
-const AccordionItem = ({ title, content }) => {
+const AccordionItem = ({ title, content, mode }) => {
     const [expanded, setExpanded] = useState(false);
 
     const toggleAccordion = () => {
@@ -19,24 +19,24 @@ const AccordionItem = ({ title, content }) => {
                 onClick={toggleAccordion}
                 aria-expanded={expanded ? 'true' : 'false'}
             >
-                <span className="accordion-title">{title}</span>
-                <span className="icon" aria-hidden="true"></span>
+                <span className="accordion-title" style={{color:mode==='light'? "black":""}}>{title}</span>
+                <span className="icon" aria-hidden="true" style={{color:mode==='light'? "black":""}}></span>
             </button>
             <div className="accordion-content">
-                <p>{content}</p>
+                <p style={{color:mode==='light'? "black":""}}>{content}</p>
             </div>
         </div>
     );
 };
 
-const FAQ = () => {
+const FAQ = ({mode,setmode}) => {
 
     return (
         <>
             {/* nav bar */}
-            <NAV />
+            <NAV mode={mode} setmode={setmode} />
             {/* main section */}
-            <div className="faq-section">
+            <div className="faq-section" style={{backgroundColor: mode === 'light'? "white" : ""}} >
                 {/* add Heading */}
                 <div className="faq-heading">Frequently Asked Questions</div>
                 <div className="faq-main">
@@ -50,8 +50,8 @@ const FAQ = () => {
                     <div className="rightSide">
                         {/* Title */}
                         <div className="accordion">
-                        {faqs.map((questions)=>{
-                           return  <AccordionItem title={questions.title} content={questions.content}/>
+                        {faqs.map((questions,index)=>{
+                           return  <AccordionItem key={index} title={questions.title} content={questions.content} mode={mode}/>
                         })}
                            
                         </div>

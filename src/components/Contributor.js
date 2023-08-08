@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import NAV from "./nav";
 import "../components/contributor.css"
-const Contributor = () => {
+const Contributor = ({mode,setmode}) => {
   const [contributors, setContributors] = useState([]);
 
   useEffect(() => {
@@ -23,9 +23,9 @@ const Contributor = () => {
 
   return (
     <>
-    <NAV/>
+    <NAV mode={mode} setmode={setmode}/>
     <br />
-      <div>
+      <div >
         <h1 className="h1" >
           Our Contributors
         </h1>
@@ -33,7 +33,7 @@ const Contributor = () => {
       <div className="main_cont">
         {contributors.map((i) => (
           <>
-          <div className="Contributor_cards">
+          <div className="Contributor_cards" style={{backgroundColor:mode === 'light' ? "white":"" }}>
           <div className="image">
             <img src={i.avatar_url} alt="" />
           </div>

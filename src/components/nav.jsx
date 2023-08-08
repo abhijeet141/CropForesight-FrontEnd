@@ -3,14 +3,18 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import menu from "../assets/menu-icon.webp";
 import "./nav.css";
+import { BsMoonFill, BsSun } from "react-icons/bs";
 
-const NAV = () => {
+const NAV = ({mode,setmode}) => {
+  // console.log(mode,setmode);
   const [showMenu, setShowMenu] = useState(false);
-
+  function changlemode(){
+    setmode(mode === 'light' ? 'dark' : 'light');
+ }
   return (
     <>
       <nav>
-        <div>
+        <div >
           <Link to="/">
             <img
               src={logo}
@@ -44,6 +48,11 @@ const NAV = () => {
             </li>
             <li>
               <Link to="/Login">Login</Link>
+            </li>
+            <li>
+              <button className="modebtn" onClick={() =>changlemode()}>
+                {mode === 'dark' ? <BsMoonFill className="h-6 w-6"/> : <BsSun className="h-6 w-6"/>}
+              </button>            
             </li>
           </ul>
         </div>

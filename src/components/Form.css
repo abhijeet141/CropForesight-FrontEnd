@@ -8,3 +8,12 @@
   color: blue;
   font-size: larger;
 }
+
+.formColordark{
+  background-color: rgb(107 114 128);
+}
+
+.formColor{
+  background-color:rgb(252 165 165);
+  ;
+}
