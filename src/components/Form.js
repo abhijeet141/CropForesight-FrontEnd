@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Form.css";
 // import { ToastContainer, toast } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
@@ -51,7 +52,7 @@ function Form({ mode }) {
     <div class="Container">
       <div className="formContainer">
         <p style={{ fontSize: 20, fontWeight: 600, marginBottom: "2rem" }}> LOGIN </p>{" "}
-        <form class={mode === "light" ? "formColor validate" : "formColordark validate"} name="Login" onSubmit={handleSubmit}>
+        <form className={mode === "light" ? "formColor validate" : "formColordark validate"} name="Login" onSubmit={handleSubmit}>
           <div class="row">
             <span class="fs-4" style={{ color: "black", fontWeight: 600 }}> Email </span>{" "}
             <input
@@ -71,6 +72,7 @@ function Form({ mode }) {
             />{" "}
           </div>{" "}
           <button type="submit" class="mt-4 ms-5" style={{ color: "white" }}>Submit</button>
+          <p style={{ fontSize: "1rem", textAlign: "center", color: "black" }}>Don't have an account <Link to="/Register">Register</Link></p>
         </form>{" "}
       </div>
     </div>

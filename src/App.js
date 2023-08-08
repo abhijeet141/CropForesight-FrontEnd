@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Suspense, lazy, useState } from "react";
+import { Suspense, useState } from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import swal from "sweetalert";
 import "./App.css";
@@ -11,18 +11,19 @@ import "./components/nav.css";
 import GoToTop from "./GoToTop/GoToTop";
 import Loading from "./components/Loading";
 
+import Err from "./components/404";
+import Contributor from "./components/Contributor";
 import Home from "./components/Home";
 import Weather from "./components/Weather";
 import About from "./components/about";
 import Contact from "./components/contact";
 import FAQ from "./components/faq/faq";
-import Err from "./components/404";
 import Navbar from "./components/nav.jsx";
-import Contributor from "./components/Contributor";
 // const Login = lazy(() => import("./components/Login"));
 // const Login = lazy(() => import("./components/Login"));
 //  import Login from "./components/Login";
 import Login from "./components/Login";
+import Register from "./components/Register";
 // import Success from "./components/Success";
 
 function App() {
@@ -253,6 +254,7 @@ function App() {
             <Route path="/ExampleCrop" element={<ExampleCrop mode={mode} setmode={setmode}/>} />{" "}
             <Route path="/contributors" element={<Contributor mode={mode} setmode={setmode}/>} />{" "}
             <Route path="/Login" element={<Login mode={mode} setmode={setmode}/>} />{" "}
+            <Route path="/Register" element={<Register mode={mode} setmode={setmode}/>} />{" "}
             {/* <Route path="/Success" element={<Success />} />{" "} */}{" "}
           </Routes>{" "}
         </Suspense>{" "}

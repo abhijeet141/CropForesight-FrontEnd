@@ -1,0 +1,95 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import "./Register.css";
+import NAV from "./nav";
+// import { ToastContainer, toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
+
+function Register({ mode, setmode }) {
+    const regex_email = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+    // const regex_password = "^(?=.*[a-z])(?=.*[A-Z])(?=.*d)[a-zA-Zd]{8,}$";
+    const [data, setData] = useState({
+        username: "",
+        email: "",
+        password: "",
+    });
+    // const toastSuccess = () =>
+    // toast.success("This is Toast Notification for Success");
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!data.username.match(regex_email)) {
+            window.alert("Email Id is invalid");
+        }
+        // i
+
+        if (data.username === "") {
+            window.alert("The Username Field is Empty");
+        }
+
+        if (data.password === "") window.alert("The Password Field is Empty");
+        if (data.username === "admin@gmail.com" && data.password === "Admin123@") {
+            // showToastMessage();
+            // toastSuccess();
+
+            window.alert("Login Successful");
+            window.location.href = "/";
+
+            console.log("Login Successful");
+        } else {
+            console.log("Login Failed");
+            window.alert("Login Failed");
+        }
+    };
+    //event handler to handle change in state of textbox
+    const handleChange = (e) => {
+        setData((previousState) => {
+            //callback function fo setData setter function name(params) {
+            console.log(e.target.name, e.target.value);
+            return { ...previousState, [e.target.name]: e.target.value }; //an object returned by call back as argument to setData
+        }); //data state object is being updated
+    };
+    // const [useremail, userpassword] = data;
+
+    return (
+        <>
+            <NAV mode={mode} setmode={setmode} />
+            <div class="Container">
+                <div className="formContainer">
+                    <p style={{ fontSize: 20, fontWeight: 600, marginBottom: "2rem" }}> Register </p>{" "}
+                    <form className={mode === "light" ? "formColor validate" : "formColordark validate"} name="Register" onSubmit={handleSubmit}>
+                        <div class="row">
+                            <span class="fs-4" style={{ color: "black", fontWeight: 600 }}> Username </span>{" "}
+                            <input
+                                type="text" required
+                                name="username"
+                                style={{ width: "100%" }}
+                                onChange={handleChange}
+                            />{" "}
+                        </div>{" "}
+                        <div class="row">
+                            <span class="fs-4" style={{ color: "black", fontWeight: 600 }}> Email </span>{" "}
+                            <input
+                                type="email" required
+                                name="username"
+                                style={{ width: "100%" }}
+                                onChange={handleChange}
+                            />{" "}
+                        </div>{" "}
+                        <div class="row">
+                            <span class="fs-4" style={{ color: "black", fontWeight: 600 }}> Password </span>{" "}
+                            <input
+                                type="password" required
+                                name="password"
+                                style={{ width: "100%" }}
+                                onChange={handleChange}
+                            />{" "}
+                        </div>{" "}
+                        <button type="submit" class="mt-4 ms-5" style={{ color: "white" }}>Submit</button>
+                        <p style={{ fontSize: "1rem", textAlign: "center", color: "black" }}>Already have an account <Link to="/Login">Login</Link></p>
+                    </form>{" "}
+                </div>
+            </div>{" "}
+        </>
+    );
+}
+export default Register;
