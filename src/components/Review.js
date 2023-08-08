@@ -4,12 +4,12 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import "./Review.css";
 import reviews from "./data";
 
-const Review = () => {
+const Review = ({mode}) => {
 
   const items = reviews.map((ele) => {
     return (
       <>
-        <div className="testimonial" key={ele.id}>
+        <div className={`testimonial ${mode === "light" ? "" : "darktet"}`} key={ele.id}>
           <div className="img-wrapper">
             <img src={ele.image} alt="img" className="img" />
           </div>

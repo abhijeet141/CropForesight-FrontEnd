@@ -40,7 +40,7 @@ const openInNewTab = (url) => {
   window.open(url, "_blank", "noopener,noreferrer");
 };
 
-const Contact = () => {
+const Contact = ({mode,setmode}) => {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -115,7 +115,7 @@ const Contact = () => {
   return (
     <div>
       {/* nav bar */}
-      <NAVBAR />
+      <NAVBAR mode={mode} setmode={setmode}/>
 
       {/* contact us form */}
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -171,28 +171,28 @@ const Contact = () => {
               </li>
             </ul>
           </div>
-          <div className="contactForm">
+          <div className={`contactForm ${mode === 'dark' ? "contactFormDark " : ""}`}>
             <h2>Send a Message</h2>
             <div className="formBox">
               <div className="inputBox w50">
                 <input type="text" name="" required="" />
-                <span>First Name</span>
+                <span className={mode === 'dark' ? "text-dark": ""}>First Name</span>
               </div>
               <div className="inputBox w50">
                 <input type="text" required="" />
-                <span>Last Name</span>
+                <span className={mode === 'dark' ? "text-dark": ""}>Last Name</span>
               </div>
               <div className="inputBox w50">
                 <input type="email" required="" />
-                <span>Email Address</span>
+                <span className={mode === 'dark' ? "text-dark": ""}>Email Address</span>
               </div>
               <div className="inputBox w50">
                 <input type="text" required="" />
-                <span>Mobile Number</span>
+                <span className={mode === 'dark' ? "text-dark": ""}>Mobile Number</span>
               </div>
               <div className="inputBox w100">
                 <textarea required="" defaultValue={""} />
-                <span>Write your message here...</span>
+                <span className={mode === 'dark' ? "text-dark": ""}>Write your message here...</span>
               </div>
               <div className="inputBox w100">
                 <input type="submit" defaultValue="Send" />

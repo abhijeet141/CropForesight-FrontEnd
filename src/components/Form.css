@@ -1,3 +1,42 @@
-/* Literals CSS added to the Form.js File */ 
-/* There is no need to add here the CSS */
-/* If the contributor watching this kindly check the Literals CSS which is in the Form.js File */
+.Container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formContainer {
+  width: 30%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.validate {
+  width: 100%;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  .formContainer {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 668px) {
+  .formContainer {
+    width: 90%;
+  }
+}
+
+.formColordark{
+  background-color: rgb(107 114 128);
+}
+
+.formColor{
+  background-color:rgb(252 165 165);
+  ;
+}

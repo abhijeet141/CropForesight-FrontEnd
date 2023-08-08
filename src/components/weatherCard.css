@@ -15,6 +15,11 @@
     justify-content: center;
     align-items: center;
     padding: 15px;
+
+    /* expand while content is increases */
+    gap : 10px;
+    height: 100%;
+    width: 100%;
 }
 
 
@@ -71,7 +76,7 @@
 
 img {
     width: 100px;
-    height: 100px;  
+    /* height: 100px;   */
 }
 
 .feels {
