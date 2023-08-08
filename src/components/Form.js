@@ -1,5 +1,6 @@
-import "./Form.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import "./Form.css";
 // import { ToastContainer, toast } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 
@@ -46,31 +47,34 @@ function Form() {
     }); //data state object is being updated
   };
   // const [useremail, userpassword] = data;
+
   return (
     <>
-      <div class=" d-flex flex-column bg-primary border border-5 border-dark mt-6 w-55 p-1 mb-5 justify-content-center align-items-center container-sm ">
-        <p class="display-6"> Login </p>{" "}
-        <form class="validate" name="Login" onSubmit={handleSubmit}>
-          <div class="row">
-            <span class="fs-4 col-lg-4 col-sm-6 col-6"> Email </span>{" "}
-            <input
-              type="text"
-              name="username"
-              class="col-lg-8 col-sm-6 col-6"
-              onChange={handleChange}
-            />{" "}
-          </div>{" "}
-          <div class="row">
-            <span class="fs-4 col-lg-4 col-sm-6 col-6"> Password </span>{" "}
-            <input
-              type="password"
-              name="password"
-              class="col-lg-8 col-sm-6 col-6"
-              onChange={handleChange}
-            />{" "}
-          </div>{" "}
-          <input type="submit" class="btn btn-dark mt-4 ms-5" value="Submit" />
-        </form>{" "}
+      <div class="Container">
+        <div className="formContainer">
+          <p style={{ fontSize: 20, fontWeight: 600, marginBottom: "2rem" }}> LOGIN </p>{" "}
+          <form class="validate" name="Login" onSubmit={handleSubmit}>
+            <div class="row">
+              <span class="fs-4" style={{ color: "black", fontWeight: 600 }}> Email </span>{" "}
+              <input
+                type="email" required
+                name="username"
+                style={{ width: "100%" }}
+                onChange={handleChange}
+              />{" "}
+            </div>{" "}
+            <div class="row">
+              <span class="fs-4" style={{ color: "black", fontWeight: 600 }}> Password </span>{" "}
+              <input
+                type="password" required
+                name="password"
+                style={{ width: "100%" }}
+                onChange={handleChange}
+              />{" "}
+            </div>{" "}
+            <button type="submit" class="mt-4 ms-5" style={{ color: "white" }}>Submit</button>
+          </form>{" "}
+        </div>
       </div>{" "}
     </>
   );
