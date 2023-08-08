@@ -1,4 +1,4 @@
-.container-sm {
+/* .container-sm {
   position: relative;
   margin-top: 10vw;
   margin-left: 32vw;
@@ -7,6 +7,40 @@
 .col-lg-8 {
   color: blue;
   font-size: larger;
+} */
+
+.Container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formContainer {
+  width: 30%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.validate {
+  width: 100%;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  .formContainer {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 668px) {
+  .formContainer {
+    width: 90%;
+  }
 }
 
 .formColordark{

@@ -1,9 +1,9 @@
-import "./Form.css";
 import { useState } from "react";
+import "./Form.css";
 // import { ToastContainer, toast } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 
-function Form({mode}) {
+function Form({ mode }) {
   const regex_email = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
   // const regex_password = "^(?=.*[a-z])(?=.*[A-Z])(?=.*d)[a-zA-Zd]{8,}$";
   const [data, setData] = useState({
@@ -46,33 +46,34 @@ function Form({mode}) {
     }); //data state object is being updated
   };
   // const [useremail, userpassword] = data;
+
   return (
-    <>
-      <div className={`d-flex flex-column  border border-5 border-dark mt-6 w-55 p-1 mb-5 justify-content-center align-items-center container-sm `}>
-        <p className="display-6 fs-8"> Login </p>{" "}
-        <form className={mode === "light" ? "formColor":"formColordark"} name="Login" onSubmit={handleSubmit}>
-          <div className="row">
-            <span className="fs-4 col-lg-4 col-sm-6 col-6"> Email </span>{" "}
+    <div class="Container">
+      <div className="formContainer">
+        <p style={{ fontSize: 20, fontWeight: 600, marginBottom: "2rem" }}> LOGIN </p>{" "}
+        <form class={mode === "light" ? "formColor validate" : "formColordark validate"} name="Login" onSubmit={handleSubmit}>
+          <div class="row">
+            <span class="fs-4" style={{ color: "black", fontWeight: 600 }}> Email </span>{" "}
             <input
-              type="text"
+              type="email" required
               name="username"
-              className="col-lg-8 col-sm-6 col-6"
+              style={{ width: "100%" }}
               onChange={handleChange}
             />{" "}
           </div>{" "}
-          <div className="row">
-            <span className="fs-4 col-lg-4 col-sm-6 col-6"> Password </span>{" "}
+          <div class="row">
+            <span class="fs-4" style={{ color: "black", fontWeight: 600 }}> Password </span>{" "}
             <input
-              type="password"
+              type="password" required
               name="password"
-              className="col-lg-8 col-sm-6 col-6"
+              style={{ width: "100%" }}
               onChange={handleChange}
             />{" "}
           </div>{" "}
-          <input type="submit" className="btn btn-dark mt-4 ms-5" value="Submit" />
+          <button type="submit" class="mt-4 ms-5" style={{ color: "white" }}>Submit</button>
         </form>{" "}
-      </div>{" "}
-    </>
+      </div>
+    </div>
   );
 }
 export default Form;
