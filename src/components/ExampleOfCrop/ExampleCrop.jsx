@@ -5,7 +5,7 @@ import { useState } from "react";
 import NAV from "../nav";
 
 
-export function ExampleCrop() {
+export function ExampleCrop({mode,setmode}) {
   const [search, setSearch] = useState("");
   const [data, setData] = useState(CropData);
   
@@ -35,7 +35,7 @@ export function ExampleCrop() {
 
   return (
     <div className="backdrop-opacity-10 backdrop-invert bg-white/30">
-      <NAV />
+      <NAV mode={mode} setmode={setmode}/>
       <h1 className="h1_E">Find your crop </h1>
     
       <div className="inputcard_E">
@@ -50,9 +50,9 @@ export function ExampleCrop() {
       </div>
 
 
-      <table className="table_E">
+      <table className="table_E" style={{backgroundColor:mode === "light" ? "white": ""}}>
         <thead className="thead_E">
-          <tr>
+          <tr style={{backgroundColor:mode === "light" ? "white": "",color:mode === "light"? "black" : "white" }}>
             <th>SL NO.</th>
             <th>SEASON</th>
             <th>CROP</th>
@@ -61,7 +61,7 @@ export function ExampleCrop() {
         </thead>
         <tbody className="tbody_E">
           {data.map((card, index) => (
-            <tr className="rowex">
+            <tr className="rowex" style={{backgroundColor:mode === "light" ? "white": "",color:mode === "light"? "black" : "white" }}>
               <td>{card.sl}</td>
               <td>{card.season}</td>
               <td>{card.head}</td>

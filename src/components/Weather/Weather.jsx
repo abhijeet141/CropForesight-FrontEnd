@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import axios from 'axios'
 import './Weather.css'
 
-export const Weather = () => {
+export const Weather = ({mode,setmode}) => {
     const [city,setCity] = useState('')
     const[weatherData,setWeatherData] = useState(null);
 

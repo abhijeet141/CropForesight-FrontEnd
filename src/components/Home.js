@@ -34,7 +34,7 @@ const Typewriter = ({ sentences, delay }) => {
   return <span>{displayText}</span>;
 };
 
-const Home = () => {
+const Home = ({mode,setmode}) => {
   const navigate = useNavigate();
   const sentences = [
     "Predict what type of crop🌾 is suitable on your land🌏",
@@ -42,9 +42,9 @@ const Home = () => {
   ];
 
   return (
-    <>
-      <div className="main">
-        <NAVBAR />
+    <div style={{backgroundColor:mode==='light'?"white":""}}>
+      <div className="main" style={{backgroundColor:mode==='light'?"white":""}}>
+        <NAVBAR mode={mode} setmode={setmode}/>
         <video src={video} autoPlay loop muted />
 
         {/* <div className="card glass">
@@ -65,16 +65,16 @@ const Home = () => {
         </button>
       </div> */}
 
-        <div className="card glass">
-          <button className="button-1" onClick={() => navigate("/form")}>
+        <div className={`card glass ${mode === 'light' ? "bg-dark1"  : "bg-light1"}`}>
+          <button className={`button-1 ${mode == 'light' ? "text-white": "text-black"}`} onClick={() => navigate("/form")}>
             PREDICT YOUR CROP
           </button>
-          <p className="para">
+          <p className={`para  ${mode == 'light' ? "text-white": "text-black"}`}>
             <Typewriter sentences={sentences} delay={2000} />
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
