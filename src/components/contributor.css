@@ -7,13 +7,14 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 30px;
-    margin: 0 16vw
+    margin: 0 0;
   }
   
   @media (min-width: 768px) {
 
     .main_cont {
       grid-template-columns: repeat(2, 1fr); 
+      
     }
   }
   
@@ -47,7 +48,7 @@
     border-radius: 0.1cm;
     cursor: pointer;
     background-color:  rgb(1, 1, 34);
-    margin: 1.5rem;
+    margin: 1.5rem auto;
     width:fit-content;
     transition: transform 0.3s, box-shadow 0.3s;
       background-image: linear-gradient(rgba(64, 25, 82, 0.84), rgba(11, 7, 15, 0.84) 50%);
@@ -62,6 +63,9 @@
       border: none;
       }
   
+      
+      
+      
 
   .image {
     width: 150px;
