@@ -171,6 +171,13 @@
     border-radius: 22px;
 }
 
+.contactFormDark{
+    background-color: #757575 !important;
+}
+.contactFormDark h2{
+    color: black !important;
+}
+
 .containerIO .contactForm h2
 {
     color: #0f3959;
@@ -218,10 +225,6 @@
     margin-bottom: 20px;
 }
 
-.containerIO .contactForm .formBox .inputBox textarea 
-{
-    /* height: 120px; */
-}
 
 .containerIO .contactForm .formBox .inputBox span 
 {
@@ -306,7 +309,6 @@
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        position: sticky;
         background: #fff38e;
     }
 
@@ -361,8 +363,13 @@
     {
         margin-top: 40px;
     }
+
     .containerIO .contactForm .formBox .inputBox.w50
     {
         width: 100%;
     }
+}
+
+.text-dark{
+    color: black  !important;
 }
