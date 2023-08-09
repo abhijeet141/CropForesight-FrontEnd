@@ -122,7 +122,7 @@ function App() {
                   onChange={onChange}
                 />
               ))}{" "}
-              <button onClick={handleSubmit} className="btn">
+              <button onClick={handleSubmit} disabled={loading} className="btn">
                 {" "}
                 {loading ? "Evaluating..." : "Recommend Crop"}{" "}
               </button>{" "}
@@ -139,7 +139,6 @@ function App() {
     event.preventDefault();
 
     // console.log("function called");
-    setLoading(true);
 
     if (values.nitrogen === "") {
       seterror("*Nitrogen is Required!");
@@ -197,6 +196,7 @@ function App() {
     ) {
       seterror("*Invalid Rainfall (should be between 0 and 1000 mm)");
     } else {
+      setLoading(true);
       const { data } = await axios.post(
         `https://cropforesight-backend.onrender.com/predict`,
         {
@@ -209,20 +209,32 @@ function App() {
           rainfall: Number(values.rainfall),
         }
       );
-      setLoading(false);
-      seterror("");
-      values.nitrogen = "";
-      values.phosphorus = "";
-      values.potassium = "";
-      values.temperature = "";
-      values.humidity = "";
-      values.ph = "";
-      values.rainfall = "";
-      swal(
-        "Success",
-        `You should plant ${data.result} in your field`,
-        "success"
-      );
+      if (data.result) {
+        setLoading(false);
+        seterror("");
+        values.nitrogen = "";
+        values.phosphorus = "";
+        values.potassium = "";
+        values.temperature = "";
+        values.humidity = "";
+        values.ph = "";
+        values.rainfall = "";
+        swal(
+          "Success",
+          `You should plant ${data.result} in your field`,
+          "success"
+        );
+      } else {
+        setLoading(false);
+        values.nitrogen = "";
+        values.phosphorus = "";
+        values.potassium = "";
+        values.temperature = "";
+        values.humidity = "";
+        values.ph = "";
+        values.rainfall = "";
+        swal("Error", "Error in evaluation Please try again later", "error");
+      }
     }
   };
   const onChange = (event) => {
