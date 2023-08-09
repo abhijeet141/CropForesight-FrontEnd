@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./contact.css";
-import "./nav.css";
+import "../nav.css";
 import swal from "sweetalert";
 import NAVBAR from "./nav";
 import validate from "../common/validation";

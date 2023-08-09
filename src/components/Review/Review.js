@@ -2,7 +2,7 @@ import React from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./Review.css";
-import reviews from "./data";
+import reviews from "../data";
 
 const Review = ({mode}) => {
 

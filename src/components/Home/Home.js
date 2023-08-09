@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import video from "../assets/nature.mp4";
+// import video from ".../../assets/nature.mp4";
+import video from "../../assets/nature.mp4"
 import "./Home.css";
-import "./nav.css";
-import NAVBAR from "./nav";
+import "../nav.css";
+import NAVBAR from "../nav";
 
 const Typewriter = ({ sentences, delay }) => {
   const [displayText, setDisplayText] = useState("");

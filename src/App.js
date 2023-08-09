@@ -11,25 +11,25 @@ import "./components/nav.css";
 import GoToTop from "./GoToTop/GoToTop";
 import Loading from "./components/Loading";
 
-import Err from "./components/404";
-import Contributor from "./components/Contributor";
-import Home from "./components/Home";
+import Err from "./components/404page/404";
+import Contributor from "./components/Contributors/Contributor";
+import Home from "./components/Home/Home";
 import Weather from "./components/Weather";
-import About from "./components/about";
-import Contact from "./components/contact";
+import About from "./components/About/about";
+import Contact from "./components/Contact/contact";
 import FAQ from "./components/faq/faq";
 import Navbar from "./components/nav.jsx";
 // const Login = lazy(() => import("./components/Login"));
 // const Login = lazy(() => import("./components/Login"));
 //  import Login from "./components/Login";
-import Login from "./components/Login";
-import Register from "./components/Register";
+import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
 // import Success from "./components/Success";
 
 function App() {
   const [values, setValues] = useState({
     nitrogen: "",
-    phosphorus: "",
+    phosphorus: "", 
     potassium: "",
     temperature: "",
     humidity: "",
