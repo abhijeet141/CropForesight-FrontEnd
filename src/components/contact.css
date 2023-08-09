@@ -23,6 +23,7 @@
     left: 0;
     width: 50%;
     height: 100%;
+    position: sticky;
     background: #170549;
 }
 
