@@ -25,6 +25,7 @@ main {
   align-items: center;
   display: flex;
   flex-direction: column;
+  height: 100vh;
   margin-top: 100px;
   justify-content: center;
   text-align: center;
@@ -42,6 +43,18 @@ main {
   .error {
     font-size: 8.5rem;
   }
+}
+
+@media (main-width:690px){
+  main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    justify-content: center;
+    text-align: center;
+  }
+  
 }
 .error > span {
   -webkit-animation: spooky 2s alternate infinite linear;
