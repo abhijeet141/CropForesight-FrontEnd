@@ -1,0 +1,66 @@
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* height: 80px; */
+    background-color: rgb(0, 0, 57);
+
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 23px;
+    text-decoration: none;
+}
+
+.nav .right ul li a {
+  color: white;
+  text-decoration: none;
+}
+/* Get a Purple Hover Using This style for the NavBar Elements */
+.nav .right ul li {
+  position: relative;
+}
+
+.nav .right ul li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #9864c9;
+  transition: width 0.3s ease;
+}
+
+.nav .right ul li:hover::after {
+  width: 100%;
+}
+.toggleButton{
+  width:60px;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  height: max-content;
+
+}
+@media only screen and (max-width: 850px) {
+
+    nav ul li{
+        margin: 0 15px;
+    }
+    nav ul{
+      position: absolute;
+      left: 5rem;
+    }
+    .left{
+      position: absolute;
+      left: 1rem;
+    }
+
+  }
