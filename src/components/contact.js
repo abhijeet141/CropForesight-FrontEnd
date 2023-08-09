@@ -3,9 +3,6 @@ import "./contact.css";
 import "./nav.css";
 import swal from "sweetalert";
 import NAVBAR from "./nav";
-import { AiFillTwitterCircle, AiFillGithub, AiFillMail } from "react-icons/ai";
-import { FaUserAlt } from "react-icons/fa";
-import { BsFillChatRightTextFill } from "react-icons/bs";
 import validate from "../common/validation";
 
 const Typewriter = ({ sentences, delay }) => {
@@ -175,27 +172,27 @@ const Contact = ({mode,setmode}) => {
             <h2>Send a Message</h2>
             <div className="formBox">
               <div className="inputBox w50">
-                <input type="text" name="" required="" />
+                <input type="text" name="" required="" placeholder="First Name"/>
                 <span className={mode === 'dark' ? "text-dark": ""}>First Name</span>
               </div>
               <div className="inputBox w50">
-                <input type="text" required="" />
+                <input type="text" required="" placeholder="Last Name " />
                 <span className={mode === 'dark' ? "text-dark": ""}>Last Name</span>
               </div>
               <div className="inputBox w50">
-                <input type="email" required="" />
+                <input type="email" required="" placeholder="Your Email" />
                 <span className={mode === 'dark' ? "text-dark": ""}>Email Address</span>
               </div>
               <div className="inputBox w50">
-                <input type="text" required="" />
+                <input type="text" required="" placeholder="Mobile Number" />
                 <span className={mode === 'dark' ? "text-dark": ""}>Mobile Number</span>
               </div>
               <div className="inputBox w100">
-                <textarea required="" defaultValue={""} />
-                <span className={mode === 'dark' ? "text-dark": ""}>Write your message here...</span>
+                <textarea required="" defaultValue={""} placeholder="Write your Message here..."/>
+                <span className={mode === 'dark' ? "text-dark": ""}>Message</span>
               </div>
               <div className="inputBox w100">
-                <input type="submit" defaultValue="Send" />
+                <button>Submit</button>
               </div>
             </div>
           </div>

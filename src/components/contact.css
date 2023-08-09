@@ -215,7 +215,7 @@
 {
     width: 100%;
     resize: none;
-    padding: 5px 0;
+    padding: 10px 15px;
     font-size: 18px;
     font-weight: 300;
     color: #333;
@@ -223,6 +223,8 @@
     outline: none;
     border-bottom: 1px solid #777;
     margin-bottom: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
 }
 
 
@@ -232,7 +234,7 @@
     left: 0;
     padding: 5px 0;
     pointer-events: none;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 300;
     transition: 0.3s;
 }
