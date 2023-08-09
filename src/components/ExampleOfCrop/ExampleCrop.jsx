@@ -36,17 +36,10 @@ export function ExampleCrop({mode,setmode}) {
   return (
     <div className="backdrop-opacity-10 backdrop-invert bg-white/30">
       <NAV mode={mode} setmode={setmode}/>
-      <h1 className="h1_E">Find your crop </h1>
+      <center><h1 className="h1_E" >Find your crop </h1></center>
     
-      <div className="inputcard_E">
-        <form className="form_E">
-          <input
-            placeholder="Input season to find your crop"
-            onChange={(e) => handlesearch(e)}
-            type="text"
-            className="input_E"
-          ></input>
-        </form>
+      <div className="search-wrapper">
+        <input type="text" placeholder="Search by Season" />
       </div>
 
 
