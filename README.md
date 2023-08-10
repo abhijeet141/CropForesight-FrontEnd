@@ -208,6 +208,14 @@ Congratulations! 🎉 you've made your contribution.
 Please follow the cotribution guide in all your interactions with the project.
 We will review your pull request and provide feedback. Once your changes are approved, we will merge them into the main branch. 
 
+## Contributors ✨
+We would like to express our heartfelt gratitude to the following contributors for their valuable contributions to Friday:	We would like to express our heartfelt gratitude to the following contributors for their valuable contributions to CropForesight-FrontEnd:
+
+Thanks to these wonderful people.
+<p>
+  <img src="https://api.vaunt.dev/v1/github/entities/abhijeet141/repositories/CropForesight-FrontEnd/contributors?format=svg&limit=54" width="600" height"250" />
+</p>
+
 ## License 
 This project is licensed under the MIT License.
 
