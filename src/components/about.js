@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import Review from "../Review/Review";
+import Review from "./Review";
 import "./about.css";
-import "../nav.css";
+import "./nav.css";
 
 const About = ({mode,setmode}) => {
   const navigate = useNavigate();

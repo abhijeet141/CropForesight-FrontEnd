@@ -255,7 +255,7 @@ function App() {
       <GoToTop />
       <BrowserRouter>
         <Suspense fallback={<Loading />}>
-          <Navbar/>
+          <Navbar  mode={mode} setmode={setmode}/>
           <Routes>
             <Route path="/" element={<Home mode={mode} setmode={setmode} />} />{" "}
             <Route path="/form" element={FormComponent(mode)} />{" "}
