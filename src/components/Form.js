@@ -2,7 +2,7 @@ import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { auth, provider } from '../firebase-config';
-
+import './Form.css';
 
 const LoginForm = () => {
 
