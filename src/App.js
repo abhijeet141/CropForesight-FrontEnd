@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import swal from "sweetalert";
 import "./App.css";
@@ -24,6 +24,7 @@ import Navbar from "./components/nav.jsx";
 //  import Login from "./components/Login";
 import ForgotPassword from "./components/ForgotPassword/FotgotPassword";
 import Login from "./components/Login/Login";
+import Profile from "./components/Profile/Profile";
 import Register from "./components/Register/Register";
 // import Success from "./components/Success";
 
@@ -250,12 +251,18 @@ function App() {
     }, 2000);
   }
   const [mode, setmode] = useState('dark');
+
+  const [token, setToken] = useState('');
+  useEffect(() => {
+    setToken(localStorage.getItem('AccessToken'));
+  }, [token]);
+
   return (
     <>
       <GoToTop />
       <BrowserRouter>
         <Suspense fallback={<Loading />}>
-          <Navbar  mode={mode} setmode={setmode}/>
+          <Navbar mode={mode} setmode={setmode} />
           <Routes>
             <Route path="/" element={<Home mode={mode} setmode={setmode} />} />{" "}
             <Route path="/form" element={FormComponent(mode)} />{" "}
@@ -266,9 +273,10 @@ function App() {
             <Route path="/*" element={<Err mode={mode} setmode={setmode} />} />{" "}
             <Route path="/ExampleCrop" element={<ExampleCrop mode={mode} setmode={setmode} />} />{" "}
             <Route path="/contributors" element={<Contributor mode={mode} setmode={setmode} />} />{" "}
-            <Route path="/Login" element={<Login mode={mode} setmode={setmode} />} />{" "}
-            <Route path="/Register" element={<Register mode={mode} setmode={setmode} />} />{" "}
-            <Route path="/forgotpassword" element={<ForgotPassword mode={mode} setmode={setmode} />} />{" "}
+            {token === null && <Route path="/Login" element={<Login mode={mode} setmode={setmode} />} />}
+            {token === null && <Route path="/Register" element={<Register mode={mode} setmode={setmode} />} />}
+            {token === null && <Route path="/forgotpassword" element={<ForgotPassword mode={mode} setmode={setmode} />} />}
+            {token !== null && <Route path="/profile" element={<Profile mode={mode} setmode={setmode} />} />}
             {/* <Route path="/Success" element={<Success />} />{" "} */}{" "}
           </Routes>{" "}
         </Suspense>{" "}

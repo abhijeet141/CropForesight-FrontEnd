@@ -1,19 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { BsMoonFill, BsSun } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import menu from "../assets/menu-icon.webp";
 import "./nav.css";
-import { BsMoonFill, BsSun } from "react-icons/bs";
 
-const NAV = ({mode,setmode}) => {
+const NAV = ({ mode, setmode }) => {
   // console.log(mode,setmode);
   const [showMenu, setShowMenu] = useState(false);
-  function changlemode(){
+  function changlemode() {
     setmode(mode === 'light' ? 'dark' : 'light');
- }
- function closeMenu() {
-  setShowMenu(false)
- }
+  }
+  function closeMenu() {
+    setShowMenu(false)
+  }
+
+  const [token, setToken] = useState('');
+  useEffect(() => {
+    setToken(localStorage.getItem('AccessToken'));
+  }, [token]);
+
   return (
     <>
       <nav>
@@ -50,18 +56,18 @@ const NAV = ({mode,setmode}) => {
               <Link to="/ExampleCrop">Example</Link>
             </li>
             <li>
-              <Link to="/Login">Login</Link>
+              {token !== null ? <Link to="/profile">Profile</Link> : <Link to="/Login">Login</Link>}
             </li>
             <li>
               <button className="modebtn" onClick={changlemode}>
-                {mode === 'dark' ? <BsMoonFill className="h-6 w-6"/> : <BsSun className="h-6 w-6"/>}
-              </button>            
+                {mode === 'dark' ? <BsMoonFill className="h-6 w-6" /> : <BsSun className="h-6 w-6" />}
+              </button>
             </li>
           </ul>
         </div>
         <div
           className="visibility-mobile"
-          onClick={() => {setShowMenu(prev => !prev)}}
+          onClick={() => { setShowMenu(prev => !prev) }}
         >
           <img src={menu} alt="" />
         </div>
@@ -89,7 +95,7 @@ const NAV = ({mode,setmode}) => {
                 <Link to="/contributors">Contributors</Link>
               </li>
               <li onClick={closeMenu}>
-                <Link to="/Login">Login</Link>
+                {token !== null ? <Link to="/profile">Profile</Link> : <Link to="/Login">Login</Link>}
               </li>
             </ul>
           </div>

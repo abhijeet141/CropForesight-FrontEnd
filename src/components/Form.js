@@ -2,6 +2,7 @@ import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { auth, provider } from '../firebase-config';
+import './Form.css';
 
 const LoginForm = () => {
 
@@ -32,6 +33,7 @@ const LoginForm = () => {
       localStorage.setItem("AccessToken", userLogin.user.accessToken);
       localStorage.setItem("Email", userLogin.user.email);
       window.alert("Login successful");
+      navigate('/');
     } catch (err) {
       console.log(err.message);;
     }
@@ -65,42 +67,44 @@ const LoginForm = () => {
         <div className="shape" />
         <div className="shape" />
       </div>
-      <form onSubmit={handleLogin}>
-        <h3>Login Here</h3>
-        <label htmlFor="email">Email</label>
-        <input type="text" placeholder="Email or Phone" id="email" value={email}
-          onChange={(e) => setEmail(e.target.value)} />
-        <label htmlFor="password">Password</label>
-        <div className="password-input" style={{ display: 'flex', position: 'relative' }}>
-          <input
-            type={showPassword ? 'text' : 'password'} value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-            id="password"
-          />
-          <span
-            className={`eye-icon ${showPassword ? 'show' : ''}`}
-            onClick={toggleShowPassword} style={{ marginTop: "1.4rem", position: 'absolute', right: 10 }}
-          >
-            {showPassword ? (
-              <i className="far fa-eye-slash" />
-            ) : (
-              <i className="far fa-eye" />
-            )}
-          </span>
-        </div>
-        <button type='submit'>Log In</button>
-        <div className="social">
-          <div className="go" onClick={handleGoogleLogin}>
-            <i className="fab fa-google" />Google
+      <div>
+        <form onSubmit={handleLogin}>
+          <h3>Login Here</h3>
+          <label htmlFor="email">Email</label>
+          <input type="text" placeholder="Email or Phone" id="email" value={email}
+            onChange={(e) => setEmail(e.target.value)} />
+          <label htmlFor="password">Password</label>
+          <div className="password-input" style={{ display: 'flex', position: 'relative' }}>
+            <input
+              type={showPassword ? 'text' : 'password'} value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              id="password"
+            />
+            <span
+              className={`eye-icon ${showPassword ? 'show' : ''}`}
+              onClick={toggleShowPassword} style={{ marginTop: "1.4rem", position: 'absolute', right: 10 }}
+            >
+              {showPassword ? (
+                <i className="far fa-eye-slash" />
+              ) : (
+                <i className="far fa-eye" />
+              )}
+            </span>
           </div>
-          <div className="fb">
-            <i className="fab fa-github" />GitHub
+          <button type='submit'>Log In</button>
+          <div className="social">
+            <div className="go" onClick={handleGoogleLogin}>
+              <i className="fab fa-google" />Google
+            </div>
+            <div className="fb">
+              <i className="fab fa-github" />GitHub
+            </div>
           </div>
-        </div>
-        <p style={{ fontSize: "1rem", textAlign: "center", marginTop: "0.4rem" }}>Don't have an account <Link to="/Register" style={{ color: "blue" }}>Register</Link></p>
-        <p style={{ fontSize: "1rem", textAlign: "center", marginTop: "0.2rem" }}> <Link to="/forgotpassword" style={{ color: "blue" }}>Forgot Password</Link></p>
-      </form>
+          <p style={{ fontSize: "1rem", textAlign: "center", marginTop: "0.4rem" }}>Don't have an account <Link to="/Register" style={{ color: "blue" }}>Register</Link></p>
+          <p style={{ fontSize: "1rem", textAlign: "center", marginTop: "0.2rem" }}> <Link to="/forgotpassword" style={{ color: "blue" }}>Forgot Password</Link></p>
+        </form>
+      </div>
     </>
   );
 };
