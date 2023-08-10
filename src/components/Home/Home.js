@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import video from "../../assets/nature.mp4"
 import "./Home.css";
 import "../nav.css";
-import NAVBAR from "../nav";
 
 const Typewriter = ({ sentences, delay }) => {
   const [displayText, setDisplayText] = useState("");
@@ -45,7 +44,6 @@ const Home = ({ mode, setmode }) => {
   return (
     <div className="card-container" style={{ backgroundColor: mode === 'light' ? "white" : "" }}>
       <div className="main" style={{ backgroundColor: mode === 'light' ? "white" : "" }}>
-        <NAVBAR mode={mode} setmode={setmode} />
         <video src={video} autoPlay loop muted />
 
         {/* <div className="card glass">

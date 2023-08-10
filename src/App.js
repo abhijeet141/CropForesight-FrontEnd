@@ -88,7 +88,6 @@ function App() {
   const FormComponent = () => {
     return (
       <>
-        <Navbar />
         <div className="body">
           <div className="formCont">
             <div className="form-left">
@@ -256,6 +255,7 @@ function App() {
       <GoToTop />
       <BrowserRouter>
         <Suspense fallback={<Loading />}>
+          <Navbar  mode={mode} setmode={setmode}/>
           <Routes>
             <Route path="/" element={<Home mode={mode} setmode={setmode} />} />{" "}
             <Route path="/form" element={FormComponent(mode)} />{" "}

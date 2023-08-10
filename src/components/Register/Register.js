@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import NAV from "../nav";
 
 const Register = ({ mode, setmode }) => {
     const [showPassword, setShowPassword] = useState(false);
@@ -11,7 +10,6 @@ const Register = ({ mode, setmode }) => {
 
     return (
         <>
-            <NAV mode={mode} setmode={setmode} />
             <title>Glassmorphism login Form Tutorial in html css</title>
             <link rel="preconnect" href="https://fonts.gstatic.com" />
             <link

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./contact.css";
 import "../nav.css";
 import swal from "sweetalert";
-import NAVBAR from "../nav";
 import { AiFillTwitterCircle, AiFillGithub, AiFillMail } from "react-icons/ai";
 import { FaUserAlt } from "react-icons/fa";
 import { BsFillChatRightTextFill } from "react-icons/bs";
@@ -115,7 +114,6 @@ const Contact = ({mode,setmode}) => {
   return (
     <div>
       {/* nav bar */}
-      <NAVBAR mode={mode} setmode={setmode}/>
 
       {/* contact us form */}
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />

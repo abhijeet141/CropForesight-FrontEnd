@@ -1,5 +1,5 @@
 nav {
-  position: fixed;
+  position: inherit;
   top: 0;
   left: 0;
   right: 0;
@@ -89,12 +89,11 @@ nav .visibility-mobile {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    position: absolute;
+    position: inherit;
     right: 0;
     left: 0;
-    z-index: 10;
+    z-index: 999;
     background-color: rgb(0, 0, 57);
-    margin-top: 25px;
     padding-top: 10px;
     transition: 2s ease-in-out;
   }
