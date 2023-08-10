@@ -1,10 +1,8 @@
 import "./404.css";
-import NAVBAR from '../nav';
 
 const Err = () => {
     return (
         <>
-            <NAVBAR />
             <div className="pg_not_found">
                 <h1 className="error">4<span><i class="fas fa-ghost purple"></i></span>4</h1>
                 <h2>Error: 404 page not found</h2>

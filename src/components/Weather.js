@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import './Weather.css';
-import NAVBAR from './nav';
 import './nav.css';
 import WeatherCard from './WeatherCard/WeatherCard';
 
@@ -39,7 +38,6 @@ export const Weather = ({mode,setmode}) => {
 
     return (
         <div id="weather-page">
-            <NAVBAR mode={mode} setmode={setmode} />
             <div className="maincontainer">
                 <h1>Weather</h1>
                 <div className='box'>

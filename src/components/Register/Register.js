@@ -31,7 +31,6 @@ const Register = ({ mode, setmode }) => {
 
     return (
         <>
-            <NAV mode={mode} setmode={setmode} />
             <title>Glassmorphism login Form Tutorial in html css</title>
             <link rel="preconnect" href="https://fonts.gstatic.com" />
             <link
