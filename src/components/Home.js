@@ -44,7 +44,6 @@ const Home = ({mode,setmode}) => {
   return (
     <div style={{backgroundColor:mode==='light'?"white":""}}>
       <div className="main" style={{backgroundColor:mode==='light'?"white":""}}>
-        <NAVBAR mode={mode} setmode={setmode}/>
         <video src={video} autoPlay loop muted />
 
         {/* <div className="card glass">

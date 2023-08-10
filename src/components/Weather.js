@@ -39,7 +39,6 @@ export const Weather = ({mode,setmode}) => {
 
     return (
         <div id="weather-page">
-            <NAVBAR mode={mode} setmode={setmode} />
             <div className="maincontainer">
                 <h1>Weather</h1>
                 <div className='box'>

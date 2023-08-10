@@ -44,7 +44,6 @@ const About = ({mode,setmode}) => {
   return (
     <>
       {/* nav bar */}
-      <NAVBAR mode={mode} setmode={setmode}/>
       {/* main section */}
       <div className={`aboutMain ${mode === 'light' && "lightmain"}`}>
         <h1 className="about">🌾 What Is CropForesight❔ </h1>
