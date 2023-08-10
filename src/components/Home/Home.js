@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import video from "../assets/nature.mp4";
+// import video from ".../../assets/nature.mp4";
+import video from "../../assets/nature.mp4"
 import "./Home.css";
-import "./nav.css";
-import NAVBAR from "./nav";
+import "../nav.css";
+import NAVBAR from "../nav";
 
 const Typewriter = ({ sentences, delay }) => {
   const [displayText, setDisplayText] = useState("");
@@ -34,7 +35,7 @@ const Typewriter = ({ sentences, delay }) => {
   return <span>{displayText}</span>;
 };
 
-const Home = ({mode,setmode}) => {
+const Home = ({ mode, setmode }) => {
   const navigate = useNavigate();
   const sentences = [
     "Predict what type of crop🌾 is suitable on your land🌏",
@@ -42,9 +43,9 @@ const Home = ({mode,setmode}) => {
   ];
 
   return (
-    <div style={{backgroundColor:mode==='light'?"white":""}}>
-      <div className="main" style={{backgroundColor:mode==='light'?"white":""}}>
-        <NAVBAR mode={mode} setmode={setmode}/>
+    <div className="card-container" style={{ backgroundColor: mode === 'light' ? "white" : "" }}>
+      <div className="main" style={{ backgroundColor: mode === 'light' ? "white" : "" }}>
+        <NAVBAR mode={mode} setmode={setmode} />
         <video src={video} autoPlay loop muted />
 
         {/* <div className="card glass">
@@ -65,11 +66,11 @@ const Home = ({mode,setmode}) => {
         </button>
       </div> */}
 
-        <div className={`card glass ${mode === 'light' ? "bg-dark1"  : "bg-light1"}`}>
-          <button className={`button-1 ${mode == 'light' ? "text-white": "text-black"}`} onClick={() => navigate("/form")}>
+        <div className={`card glass ${mode === 'light' ? "bg-dark1" : "bg-light1"}`}>
+          <button className={`button-1 ${mode == 'light' ? "text-white" : "text-black"}`} onClick={() => navigate("/form")}>
             PREDICT YOUR CROP
           </button>
-          <p className={`para  ${mode == 'light' ? "text-white": "text-black"}`}>
+          <p className={`para  ${mode == 'light' ? "text-white" : "text-black"}`}>
             <Typewriter sentences={sentences} delay={2000} />
           </p>
         </div>

@@ -11,20 +11,20 @@ import "./components/nav.css";
 import GoToTop from "./GoToTop/GoToTop";
 import Loading from "./components/Loading";
 
-import Err from "./components/404";
-import Contributor from "./components/Contributor";
-import Home from "./components/Home";
+import Err from "./components/404page/404";
+import About from "./components/About/about";
+import Contact from "./components/Contact/contact";
+import Contributor from "./components/Contributors/Contributor";
+import Home from "./components/Home/Home";
 import Weather from "./components/Weather";
-import About from "./components/about";
-import Contact from "./components/contact";
 import FAQ from "./components/faq/faq";
 import Navbar from "./components/nav.jsx";
 // const Login = lazy(() => import("./components/Login"));
 // const Login = lazy(() => import("./components/Login"));
 //  import Login from "./components/Login";
-import ForgotPassword from "./components/FotgotPassword";
-import Login from "./components/Login";
-import Register from "./components/Register";
+import ForgotPassword from "./components/ForgotPassword/FotgotPassword";
+import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
 // import Success from "./components/Success";
 
 function App() {
@@ -123,7 +123,7 @@ function App() {
                   onChange={onChange}
                 />
               ))}{" "}
-              <button onClick={handleSubmit} className="btn">
+              <button onClick={handleSubmit} disabled={loading} className="btn">
                 {" "}
                 {loading ? "Evaluating..." : "Recommend Crop"}{" "}
               </button>{" "}
@@ -140,7 +140,6 @@ function App() {
     event.preventDefault();
 
     // console.log("function called");
-    setLoading(true);
 
     if (values.nitrogen === "") {
       seterror("*Nitrogen is Required!");
@@ -198,6 +197,7 @@ function App() {
     ) {
       seterror("*Invalid Rainfall (should be between 0 and 1000 mm)");
     } else {
+      setLoading(true);
       const { data } = await axios.post(
         `https://cropforesight-backend.onrender.com/predict`,
         {
@@ -210,20 +210,32 @@ function App() {
           rainfall: Number(values.rainfall),
         }
       );
-      setLoading(false);
-      seterror("");
-      values.nitrogen = "";
-      values.phosphorus = "";
-      values.potassium = "";
-      values.temperature = "";
-      values.humidity = "";
-      values.ph = "";
-      values.rainfall = "";
-      swal(
-        "Success",
-        `You should plant ${data.result} in your field`,
-        "success"
-      );
+      if (data.result) {
+        setLoading(false);
+        seterror("");
+        values.nitrogen = "";
+        values.phosphorus = "";
+        values.potassium = "";
+        values.temperature = "";
+        values.humidity = "";
+        values.ph = "";
+        values.rainfall = "";
+        swal(
+          "Success",
+          `You should plant ${data.result} in your field`,
+          "success"
+        );
+      } else {
+        setLoading(false);
+        values.nitrogen = "";
+        values.phosphorus = "";
+        values.potassium = "";
+        values.temperature = "";
+        values.humidity = "";
+        values.ph = "";
+        values.rainfall = "";
+        swal("Error", "Error in evaluation Please try again later", "error");
+      }
     }
   };
   const onChange = (event) => {

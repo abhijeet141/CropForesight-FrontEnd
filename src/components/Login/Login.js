@@ -1,6 +1,6 @@
-import NAV from "./nav";
+import NAV from "../nav";
 import "./Login.css";
-import Form from "./Form";
+import Form from "../Form";
 
 function Login({mode,setmode}) {
   return (

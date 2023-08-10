@@ -1,6 +1,6 @@
 .carousel-wrapper {
   margin: 20 auto;
-  max-width: 1200px;
+  max-width: 100vh;
   padding: 20px;
 }
 
@@ -9,19 +9,15 @@
   height: 470px;
   padding: 20px;
   margin-bottom: 20px;
-  box-shadow: rgba(46, 182, 240, 0.4) 0px 5px, rgba(5, 97, 101, 0.3) 0px 10px,
-    rgba(46, 133, 240, 0.2) 0px 15px, rgba(46, 175, 240, 0.1) 0px 20px,
-    rgba(46, 137, 240, 0.05) 0px 25px;
   border-radius: 30px;
-  background-image: linear-gradient(to right, #6ab0fb,#1a555e);
+  background-image: linear-gradient(to bottom, #ffffff,#4f636b);
   margin-right: 20px;
   transition: all 3s ease;
 }
 .testimonial:hover {
   transform: scale(0.9);
   transition: all 3s ease;
-  background-image: linear-gradient(to right, #1a555e, #6ab0fb);
-  box-shadow: #0000009c 2px 4px 10px;
+  box-shadow: #eeecec9c 2px 4px 10px;
   
 }
 
@@ -67,17 +63,17 @@
 }
 
 .quote-icon {
-  font-size: 24px;
+  font-size: 12px;
   margin-bottom: 10px;
 }
 
 .right_arrow {
-  width: 100%;
+  /* width: 100%; */
   margin: 0;
-  top: -300px;
+  top: -350px;
   position: relative;
   cursor: pointer;
-  left: -400px;
+  left: -440px;
 }
 .right_arrow:hover {
   color: #fc5c7d;
@@ -89,7 +85,7 @@
   /* width:100%; */
   cursor: pointer;
   position: relative;
-  top: -300px;
+  top: -350px;
   margin: 0;
   right: -300px;
 }
@@ -130,4 +126,47 @@
   .left_arrow {
     right: -100px;
   }
+}
+
+
+/* Review.css */
+
+.carousel-wrapper {
+  /* Your carousel wrapper styles */
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial {
+  /* Your testimonial styles */
+}
+
+.arrows-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+}
+
+.arrow-button {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: #f2f3fa; /* Arrow color */
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #9399d4;
+}
+
+.prev-button {
+  margin-right: 100vh;
+}
+
+.next-button {
+  margin-left: 10px;
 }

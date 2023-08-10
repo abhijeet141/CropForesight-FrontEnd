@@ -33,21 +33,23 @@ td {
   font-size: 18px;
 }
 .Crop_table {
+  display: flex;
   justify-content: center !important;
   align-items: center !important;
 }
 
 .form_E{
-  margin: auto;
   margin-bottom: 1rem;
-  overflow: hidden;
-  background-color: rgb(220, 155, 240);
+  display: flex;
+  justify-content: center;
   border-radius: 0.5rem;
 }
 
 .input_E {
   width: 90% ;
-  margin-inline: 5%;
+  display: flex;
+  justify-content: center;
+  /* margin-inline: 5%; */
   transition: 1s ease-in all;
   font-size: 1.2rem;
 }
@@ -71,7 +73,6 @@ td {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
   font-style: bold;
   color: rgb(147, 102, 189);
   text-align: center;
@@ -98,5 +99,21 @@ td {
 @media only screen and (max-width: 855px) {
   img {
     position: relative !important;
+  }
+}
+
+.search-wrapper{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-wrapper input{
+  width: 30%;
+}
+
+@media (max-width:900px){
+  .search-wrapper input{
+    width: 50%;
   }
 }
