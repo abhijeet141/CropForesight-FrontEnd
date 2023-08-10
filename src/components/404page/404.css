@@ -25,7 +25,8 @@ main {
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  /* height: 100vh; */
+  margin-top: 100px;
   justify-content: center;
   text-align: center;
 }
@@ -81,4 +82,3 @@ p {
     transform: translatey(-0.15em);
   }
 }
-
