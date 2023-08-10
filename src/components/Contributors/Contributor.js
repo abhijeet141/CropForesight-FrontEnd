@@ -14,7 +14,7 @@ const Contributor = ({mode,setmode}) => {
         const data = response.data;
         console.log(data);
         setContributors(data);
-      } catch (error) {
+      } catch (error) { 
         console.error(error);
       }
     };
