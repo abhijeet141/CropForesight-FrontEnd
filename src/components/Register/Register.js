@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import NAV from "./nav";
+import NAV from "../nav";
 
 const Register = ({ mode, setmode }) => {
     const [showPassword, setShowPassword] = useState(false);

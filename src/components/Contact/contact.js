@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./contact.css";
-import "./nav.css";
+import "../nav.css";
 import swal from "sweetalert";
-import NAVBAR from "./nav";
+import NAVBAR from "../nav";
 import { AiFillTwitterCircle, AiFillGithub, AiFillMail } from "react-icons/ai";
 import { FaUserAlt } from "react-icons/fa";
 import { BsFillChatRightTextFill } from "react-icons/bs";
-import validate from "../common/validation";
+import validate from "../../common/validation";
 
 const Typewriter = ({ sentences, delay }) => {
   const [displayText, setDisplayText] = useState("");

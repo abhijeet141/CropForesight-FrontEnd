@@ -1,5 +1,5 @@
 import "./404.css";
-import NAVBAR from './nav';
+import NAVBAR from '../nav';
 
 const Err = () => {
     return (

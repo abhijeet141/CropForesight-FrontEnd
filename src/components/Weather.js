@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './Weather.css';
 import NAVBAR from './nav';
 import './nav.css';
-import WeatherCard from './WeatherCard';
+import WeatherCard from './WeatherCard/WeatherCard';
 
 export const Weather = ({mode,setmode}) => {
     const [city, setCity] = useState('')
