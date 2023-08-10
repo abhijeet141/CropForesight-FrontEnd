@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import NAV from "../nav";
 import "../Contributors/contributor.css"
 const Contributor = ({mode,setmode}) => {
   const [contributors, setContributors] = useState([]);
@@ -23,7 +22,6 @@ const Contributor = ({mode,setmode}) => {
 
   return (
     <>
-    <NAV mode={mode} setmode={setmode}/>
     <br />
       <div >
         <h1 className="h1" >
