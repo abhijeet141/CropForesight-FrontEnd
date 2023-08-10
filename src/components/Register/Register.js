@@ -1,15 +1,40 @@
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { auth } from '../../firebase-config';
+import NAV from "../nav";
 
 const Register = ({ mode, setmode }) => {
+
+    const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [displayName, setDisplayName] = useState('');
+    const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
 
     const toggleShowPassword = () => {
         setShowPassword(!showPassword);
     };
 
+    // Register user
+    const handleRegister = async (e) => {
+        e.preventDefault();
+        try {
+            const user = await createUserWithEmailAndPassword(auth, email, password, displayName);
+            console.log(user);
+            localStorage.setItem("AccessToken", user.user.accessToken);
+            // localStorage.setItem("displayName", user.user.displayName);
+            // localStorage.setItem("AccessToken", user.user.email);
+            window.alert("Registration successful");
+            navigate('/Login');
+        } catch (err) {
+            console.log(err.message);
+        }
+    }
+
     return (
         <>
+            <NAV mode={mode} setmode={setmode} />
             <title>Glassmorphism login Form Tutorial in html css</title>
             <link rel="preconnect" href="https://fonts.gstatic.com" />
             <link
@@ -32,18 +57,18 @@ const Register = ({ mode, setmode }) => {
                 <div className="shape" />
                 <div className="shape" />
             </div>
-            <form>
+            <form onSubmit={handleRegister}>
                 <h3>Register Here</h3>
                 <label htmlFor="Username">Username</label>
-                <input type="text" placeholder="Username" id="username" />
+                <input type="text" placeholder="Username" id="displayName" onChange={(e) => setDisplayName(e.target.value)} value={displayName} />
                 <label htmlFor="Email">Email</label>
-                <input type="email" placeholder="Email or Phone" id="email" />
+                <input type="email" placeholder="Email or Phone" id="email" onChange={(e) => setEmail(e.target.value)} value={email} />
                 <label htmlFor="password">Password</label>
                 <div className="password-input" style={{ display: 'flex', position: 'relative' }}>
                     <input
                         type={showPassword ? 'text' : 'password'}
-                        placeholder="Password"
-                        id="password"
+                        placeholder="Password" value={password}
+                        id="password" onChange={(e) => setPassword(e.target.value)}
                     />
                     <span
                         className={`eye-icon ${showPassword ? 'show' : ''}`}
@@ -56,7 +81,7 @@ const Register = ({ mode, setmode }) => {
                         )}
                     </span>
                 </div>
-                <button>Register</button>
+                <button type='submit'>Register</button>
                 <p style={{ fontSize: "1rem", textAlign: "center" }}>Already have an account <Link to="/Login" style={{ color: "blue" }}>Login</Link></p>
             </form>
         </>

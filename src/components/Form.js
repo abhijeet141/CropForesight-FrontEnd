@@ -1,8 +1,41 @@
+import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { auth, provider } from '../firebase-config';
 
 const LoginForm = () => {
+
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+
+
+  const handleGoogleLogin = async () => {
+    try {
+      const user = await signInWithPopup(auth, provider);
+      localStorage.setItem("AccessToken", user.user.accessToken);
+      localStorage.setItem("Email", user.user.email);
+      localStorage.setItem("displayName", user.user.displayName);
+      window.location.reload();
+      navigate('/');
+    } catch (err) {
+      console.log(err.message);
+    }
+  }
+
+  // Login user
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const userLogin = await signInWithEmailAndPassword(auth, email, password);
+      localStorage.setItem("AccessToken", userLogin.user.accessToken);
+      localStorage.setItem("Email", userLogin.user.email);
+      window.alert("Login successful");
+    } catch (err) {
+      console.log(err.message);;
+    }
+  }
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
@@ -32,14 +65,16 @@ const LoginForm = () => {
         <div className="shape" />
         <div className="shape" />
       </div>
-      <form>
+      <form onSubmit={handleLogin}>
         <h3>Login Here</h3>
-        <label htmlFor="username">Username</label>
-        <input type="text" placeholder="Email or Phone" id="username" />
+        <label htmlFor="email">Email</label>
+        <input type="text" placeholder="Email or Phone" id="email" value={email}
+          onChange={(e) => setEmail(e.target.value)} />
         <label htmlFor="password">Password</label>
         <div className="password-input" style={{ display: 'flex', position: 'relative' }}>
           <input
-            type={showPassword ? 'text' : 'password'}
+            type={showPassword ? 'text' : 'password'} value={password}
+            onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
             id="password"
           />
@@ -54,9 +89,9 @@ const LoginForm = () => {
             )}
           </span>
         </div>
-        <button>Log In</button>
+        <button type='submit'>Log In</button>
         <div className="social">
-          <div className="go">
+          <div className="go" onClick={handleGoogleLogin}>
             <i className="fab fa-google" />Google
           </div>
           <div className="fb">
