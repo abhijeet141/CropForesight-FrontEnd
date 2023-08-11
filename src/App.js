@@ -29,6 +29,7 @@ import Register from "./components/Register/Register";
 // import Success from "./components/Success";
 
 function App() {
+  const [mode, setmode] = useState('dark');
   const [values, setValues] = useState({
     nitrogen: "",
     phosphorus: "",
@@ -250,7 +251,6 @@ function App() {
       setPreLoading(false);
     }, 2000);
   }
-  const [mode, setmode] = useState('dark');
 
   const [token, setToken] = useState('');
   useEffect(() => {

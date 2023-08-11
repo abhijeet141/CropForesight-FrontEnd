@@ -24,7 +24,9 @@ const NAV = ({ mode, setmode }) => {
 
   return (
     <>
-      <nav>
+      <nav style={{
+        backgroundColor: mode === "light" ? '#b0b0ac' : '#1c1c1b',
+      }}>
         <div >
           <Link to="/">
             <img
@@ -37,31 +39,31 @@ const NAV = ({ mode, setmode }) => {
         <div className="visibility-desktop">
           <ul>
             <li style={{ backgroundColor: location.pathname === '/' ? 'green' : 'inherit', width: '5rem', height: '3rem', borderRadius: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <Link to="/">Home</Link>
+              <Link style={{ color: mode === "light" ? '#1c1c1b' : '#e8e8e6' }} to="/">Home</Link>
             </li>
             <li style={{ backgroundColor: location.pathname === '/about' ? 'green' : 'inherit', width: '5rem', height: '3rem', borderRadius: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <Link to="/about">About</Link>
+              <Link style={{ color: mode === "light" ? '#1c1c1b' : '#e8e8e6' }} to="/about">About</Link>
             </li>
             <li style={{ backgroundColor: location.pathname === '/contact' ? 'green' : 'inherit', width: '5rem', height: '3rem', borderRadius: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <Link to="/contact">Contact</Link>
+              <Link style={{ color: mode === "light" ? '#1c1c1b' : '#e8e8e6' }} to="/contact">Contact</Link>
             </li>
             <li style={{ backgroundColor: location.pathname === '/faq' ? 'green' : 'inherit', width: '5rem', height: '3rem', borderRadius: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <Link to="/faq">FAQs</Link>
+              <Link style={{ color: mode === "light" ? '#1c1c1b' : '#e8e8e6' }} to="/faq">FAQs</Link>
             </li>
             <li style={{ backgroundColor: location.pathname === '/Weather' ? 'green' : 'inherit', width: '5rem', height: '3rem', borderRadius: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <Link to="/Weather">Weather</Link>
+              <Link style={{ color: mode === "light" ? '#1c1c1b' : '#e8e8e6' }} to="/Weather">Weather</Link>
             </li>
             <li style={{ backgroundColor: location.pathname === '/contributors' ? 'green' : 'inherit', width: '8rem', height: '3rem', borderRadius: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <Link to="/contributors">Contributors</Link>
+              <Link style={{ color: mode === "light" ? '#1c1c1b' : '#e8e8e6' }} to="/contributors">Contributors</Link>
             </li>
             <li style={{ backgroundColor: location.pathname === '/ExampleCrop' ? 'green' : 'inherit', width: '5rem', height: '3rem', borderRadius: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <Link to="/ExampleCrop">Example</Link>
+              <Link style={{ color: mode === "light" ? '#1c1c1b' : '#e8e8e6' }} to="/ExampleCrop">Example</Link>
             </li>
             <li style={{ backgroundColor: location.pathname === '/Login' ? 'green' : 'inherit', width: '5rem', height: '3rem', borderRadius: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              {token !== null ? <Link to="/profile">Profile</Link> : <Link to="/Login">Login</Link>}
+              {token !== null ? <Link style={{ color: mode === "light" ? '#1c1c1b' : '#e8e8e6' }} to="/profile">Profile</Link> : <Link style={{ color: mode === "light" ? '#1c1c1b' : '#e8e8e6' }} to="/Login">Login</Link>}
             </li>
             <li>
-              <button className="modebtn" onClick={changlemode}>
+              <button style={{ color: mode === "light" ? '#1c1c1b' : '#e8e8e6' }} className="modebtn" onClick={changlemode}>
                 {mode === 'dark' ? <BsMoonFill className="h-6 w-6" /> : <BsSun className="h-6 w-6" />}
               </button>
             </li>
