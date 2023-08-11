@@ -96,10 +96,10 @@ function App() {
                   {" "}
                   {<h1> Crop Foresight </h1>}{" "}
                 </Link>{" "}
-                <h2> Crop Recomendation </h2>{" "}
+                <h2> Crop Recommendation </h2>{" "}
                 <p className="form-left-one-para">
                   Get crops recommendation based on your soil and weather
-                  conditions.Fill in the given form andget recommendations now.{" "}
+                  conditions.Fill in the given form and get recommendations now.{" "}
                 </p>{" "}
               </div>{" "}
               <div className="form-left-two">
@@ -249,26 +249,53 @@ function App() {
       setPreLoading(false);
     }, 2000);
   }
-  const [mode, setmode] = useState('dark');
+  const [mode, setmode] = useState("dark");
   return (
     <>
       <GoToTop />
       <BrowserRouter>
         <Suspense fallback={<Loading />}>
-          <Navbar  mode={mode} setmode={setmode}/>
+          <Navbar mode={mode} setmode={setmode} />
           <Routes>
             <Route path="/" element={<Home mode={mode} setmode={setmode} />} />{" "}
             <Route path="/form" element={FormComponent(mode)} />{" "}
-            <Route path="/about" element={<About mode={mode} setmode={setmode} />} />{" "}
-            <Route path="/contact" element={<Contact mode={mode} setmode={setmode} />} />{" "}
-            <Route path="/faq" element={<FAQ mode={mode} setmode={setmode} />} />{" "}
-            <Route path="/Weather" element={<Weather mode={mode} setmode={setmode} />} />{" "}
+            <Route
+              path="/about"
+              element={<About mode={mode} setmode={setmode} />}
+            />{" "}
+            <Route
+              path="/contact"
+              element={<Contact mode={mode} setmode={setmode} />}
+            />{" "}
+            <Route
+              path="/faq"
+              element={<FAQ mode={mode} setmode={setmode} />}
+            />{" "}
+            <Route
+              path="/Weather"
+              element={<Weather mode={mode} setmode={setmode} />}
+            />{" "}
             <Route path="/*" element={<Err mode={mode} setmode={setmode} />} />{" "}
-            <Route path="/ExampleCrop" element={<ExampleCrop mode={mode} setmode={setmode} />} />{" "}
-            <Route path="/contributors" element={<Contributor mode={mode} setmode={setmode} />} />{" "}
-            <Route path="/Login" element={<Login mode={mode} setmode={setmode} />} />{" "}
-            <Route path="/Register" element={<Register mode={mode} setmode={setmode} />} />{" "}
-            <Route path="/forgotpassword" element={<ForgotPassword mode={mode} setmode={setmode} />} />{" "}
+            <Route
+              path="/ExampleCrop"
+              element={<ExampleCrop mode={mode} setmode={setmode} />}
+            />{" "}
+            <Route
+              path="/contributors"
+              element={<Contributor mode={mode} setmode={setmode} />}
+            />{" "}
+            <Route
+              path="/Login"
+              element={<Login mode={mode} setmode={setmode} />}
+            />{" "}
+            <Route
+              path="/Register"
+              element={<Register mode={mode} setmode={setmode} />}
+            />{" "}
+            <Route
+              path="/forgotpassword"
+              element={<ForgotPassword mode={mode} setmode={setmode} />}
+            />{" "}
             {/* <Route path="/Success" element={<Success />} />{" "} */}{" "}
           </Routes>{" "}
         </Suspense>{" "}

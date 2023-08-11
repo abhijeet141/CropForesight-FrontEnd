@@ -1,23 +1,25 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 import menu from "../assets/menu-icon.webp";
 import "./nav.css";
 import { BsMoonFill, BsSun } from "react-icons/bs";
 
-const NAV = ({mode,setmode}) => {
+import Login from "./Login/Login";
+const NAV = ({ mode, setmode }) => {
   // console.log(mode,setmode);
   const [showMenu, setShowMenu] = useState(false);
-  function changlemode(){
-    setmode(mode === 'light' ? 'dark' : 'light');
- }
- function closeMenu() {
-  setShowMenu(false)
- }
+  const location = useLocation();
+  function changlemode() {
+    setmode(mode === "light" ? "dark" : "light");
+  }
+  function closeMenu() {
+    setShowMenu(false);
+  }
   return (
     <>
       <nav>
-        <div >
+        <div>
           <Link to="/">
             <img
               src={logo}
@@ -29,43 +31,99 @@ const NAV = ({mode,setmode}) => {
         <div className="visibility-desktop">
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              {/* making use of location.pathname to get the active path and setting the font weight and color using the "active-links " class */}
+              <Link
+                to="/"
+                className={location.pathname === "/" ? "active-links" : ""}
+              >
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link
+                to="/about"
+                className={location.pathname === "/about" ? "active-links" : ""}
+              >
+                About
+              </Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Link
+                to="/contact"
+                className={
+                  location.pathname === "/contact" ? "active-links" : ""
+                }
+              >
+                Contact
+              </Link>
             </li>
             <li>
-              <Link to="/faq">FAQs</Link>
+              <Link
+                to="/faq"
+                className={location.pathname === "/faq" ? "active-links" : ""}
+              >
+                FAQs
+              </Link>
             </li>
             <li>
-              <Link to="/Weather">Weather</Link>
+              <Link
+                to="/Weather"
+                className={
+                  location.pathname === "/Weather" ? "active-links" : ""
+                }
+              >
+                Weather
+              </Link>
             </li>
             <li>
-              <Link to="/contributors">Contributors</Link>
+              <Link
+                to="/contributors"
+                className={
+                  location.pathname === "/contributors" ? "active-links" : ""
+                }
+              >
+                Contributors
+              </Link>
             </li>
             <li>
-              <Link to="/ExampleCrop">Example</Link>
+              <Link
+                to="/ExampleCrop"
+                className={
+                  location.pathname === "/ExampleCrop" ? "active-links" : ""
+                }
+              >
+                Example
+              </Link>
             </li>
             <li>
-              <Link to="/Login">Login</Link>
+              <Link
+                to="/Login"
+                className={location.pathname === "/Login" ? "active-links" : ""}
+              >
+                Login
+              </Link>
             </li>
             <li>
               <button className="modebtn" onClick={changlemode}>
-                {mode === 'dark' ? <BsMoonFill className="h-6 w-6"/> : <BsSun className="h-6 w-6"/>}
-              </button>            
+                {mode === "dark" ? (
+                  <BsMoonFill className="h-6 w-6" />
+                ) : (
+                  <BsSun className="h-6 w-6" />
+                )}
+              </button>
             </li>
           </ul>
         </div>
         <div
           className="visibility-mobile"
-          onClick={() => {setShowMenu(prev => !prev)}}
+          onClick={() => {
+            setShowMenu((prev) => !prev);
+          }}
         >
           <img src={menu} alt="" />
         </div>
       </nav>
+
       {showMenu && (
         <>
           <div className="mobile-nav">
