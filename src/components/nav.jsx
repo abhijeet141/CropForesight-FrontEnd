@@ -11,6 +11,9 @@ const NAV = ({mode,setmode}) => {
   function changlemode(){
     setmode(mode === 'light' ? 'dark' : 'light');
  }
+ function closeMenu() {
+  setShowMenu(false)
+ }
   return (
     <>
       <nav>
@@ -50,7 +53,7 @@ const NAV = ({mode,setmode}) => {
               <Link to="/Login">Login</Link>
             </li>
             <li>
-              <button className="modebtn" onClick={() =>changlemode()}>
+              <button className="modebtn" onClick={changlemode}>
                 {mode === 'dark' ? <BsMoonFill className="h-6 w-6"/> : <BsSun className="h-6 w-6"/>}
               </button>            
             </li>
@@ -58,7 +61,7 @@ const NAV = ({mode,setmode}) => {
         </div>
         <div
           className="visibility-mobile"
-          onClick={() => setShowMenu((prev) => !prev)}
+          onClick={() => {setShowMenu(prev => !prev)}}
         >
           <img src={menu} alt="" />
         </div>
@@ -67,25 +70,25 @@ const NAV = ({mode,setmode}) => {
         <>
           <div className="mobile-nav">
             <ul>
-              <li>
+              <li onClick={closeMenu}>
                 <Link to="/">Home</Link>
               </li>
-              <li>
+              <li onClick={closeMenu}>
                 <Link to="/about">About</Link>
               </li>
-              <li>
+              <li onClick={closeMenu}>
                 <Link to="/contact">Contact</Link>
               </li>
-              <li>
+              <li onClick={closeMenu}>
                 <Link to="/faq">FAQs</Link>
               </li>
-              <li>
+              <li onClick={closeMenu}>
                 <Link to="/Weather">Weather</Link>
               </li>
-              <li>
+              <li onClick={closeMenu}>
                 <Link to="/contributors">Contributors</Link>
               </li>
-              <li>
+              <li onClick={closeMenu}>
                 <Link to="/Login">Login</Link>
               </li>
             </ul>

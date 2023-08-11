@@ -19,11 +19,11 @@
 .sectionIO::before
 {
     content: '';
-    position: absolute;
     top: 0;
     left: 0;
     width: 50%;
     height: 100%;
+    position: sticky;
     background: #170549;
 }
 
@@ -171,13 +171,6 @@
     border-radius: 22px;
 }
 
-.contactFormDark{
-    background-color: #757575 !important;
-}
-.contactFormDark h2{
-    color: black !important;
-}
-
 .containerIO .contactForm h2
 {
     color: #0f3959;
@@ -309,6 +302,7 @@
         justify-content: center;
         align-items: center;
         min-height: 100vh;
+        position: sticky;
         background: #fff38e;
     }
 
@@ -368,8 +362,4 @@
     {
         width: 100%;
     }
-}
-
-.text-dark{
-    color: black  !important;
 }

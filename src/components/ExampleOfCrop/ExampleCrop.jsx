@@ -2,7 +2,6 @@ import React from "react";
 import "./ExampleCrop.css";
 import CropData from "./CropData";
 import { useState } from "react";
-import NAV from "../nav";
 
 
 export function ExampleCrop({mode,setmode}) {
@@ -35,7 +34,6 @@ export function ExampleCrop({mode,setmode}) {
 
   return (
     <div className="backdrop-opacity-10 backdrop-invert bg-white/30">
-      <NAV mode={mode} setmode={setmode}/>
       <center><h1 className="h1_E" >Find your crop </h1></center>
     
       <div className="search-wrapper">

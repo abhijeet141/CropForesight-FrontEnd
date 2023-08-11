@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import Review from "../Review/Review";
 import "./about.css";
-import NAVBAR from "../nav";
 import "../nav.css";
 
 const About = ({mode,setmode}) => {
@@ -43,8 +42,6 @@ const About = ({mode,setmode}) => {
 
   return (
     <>
-      {/* nav bar */}
-      <NAVBAR mode={mode} setmode={setmode}/>
       {/* main section */}
       <div className={`aboutMain ${mode === 'light' && "lightmain"}`}>
         <h1 className="about">🌾 What Is CropForesight❔ </h1>

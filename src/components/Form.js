@@ -63,7 +63,8 @@ const LoginForm = () => {
             <i className="fab fa-github" />GitHub
           </div>
         </div>
-        <p style={{ fontSize: "1rem", textAlign: "center" }}>Don't have an account <Link to="/Register" style={{ color: "blue" }}>Register</Link></p>
+        <p style={{ fontSize: "1rem", textAlign: "center", marginTop: "0.4rem" }}>Don't have an account <Link to="/Register" style={{ color: "blue" }}>Register</Link></p>
+        <p style={{ fontSize: "1rem", textAlign: "center", marginTop: "0.2rem" }}> <Link to="/forgotpassword" style={{ color: "blue" }}>Forgot Password</Link></p>
       </form>
     </>
   );

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 
-const Register = ({ mode, setmode }) => {
+const ForgotPassword = () => {
     const [showPassword, setShowPassword] = useState(false);
 
     const toggleShowPassword = () => {
@@ -33,11 +33,7 @@ const Register = ({ mode, setmode }) => {
                 <div className="shape" />
             </div>
             <form>
-                <h3>Register Here</h3>
-                <label htmlFor="Username">Username</label>
-                <input type="text" placeholder="Username" id="username" />
-                <label htmlFor="Email">Email</label>
-                <input type="email" placeholder="Email or Phone" id="email" />
+                <h3>Update Password</h3>
                 <label htmlFor="password">Password</label>
                 <div className="password-input" style={{ display: 'flex', position: 'relative' }}>
                     <input
@@ -56,11 +52,29 @@ const Register = ({ mode, setmode }) => {
                         )}
                     </span>
                 </div>
-                <button>Register</button>
-                <p style={{ fontSize: "1rem", textAlign: "center" }}>Already have an account <Link to="/Login" style={{ color: "blue" }}>Login</Link></p>
+                <label htmlFor="password">Confirm Password</label>
+                <div className="password-input" style={{ display: 'flex', position: 'relative' }}>
+                    <input
+                        type={showPassword ? 'text' : 'password'}
+                        placeholder="Password"
+                        id="password"
+                    />
+                    <span
+                        className={`eye-icon ${showPassword ? 'show' : ''}`}
+                        onClick={toggleShowPassword} style={{ marginTop: "1.4rem", position: 'absolute', right: 10 }}
+                    >
+                        {showPassword ? (
+                            <i className="far fa-eye-slash" />
+                        ) : (
+                            <i className="far fa-eye" />
+                        )}
+                    </span>
+                </div>
+                <button>Update Password</button>
+                <p style={{ fontSize: "1rem", textAlign: "center" }}>Back to <Link to="/Login" style={{ color: "blue" }}>Login</Link></p>
             </form>
         </>
     );
 };
 
-export default Register;
+export default ForgotPassword;
