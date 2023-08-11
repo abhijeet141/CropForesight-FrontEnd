@@ -26,6 +26,7 @@ import ForgotPassword from "./components/ForgotPassword/FotgotPassword";
 import Login from "./components/Login/Login";
 import Profile from "./components/Profile/Profile";
 import Register from "./components/Register/Register";
+import Footer from "./components/Footer";
 // import Success from "./components/Success";
 
 function App() {
@@ -279,6 +280,7 @@ function App() {
             {token !== null && <Route path="/profile" element={<Profile mode={mode} setmode={setmode} />} />}
             {/* <Route path="/Success" element={<Success />} />{" "} */}{" "}
           </Routes>{" "}
+          <Footer mode={mode} setmode={setmode} />
         </Suspense>{" "}
       </BrowserRouter>{" "}
     </>
