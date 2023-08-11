@@ -1,9 +1,13 @@
+
 import React, { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { BsMoonFill, BsSun } from "react-icons/bs";
+
 import logo from "../assets/logo.png";
 import menu from "../assets/menu-icon.webp";
 import "./nav.css";
-import { BsMoonFill, BsSun } from "react-icons/bs";
+
 
 import Login from "./Login/Login";
 const NAV = ({ mode, setmode }) => {
@@ -16,6 +20,22 @@ const NAV = ({ mode, setmode }) => {
   function closeMenu() {
     setShowMenu(false);
   }
+=======
+const NAV = ({ mode, setmode }) => {
+  // console.log(mode,setmode);
+  const [showMenu, setShowMenu] = useState(false);
+  function changlemode() {
+    setmode(mode === 'light' ? 'dark' : 'light');
+  }
+  function closeMenu() {
+    setShowMenu(false)
+  }
+
+  const [token, setToken] = useState('');
+  useEffect(() => {
+    setToken(localStorage.getItem('AccessToken'));
+  }, [token]);
+
   return (
     <>
       <nav>
@@ -96,6 +116,7 @@ const NAV = ({ mode, setmode }) => {
               </Link>
             </li>
             <li>
+
               <Link
                 to="/Login"
                 className={location.pathname === "/Login" ? "active-links" : ""}
@@ -110,15 +131,25 @@ const NAV = ({ mode, setmode }) => {
                 ) : (
                   <BsSun className="h-6 w-6" />
                 )}
+
+              {token !== null ? <Link to="/profile">Profile</Link> : <Link to="/Login">Login</Link>}
+            </li>
+            <li>
+              <button className="modebtn" onClick={changlemode}>
+                {mode === 'dark' ? <BsMoonFill className="h-6 w-6" /> : <BsSun className="h-6 w-6" />}
+
               </button>
             </li>
           </ul>
         </div>
         <div
           className="visibility-mobile"
+
           onClick={() => {
             setShowMenu((prev) => !prev);
           }}
+
+          onClick={() => { setShowMenu(prev => !prev) }}
         >
           <img src={menu} alt="" />
         </div>
@@ -147,7 +178,7 @@ const NAV = ({ mode, setmode }) => {
                 <Link to="/contributors">Contributors</Link>
               </li>
               <li onClick={closeMenu}>
-                <Link to="/Login">Login</Link>
+                {token !== null ? <Link to="/profile">Profile</Link> : <Link to="/Login">Login</Link>}
               </li>
             </ul>
           </div>

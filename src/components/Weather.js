@@ -4,6 +4,8 @@ import './Weather.css';
 import './nav.css';
 import WeatherCard from './WeatherCard/WeatherCard';
 
+
+
 export const Weather = ({mode,setmode}) => {
     const [city, setCity] = useState('')
     const [weatherData, setWeatherData] = useState(null);

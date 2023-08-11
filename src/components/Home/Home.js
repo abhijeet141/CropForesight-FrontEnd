@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import video from "../../assets/nature.mp4"
 import "./Home.css";
 import "../nav.css";
+import NAVBAR from "../nav";
+import Footer from "../Footer";
 
 const Typewriter = ({ sentences, delay }) => {
   const [displayText, setDisplayText] = useState("");
