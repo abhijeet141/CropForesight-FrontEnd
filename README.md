@@ -1,7 +1,6 @@
 <h1 align="center" id="top">CropForesight (Frontend)</h1>
 <p align="center">This Repository includes the frontend code of the <a href="crop-foresight-front-end.vercel.app" >CropForesight</a> website. The frontend of the project is written in HTML, CSS, Javascript, and ReactJS. Before moving ahead, a short intro about the project.</p>
 
-
  <h1 align="center">CropForesight🌾</h1>
 CropForesight is an advanced website designed to assist farmers and agriculture enthusiasts in making smart choices about which crops to grow on their land. It achieves this by using special computer programs that can learn from data and environmental information. These programs take into account factors like soil nutrients, rainfall, pH levels, and weather conditions. With all this data, CropForesight can accurately predict the best crop to cultivate, helping farmers maximize their productivity and yield. It's like having a knowledgeable farming expert to guide you towards success!
 <br>
@@ -17,7 +16,6 @@ CropForesight is an advanced website designed to assist farmers and agriculture 
 - [Deployment](#deployment)
 - [Contributing](#contributing)
 - [License](#license)
-
 
 <h1 align="center">Features</h1>
 
@@ -52,60 +50,60 @@ If you want to contribute to CropForesight or run it locally for development pur
 
 1. Clone the frontend repository:
 
-   ``` sh
+   ```sh
    git clone https://github.com/abhijeet141/CropForesight-FrontEnd.git
    ```
-   
+
 2. Change to the project directory:
 
-   ``` sh
+   ```sh
    cd CropForesight-FrontEnd
    ```
- 
+
 3. Install the required dependencies:
 
-   ``` sh
+   ```sh
    npm install
    ```
- 
+
 4. Run the frontend:
 
-   ``` sh
+   ```sh
    npm start
    ```
 
 5. Clone the backend repository:
 
-   ``` sh
+   ```sh
    git clone https://github.com/abhijeet141/CropForesight_BackEnd.git
    ```
 
 6. Change to the CropForesight_BackEnd directory:
 
-   ``` sh
+   ```sh
    cd CropForesight_BackEnd
    ```
-  
 
 7. Install the required dependencies:
 
-   ```sh 
+   ```sh
    pip install -r requirements.txt
-```
+   ```
+
+````
 
 
 8. Run the backend:
 
 ```sh
  uvicorn main:app --reload
-```
+````
 
 9. Open the website in your browser at [http://localhost:3000](http://localhost:3000) to access the local instance of CropForesight.
 
-
 ## Deployment
 
-✅ CropForesight's frontend is deployed and can be accessed online at [https://crop-foresight-front-end.vercel.app/](https://crop-foresight-front-end.vercel.app/). 
+✅ CropForesight's frontend is deployed and can be accessed online at [https://crop-foresight-front-end.vercel.app/](https://crop-foresight-front-end.vercel.app/).
 
 ✅ Feel free to explore the website and witness the power of smart crop recommendation firsthand!
 
@@ -115,7 +113,7 @@ We welcome contributions from anyone who is interested in improving this project
 
 - Submit a bug report if you find any issues with the application.
 - Suggest new features or improvements.
-- Submit a pull request to fix a bug or add a feature after an issue is assigned to you. 
+- Submit a pull request to fix a bug or add a feature after an issue is assigned to you.
 
 To submit a pull request, please follow these steps:
 
@@ -125,33 +123,38 @@ To submit a pull request, please follow these steps:
 ```sh
  git clone https://github.com/<your_github_username>/CropForesight-FrontEnd.git
 ```
+
 3. Now go ahead and create a new branch and move to the branch
    ```sh
    git checkout -b fix-issue-<ISSUE-NUMBER>
    ```
 4. After you have added your changes, follow the following command chain
-   * Check the changed files
-    ```sh
-     git status -s
-     ```
 
-   * Add all the files to the staging area
-      ```sh
+   - Check the changed files
+
+   ```sh
+    git status -s
+   ```
+
+   - Add all the files to the staging area
+     ```sh
      git add .
      ```
      or
      ```sh
      git add <file_name1> <file_name2>
      ```
-   * Commit your changes
-    ```sh
-     git commit -m "<EXPLAIN-YOUR_CHANGES>"
-     ```
+   - Commit your changes
+
+   ```sh
+    git commit -m "<EXPLAIN-YOUR_CHANGES>"
+   ```
+
 5. Push your changes
    ```sh
    git push origin fix-issue-<ISSUE-NUMBER>
    ```
-6. Open a Pull Request 
+6. Open a Pull Request
 
 Congratulations! 🎉 you've made your contribution.
 
@@ -161,8 +164,6 @@ Congratulations! 🎉 you've made your contribution.
 - Once an issue is assigned,the assignee is expected to submit a pr for review withing a week of the assignment. 
 	
 - If the assignee fails to comply with the deadline, the issue will be assigned to the next person who had who had requested to be assigned.
-	
-	
 
 <h1>GSSOC'23 Pointer System</h1>
 <h2> Level 1 - Documentation/Minor bug fix </h2>
@@ -178,12 +179,8 @@ Congratulations! 🎉 you've made your contribution.
 - Fixing issues such as typos, brokel links, or minor performance problems.
 	
 	
-- Bug fixes are an important part of maintaining stability of and reliability of of an open-source project and every bug fix, no matter how small, contributes to the overall health of the project. 
-	
-	
+- Bug fixes are an important part of maintaining stability of and reliability of of an open-source project and every bug fix, no matter how small, contributes to the overall health of the project.
 
-	
-	
 <h2> Level 2 - Enhancement of existing features </h2>
 <h3> Points - 25 </h3>
 	
@@ -191,12 +188,7 @@ Congratulations! 🎉 you've made your contribution.
 -  Feature or enhancement contributions refer to adding new functionality to an open source project.  
 	
 - Contributors can add new features, improve existing features, or add new functionality to existing features.
-	
 
-	
-	
-	
-	
 <h2> Level 3 - Refactoring/ Adding functionalities </h2>
 <h3> Points - 45 </h3>
 	
@@ -206,20 +198,116 @@ Congratulations! 🎉 you've made your contribution.
 	
  
 Please follow the cotribution guide in all your interactions with the project.
-We will review your pull request and provide feedback. Once your changes are approved, we will merge them into the main branch. 
+We will review your pull request and provide feedback. Once your changes are approved, we will merge them into the main branch.
 
 ## Contributors ✨
-We would like to express our heartfelt gratitude to the following contributors for their valuable contributions to Friday:	We would like to express our heartfelt gratitude to the following contributors for their valuable contributions to CropForesight-FrontEnd:
+
+We would like to express our heartfelt gratitude to the following contributors for their valuable contributions to Friday: We would like to express our heartfelt gratitude to the following contributors for their valuable contributions to CropForesight-FrontEnd:
 
 Thanks to these wonderful people.
+
+Our Contributors
+
+abhijeet141
+Commits: 173
+
+SubhamB2003
+Commits: 24
+
+SyedImtiyaz-1
+Commits: 12
+
+AlfiyaSiddique
+Commits: 11
+
+rishuraj1
+Commits: 10
+
+NamandeepNegi
+Commits: 8
+
+Sameep002
+Commits: 7
+
+Tisha6661
+Commits: 7
+
+krutikajichkar
+Commits: 6
+
+akuldeepj
+Commits: 6
+
+karthiknadar1204
+Commits: 6
+
+Akshatchaube01
+Commits: 5
+
+Prajwal0225
+Commits: 5
+
+Avinash905
+Commits: 5
+
+Pragati-3003
+Commits: 5
+
+BhartiNagpure
+Commits: 4
+
+abhi03ruchi
+Commits: 4
+
+1Shubham7
+Commits: 4
+
+thestarsahil
+Commits: 4
+
+somenath203
+Commits: 3
+
+kaur-rajdeep
+Commits: 3
+
+HimanshuNarware
+Commits: 3
+
+akshaysoni10
+Commits: 2
+
+Tarun0951
+Commits: 2
+
+dheeraj1129
+Commits: 2
+
+Dimple-Choudhary
+Commits: 2
+
+Geeta259
+Commits: 2
+
+GiriprasadKrishnamurthy
+Commits: 2
+
+Harshu467
+Commits: 2
+
+kaashikaagrawal
+Commits: 2
+
 <p>
   <img src="https://api.vaunt.dev/v1/github/entities/abhijeet141/repositories/CropForesight-FrontEnd/contributors?format=svg&limit=54" width="600" height"250" />
 </p>
 
-## License 
+## License
+
 This project is licensed under the MIT License.
 
 Please feel free to modify the sections and add any additional information or badges relevant to your project. Let me know if you need further help.
 <br><br>
- <a href="#top">Back to top</a>
+<a href="#top">Back to top</a>
+
 </div>
