@@ -33,6 +33,7 @@ nav ul li a {
   text-decoration: none;
 }
 
+
 nav ul li:hover::after {
   width: 100%;
 }
@@ -107,4 +108,10 @@ nav .visibility-mobile {
     color: #fff;
     text-decoration: none;
   }
+}
+/* For setting the active links */
+.active-links {
+  color: #9864c9;
+  font-weight: bold;
+  font-size: 1.2rem;
 }

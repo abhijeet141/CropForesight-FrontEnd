@@ -1,31 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { BsMoonFill, BsSun } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, Suspense } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 import menu from "../assets/menu-icon.webp";
 import "./nav.css";
-import { useLocation } from "react-router-dom";
+import { BsMoonFill, BsSun } from "react-icons/bs";
 
+import Login from "./Login/Login";
 const NAV = ({ mode, setmode }) => {
   // console.log(mode,setmode);
-  const location = useLocation()
   const [showMenu, setShowMenu] = useState(false);
+  const location = useLocation();
   function changlemode() {
-    setmode(mode === 'light' ? 'dark' : 'light');
+    setmode(mode === "light" ? "dark" : "light");
   }
   function closeMenu() {
-    setShowMenu(false)
+    setShowMenu(false);
   }
-
-  const [token, setToken] = useState('');
-  useEffect(() => {
-    setToken(localStorage.getItem('AccessToken'));
-  }, [token]);
-
   return (
     <>
       <nav>
-        <div >
+        <div>
           <Link to="/">
             <img
               src={logo}
@@ -36,44 +30,100 @@ const NAV = ({ mode, setmode }) => {
         </div>
         <div className="visibility-desktop">
           <ul>
-            <li style={{ backgroundColor: location.pathname === '/' ? 'green' : 'inherit', width: '5rem', height: '3rem', borderRadius: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <Link to="/">Home</Link>
+            <li>
+              <Link
+                to="/"
+                className={location.pathname === "/" ? "active-links" : ""}
+              >
+                Home
+              </Link>
             </li>
-            <li style={{ backgroundColor: location.pathname === '/about' ? 'green' : 'inherit', width: '5rem', height: '3rem', borderRadius: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <Link to="/about">About</Link>
+            <li>
+              {/* Changes updated */}
+              <Link
+                to="/about"
+                className={location.pathname === "/about" ? "active-links" : ""}
+              >
+                About
+              </Link>
             </li>
-            <li style={{ backgroundColor: location.pathname === '/contact' ? 'green' : 'inherit', width: '5rem', height: '3rem', borderRadius: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <Link to="/contact">Contact</Link>
+            <li>
+              <Link
+                to="/contact"
+                className={
+                  location.pathname === "/contact" ? "active-links" : ""
+                }
+              >
+                Contact
+              </Link>
             </li>
-            <li style={{ backgroundColor: location.pathname === '/faq' ? 'green' : 'inherit', width: '5rem', height: '3rem', borderRadius: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <Link to="/faq">FAQs</Link>
+            <li>
+              <Link
+                to="/faq"
+                className={location.pathname === "/faq" ? "active-links" : ""}
+              >
+                FAQs
+              </Link>
             </li>
-            <li style={{ backgroundColor: location.pathname === '/Weather' ? 'green' : 'inherit', width: '5rem', height: '3rem', borderRadius: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <Link to="/Weather">Weather</Link>
+            <li>
+              <Link
+                to="/Weather"
+                className={
+                  location.pathname === "/Weather" ? "active-links" : ""
+                }
+              >
+                Weather
+              </Link>
             </li>
-            <li style={{ backgroundColor: location.pathname === '/contributors' ? 'green' : 'inherit', width: '8rem', height: '3rem', borderRadius: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <Link to="/contributors">Contributors</Link>
+            <li>
+              <Link
+                to="/contributors"
+                className={
+                  location.pathname === "/contributors" ? "active-links" : ""
+                }
+              >
+                Contributors
+              </Link>
             </li>
-            <li style={{ backgroundColor: location.pathname === '/ExampleCrop' ? 'green' : 'inherit', width: '5rem', height: '3rem', borderRadius: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <Link to="/ExampleCrop">Example</Link>
+            <li>
+              <Link
+                to="/ExampleCrop"
+                className={
+                  location.pathname === "/ExampleCrop" ? "active-links" : ""
+                }
+              >
+                Example
+              </Link>
             </li>
-            <li style={{ backgroundColor: location.pathname === '/Login' ? 'green' : 'inherit', width: '5rem', height: '3rem', borderRadius: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              {token !== null ? <Link to="/profile">Profile</Link> : <Link to="/Login">Login</Link>}
+            <li>
+              <Link
+                to="/Login"
+                className={location.pathname === "/Login" ? "active-links" : ""}
+              >
+                Login
+              </Link>
             </li>
             <li>
               <button className="modebtn" onClick={changlemode}>
-                {mode === 'dark' ? <BsMoonFill className="h-6 w-6" /> : <BsSun className="h-6 w-6" />}
+                {mode === "dark" ? (
+                  <BsMoonFill className="h-6 w-6" />
+                ) : (
+                  <BsSun className="h-6 w-6" />
+                )}
               </button>
             </li>
           </ul>
         </div>
         <div
           className="visibility-mobile"
-          onClick={() => { setShowMenu(prev => !prev) }}
+          onClick={() => {
+            setShowMenu((prev) => !prev);
+          }}
         >
           <img src={menu} alt="" />
         </div>
       </nav>
+
       {showMenu && (
         <>
           <div className="mobile-nav">
@@ -97,7 +147,7 @@ const NAV = ({ mode, setmode }) => {
                 <Link to="/contributors">Contributors</Link>
               </li>
               <li onClick={closeMenu}>
-                {token !== null ? <Link to="/profile">Profile</Link> : <Link to="/Login">Login</Link>}
+                <Link to="/Login">Login</Link>
               </li>
             </ul>
           </div>
