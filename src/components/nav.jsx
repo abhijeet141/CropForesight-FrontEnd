@@ -57,9 +57,9 @@ const NAV = ({ mode, setmode }) => {
             <li style={{ backgroundColor: location.pathname === '/ExampleCrop' ? 'green' : 'inherit', width: '5rem', height: '3rem', borderRadius: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <Link to="/ExampleCrop">Example</Link>
             </li>
-            <li style={{ backgroundColor: location.pathname === '/Login' ? 'green' : 'inherit', width: '5rem', height: '3rem', borderRadius: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            {/* <li style={{ backgroundColor: location.pathname === '/Login' ? 'green' : 'inherit', width: '5rem', height: '3rem', borderRadius: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               {token !== null ? <Link to="/profile">Profile</Link> : <Link to="/Login">Login</Link>}
-            </li>
+            </li> */}
             <li>
               <button className="modebtn" onClick={changlemode}>
                 {mode === 'dark' ? <BsMoonFill className="h-6 w-6" /> : <BsSun className="h-6 w-6" />}
@@ -96,9 +96,9 @@ const NAV = ({ mode, setmode }) => {
               <li onClick={closeMenu}>
                 <Link to="/contributors">Contributors</Link>
               </li>
-              <li onClick={closeMenu}>
+              {/* <li onClick={closeMenu}>
                 {token !== null ? <Link to="/profile">Profile</Link> : <Link to="/Login">Login</Link>}
-              </li>
+              </li> */}
             </ul>
           </div>
         </>
