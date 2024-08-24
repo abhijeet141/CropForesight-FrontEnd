@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import './Weather.css';
-import './nav.css';
+import Navbar from './Navbar/Navbar'
 import WeatherCard from './WeatherCard/WeatherCard';
 
 
@@ -39,6 +39,8 @@ export const Weather = ({mode,setmode}) => {
 
 
     return (
+        <>
+        <Navbar isHomepage={false} mode={mode} setmode={setmode} />
         <div id="weather-page">
             <div className="maincontainer">
                 <h1>Weather</h1>
@@ -67,7 +69,7 @@ export const Weather = ({mode,setmode}) => {
                 )}
             </div>
         </div>
-
+    </>
     )
 }
 export default Weather;

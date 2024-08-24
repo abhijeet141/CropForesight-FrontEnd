@@ -24,14 +24,14 @@ body {
   overflow: hidden; /* Prevent vertical scrolling */
 }
 
-video {
+/* video {
   width: 90%;
   max-width: 150vw;
   height: auto;
   max-height: 60vh;
   object-fit: fill;
   border-radius: 8vw;
-}
+} */
 
 .overlay {
   position: absolute;
@@ -134,7 +134,7 @@ img {
 
 @media only screen and (max-width: 855px) {
   .main {
-    text-align: center;
+    /* text-align: center; */
     overflow: auto; /* Allow scrolling for smaller screens */
   }
 
@@ -194,12 +194,12 @@ img {
     flex-direction: column;
     align-items: center;
   }
-
+/* 
   video {
     width: 90vw;
     height: auto;
     max-height: 40vh;
-  }
+  } */
 
   .text {
     font-size: 1.5rem;
@@ -285,9 +285,9 @@ img {
     }
   }
 }
-.button-1 {
+/* .button-1 {
   height: 50px;
-}
+} */
 
 .text-black{
   color: black;

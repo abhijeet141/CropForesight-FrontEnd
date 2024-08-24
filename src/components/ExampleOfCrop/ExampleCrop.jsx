@@ -2,6 +2,7 @@ import React from "react";
 import "./ExampleCrop.css";
 import CropData from "./CropData";
 import { useState } from "react";
+import Navbar from '../Navbar/Navbar'
 
 
 export function ExampleCrop({mode,setmode}) {
@@ -33,6 +34,8 @@ export function ExampleCrop({mode,setmode}) {
 }
 
   return (
+    <>
+      <Navbar isHomepage={false} mode={mode} setmode={setmode} />
     <div className="backdrop-opacity-10 backdrop-invert bg-white/30">
       <center><h1 className="h1_E" >Find your crop </h1></center>
     
@@ -52,7 +55,7 @@ export function ExampleCrop({mode,setmode}) {
         </thead>
         <tbody className="tbody_E">
           {data.map((card, index) => (
-            <tr className="rowex" style={{backgroundColor:mode === "light" ? "white": "",color:mode === "light"? "black" : "white" }}>
+            <tr key={index} className="rowex" style={{backgroundColor:mode === "light" ? "white": "",color:mode === "light"? "black" : "white" }}>
               <td>{card.sl}</td>
               <td>{card.season}</td>
               <td>{card.head}</td>
@@ -64,5 +67,6 @@ export function ExampleCrop({mode,setmode}) {
         </tbody>
       </table>
     </div>
+    </>
   );
 }
