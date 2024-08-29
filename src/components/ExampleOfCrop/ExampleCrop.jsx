@@ -6,11 +6,9 @@ import Navbar from '../Navbar/Navbar'
 
 
 export function ExampleCrop({mode,setmode}) {
-  const [search, setSearch] = useState("");
   const [data, setData] = useState(CropData);
   
   function handlesearch(e){
-    setSearch(e.target.value);
     const query = e.target.value;
     if(query === ""){
         setData(CropData);
@@ -40,7 +38,7 @@ export function ExampleCrop({mode,setmode}) {
       <center><h1 className="h1_E" >Find your crop </h1></center>
     
       <div className="search-wrapper">
-        <input type="text" placeholder="Search by Season" />
+        <input type="text" onChange={handlesearch} placeholder="Search by Season" />
       </div>
 
 
