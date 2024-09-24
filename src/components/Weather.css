@@ -54,11 +54,6 @@ h1 {
   align-items: center;
 }
 
-.maincontainer {
-  position: absolute;
-  top: 50px;
-}
-
 .getWeather {
   width: 150px;
   height: 42px;
@@ -71,9 +66,6 @@ h1 {
   background-color: rgb(208, 177, 244);
 }
 
-.getWeather:hover {
-  background-color: rgb(249, 178, 249);
-}
 
 .error-message {
   color: gray;
@@ -98,7 +90,6 @@ h1 {
   font-family: "Courier New", Courier, monospace;
   color: rgb(255, 255, 255);
 }
-
 .form-h {
   /* width: 30rem;
   height: 8rem; */
@@ -108,39 +99,6 @@ h1 {
   flex-direction: column;
   width: 500px;
 }
-
-/* #search {
-  position: absolute;
-  left: 5rem;
-} */
-
 #search:hover {
   box-shadow: 0px 0px 3px 3px pink;
 }
-
-/* @media only screen and (max-width: 850px) {
-
-    .maincontainer{
-        left: -2vw;
-    }
-    .getWeather{
-        position: absolute;
-        top: 23rem;
-        left: -2rem;
-
-    }
-    .form-h{
-        position: absolute;
-        top: 20vh;
-        left: 10vw;
-        width: 20rem;
-        height: 8rem;
-    }
-    .Weather{
-        position: absolute;
-        top: 30rem;
-    }
-    #search{
-        left: 4vw;
-    }
-  } */

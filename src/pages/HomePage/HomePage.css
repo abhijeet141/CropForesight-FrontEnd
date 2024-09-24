@@ -1,16 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-  }
-  
   .left p {
     color: white;
-  }
-  
-  .aboutMain {
-    top: 10rem;
-    height: 100%;
-    width: 100%;
   }
   
   .aboutMain h1 {
@@ -24,10 +13,8 @@
     font-weight: 300;
     font-size: 40px;
     font-style: bold;
-    color: rgb(147, 102, 189);
-    margin-top: 80px;
+    padding-top: 60px;
     text-align: center;
-    padding-top: 20px;
   }
   
   ul {
@@ -43,9 +30,7 @@
     margin: 5%;
     margin-top: 10px;
     margin-right: 0px;
-    /* background-color: green; */
     color: aliceblue;
-    padding: 10px;
   }
   
   .content .left {
@@ -53,47 +38,15 @@
     font-weight: 300;
     flex: 0.6;
     text-align: justify;
-  
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
     align-items: center;
-    /* background-color: blue; */
   }
-  
-  .content .left button {
-    width: 50%;
-    height: 50px;
-    background-color: rgb(147, 102, 189);
-    color: aliceblue;
-    border: none;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: 500;
-    margin-top: 20px;
-  }
-  
-  .content .left button:hover {
-    background-color: aliceblue;
-    color: purple;
-    box-shadow: 1px 1px 1px 1px purple;
-    transition: background-color 0.5s ease;
-    border: none;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: 300;
-    margin-top: 20px;
-    cursor: pointer;
-    transition: 0.7s;
-  }
-  
+
   .content .left .feature {
     font-size: 20px;
     font-weight: 300;
-    text-align: justify;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    /* text-align: center; */
+    padding-top: 12px;
   }
   
   .slider {
@@ -104,9 +57,7 @@
   
   .slider-box {
     width: 20%;
-    display: block;
     margin: auto;
-    margin-top: 100px;
   }
   
   .slider-div img {
@@ -120,10 +71,51 @@
     font-weight: 600;
     color: rgb(147, 102, 189);
   }
-  
+
   @media (max-width: 1000px) {
+    body{
+      padding: 30px;
+    }
     .content{
       display: flex;
       flex-direction: column;
     }
+    .slider {
+      width: 100%;
+      height: 160%;
+      margin-left: -40px;
+    }
+    .slider-box {
+      width: 50%;
+      margin-top: 30px;
+    }
   }
+  @media (max-width: 600px) {
+    .content {
+      margin: 2%;
+    }
+    .content .left {
+      align-items: flex-start; 
+      text-align:justify;
+      padding: 10px; 
+    }
+    .about {
+      width: 100%;
+      font-size: 23px;
+      font-style: bold;
+      text-align: center;
+    }
+    .slider {
+      width: 100%;
+      margin-left: 0; 
+    }
+    .slider-box {
+      width: 80%;
+      margin-top: 20px;
+    }
+    .slider-div img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './faq.css';
 import faq from "../../assets/faq.webp";
 import faqs from './faqData';
-import Navbar from '../Navbar/Navbar'
+import Navbar from '../../components/Navbar/Navbar'
 
 const AccordionItem = ({ title, content, mode }) => {
     const [expanded, setExpanded] = useState(false);

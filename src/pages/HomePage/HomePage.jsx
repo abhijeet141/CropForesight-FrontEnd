@@ -1,11 +1,11 @@
-import '../HomePage/HomePage.css'
+import '../../pages/HomePage/HomePage.css'
 import {useState, useEffect} from 'react'
-import Navbar from '../Navbar/Navbar'
+import Navbar from '../../components/Navbar/Navbar';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 export function HomePage(){
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [, setCurrentIndex] = useState(0);
         const settings = {
           dots: true,
           infinite: true,
@@ -13,7 +13,6 @@ export function HomePage(){
           slidesToShow: 1,
           slidesToScroll: 1,
           autoplay: true,
-          autoplaySpeed: 2000,
           beforeChange: (current, next) => setCurrentIndex(next),
         };  
         const images = [
@@ -27,18 +26,18 @@ export function HomePage(){
             setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
           }, 3000);
           return () => clearInterval(interval);
-        }, []);
+        }, [images.length]);
     return(
         <div>
             <div>
                 <Navbar isHomepage={true}></Navbar>
             </div>
-        <div className={`aboutMain`}>
+        <div className="aboutMain">
         <h1 className="about">🌾 What Is CropForesight❔ </h1>
         <div className="content">
           <div className="left">
             <p>
-             CropForesight provides comprehensive agricultural solutions, helping farmers and agriculture enthusiasts make informed decisions. Our platform offers crop recommendations by analyzing key environmental parameters—such as soil nitrogen and phosphorus levels, rainfall, pH, potassium, humidity, and temperature—to identify the optimal crop for maximum productivity and yield. Additionally, CropForesight features a tomato plant disease classification tool that uses deep learning to detect potential issues from leaf images.
+             CropForesight provides comprehensive agricultural solutions, helping farmers and agriculture enthusiasts to make informed decisions. Our platform offers crop recommendations by analyzing the key environmental parameters, such as soil nitrogen and phosphorus levels, rainfall, pH, potassium, humidity, and temperature, to identify the optimal crop for maximum productivity and yield. Additionally, CropForesight features a tomato plant disease classification tool that uses deep learning to detect potential issues from tomato leaf images.
             </p>
 
             <ul className="feature">
