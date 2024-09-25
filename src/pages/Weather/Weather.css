@@ -1,0 +1,102 @@
+input {
+  padding: 1rem;
+  border-radius: 25px;
+  border: none;
+  display: flex;
+  background-color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+}
+
+form{
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+h1 {
+  font-family: "Poppins";
+  font-size: 40px;
+  font-weight: 600;
+  text-shadow: 0px 2px 0px rgb(91, 53, 126);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-style: bold;
+  color: rgb(147, 102, 189);
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.Weather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+
+}
+
+#weather-page {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.getWeather {
+  width: 150px;
+  height: 42px;
+  cursor: pointer;
+  border-radius: 20px;
+  align-items: center;
+  border: none;
+  background-color: rgb(208, 177, 244);
+}
+
+
+.error-message {
+  color: gray;
+  font-weight: bold;
+  margin-top: 2vh;
+}
+
+.Weather .name {
+  font-size: 20pt;
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(255, 255, 255);
+}
+
+.Weather .dis {
+  font-size: 20pt;
+  color: rgb(255, 255, 255);
+  font-family: "Courier New", Courier, monospace;
+}
+
+.Weather .temp {
+  font-size: 20pt;
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(255, 255, 255);
+}
+.form-h {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 500px;
+}
+#search:hover {
+  box-shadow: 0px 0px 3px 3px pink;
+}

@@ -193,6 +193,7 @@
     margin: 1.6em 0;
     color: #fff;
     opacity: 0.6;
+    text-align: left;
   }
   
   @media (max-width: 750px) {

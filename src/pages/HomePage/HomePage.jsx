@@ -5,6 +5,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 export function HomePage(){
+  console.log("Hello");
+  
     const [, setCurrentIndex] = useState(0);
         const settings = {
           dots: true,

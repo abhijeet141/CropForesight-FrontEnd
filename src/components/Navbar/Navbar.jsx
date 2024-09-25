@@ -11,12 +11,14 @@ export default function Navbar({isHomePage}) {
   const location = useLocation();
   const [showMenu, setShowMenu] = useState(false);
   const [closed, setClosed] = useState(false)
-  const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
+  const { user,loginWithRedirect, isAuthenticated, logout } = useAuth0();
 
   function closeMenu() {
     setShowMenu(false);
   }
-  
+    
+console.log(user);
+
   const onHomePage = isHomePage || location.pathname === "/";
 
   useEffect(() => {

@@ -3,8 +3,8 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
 import { Auth0Provider } from '@auth0/auth0-react';
-import reportWebVitals from "./reportWebVitals";
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -18,9 +18,6 @@ root.render(
   cacheLocation="localstorage"
   >
     <App />
-    {/* <Footer/> */}
     </Auth0Provider>  
 );
 
-serviceWorkerRegistration.register();
-reportWebVitals();

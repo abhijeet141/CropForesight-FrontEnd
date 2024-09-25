@@ -1,7 +1,7 @@
 import swal from "sweetalert";
 import axios from "axios";
 import { crop } from "../../assets/index.js";
-import FormInfo from "../FormInfo.js";
+import FormInfo from "./FormInfo.js";
 import Navbar from "../Navbar/Navbar.jsx";
 import { useState } from "react";
 import { Link } from "react-router-dom";

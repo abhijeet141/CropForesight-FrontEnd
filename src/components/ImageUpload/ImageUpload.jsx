@@ -69,7 +69,8 @@ export function ImageUpload() {
         <>
             <Navbar isHomepage={false} />
             <div>
-                <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+                <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection:"column", marginTop:"15rem" }}>
+                    <div>
                     <FontAwesomeIcon
                         style={{ width: "8rem", height: "auto", cursor: "pointer" }}
                         icon={faFolder}
@@ -77,8 +78,12 @@ export function ImageUpload() {
                             widgetRef.current.open();
                         }}
                     />
+                    </div>
+                    <div style={{fontSize:"20px",textTransform:"capitalize",textAlign:"center"}}>
+                        Click on the folder icon to upload photo of diseased tomato leaf
+                    </div>
                 </div>
-                {loading && <p style={{ textAlign: "center" }}>Loading...</p>}
+                {loading && <p style={{ textAlign: "center", color:"white", fontSize:"20px", marginTop:"10px" }}>Loading...</p>}
             </div>
         </>
     );
