@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import './faq.css';
 import faq from "../../assets/faq.webp";
 import faqs from './faqData';
-import Navbar from '../../components/Navbar/Navbar'
 
-const AccordionItem = ({ title, content, mode }) => {
+const AccordionItem = ({ title, content}) => {
     const [expanded, setExpanded] = useState(false);
 
     const toggleAccordion = () => {
@@ -18,23 +17,22 @@ const AccordionItem = ({ title, content, mode }) => {
                 onClick={toggleAccordion}
                 aria-expanded={expanded ? 'true' : 'false'}
             >
-                <span className="accordion-title" style={{color:mode==='light'? "black":""}}>{title}</span>
-                <span className="icon" aria-hidden="true" style={{color:mode==='light'? "black":""}}></span>
+                <span className="accordion-title">{title}</span>
+                <span className="icon" aria-hidden="true"></span>
             </button>
             <div className="accordion-content">
-                <p style={{color:mode==='light'? "black":""}}>{content}</p>
+                <p>{content}</p>
             </div>
         </div>
     );
 };
 
-const FAQ = ({mode,setmode}) => {
+const FAQ = () => {
 
     return (
         <>
-            <Navbar isHomepage={false} mode={mode} setmode={setmode} />
             {/* main section */}
-            <div className="faq-section" style={{backgroundColor: mode === 'light'? "white" : ""}} >
+            <div className="faq-section">
                 {/* add Heading */}
                 <div className="faq-heading">Frequently Asked Questions</div>
                 <div className="faq-main">
@@ -49,7 +47,7 @@ const FAQ = ({mode,setmode}) => {
                         {/* Title */}
                         <div className="accordion">
                         {faqs.map((questions,index)=>{
-                           return  <AccordionItem key={index} title={questions.title} content={questions.content} mode={mode}/>
+                           return  <AccordionItem key={index} title={questions.title} content={questions.content}/>
                         })}
                            
                         </div>

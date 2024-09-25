@@ -2,7 +2,6 @@ import React from "react";
 import "./ExampleCrop.css";
 import CropData from "./CropData";
 import { useState } from "react";
-import Navbar from '../../components/Navbar/Navbar'
 
 
 export function ExampleCrop() {
@@ -33,7 +32,6 @@ export function ExampleCrop() {
 
   return (
     <>
-      <Navbar isHomepage={false}/>
     <div className="backdrop-opacity-10 backdrop-invert bg-white/30">
       <center><h1 className="h1_E" >Find your crop </h1></center>
     

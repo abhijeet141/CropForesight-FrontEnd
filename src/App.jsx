@@ -11,6 +11,8 @@ import Contributor from "./pages/Contributors/Contributor.jsx";
 import Weather from "./pages/Weather/Weather.jsx";
 import FAQ from "./pages/faq/faq.jsx";
 import { ImageUpload } from "./components/ImageUpload/ImageUpload.jsx";
+import Verify from "./pages/Verify/Verify.jsx";
+import Navbar from "./components/Navbar/Navbar.jsx";
 
 function App() { 
  
@@ -23,6 +25,7 @@ function App() {
     <>
       <GoToTop />
       <BrowserRouter>
+          <Navbar></Navbar>
           <Routes>
             <Route path="/" element={<HomeRoute />} />
             <Route path="/form" element={<ProtectedRoute element={<FormComponent />} />} />
@@ -31,6 +34,7 @@ function App() {
             <Route path="/Weather" element={<ProtectedRoute element={<Weather />} />} />
             <Route path="/ExampleCrop" element={<ProtectedRoute element={<ExampleCrop />} />} />
             <Route path="/contributors" element={<ProtectedRoute element={<Contributor />} />} />
+            <Route path="/verify" element={<Verify />} />
             <Route path="/*" element={<Err />} />
           </Routes>
       </BrowserRouter>

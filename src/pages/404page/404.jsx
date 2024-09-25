@@ -1,6 +1,7 @@
 import "./404.css";
 
 const Err = () => {
+    
     return (
         <>
             <div className="pg_not_found">

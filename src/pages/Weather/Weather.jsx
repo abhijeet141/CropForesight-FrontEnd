@@ -1,12 +1,11 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import './Weather.css';
-import Navbar from '../../components/Navbar/Navbar'
 import WeatherCard from '../../components/WeatherCard/WeatherCard';
 
 
 
-export const Weather = ({mode,setmode}) => {
+export const Weather = () => {
     const [city, setCity] = useState('')
     const [weatherData, setWeatherData] = useState(null);
     const [errorMessage, setErrorMessage] = useState('');
@@ -36,7 +35,6 @@ export const Weather = ({mode,setmode}) => {
 
     return (
         <>
-        <Navbar isHomepage={false}/>
         <div id="weather-page">
             <div className="maincontainer">
                 <h1>Weather</h1>

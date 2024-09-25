@@ -7,19 +7,17 @@ import "../Navbar/Navbar.css";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useLocation } from "react-router-dom";
 
-export default function Navbar({isHomePage}) {
+export default function Navbar() {
   const location = useLocation();
   const [showMenu, setShowMenu] = useState(false);
   const [closed, setClosed] = useState(false)
-  const { user,loginWithRedirect, isAuthenticated, logout } = useAuth0();
+  const {loginWithRedirect, isAuthenticated, logout, isLoading } = useAuth0();
 
   function closeMenu() {
     setShowMenu(false);
   }
-    
-console.log(user);
 
-  const onHomePage = isHomePage || location.pathname === "/";
+  const onHomePage = location.pathname === "/";
 
   useEffect(() => {
     if (showMenu) {
@@ -29,6 +27,10 @@ console.log(user);
     }
   }, [showMenu]);
 
+  if(isLoading){
+    return null;
+  }
+  
   return (
     <>
       <nav>

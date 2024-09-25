@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from '../../components/Navbar/Navbar'
 import plant from '../../assets/plant.jpg'
 import plant2 from '../../assets/plant2.jpg'
 import "./Home.css";
 
 const Typewriter = ({ sentences, delay }) => {
+  
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -49,7 +49,6 @@ const Home = () => {
 
   return (
     <>
-    <Navbar isHomepage={false} />
       <div className="main">
       <div className="container">
       <div className={`card glass "bg-light1"`}>

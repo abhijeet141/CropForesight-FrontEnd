@@ -1,6 +1,5 @@
 import '../../pages/HomePage/HomePage.css'
 import {useState, useEffect} from 'react'
-import Navbar from '../../components/Navbar/Navbar';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
@@ -31,9 +30,6 @@ export function HomePage(){
         }, [images.length]);
     return(
         <div>
-            <div>
-                <Navbar isHomepage={true}></Navbar>
-            </div>
         <div className="aboutMain">
         <h1 className="about">🌾 What Is CropForesight❔ </h1>
         <div className="content">

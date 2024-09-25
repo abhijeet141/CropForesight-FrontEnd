@@ -4,6 +4,7 @@ import { HomePage } from './pages/HomePage/HomePage';
 import Home from './pages/Home/Home';
 
 const HomeRoute = () => {
+
   const { isAuthenticated, isLoading } = useAuth0();
 
   if (isLoading) {
