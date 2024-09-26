@@ -61,7 +61,7 @@ nav .visibility-mobile {
   background-color: transparent;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1120px) {
   nav .visibility-desktop {
     display: none;
   }
