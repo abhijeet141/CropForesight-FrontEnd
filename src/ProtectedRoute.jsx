@@ -1,15 +1,14 @@
 import { Navigate } from "react-router-dom";
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth } from "@clerk/clerk-react";
 
 const ProtectedRoute = ({ element }) => {
-  const {user, isAuthenticated, isLoading } = useAuth0();
-  if(isLoading){
+  const { isLoaded, isSignedIn } = useAuth();
+
+  if (!isLoaded) {
     return null;
   }
-    if (user && !user.email_verified) {
-    return <Navigate to="/verify" />;
-  }
-  return isAuthenticated ? element : <Navigate to="/" />;
+
+  return isSignedIn ? element : <Navigate to="/" />;
 };
 
 export default ProtectedRoute;

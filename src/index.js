@@ -2,20 +2,24 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
-import { Auth0Provider } from '@auth0/auth0-react';
+import { ClerkProvider } from '@clerk/clerk-react'
+
+const PUBLISHABLE_KEY = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY
+
+console.log(PUBLISHABLE_KEY);
+
+
+if (!PUBLISHABLE_KEY) {
+  throw new Error("Missing Publishable Key")
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Auth0Provider
-    domain={process.env.REACT_APP_DOMAIN}
-    clientId={process.env.REACT_APP_ID}
-    authorizationParams={{
-      redirect_uri: window.location.origin
-    }}
-  useRefreshTokens={true}
-  cacheLocation="localstorage"
-  >
-    <App />
-    </Auth0Provider>  
+  <React.StrictMode>
+  <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
+  <App />
+</ClerkProvider>
+</React.StrictMode>,
+
 );
 

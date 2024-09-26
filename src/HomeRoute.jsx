@@ -1,17 +1,17 @@
 import React from 'react';
-import { useAuth0 } from '@auth0/auth0-react';
+import { useAuth } from '@clerk/clerk-react'
 import { HomePage } from './pages/HomePage/HomePage';
 import Home from './pages/Home/Home';
 
 const HomeRoute = () => {
 
-  const { isAuthenticated, isLoading } = useAuth0();
+  const { isLoaded, isSignedIn } = useAuth()
 
-  if (isLoading) {
+  if (!isLoaded) {
     return null;
   }
 
-  return isAuthenticated ? <Home /> : <HomePage />;
+  return isSignedIn ? <Home /> : <HomePage />;
 };
 
 export default HomeRoute;

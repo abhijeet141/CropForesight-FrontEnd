@@ -4,14 +4,15 @@ import logo from "../../assets/logo.png";
 import menu from "../../assets/menu-icon.webp";
 import close from '../../assets/close.png'
 import "../Navbar/Navbar.css";
-import { useAuth0 } from "@auth0/auth0-react";
+import {useAuth, SignInButton, SignOutButton  } from '@clerk/clerk-react'
 import { useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const location = useLocation();
   const [showMenu, setShowMenu] = useState(false);
   const [closed, setClosed] = useState(false)
-  const {loginWithRedirect, isAuthenticated, logout, isLoading } = useAuth0();
+  const {isLoaded, isSignedIn } = useAuth()
+
 
   function closeMenu() {
     setShowMenu(false);
@@ -27,7 +28,7 @@ export default function Navbar() {
     }
   }, [showMenu]);
 
-  if(isLoading){
+  if(!isLoaded){
     return null;
   }
   
@@ -45,7 +46,7 @@ export default function Navbar() {
         </div>
         <div className="visibility-desktop">
           <ul>
-            {!isAuthenticated && onHomePage ? (
+            {!isSignedIn && onHomePage ? (
               <li
                 style={{
                   backgroundColor:
@@ -58,13 +59,11 @@ export default function Navbar() {
                   alignItems: "center",
                 }}
               >
-                <Link
-                  onClick={() =>
-                    loginWithRedirect()
-                  }
-                >
+                <SignInButton>
+                <Link>
                   Sign In
                 </Link>
+                </SignInButton>
               </li>
             ) : (
               <>
@@ -82,20 +81,6 @@ export default function Navbar() {
                 >
                   <Link to="/">Home</Link>
                 </li>
-                {/* <li
-                  style={{
-                    backgroundColor:
-                      location.pathname === "/contact" ? "#117660" : "inherit",
-                    width: "7rem",
-                    height: "3rem",
-                    borderRadius: "10px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Link to="/contact">Contact</Link>
-                </li> */}
                 <li
                   style={{
                     backgroundColor:
@@ -165,15 +150,9 @@ export default function Navbar() {
                     alignItems: "center",
                   }}
                 >
-                  <Link
-                    onClick={() =>
-                      logout({
-                        logoutParams: { returnTo: window.location.origin },
-                      })
-                    }
-                  >
-                    Log Out
-                  </Link>
+                      <SignOutButton>
+                  <Link>Log Out</Link>
+                  </SignOutButton>
                 </li>
               </>
             )}
@@ -194,20 +173,19 @@ export default function Navbar() {
       {showMenu && (
         <div className="mobile-nav">
           <ul>
-            {!isAuthenticated && onHomePage ? (
+            {!isSignedIn && onHomePage ? (
               <li onClick={closeMenu} style={{fontSize:"30px"}}>
-                <Link   onClick={() =>
-                    loginWithRedirect()
-                  }>Sign In</Link>
+                <SignInButton>
+                <Link>
+                  Sign In
+                </Link>
+                </SignInButton>
               </li>
             ) : (
               <>
                 <li onClick={closeMenu}>
                   <Link to="/">Home</Link>
                 </li>
-                {/* <li onClick={closeMenu}>
-                  <Link to="/contact">Contact</Link>
-                </li> */}
                 <li onClick={closeMenu}>
                   <Link to="/faq">FAQs</Link>
                 </li>
@@ -218,7 +196,12 @@ export default function Navbar() {
                   <Link to="/contributors">Contributors</Link>
                 </li>
                 <li onClick={closeMenu}>
-                  <Link onClick={() => logout()}>Log Out</Link>
+                <Link to="/ExampleCrop">Example</Link>
+                </li>
+                <li onClick={closeMenu}>
+                  <SignOutButton>
+                  <Link>Log Out</Link>
+                  </SignOutButton>
                 </li>
               </>
             )}
