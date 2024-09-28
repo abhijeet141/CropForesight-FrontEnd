@@ -51,7 +51,7 @@ function App() {
           <Route path="/Weather" element={<ProtectedRoute element={<Weather override={override}/>} />} />
           <Route path="/ExampleCrop" element={<ProtectedRoute element={<ExampleCrop />} />} />
           <Route path="/contributors" element={<ProtectedRoute element={<Contributor override={override} />} />} />
-          <Route path="/*" element={<Err />} />
+          <Route path="/*" element={<ProtectedRoute element={<Err />}></ProtectedRoute>} />
         </Routes>
       </BrowserRouter>
       </>
