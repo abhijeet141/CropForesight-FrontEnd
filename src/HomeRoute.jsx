@@ -5,11 +5,8 @@ import Home from './pages/Home/Home';
 
 const HomeRoute = () => {
 
-  const { isLoaded, isSignedIn } = useAuth()
+  const { isSignedIn } = useAuth()
 
-  if (!isLoaded) {
-    return null;
-  }
 
   return isSignedIn ? <Home /> : <HomePage />;
 };

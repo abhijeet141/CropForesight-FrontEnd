@@ -11,7 +11,7 @@ export default function Navbar() {
   const location = useLocation();
   const [showMenu, setShowMenu] = useState(false);
   const [closed, setClosed] = useState(false)
-  const {isLoaded, isSignedIn } = useAuth()
+  const {isSignedIn } = useAuth()
 
 
   function closeMenu() {
@@ -27,10 +27,6 @@ export default function Navbar() {
       document.body.style.overflow = "auto";
     }
   }, [showMenu]);
-
-  if(!isLoaded){
-    return null;
-  }
   
   return (
     <>

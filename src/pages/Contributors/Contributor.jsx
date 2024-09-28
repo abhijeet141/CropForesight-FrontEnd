@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import HashLoader from "react-spinners/HashLoader";
+
 import "./contributor.css"
-const Contributor = () => {
+const Contributor = ({override}) => {
   const [contributors, setContributors] = useState([]);
+  let [loading,setLoading] = useState(true);
+  let [color,] = useState("#ffffff");
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -12,6 +17,7 @@ const Contributor = () => {
         );
         const data = response.data;
         setContributors(data);
+        setLoading(false)
       } catch (error) { 
         console.error(error);
       }
@@ -21,7 +27,16 @@ const Contributor = () => {
 
   return (
     <>
-      <div >
+    {loading ? <HashLoader
+        color={color}
+        loading={loading}
+        cssOverride={override}
+        size={100}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      /> :
+      <>
+       <div >
         <h1 className="h1" >
           Our Contributors
         </h1>
@@ -46,6 +61,9 @@ const Contributor = () => {
           </>   
         ))}
       </div>
+      </>
+      }
+     
     </>
   );
 }
