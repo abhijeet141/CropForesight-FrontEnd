@@ -121,13 +121,13 @@ export function FormComponent() {
     setStatus("scanning");
     try {
       const { data } = await axios.post(`${import.meta.env.VITE_BACKEND_ML}/predict`, {
-        nitrogen: Number(values.nitrogen),
-        phosphorus: Number(values.phosphorus),
-        potassium: Number(values.potassium),
-        temperature: Number(values.temperature),
-        humidity: Number(values.humidity),
-        ph: Number(values.ph),
-        rainfall: Number(values.rainfall),
+        nitrogen: Math.round(Number(values.nitrogen)),
+        phosphorus: Math.round(Number(values.phosphorus)),
+        potassium: Math.round(Number(values.potassium)),
+        temperature: Math.round(Number(values.temperature)),
+        humidity: Math.round(Number(values.humidity)),
+        ph: Math.round(Number(values.ph)),
+        rainfall: Math.round(Number(values.rainfall)),
       });
       if (data && data.result) {
         setResult({ name: data.result, ...cropInfo(data.result), readings: { ...values } });
