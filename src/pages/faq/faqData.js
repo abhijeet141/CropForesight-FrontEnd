@@ -1,24 +1,44 @@
 const faqs = [
-    {
-      title: "Q: How does CropForesight determine the best crop recommendation for a specific piece of land?",
-      content: "A : CropForesight utilizes machine learning algorithms that analyze various environmental parameters such as soil composition, rainfall, pH, potassium, humidity, and temperature. Based on these inputs, it predicts the optimal crop choice that maximizes productivity and yield."
-    },
-    {
-        title:"Q: What factors does CropForesight consider when suggesting a crop for cultivation?",
-        content:"A: CropForesight takes into account several factors, including soil composition, rainfall, pH, potassium, humidity, and temperature. These parameters are crucial in determining the suitability of different crops for cultivation."
-      },
-      {
-        title: "Q: Can CropForesight provide crop recommendations for different types of soil conditions?",
-        content: "A: Yes, CropForesight is designed to consider various soil conditions when making crop recommendations. By analyzing the soil composition, it suggests crops that are well-suited to different types of soil, such as sandy, loamy, or clayey soil."
-      },
-      {
-        title:"Q: How accurate are the crop recommendations provided by CropForesight?",
-        content: "A: CropForesight strives to provide accurate crop recommendations by leveraging advanced machine learning algorithms and considering multiple environmental factors. However, the accuracy may depend on the quality and reliability of the input data."
-      },
-      {
-        title: "Q: Is CropForesight applicable to all regions and climates?",
-        content: "A: CropForesight is designed to be applicable to a wide range of regions and climates. However, it's important to note that certain crops may have specific requirements and thrive in particular climatic conditions. CropForesight considers these factors to suggest crops that are suitable for specific regions and climates."
-      },
-]
+  {
+    cat: "model",
+    q: "How does CropForesight determine the best crop for a piece of land?",
+    a: "It uses a machine-learning model that analyses seven environmental parameters — nitrogen, phosphorus, potassium, pH, rainfall, humidity and temperature. From these it predicts the crop most likely to thrive and maximise yield.",
+  },
+  {
+    cat: "model",
+    q: "What factors does it consider when suggesting a crop?",
+    a: "Soil nutrients (N, P, K), soil pH, rainfall, humidity and temperature. Together these capture the soil and climate conditions that decide which crops do well.",
+  },
+  {
+    cat: "model",
+    q: "Can it handle different soil conditions?",
+    a: "Yes. By reading your soil's nutrient and pH values it adapts to different conditions — sandy, loamy or clayey — and suggests crops suited to them.",
+  },
+  {
+    cat: "model",
+    q: "How accurate are the recommendations?",
+    a: "The model is trained on thousands of real soil–crop samples. Accuracy depends on how representative your input readings are, so use values from a recent soil health card for the best result.",
+  },
+  {
+    cat: "model",
+    q: "Does it work for all regions and climates?",
+    a: "It covers a wide range of regions, but some crops have specific climate needs. The model weighs your temperature, humidity and rainfall to suggest crops realistic for your conditions.",
+  },
+  {
+    cat: "leaf",
+    q: "What photo should I upload for the leaf check?",
+    a: "A clear, well-lit photo of a single tomato leaf filling the frame, against a plain background. The model is trained on tomato leaves only.",
+  },
+  {
+    cat: "model",
+    q: "Which crops can it recommend?",
+    a: "22 crops in total — cereals like rice and maize, pulses like chickpea and lentil, fruits like mango, banana and grapes, and cash crops like cotton, coffee and jute.",
+  },
+  {
+    cat: "data",
+    q: "What happens to my data and images?",
+    a: "Your soil readings are sent to the model only to generate a recommendation. Leaf photos are uploaded to Cloudinary so the disease model can process them.",
+  },
+];
 
 export default faqs;

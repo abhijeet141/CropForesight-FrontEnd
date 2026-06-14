@@ -1,209 +1,119 @@
-import React, { useState, useEffect} from "react";
-import { Link } from "react-router-dom";
-import logo from "../../assets/logo.png";
-import menu from "../../assets/menu-icon.webp";
-import close from '../../assets/close.png'
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "../Navbar/Navbar.css";
-import {useAuth, SignInButton, SignOutButton  } from '@clerk/clerk-react'
-import { useLocation } from "react-router-dom";
+import { useAuth, SignInButton, SignOutButton } from "@clerk/clerk-react";
+
+const LINKS = [
+  { to: "/", label: "Home" },
+  { to: "/faq", label: "FAQs" },
+  { to: "/Weather", label: "Weather" },
+  { to: "/ExampleCrop", label: "Crops" },
+];
 
 export default function Navbar() {
   const location = useLocation();
-  const [showMenu, setShowMenu] = useState(false);
-  const [closed, setClosed] = useState(false)
-  const {isSignedIn } = useAuth()
-
-
-  function closeMenu() {
-    setShowMenu(false);
-  }
+  const [open, setOpen] = useState(false);
+  const { isLoaded, isSignedIn } = useAuth();
 
   const onHomePage = location.pathname === "/";
 
-  useEffect(() => {
-    if (showMenu) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [showMenu]);
-  
+  if (!isLoaded) {
+    return null;
+  }
+
+  // the signed-out landing page renders its own nav
+  if (!isSignedIn && onHomePage) {
+    return null;
+  }
+
+  const isActive = (to) => location.pathname.toLowerCase() === to.toLowerCase();
+
+  const authButton = (
+    <li>
+      {isSignedIn ? (
+        <SignOutButton>
+          <button className="app-btn app-btn-primary">Sign out</button>
+        </SignOutButton>
+      ) : (
+        <SignInButton mode="modal">
+          <button className="app-btn app-btn-primary">Sign in</button>
+        </SignInButton>
+      )}
+    </li>
+  );
+
   return (
-    <>
-      <nav>
-        <div>
-          <Link to="/">
-            <img
-              src={logo}
-              alt="logo"
-              style={{ width: "200px", height: "45px", marginTop: "7px" }}
-            />
-          </Link>
-        </div>
-        <div className="visibility-desktop">
-          <ul>
-            {!isSignedIn && onHomePage ? (
-              <li
-                style={{
-                  backgroundColor:
-                    location.pathname === "/" ? "#117660" : "inherit",
-                  width: "7rem",
-                  height: "3rem",
-                  borderRadius: "10px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <SignInButton>
-                <Link>
-                  Sign In
-                </Link>
-                </SignInButton>
-              </li>
-            ) : (
-              <>
-                <li
-                  style={{
-                    backgroundColor:
-                      location.pathname === "/" ? "#117660" : "inherit",
-                    width: "7rem",
-                    height: "3rem",
-                    borderRadius: "10px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Link to="/">Home</Link>
-                </li>
-                <li
-                  style={{
-                    backgroundColor:
-                      location.pathname === "/faq" ? "#117660" : "inherit",
-                    width: "7rem",
-                    height: "3rem",
-                    borderRadius: "10px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Link to="/faq">FAQs</Link>
-                </li>
-                <li
-                  style={{
-                    backgroundColor:
-                      location.pathname === "/Weather" ? "#117660" : "inherit",
-                    width: "7rem",
-                    height: "3rem",
-                    borderRadius: "10px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Link to="/Weather">Weather</Link>
-                </li>
-                <li
-                  style={{
-                    backgroundColor:
-                      location.pathname === "/contributors"
-                        ? "#117660"
-                        : "inherit",
-                    width: "9rem",
-                    height: "3rem",
-                    borderRadius: "10px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Link to="/contributors">Contributors</Link>
-                </li>
-                <li
-                  style={{
-                    backgroundColor:
-                      location.pathname === "/ExampleCrop" ? "#117660" : "inherit",
-                    width: "7rem",
-                    height: "3rem",
-                    borderRadius: "10px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Link to="/ExampleCrop">Example</Link>
-                </li>
-                <li
-                  style={{
-                    backgroundColor:"#117660",
-                    width: "7rem",
-                    height: "3rem",
-                    borderRadius: "10px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                      <SignOutButton>
-                  <Link>Log Out</Link>
-                  </SignOutButton>
-                </li>
-              </>
-            )}
-          </ul>
-        </div>
-        <div
-          className="visibility-mobile"
-          onClick={() => {
-            setShowMenu((prev) => !prev);
-            setClosed(!closed)
-          }}
+    <nav className="app-nav">
+      <div className="app-nav-inner">
+        <Link className="app-brand" to="/" onClick={() => setOpen(false)}>
+          <span className="app-brand-mark">🌾</span>CropForesight
+        </Link>
+
+        <ul className="app-nav-links">
+          {LINKS.map(({ to, label }) => (
+            <li key={to}>
+              <Link to={to} className={isActive(to) ? "active" : ""}>
+                {label}
+              </Link>
+            </li>
+          ))}
+          {authButton}
+        </ul>
+
+        <button
+          className="app-nav-toggle"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
         >
-          {closed ?  <img src={close} alt="" srcset="" /> :<img src={menu} style={{cursor:"pointer"}} alt="" /> }
-        </div>
-      </nav>
-
-
-      {showMenu && (
-        <div className="mobile-nav">
-          <ul>
-            {!isSignedIn && onHomePage ? (
-              <li onClick={closeMenu} style={{fontSize:"30px"}}>
-                <SignInButton>
-                <Link>
-                  Sign In
-                </Link>
-                </SignInButton>
-              </li>
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          >
+            {open ? (
+              <>
+                <line x1="6" y1="6" x2="18" y2="18" />
+                <line x1="18" y1="6" x2="6" y2="18" />
+              </>
             ) : (
               <>
-                <li onClick={closeMenu}>
-                  <Link to="/">Home</Link>
-                </li>
-                <li onClick={closeMenu}>
-                  <Link to="/faq">FAQs</Link>
-                </li>
-                <li onClick={closeMenu}>
-                  <Link to="/weather">Weather</Link>
-                </li>
-                <li onClick={closeMenu}>
-                  <Link to="/contributors">Contributors</Link>
-                </li>
-                <li onClick={closeMenu}>
-                <Link to="/ExampleCrop">Example</Link>
-                </li>
-                <li onClick={closeMenu}>
-                  <SignOutButton>
-                  <Link>Log Out</Link>
-                  </SignOutButton>
-                </li>
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
               </>
             )}
-          </ul>
+          </svg>
+        </button>
+      </div>
+
+      {open && (
+        <div className="app-nav-mobile">
+          {LINKS.map(({ to, label }) => (
+            <Link
+              key={to}
+              to={to}
+              className={isActive(to) ? "active" : ""}
+              onClick={() => setOpen(false)}
+            >
+              {label}
+            </Link>
+          ))}
+          {isSignedIn ? (
+            <SignOutButton>
+              <button className="app-btn app-btn-primary">Sign out</button>
+            </SignOutButton>
+          ) : (
+            <SignInButton mode="modal">
+              <button className="app-btn app-btn-primary">Sign in</button>
+            </SignInButton>
+          )}
         </div>
       )}
-    </>
+    </nav>
   );
 }

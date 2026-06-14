@@ -1,0 +1,81 @@
+.crop-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.crop-loader--fullpage {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  min-height: 100vh;
+  background: #faf7f1;
+}
+.crop-loader__label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5a645a;
+  animation: crop-loader-pulse 1.6s ease-in-out infinite;
+}
+/* the sprout grows once and holds — no loop, no fade-out */
+.crop-loader__stem {
+  stroke-dasharray: 1;
+  animation: crop-loader-stem 1.8s ease-out forwards;
+}
+.crop-loader__leaf1 {
+  transform-origin: 59px 78px;
+  animation: crop-loader-leaf1 1.8s ease-out forwards;
+}
+.crop-loader__leaf2 {
+  transform-origin: 60px 64px;
+  animation: crop-loader-leaf2 1.8s ease-out forwards;
+}
+.crop-loader__bud {
+  transform-origin: 60px 50px;
+  animation: crop-loader-bud 1.8s ease-out forwards;
+}
+@keyframes crop-loader-stem {
+  0% { stroke-dashoffset: 1; }
+  55% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes crop-loader-leaf1 {
+  0%, 32% { transform: scale(0); }
+  56% { transform: scale(1.12); }
+  68% { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+@keyframes crop-loader-leaf2 {
+  0%, 46% { transform: scale(0); }
+  68% { transform: scale(1.12); }
+  80% { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+@keyframes crop-loader-bud {
+  0%, 62% { transform: scale(0); }
+  82% { transform: scale(1.25); }
+  92% { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+@keyframes crop-loader-pulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .crop-loader__stem {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .crop-loader__leaf1,
+  .crop-loader__leaf2,
+  .crop-loader__bud {
+    animation: none;
+    transform: scale(1);
+  }
+  .crop-loader__label {
+    animation: none;
+  }
+}

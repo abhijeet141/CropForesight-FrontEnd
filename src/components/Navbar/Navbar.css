@@ -1,97 +1,162 @@
-nav {
+.app-nav {
+  --loam: #1c3829;
+  --leaf: #2e6b46;
+  --leaf-soft: #e8f0e9;
+  --wheat: #e0a226;
+  --paper: #faf7f1;
+  --ink-soft: #5a645a;
+  --line: #e3dfd4;
+
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  width: 100%;
-  height: 10vh;
+  z-index: 100;
+  background: rgba(250, 247, 241, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  font-family: "Archivo", sans-serif;
+}
+.app-nav-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 68px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  padding: 2.4rem 3.2rem;
-  background-color: rgba(0, 0, 40, 0.8);
 }
-
-nav ul {
+.app-brand {
   display: flex;
   align-items: center;
-  list-style: none;
-  
-}
-
-nav ul li {
-  margin-right: 2rem;
-  text-decoration: none;
-  list-style: none;
-}
-
-nav ul li a {
-  color: #fff;
-  position: relative;
-  list-style: none;
+  gap: 10px;
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--loam);
   text-decoration: none;
 }
-
-nav ul li a::before {
-  transition: 300ms;
-  height: 3px;
-  content: "";
-  position: absolute;
-  background-color: #9864c9;
-  bottom: 0;
+.app-brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--loam);
+  display: grid;
+  place-items: center;
+  color: var(--wheat);
+  font-size: 1.05rem;
 }
 
-nav ul li a::before {
-  width: 0%;
+.app-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-
-nav ul li a:hover::before {
-  width: 100%;
-}
-
-nav .visibility-desktop {
+.app-nav-links a {
   display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: color 0.15s, background 0.15s;
+}
+.app-nav-links a:hover {
+  color: var(--loam);
+  background: var(--leaf-soft);
+}
+.app-nav-links a.active {
+  color: var(--loam);
+  background: var(--leaf-soft);
 }
 
-nav .visibility-mobile {
+.app-btn {
+  font-family: "Archivo", sans-serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 9px;
+  padding: 9px 18px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.15s;
+}
+.app-btn:active {
+  transform: translateY(1px);
+}
+.app-btn-primary {
+  background: var(--loam);
+  color: #fff;
+}
+.app-btn-primary:hover {
+  background: #234733;
+  box-shadow: 0 6px 18px rgba(28, 56, 41, 0.25);
+}
+
+.app-nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1.5px solid var(--line);
+  border-radius: 9px;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  color: var(--loam);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.app-nav-toggle:hover {
+  border-color: var(--leaf);
+  background: var(--leaf-soft);
+}
+
+.app-nav-mobile {
   display: none;
 }
 
-.modebtn{
-  background-color: transparent;
+:focus-visible {
+  outline-offset: 2px;
 }
 
-@media only screen and (max-width: 1120px) {
-  nav .visibility-desktop {
+@media (max-width: 860px) {
+  .app-nav-links {
     display: none;
   }
-
-  nav .visibility-mobile {
-    display: block;
+  .app-nav-toggle {
+    display: flex;
   }
-
-  nav .visibility-mobile img {
-    width: 28px;
-  }
-
-  .mobile-nav {
+  .app-nav-mobile {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 40, 0.8);
-    transition: 2s ease-in-out;
+    gap: 4px;
+    padding: 12px 24px 18px;
+    background: rgba(250, 247, 241, 0.98);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 14px 28px -18px rgba(28, 56, 41, 0.35);
   }
-
-  .mobile-nav ul li {
-    padding-bottom: 3rem;
-    list-style: none;
-  }
-
-  .mobile-nav ul li a {
-    color: #fff;
+  .app-nav-mobile a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--ink-soft);
     text-decoration: none;
+    padding: 12px 14px;
+    border-radius: 9px;
+    transition: color 0.15s, background 0.15s;
+  }
+  .app-nav-mobile a:hover,
+  .app-nav-mobile a.active {
+    color: var(--loam);
+    background: var(--leaf-soft);
+  }
+  .app-nav-mobile .app-btn {
+    margin-top: 8px;
+    width: 100%;
+    padding: 13px 18px;
+    font-size: 1rem;
   }
 }
